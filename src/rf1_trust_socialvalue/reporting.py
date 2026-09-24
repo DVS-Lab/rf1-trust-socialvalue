@@ -44,7 +44,7 @@ def report(config):
 
 Friends elicit substantially more investment and higher-offer choices. In the primary rating-free analysis, M7 (separate friend/stranger reciprocation bonuses) has the lowest mean AIC, AICc and BIC. However, M5 wins AICc for the largest single share of participants, while asymmetric learning M8 has the lowest mean held-out log loss among primary candidates. These results support partner-dependent behavior, but **do not establish a unique social-reward mechanism**. A generic partner preference control fits at least as well as M7 on average. Ratings are **not verified as pre-task**, so M3/M4 cannot serve as a primary replication of Fareri's pre-task-rating models.
 
-**Individual parameter interpretation requires caution.** M5's theta recovery has mean Pearson r={recm5.pearson:.3f}, RMSE={recm5.rmse:.3f}, and boundary-hit rate={recm5.boundary_rate:.1%}. See all recovery results below; optimizer convergence does not establish identification.
+**Individual parameter interpretation requires caution.** M5's theta recovery has mean Pearson r={recm5.pearson:.3f}, RMSE={recm5.rmse:.3f}, and boundary-hit rate={recm5.boundary_rate:.1%}. See all recovery results below; optimizer convergence does not establish identification. In the expanded 12-candidate model-recovery analysis, AICc reselects M7 for only {float(diagonal[(diagonal.metric=='AICc') & (diagonal.generating=='M7')].selection_probability.iloc[0]):.1%} of M7-generated datasets. **This candidate set poorly distinguishes M7's mechanism**, even though its mean in-sample criterion is favorable.
 
 ## Dataset/version and provenance
 
