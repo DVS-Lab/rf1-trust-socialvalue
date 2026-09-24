@@ -106,7 +106,7 @@ def comparison_figures():
         if param=='alpha':ax.set_ylim(-.03,1.03)
         if param=='theta_stranger':ax.set_ylim(-.15,5.15)
         if param=='theta':ax.set_ylim(-.15,5.15);ax.text(.02,.95,'M7: friend bonus',transform=ax.transAxes,va='top',fontsize=9)
-        if param=='kappa':ax.set_yscale('symlog',linthresh=.1);ax.set_ylabel('Symlog scale; linear near zero')
+        if param=='kappa':ax.set_yscale('symlog',linthresh=.1);ax.set_ylim(0,25);ax.set_ylabel('Symlog scale; linear near zero')
     heading(fig,'Parameter estimates often reach their allowed bounds','Participant maximum-likelihood estimates · M4 is secondary · M8 α is the positive-error rate · recovery limits interpretation')
     save(fig,'06_model_parameters')
     h=pd.read_csv(TABLE/'heldout_fits.csv');fig,axs=plt.subplots(1,2,figsize=(12,5),layout='constrained')
@@ -199,7 +199,7 @@ def age_figure():
     ax.scatter(d.age,d.theta+rng.uniform(-.025,.025,len(d)),s=28,alpha=.6,color=MODEL_COLORS['M5'],edgecolor='white',lw=.4)
     x=np.linspace(d.age.min(),d.age.max(),100);p=np.polyfit(d.age,d.theta,1);ax.plot(x,np.polyval(p,x),color='#26394C',lw=2)
     ax.set(xlabel='Age (years)',ylabel='Friend-specific value θ (M5)',ylim=(-.15,5.15));ax.grid(axis='y')
-    heading(fig,'Age–parameter relationships remain exploratory','Unpooled participant estimates · line: descriptive linear association · boundary estimates and recovery limit interpretation')
+    heading(fig,'Age–parameter relationships remain exploratory','Unpooled estimates with small vertical jitter · line: descriptive linear association · recovery limits interpretation')
     save(fig,'11_age_and_social_value')
 
 
