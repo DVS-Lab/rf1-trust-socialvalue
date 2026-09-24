@@ -96,17 +96,18 @@ def comparison_figures():
         ax.set(xticks=range(len(PRIMARY)),xticklabels=PRIMARY,ylabel=f'Δ{metric} from each participant’s best model',title=metric);ax.grid(axis='y');ax.set_ylim(bottom=-2)
     heading(fig,'Model fit varies substantially across participants','Primary rating-free sample: N=111 · each dot is a participant · horizontal marks show medians · lower is better')
     save(fig,'05_model_comparison')
-    f=pd.read_csv(TABLE/'model_fits.csv');fig,axs=plt.subplots(1,3,figsize=(12,4.8),layout='constrained')
-    for ax,param,title in zip(axs,['alpha','kappa','theta'],['Learning rate α','Inverse temperature κ','Reciprocation value θ']):
-        models=['M2','M5','M7','M8'] if param!='theta' else ['M4','M5','M7']
+    f=pd.read_csv(TABLE/'model_fits.csv');fig,axs=plt.subplots(1,4,figsize=(14,4.8),layout='constrained')
+    for ax,param,title in zip(axs,['alpha','kappa','theta','theta_stranger'],['Learning rate α','Inverse temperature κ','Reciprocation value θ','Stranger value θ_S']):
+        models=['M7'] if param=='theta_stranger' else ['M4','M5','M7'] if param=='theta' else ['M2','M5','M7','M8']
         for j,m in enumerate(models):
             vals=f[f.model.eq(m)][param].dropna()
             ax.scatter(j+rng.uniform(-.18,.18,len(vals)),vals,s=13,alpha=.45,c=MODEL_COLORS[m],edgecolors='none');ax.plot(j,vals.median(),'_',color='#243242',ms=22,mew=2)
         ax.set(xticks=range(len(models)),xticklabels=models,title=title);ax.grid(axis='y')
         if param=='alpha':ax.set_ylim(-.03,1.03)
+        if param=='theta_stranger':ax.set_ylim(-.15,5.15)
         if param=='theta':ax.set_ylim(-.15,5.15);ax.text(.02,.95,'M7: friend bonus',transform=ax.transAxes,va='top',fontsize=9)
         if param=='kappa':ax.set_yscale('symlog',linthresh=.1);ax.set_ylabel('Symlog scale; linear near zero')
-    heading(fig,'Parameter estimates often reach their allowed bounds','Participant maximum-likelihood estimates · M4 is secondary · recovery determines which differences are interpretable')
+    heading(fig,'Parameter estimates often reach their allowed bounds','Participant maximum-likelihood estimates · M4 is secondary · M8 α is the positive-error rate · recovery limits interpretation')
     save(fig,'06_model_parameters')
     h=pd.read_csv(TABLE/'heldout_fits.csv');fig,axs=plt.subplots(1,2,figsize=(12,5),layout='constrained')
     order=PRIMARY+['M3','M4']
