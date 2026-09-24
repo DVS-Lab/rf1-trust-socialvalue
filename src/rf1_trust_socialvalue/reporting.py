@@ -142,7 +142,7 @@ Each generating model is simulated on every rating-complete participant's schedu
 
 ## Robustness checks
 
-Negative differences favor the first model:
+Negative differences favor the first model. Improvement fractions require a difference below −0.0001 to avoid counting optimizer roundoff as substantive improvement:
 
 {markdown_table(rob[(rob['sample']=='primary')&(rob.metric=='AICc')],['comparison','n','mean_difference','median_difference','fraction_improved'])}
 

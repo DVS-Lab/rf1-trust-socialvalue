@@ -20,14 +20,14 @@ def run_robustness(config):
         x=combined[combined.model.eq(a)].set_index('participant_id');y=combined[combined.model.eq(b)].set_index('participant_id');ids=x.index.intersection(y.index)
         for metric in ['AIC','AICc','BIC']:
             diff=x.loc[ids,metric]-y.loc[ids,metric]
-            rows.append(dict(comparison=f'{a} - {b}',sample='primary',metric=metric,n=len(ids),mean_difference=diff.mean(),median_difference=diff.median(),fraction_improved=(diff<0).mean()))
+            rows.append(dict(comparison=f'{a} - {b}',sample='primary',metric=metric,n=len(ids),mean_difference=diff.mean(),median_difference=diff.median(),fraction_improved=(diff < -1e-4).mean()))
     for label,ids in [('sensitivity',sample.loc[sample.sensitivity_include,'participant_id']),('complete_ratings',sample.loc[sample.primary_include&sample.complete_ratings,'participant_id'])]:
         sub=primary[primary.participant_id.isin(ids)]
         for model in config['primary_models']:
             x=sub[sub.model.eq(model)].set_index('participant_id');base=sub[sub.model.eq('M2')].set_index('participant_id')
             for metric in ['AIC','AICc','BIC']:
                 diff=x[metric]-base[metric]
-                rows.append(dict(comparison=f'{model} - M2',sample=label,metric=metric,n=len(diff),mean_difference=diff.mean(),median_difference=diff.median(),fraction_improved=(diff<0).mean()))
+                rows.append(dict(comparison=f'{model} - M2',sample=label,metric=metric,n=len(diff),mean_difference=diff.mean(),median_difference=diff.median(),fraction_improved=(diff < -1e-4).mean()))
     pd.DataFrame(rows).to_csv('results/tables/robustness_comparisons.csv',index=False)
     age_analysis(primary,sample)
 
