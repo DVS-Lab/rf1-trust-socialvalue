@@ -1,0 +1,14 @@
+{
+  "n": 113,
+  "age_min": 21.0,
+  "age_max": 80.0,
+  "age_mean": 42.56637168141593,
+  "age_sd": 17.054993040474084,
+  "sex_as_released": {
+    "F": 69,
+    "M": 40,
+    "O": 4
+  },
+  "gee_converged": true,
+  "n_inference": 111
+}

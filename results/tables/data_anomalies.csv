@@ -1,0 +1,13 @@
+participant_id,run,issue,raw_observed,action
+sub-10369,0,multiple_unlabelled_rating_sessions,19,exclude ratings; retain rating-free analyses
+sub-10478,0,multiple_unlabelled_rating_sessions,19,exclude ratings; retain rating-free analyses
+sub-10486,2,empty_BIDS_run,0,exclude run; no shared representation
+sub-10555,2,empty_BIDS_run,11,exclude run; no shared representation
+sub-10617,2,empty_BIDS_run,0,exclude run; no shared representation
+sub-10657,1,appended_sessions_repeated_header,84,retain behavioral audit; exclude participant from primary inference
+sub-10657,2,empty_BIDS_run,0,exclude run; no shared representation
+sub-10668,2,empty_BIDS_run,0,exclude run; no shared representation
+sub-10777,1,appended_sessions_repeated_header,84,retain behavioral audit; exclude participant from primary inference
+sub-10777,1,unpresented_design_rows,40,"exclude unpresented rows, not missed decisions"
+sub-10836,1,empty_BIDS_run,0,exclude run; no shared representation
+sub-10974,2,empty_BIDS_run,0,exclude run; no shared representation

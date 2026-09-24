@@ -1,0 +1,28 @@
+                               GEE Regression Results                              
+===================================================================================
+Dep. Variable:                  chose_high   No. Observations:                 8251
+Model:                                 GEE   No. clusters:                      111
+Method:                        Generalized   Min. cluster size:                  37
+                      Estimating Equations   Max. cluster size:                  84
+Family:                           Binomial   Mean cluster size:                74.3
+Dependence structure:         Exchangeable   Num. iterations:                     7
+Date:                     Thu, 24 Sep 2026   Scale:                           1.000
+Covariance type:                    robust   Time:                         00:48:18
+=======================================================================================================
+                                          coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------
+Intercept                               0.5516      0.145      3.805      0.000       0.267       0.836
+C(partner)[T.stranger]                  0.3714      0.122      3.047      0.002       0.132       0.610
+C(partner)[T.friend]                    1.9059      0.182     10.471      0.000       1.549       2.263
+C(offer_pair)[T.0-4]                   -0.1873      0.082     -2.272      0.023      -0.349      -0.026
+C(offer_pair)[T.0-8]                   -0.5476      0.111     -4.954      0.000      -0.764      -0.331
+C(offer_pair)[T.2-4]                   -0.8956      0.124     -7.216      0.000      -1.139      -0.652
+C(offer_pair)[T.2-8]                   -1.3066      0.141     -9.277      0.000      -1.583      -1.031
+C(offer_pair)[T.4-8]                   -1.5315      0.143    -10.722      0.000      -1.811      -1.252
+trial_scaled                            0.3147      0.161      1.957      0.050      -0.000       0.630
+C(partner)[T.stranger]:trial_scaled    -0.3830      0.168     -2.276      0.023      -0.713      -0.053
+C(partner)[T.friend]:trial_scaled      -1.0327      0.218     -4.745      0.000      -1.459      -0.606
+==============================================================================
+Skew:                         -0.2854   Kurtosis:                      -1.3540
+Centered skew:                -0.1700   Centered kurtosis:             -0.7829
+==============================================================================

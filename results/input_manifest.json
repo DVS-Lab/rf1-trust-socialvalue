@@ -1,0 +1,2090 @@
+[
+  {
+    "path": "participants.tsv",
+    "sha256": "410576ff5a34029088d3bf0ad583d16eea530877911881625df4b4853a1fa643"
+  },
+  {
+    "path": "sub-10317/func/sub-10317_task-trust_run-1_events.tsv",
+    "sha256": "80d84c6f07750283f70494f73891e17f6f115bc46f3dbc8200a9888fa6e1fafb"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10317/sub-10317_task-trust_run-0_raw.csv",
+    "sha256": "909059529580d646719aabbaafc6700d91e6bb6aacb9e7f9526209884d969f6f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10317/sub-10317_Trust-Ratings.csv",
+    "sha256": "7ee03063464091222d686ce0e3aff93f5df3a985beba878f7c5cd46529c8ec26"
+  },
+  {
+    "path": "sub-10369/func/sub-10369_task-trust_run-1_events.tsv",
+    "sha256": "16197801a93cf6423f9c27308d847c56ff9b7ee1648955b63a8aaca1ea32057e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10369/sub-10369_task-trust_run-0_raw.csv",
+    "sha256": "895c0f97f89a10dbe4dc3c0cbf27c51e1c2e92c8e83d3b74597f4dd9457a3905"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10369/sub-10369_Trust-Ratings.csv",
+    "sha256": "6dd761ce6d5ff76adb6f4c83d476728e2be0d7cf811f3dd6abbefdedf5b7de17"
+  },
+  {
+    "path": "sub-10402/func/sub-10402_task-trust_run-1_events.tsv",
+    "sha256": "88bbcbcc562db1c329402ad9cbeef17abd9afd92f4eb099483bbf8f53fa4358d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10402/sub-10402_task-trust_run-0_raw.csv",
+    "sha256": "6305859579635583e11c4b3d46ef9fe1d0f72408f087fa080f6ab359193f1725"
+  },
+  {
+    "path": "sub-10402/func/sub-10402_task-trust_run-2_events.tsv",
+    "sha256": "06166eede0a479b61f942dd89c2b210703d31de53cfdc3130adef4aa921ad172"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10402/sub-10402_task-trust_run-1_raw.csv",
+    "sha256": "848b7018f678628daec62a04f03e345d7ae86d846dac58229468d41cf4ef47d8"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10402/sub-10402_Trust-Ratings.csv",
+    "sha256": "e07187788641f0601986a1a4b848f36259684143d0acb87ea653f96bf0cb680e"
+  },
+  {
+    "path": "sub-10418/func/sub-10418_task-trust_run-1_events.tsv",
+    "sha256": "314aa20b2ca0825dd5c88596c44e6f089c14449fb0692c45909ebc725d64e723"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10418/sub-10418_task-trust_run-0_raw.csv",
+    "sha256": "1d01191e385b0782e7f5e189f846feb419205d5573fec4cd603da414e4ee5c1f"
+  },
+  {
+    "path": "sub-10418/func/sub-10418_task-trust_run-2_events.tsv",
+    "sha256": "ba3694de0958c740aeefa32e9f5266d3c0f704fda22a7360cc79dc7ef3307d50"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10418/sub-10418_task-trust_run-1_raw.csv",
+    "sha256": "980b9453fd789e7e51973e2f76eed37cbc3233d2390786c55376a7443a8a7636"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10418/sub-10418_Trust-Ratings.csv",
+    "sha256": "91d207fbe38b9b88537a3ebb5d0ed96acc1a693507a4ca1f8323f67a9f6ab734"
+  },
+  {
+    "path": "sub-10462/func/sub-10462_task-trust_run-1_events.tsv",
+    "sha256": "cc8ac8af2c8ff380fb557297bb35e898844aea9caf8395cd4d8f4d1b5c4c5579"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10462/sub-10462_task-trust_run-0_raw.csv",
+    "sha256": "c746f09991d3199d6880ee0ae8a8582dbb38aad4e2190bbb001ea05676b58ac7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10462/sub-10462_Trust-Ratings.csv",
+    "sha256": "83be2ff0af590bff3041917010372009681b9effd446309d63f14909c4af49b2"
+  },
+  {
+    "path": "sub-10478/func/sub-10478_task-trust_run-1_events.tsv",
+    "sha256": "448eb5a8a578b52bd0c8be437d1b335ab328014f9ee3a3310161f60a923bc4e9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10478/sub-10478_task-trust_run-0_raw.csv",
+    "sha256": "4a8db3de1aa5b2ab28211a359553a660238bdfe35df469043215db3b2719ae13"
+  },
+  {
+    "path": "sub-10478/func/sub-10478_task-trust_run-2_events.tsv",
+    "sha256": "b0b5cc1c77455eafc6e48ca2a2cf30611895a8976a8e06be1f1183d1b75a5e41"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10478/sub-10478_task-trust_run-1_raw.csv",
+    "sha256": "666411360dd1a90e213705c09acd0cf0ecc041ad34c52cfe6b664ff0f17d1f88"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10478/sub-10478_Trust-Ratings.csv",
+    "sha256": "2d14d769bde3a9581eb1903a727673550ebc907c00b1e6546005f643e5bb52e0"
+  },
+  {
+    "path": "sub-10486/func/sub-10486_task-trust_run-1_events.tsv",
+    "sha256": "9dc63b0512bfb27a9f0a626f26f645da3c419b0719e786144f67a98154cc2467"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10486/sub-10486_task-trust_run-0_raw.csv",
+    "sha256": "cfde88c94c653103de5cfec399250e0531b556da3e86b631cb84f6807820cc5f"
+  },
+  {
+    "path": "sub-10486/func/sub-10486_task-trust_run-2_events.tsv",
+    "sha256": "1c1dcab94d73fa9a03db0e8c3afd375b4a74fa229555f3d31d269e5e86f97b00"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10486/sub-10486_Trust-Ratings.csv",
+    "sha256": "6858484ac455108d99af6dc581d9f91187e092ba68f0cb166894ad8a30f636db"
+  },
+  {
+    "path": "sub-10529/func/sub-10529_task-trust_run-1_events.tsv",
+    "sha256": "792e432b7c7926527461740e978bab0cd2f4a8b80f453bcc15fefd2ddbfeb224"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10529/sub-10529_task-trust_run-0_raw.csv",
+    "sha256": "6dde1ee169d83e00c4bdff8d8ba45abd58813770aeb511eb8e81a0c181683bd0"
+  },
+  {
+    "path": "sub-10529/func/sub-10529_task-trust_run-2_events.tsv",
+    "sha256": "c25dc9c124d583bf8c91275cb00000c60185849b12bc9fe34446c622cf7c6419"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10529/sub-10529_task-trust_run-1_raw.csv",
+    "sha256": "e62533bfaee6938441a55b515e31ac3693a89faab179a57a7f7a365431180903"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10529/sub-10529_Trust-Ratings.csv",
+    "sha256": "2a1f92ed8076f6ab8fcb04f14eccabfe7ee856c57ec2f09b393427fc05be5756"
+  },
+  {
+    "path": "sub-10541/func/sub-10541_task-trust_run-1_events.tsv",
+    "sha256": "217fe2aa3fa201f48b2090ead2a0f391ab495b1c5509d7ac719a3e97ad0b73cf"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10541/sub-10541_task-trust_run-0_raw.csv",
+    "sha256": "e63c538fd38b611ee9af92091e1ab100d820a1a80168fc87bed1a646d48472f6"
+  },
+  {
+    "path": "sub-10541/func/sub-10541_task-trust_run-2_events.tsv",
+    "sha256": "89932214a599416f46e3758023fb1ec632d5bb8d8fb6d2da1e4bc67a958aaf98"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10541/sub-10541_task-trust_run-1_raw.csv",
+    "sha256": "166ca1ff56c92fb05aff1048b69a8cd95e7aca39e957b4dd7dc736bd35d707b6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10541/sub-10541_Trust-Ratings.csv",
+    "sha256": "521890eb7c162d8dd4bc87ec63e9ea7c5c51f126d648410c647d2b21275550c5"
+  },
+  {
+    "path": "sub-10555/func/sub-10555_task-trust_run-1_events.tsv",
+    "sha256": "ac9aa02297413ea95951d7a2fda6f232c3d630f4f2e326c243926206410c6e1a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10555/sub-10555_task-trust_run-0_raw.csv",
+    "sha256": "a2d1b013caefdfb4d109900fe1b1cd4d36d04e98f873e292206f6a3acb3b49ff"
+  },
+  {
+    "path": "sub-10555/func/sub-10555_task-trust_run-2_events.tsv",
+    "sha256": "dad4989e6f58211755b10105a5399d5ccbbec62a78fd1e816c0db0d4461b616a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10555/sub-10555_task-trust_run-1_raw.csv",
+    "sha256": "f48ed67c49217bebfb36b54680acaa24dcef816a7bac930553881f5a208ca49b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10555/sub-10555_Trust-Ratings.csv",
+    "sha256": "6e0068218a71024eb1aaa5648e643b81392fc1df80f45c0c0abef8f591f99c55"
+  },
+  {
+    "path": "sub-10559/func/sub-10559_task-trust_run-1_events.tsv",
+    "sha256": "8fe016ff38384dc5d87e374b00c0d4ea693b7dc94990c21f788b18b9fb5a0059"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10559/sub-10559_task-trust_run-0_raw.csv",
+    "sha256": "73a1482beadd81a9654fe07dde095b2b6bcf957f0ee9caf3019b2fe0a75fb6b6"
+  },
+  {
+    "path": "sub-10559/func/sub-10559_task-trust_run-2_events.tsv",
+    "sha256": "84d1e9c6c9c97da1a0d6f5d39040581cd0119247d1ad9284f5eb2a8b2fdcbeca"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10559/sub-10559_task-trust_run-1_raw.csv",
+    "sha256": "949dd5e2b7c5a8b9c24f8b04f9499201f4c7f0953c890b69535f8f2352850a1b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10559/sub-10559_Trust-Ratings.csv",
+    "sha256": "7dc53051c192507b1900ae1549a74628727af8ff3f86225e620ad71690c9a510"
+  },
+  {
+    "path": "sub-10572/func/sub-10572_task-trust_run-1_events.tsv",
+    "sha256": "ac8d63762ec2e1a23d8aad9b8794c6e88009a0ee2396db5696548692637fb0ef"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10572/sub-10572_task-trust_run-0_raw.csv",
+    "sha256": "57597ae63f6e394f532be64acad233dd4fc0660afb8f5b02e0c0a4d2fc5de8db"
+  },
+  {
+    "path": "sub-10572/func/sub-10572_task-trust_run-2_events.tsv",
+    "sha256": "b32bd0a8f4fb10957eae4b104a2f5abbe67220b335daeb75c34f2224424f75fa"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10572/sub-10572_task-trust_run-1_raw.csv",
+    "sha256": "8060af759f1eeba905edf66f4c90a8700c0a905a031934b54a45f356ebd30dab"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10572/sub-10572_Trust-Ratings.csv",
+    "sha256": "5679bf9ec2f212fb1df10b53db80cbf65bad7091fca7c66ffd08959ef00d774c"
+  },
+  {
+    "path": "sub-10581/func/sub-10581_task-trust_run-1_events.tsv",
+    "sha256": "580c82f5393d4edb71cda2206ed2756f5b6a719de44cbd09d3e991da1ae28725"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10581/sub-10581_task-trust_run-0_raw.csv",
+    "sha256": "6362733decfa568edbd0bf3a7d7ddc1e14da56f71bb8fd0049d41790bd6f88dc"
+  },
+  {
+    "path": "sub-10581/func/sub-10581_task-trust_run-2_events.tsv",
+    "sha256": "1096395f46c50345e4fbe43f999a8a20fce9cb31ac36af7eec03a308b30c2764"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10581/sub-10581_task-trust_run-1_raw.csv",
+    "sha256": "cd7c7326c15c77f432a4912cfe2d89f3c2dcb21f30b762bcb44c3aa0392e405b"
+  },
+  {
+    "path": "sub-10584/func/sub-10584_task-trust_run-1_events.tsv",
+    "sha256": "86c093ee52ced47d7c4bf975e143531acda266d5f6f6647eed01eef29f238794"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10584/sub-10584_task-trust_run-0_raw.csv",
+    "sha256": "4d15d1210798ccaf88ef6d7cac021ec99fdd33b6cf7680e6b6e37ae5fea57d20"
+  },
+  {
+    "path": "sub-10584/func/sub-10584_task-trust_run-2_events.tsv",
+    "sha256": "e6dc5a52eca06c499448097f37c710b1e6508fb6ccfd5893befedc303f0246e0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10584/sub-10584_task-trust_run-1_raw.csv",
+    "sha256": "4dfff2f06b41454a872acd95640c84a0a87a61150cea01b1b494ab63080919f1"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10584/sub-10584_Trust-Ratings.csv",
+    "sha256": "dcc1abfe33ac52b619092b925467cf4e305b073507070160014cc3631c5f5b1c"
+  },
+  {
+    "path": "sub-10585/func/sub-10585_task-trust_run-1_events.tsv",
+    "sha256": "8fbab2e9df98dec328d510dbf572d8c746c2a027823f68e34859d679e82aff96"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10585/sub-10585_task-trust_run-0_raw.csv",
+    "sha256": "0a6f4b17607f1b98a59b2f069724ec3360bf7eccfec78a572519895936048db0"
+  },
+  {
+    "path": "sub-10585/func/sub-10585_task-trust_run-2_events.tsv",
+    "sha256": "f322e095d9cf52764402ee4bc8e0092b73b9f8ad0a71a42c750643c509b3453e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10585/sub-10585_task-trust_run-1_raw.csv",
+    "sha256": "3947139cfd197bed1db81de486546124ff1ca285bf01b0c6d73bd062f3ec7d6d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10585/sub-10585_Trust-Ratings.csv",
+    "sha256": "81042ae4902a6e133f2056036f7f1db98f58609754131c9d1c0a5281d0fd69d6"
+  },
+  {
+    "path": "sub-10589/func/sub-10589_task-trust_run-1_events.tsv",
+    "sha256": "472954a20d9424654e5d3b1a4a0b9ea723bdecb223d5c74f1d9817fc47598d1b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10589/sub-10589_task-trust_run-0_raw.csv",
+    "sha256": "ccac20f06f5ec0499eaf9dd6b0f4600d3d00025f212fe5554587e0804119eb15"
+  },
+  {
+    "path": "sub-10589/func/sub-10589_task-trust_run-2_events.tsv",
+    "sha256": "c4406c2e2574a203a46b50aa5599de685f50163a14844ede676f03e234775013"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10589/sub-10589_task-trust_run-1_raw.csv",
+    "sha256": "23c1026c7ed4022ada0c86a844361e55031a8433e9e3d8d0d912dc075991cb8d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10589/sub-10589_Trust-Ratings.csv",
+    "sha256": "db35952cf0256ed63ed880c6c47633355882b8833e5f06be70507c4c407151eb"
+  },
+  {
+    "path": "sub-10590/func/sub-10590_task-trust_run-1_events.tsv",
+    "sha256": "d42589b592b79d8daacf05f17d16c509091e5534ba663eb6519f3c75c53b1bda"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10590/sub-10590_task-trust_run-0_raw.csv",
+    "sha256": "8ce64624d29d729c49c5815b6cbda45100feda5268557d2d49972a4a4fbce7da"
+  },
+  {
+    "path": "sub-10590/func/sub-10590_task-trust_run-2_events.tsv",
+    "sha256": "f9161b55e94310bb54ef274fad881798892b09095a5cc0d15b4310b3562155a3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10590/sub-10590_task-trust_run-1_raw.csv",
+    "sha256": "b5ac1c530e2ee5f0689d4c3ac5031044c46e1dc1e087d2ce08599aa92486c8d2"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10590/sub-10590_Trust-Ratings.csv",
+    "sha256": "b62aed25b4ceb7b5395283fe4f394329d7d0697cc0e22f0e0eae7e9a94c23658"
+  },
+  {
+    "path": "sub-10596/func/sub-10596_task-trust_run-1_events.tsv",
+    "sha256": "2efb3283e46909a936ee7b4167b4d2d5b2772b2bcd6cb87b30f42a4c8f386377"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10596/sub-10596_task-trust_run-0_raw.csv",
+    "sha256": "45304a7d1b27a18238e5882533bd3933939592c8c2ed290929a35badd79896f4"
+  },
+  {
+    "path": "sub-10596/func/sub-10596_task-trust_run-2_events.tsv",
+    "sha256": "d68b177552a2bfc47b25326c2d55af266716710a66d4adeb6a25ba087656d153"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10596/sub-10596_task-trust_run-1_raw.csv",
+    "sha256": "c18ecfeb1ffa974640614720e11bbf9d4a095ba9358f7b767ac61214680fdf68"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10596/sub-10596_Trust-Ratings.csv",
+    "sha256": "8987549800b0bf67c9ec0dc42f64691f5a22d3aeb7f66317c3950f6cbfc9e1f7"
+  },
+  {
+    "path": "sub-10603/func/sub-10603_task-trust_run-1_events.tsv",
+    "sha256": "f3b6415402897756539eef90bb46808f952cd9ff3614aed834261aac5ae86ec6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10603/sub-10603_task-trust_run-0_raw.csv",
+    "sha256": "c1271a6402ecc7e65a60f82277f5dd54fcfb6888af04576e94cfcc79e8ec04c8"
+  },
+  {
+    "path": "sub-10603/func/sub-10603_task-trust_run-2_events.tsv",
+    "sha256": "f70d2fdf43685fdf4d379dc05573230f4387781061ce2d4ce70c22102bce3f44"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10603/sub-10603_task-trust_run-1_raw.csv",
+    "sha256": "117c1c099dc9b03798162e72c37a3166c2058005835eeeac3a8a8ef712cceee6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10603/sub-10603_Trust-Ratings.csv",
+    "sha256": "43e011f6973a2476a223a1c845e7f048ae25d5486c0204f419ae5c704766dfd1"
+  },
+  {
+    "path": "sub-10606/func/sub-10606_task-trust_run-1_events.tsv",
+    "sha256": "88ee842885fb2cd0654e6ea328361bab1d4a0f15d1f8dcd2e571f749abf5f7cb"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10606/sub-10606_task-trust_run-0_raw.csv",
+    "sha256": "180a6ba11d9353b2652d0f1cc44dfad1f58e9d64a284ade16ac98e9c5a1ea3cd"
+  },
+  {
+    "path": "sub-10606/func/sub-10606_task-trust_run-2_events.tsv",
+    "sha256": "812bba4cc6e9d4cbf0252327305728a4f7a76a0c9f6453beb929582070f24c36"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10606/sub-10606_task-trust_run-1_raw.csv",
+    "sha256": "08dd88bfb3951de2594ac1d60662ab3ac835b28f5dd95c9dc38a1193b3c9f0ff"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10606/sub-10606_Trust-Ratings.csv",
+    "sha256": "e711cf8754e3dc800f9bab710457b9853012c135aec63da2071ce2eca2733bd4"
+  },
+  {
+    "path": "sub-10608/func/sub-10608_task-trust_run-1_events.tsv",
+    "sha256": "ccd1e8224d2f403ad030a2024574defafe3f58eb6ecce83127593224077f78ac"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10608/sub-10608_task-trust_run-0_raw.csv",
+    "sha256": "0eab923742d60789e653d80df34bdc2cd7c917e0accfecc19cec4a88870e0104"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10608/sub-10608_Trust-Ratings.csv",
+    "sha256": "c61a93cc13a91e2d18d60d75f1a0b327734776bd3658df36eba3a7ced2f8664f"
+  },
+  {
+    "path": "sub-10617/func/sub-10617_task-trust_run-1_events.tsv",
+    "sha256": "701bf529ab59a7f16fbd459167860d65476a6467690050a0e6941384928e63b1"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10617/sub-10617_task-trust_run-0_raw.csv",
+    "sha256": "4e05b83d18bf722a7b0681233dee4a4311f4dba9d060b3e5c2d48b8a168670aa"
+  },
+  {
+    "path": "sub-10617/func/sub-10617_task-trust_run-2_events.tsv",
+    "sha256": "1c1dcab94d73fa9a03db0e8c3afd375b4a74fa229555f3d31d269e5e86f97b00"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10617/sub-10617_Trust-Ratings.csv",
+    "sha256": "31492cf2707f1f9a081b37d12d67fd7db0db4f393ae8369ee23eb4e772f9a40e"
+  },
+  {
+    "path": "sub-10636/func/sub-10636_task-trust_run-1_events.tsv",
+    "sha256": "871e273c344ca8802e090cc6d07cc9bacbe21b43d8a38bbcd87c1ba740b5b381"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10636/sub-10636_task-trust_run-0_raw.csv",
+    "sha256": "e2459863ded23300cbc54c1c749707eb28d543c503aba646a20d5a1ff7d99275"
+  },
+  {
+    "path": "sub-10636/func/sub-10636_task-trust_run-2_events.tsv",
+    "sha256": "9fe827016574cf6573418842d1cb18b8cc5fe206e05ef1d42d0f0ae2fc8e0fad"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10636/sub-10636_task-trust_run-1_raw.csv",
+    "sha256": "7c991ca4e8819775e429adb4d2202243364feb1f1ea47bb3987cdcaefe9083d4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10636/sub-10636_Trust-Ratings.csv",
+    "sha256": "a2def1428fc2cde34084dc4a18f85304c5339cd5d66d497f16fefefd25859787"
+  },
+  {
+    "path": "sub-10638/func/sub-10638_task-trust_run-1_events.tsv",
+    "sha256": "1e73bac10fb141ec6749ba07333bb3d9d8952dde53fa23676fac1d63352ffa33"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10638/sub-10638_task-trust_run-0_raw.csv",
+    "sha256": "f177dbdefcc30cd0e5d78603cf795841f05652134075d1dfb6d836191816e501"
+  },
+  {
+    "path": "sub-10638/func/sub-10638_task-trust_run-2_events.tsv",
+    "sha256": "f579743e4267b6751a097ec13ca2e5f33dd29cd5859856aac60e265f1100692b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10638/sub-10638_task-trust_run-1_raw.csv",
+    "sha256": "1fc2a40808e6edc10ee1c57d8e46b3daae44e751753f930acd00e57613eb598c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10638/sub-10638_Trust-Ratings.csv",
+    "sha256": "385f0cec6f3dcfae3edcf8e63baf99757e62b393647f514c4d6482e0b8fb527e"
+  },
+  {
+    "path": "sub-10640/func/sub-10640_task-trust_run-1_events.tsv",
+    "sha256": "9ee43389e22116b3e8f41a5d77004de7df1c5a0b7940afb504964018602a8bb5"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10640/sub-10640_task-trust_run-0_raw.csv",
+    "sha256": "194441226b55c503de5c93c7cccf1da8e566d00ede6417bb1fcc01e199111a3a"
+  },
+  {
+    "path": "sub-10640/func/sub-10640_task-trust_run-2_events.tsv",
+    "sha256": "f7e426d416fe1744d3f9fdccf6e72fb4437f28d9739f2bc1a709a7c7c45e8552"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10640/sub-10640_task-trust_run-1_raw.csv",
+    "sha256": "9cc7043ecda767f475157a94463f31d35fc6981a9fd29fbc02a16b58332027da"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10640/sub-10640_Trust-Ratings.csv",
+    "sha256": "fa4ca18f25faca73abd133e2bfdaaf34665d81526c4453b554ceb7b6bc32865e"
+  },
+  {
+    "path": "sub-10641/func/sub-10641_task-trust_run-1_events.tsv",
+    "sha256": "c4557a42edf9b848a53fb16ee5ba7e2709072dd35a5b77d554382ce62c0cf9ee"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10641/sub-10641_task-trust_run-0_raw.csv",
+    "sha256": "83e0cf59e2730c058fe88979089d59d806a5391e714a14fb33c987972a7af04b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10641/sub-10641_Trust-Ratings.csv",
+    "sha256": "2d622da1d5c8bec6487c87297d2728231837940530cc1b850ee567dd37796017"
+  },
+  {
+    "path": "sub-10642/func/sub-10642_task-trust_run-1_events.tsv",
+    "sha256": "789da3e4cf0266871d721a6dc383cbbada79dc90164f2a93593971654c7a0d4c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10642/sub-10642_task-trust_run-0_raw.csv",
+    "sha256": "ac21e0fe98410add473702182102e93288fad2350c299c26cda382648fff11b3"
+  },
+  {
+    "path": "sub-10642/func/sub-10642_task-trust_run-2_events.tsv",
+    "sha256": "5675f4e031c33540f5431d1ac7bd43ba2234e31a7c888248516c3bd348964867"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10642/sub-10642_task-trust_run-1_raw.csv",
+    "sha256": "f0e2dd23e234b9e8714764c84d90db8c89dd24c32c45b4021d0260d8abd7114d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10642/sub-10642_Trust-Ratings.csv",
+    "sha256": "008f8db6b1bca247bd8f1d81d339ee999ec57f4edafb3032e8aa6ad606a81a0b"
+  },
+  {
+    "path": "sub-10644/func/sub-10644_task-trust_run-1_events.tsv",
+    "sha256": "9cf300d21b8e9ae1a016d283c7bd9c846de17827365637cd5719307961126544"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10644/sub-10644_task-trust_run-0_raw.csv",
+    "sha256": "d41f2ff9faaa6e8e4c93871287f026d798357d9eaba64cd84c3a9c6636661065"
+  },
+  {
+    "path": "sub-10644/func/sub-10644_task-trust_run-2_events.tsv",
+    "sha256": "0ecf66d8558ff3d579dcedf2609130e2310c3f44a7fb5e046679fd4e3f2f6cae"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10644/sub-10644_task-trust_run-1_raw.csv",
+    "sha256": "ffb9f65ff2f56eeea4e9b9d08c823682a93237b3df267da998e28ef52ffc17f6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10644/sub-10644_Trust-Ratings.csv",
+    "sha256": "31492cf2707f1f9a081b37d12d67fd7db0db4f393ae8369ee23eb4e772f9a40e"
+  },
+  {
+    "path": "sub-10647/func/sub-10647_task-trust_run-1_events.tsv",
+    "sha256": "c060446d04cad4f42aa3a7e19435b3d3a15674c2d012be0edb34d94df7632cd2"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10647/sub-10647_task-trust_run-0_raw.csv",
+    "sha256": "ce478ddf90d69fdd24382f6f5dd76b7a92304f787979bf55f2ce0f301b049d47"
+  },
+  {
+    "path": "sub-10647/func/sub-10647_task-trust_run-2_events.tsv",
+    "sha256": "e9f8d77236596878cf62b1b843b8b1ad7d3ab152fd3cb48270fcc0b0099b72b4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10647/sub-10647_task-trust_run-1_raw.csv",
+    "sha256": "465912ea67beba01e095693934538bf530f1050d5d84eb4e5cc149269bf7e195"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10647/sub-10647_Trust-Ratings.csv",
+    "sha256": "392ea35d11a027617c169cc3d258c9375cee240efdb6dab162fd0fc25daacba8"
+  },
+  {
+    "path": "sub-10649/func/sub-10649_task-trust_run-1_events.tsv",
+    "sha256": "ed1ee8d83ec7983a7be50b6bba5d4bfa4952bf8e91c7f2da762841a24560979e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10649/sub-10649_task-trust_run-0_raw.csv",
+    "sha256": "d545fb44eab7732fcf8339706f1164f72ec1928fe90f6969c5c6e406e30a1559"
+  },
+  {
+    "path": "sub-10649/func/sub-10649_task-trust_run-2_events.tsv",
+    "sha256": "905e646a67466aecf11438a6f702aaf948763e855fa1e2fa86ea6c8b4c1945a9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10649/sub-10649_task-trust_run-1_raw.csv",
+    "sha256": "2ca6fd2856ee1c36172c71cc83caf5e683bb3c2783d346b4aba756762bdfdafa"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10649/sub-10649_Trust-Ratings.csv",
+    "sha256": "37767fc522ce3dc6f65e15a7c24b613c6cb679e3cb684f96748c3dd5aa2a3e30"
+  },
+  {
+    "path": "sub-10652/func/sub-10652_task-trust_run-1_events.tsv",
+    "sha256": "ee357c8d987df5b29d1577ff8f3d7e82e4179d1acb47a18c34a469015534e8a5"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10652/sub-10652_task-trust_run-0_raw.csv",
+    "sha256": "2e15d5608c79e2699c17371ee301392f3aced436d1a2b74881cae5eeb466c9cd"
+  },
+  {
+    "path": "sub-10652/func/sub-10652_task-trust_run-2_events.tsv",
+    "sha256": "0081c6be80177e0ecb35bc2ebfe0277c08744df8619bb9ec201c3e980ec37b3b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10652/sub-10652_task-trust_run-1_raw.csv",
+    "sha256": "64f50f51a8885470dc5bd1df8ee7b6598f68ac864b65e33ab27b0d611583d0da"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10652/sub-10652_Trust-Ratings.csv",
+    "sha256": "74c76311508ba2ebcae04261e51004403ec7dba55821f55aa46bf911094a57c8"
+  },
+  {
+    "path": "sub-10656/func/sub-10656_task-trust_run-1_events.tsv",
+    "sha256": "96a0baed5388bd97b02f24c8eb3dd46b0a46a0e9ac1a52dabaf91cc8290ff05b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10656/sub-10656_task-trust_run-0_raw.csv",
+    "sha256": "d48f168933c17906645e5347b1cde8533284b382da438592423aa07a28c82ba6"
+  },
+  {
+    "path": "sub-10656/func/sub-10656_task-trust_run-2_events.tsv",
+    "sha256": "0bee1b4092da6d7e2ad28a0094eb20a6ec65c1a8407843a5af353f6b481d1ba3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10656/sub-10656_task-trust_run-1_raw.csv",
+    "sha256": "5696390d4f3fbc2c033659d4ba642d6a8fcc5c7bd28ce42022d9c53e5e39d33c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10656/sub-10656_Trust-Ratings.csv",
+    "sha256": "781f400a53bb4e7c86fef15f0ecc4631f9b1e0c5b323d16f7c72519b9b22da20"
+  },
+  {
+    "path": "sub-10657/func/sub-10657_task-trust_run-1_events.tsv",
+    "sha256": "e38e2a09c48152cec063b4ad79c343e6a9cc491032189e4f36bea6824d972457"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10657/sub-10657_task-trust_run-0_raw.csv",
+    "sha256": "c6ec17686c0e7a1371dabfd88f7f0aa309c265c350d209f20b9214c77334e194"
+  },
+  {
+    "path": "sub-10657/func/sub-10657_task-trust_run-2_events.tsv",
+    "sha256": "1c1dcab94d73fa9a03db0e8c3afd375b4a74fa229555f3d31d269e5e86f97b00"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10657/sub-10657_Trust-Ratings.csv",
+    "sha256": "86a4376b3cb7bda441957133656033885a842dae0498c897c89502f7cead5720"
+  },
+  {
+    "path": "sub-10661/func/sub-10661_task-trust_run-1_events.tsv",
+    "sha256": "bde713533cda99389a7d57f9611c3ca890e7f6cbe45c3ca021d5ea1a1a858aa7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10661/sub-10661_task-trust_run-0_raw.csv",
+    "sha256": "a3c17e810d71df4a4e9f0ff3830d6a10d3f6fbe11036656912801e05179e1498"
+  },
+  {
+    "path": "sub-10661/func/sub-10661_task-trust_run-2_events.tsv",
+    "sha256": "784b2463ecbc81eb9501ccd5ebdd0e53f60439cb16b243c421251e60d7ff575e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10661/sub-10661_task-trust_run-1_raw.csv",
+    "sha256": "8a785668938bca2210ba2b85ee3b69cb62a1df3e6ca6878030817195967b27e9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10661/sub-10661_Trust-Ratings.csv",
+    "sha256": "a832890454d1e3432d6a9ee2ca2706cbf3753a3d2503b07660bf1859663f5c41"
+  },
+  {
+    "path": "sub-10663/func/sub-10663_task-trust_run-1_events.tsv",
+    "sha256": "bb36bcb90b67b50955e3629c1231e4d1300fe41154ca9693785e18363901c226"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10663/sub-10663_task-trust_run-0_raw.csv",
+    "sha256": "243c8e2ffb467b454d991389aa718e87d5fd9d0b3444abbbb2c04e29b7be9575"
+  },
+  {
+    "path": "sub-10663/func/sub-10663_task-trust_run-2_events.tsv",
+    "sha256": "ea6768414963c9635400147217727db8d0149ddb8a4f4e26c2109f4fec69e24a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10663/sub-10663_task-trust_run-1_raw.csv",
+    "sha256": "ac437170fd51c542f855a170dd9080199d05e9476230be673963e6baa528aac5"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10663/sub-10663_Trust-Ratings.csv",
+    "sha256": "5a7ab16dff5d533f1e91b023fd7cb43cb32666e579717cace8b53b6b3764ae49"
+  },
+  {
+    "path": "sub-10668/func/sub-10668_task-trust_run-1_events.tsv",
+    "sha256": "4ed6c367a05803ba263af0f89260f4968d48794ea53b10f14e493fed1c2bd900"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10668/sub-10668_task-trust_run-0_raw.csv",
+    "sha256": "4efedc6078779b77b993999ef6f35331c029764032c3cf0ecdd51b5012b2fffc"
+  },
+  {
+    "path": "sub-10668/func/sub-10668_task-trust_run-2_events.tsv",
+    "sha256": "1c1dcab94d73fa9a03db0e8c3afd375b4a74fa229555f3d31d269e5e86f97b00"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10668/sub-10668_Trust-Ratings.csv",
+    "sha256": "bd3e94a27de4941750fb64db940c072466aaa685884e9895514334a56bb69a6f"
+  },
+  {
+    "path": "sub-10673/func/sub-10673_task-trust_run-1_events.tsv",
+    "sha256": "8b213ccafb952b2a4cf9fc9e0fac58ee41b1bb959e24dbf678329b55520bb457"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10673/sub-10673_task-trust_run-0_raw.csv",
+    "sha256": "4a767efcd15c1c4577738988c1c3e8292d249429a40147d91d9eb352fb8df70f"
+  },
+  {
+    "path": "sub-10673/func/sub-10673_task-trust_run-2_events.tsv",
+    "sha256": "3747b13f1e6a8e1d1d1e4f4bd7c5c27902dad95777afd7c12377cd066b9c17a9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10673/sub-10673_task-trust_run-1_raw.csv",
+    "sha256": "a9e3a988619e19d0240038782b4329f45b6daa12c74888790f7780167e879070"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10673/sub-10673_Trust-Ratings.csv",
+    "sha256": "73c4665b529f57fe116a3ca638d53c94bcf7c7d683a4c42e24298693e1249240"
+  },
+  {
+    "path": "sub-10674/func/sub-10674_task-trust_run-1_events.tsv",
+    "sha256": "d702fad8a4a565ef71ade45edf8583db55fd213a30e45646a43156aacc7741a3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10674/sub-10674_task-trust_run-0_raw.csv",
+    "sha256": "7b406e67bf10db21116dbe6afd4fe9aa64806999bbbb0b37588ada29a1cc12d1"
+  },
+  {
+    "path": "sub-10674/func/sub-10674_task-trust_run-2_events.tsv",
+    "sha256": "ac8a04f5f4b9a730baa696949e642b185be27e365e51f01d8ec3ecedf6e3e146"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10674/sub-10674_task-trust_run-1_raw.csv",
+    "sha256": "969b41ff27de2756adae391a8f0953c73903b66cc3100113a95ccd122505193e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10674/sub-10674_Trust-Ratings.csv",
+    "sha256": "311bd6bdf871f7bf306e11f5d0b60a29c919af6a0f2be030a6e15ee1353f6653"
+  },
+  {
+    "path": "sub-10677/func/sub-10677_task-trust_run-1_events.tsv",
+    "sha256": "e412f5ea7831654d1adbd60e895aaf33298188526ad803da9f3eb6d5b06480db"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10677/sub-10677_task-trust_run-0_raw.csv",
+    "sha256": "fa0f9ee97bce07dad6be6e0a12f5bb8c7af0120e7819b58bdb2c7be6ce63afe9"
+  },
+  {
+    "path": "sub-10677/func/sub-10677_task-trust_run-2_events.tsv",
+    "sha256": "2381978d608c62694b703a98b313f0f41c3d938a45d0a9ae42d70f38448672b6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10677/sub-10677_task-trust_run-1_raw.csv",
+    "sha256": "d96eb63434d02a0ca206168be86c63993a993bbfef12e3c95b2bbc0c48a7e474"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10677/sub-10677_Trust-Ratings.csv",
+    "sha256": "ff88cd828697f7504817225b08b1fb02237c506db4e2da4f4da41e97c0fbcbc1"
+  },
+  {
+    "path": "sub-10685/func/sub-10685_task-trust_run-1_events.tsv",
+    "sha256": "3b3d1253b82233f24618d9364c434a5ba1f60966fa3c34f4a0a41eda2b04b625"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10685/sub-10685_task-trust_run-0_raw.csv",
+    "sha256": "3da5ba537161a3b22edca792ab23a23af7ef2e2165ee018aab86072bbec27c1f"
+  },
+  {
+    "path": "sub-10685/func/sub-10685_task-trust_run-2_events.tsv",
+    "sha256": "46179edb4a6f746f940b1742381ece7c6e4472ab990b500e2bd0cbe197c01340"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10685/sub-10685_task-trust_run-1_raw.csv",
+    "sha256": "cdf8f879a6d4ef596bc24062f78bac89800350ee3fa181f133710f67b62a13f6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10685/sub-10685_Trust-Ratings.csv",
+    "sha256": "36939dc3806d9c71f5f55f5674c1ae7e1bc909a3ae79a76118f7c7ec238e092b"
+  },
+  {
+    "path": "sub-10690/func/sub-10690_task-trust_run-1_events.tsv",
+    "sha256": "fa3efc1d11bb194fca17b21f72232fc636abcaba075492845bec1abe6bc5cc72"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10690/sub-10690_task-trust_run-0_raw.csv",
+    "sha256": "30a6ac7317d860ce699a5e3150ee4b87aec50033116777ad20ba822ecd692b93"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10690/sub-10690_Trust-Ratings.csv",
+    "sha256": "8b818351fb760656768804bd14c56aabf8cfbc71d0e102db90b0efc3cba74c0b"
+  },
+  {
+    "path": "sub-10691/func/sub-10691_task-trust_run-1_events.tsv",
+    "sha256": "df59157c2ce53fd5eed409eed6528bf285e16b183388821f1173d3d545fb87a3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10691/sub-10691_task-trust_run-0_raw.csv",
+    "sha256": "83c633f7322a103f2ee8c7ef02dba2238c3b0309aee7af46ae445aa74da8eb8a"
+  },
+  {
+    "path": "sub-10691/func/sub-10691_task-trust_run-2_events.tsv",
+    "sha256": "3f77bf8465d0a42604baa6fbe3ee271c401845c05c4933e255c613b9acb033c1"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10691/sub-10691_task-trust_run-1_raw.csv",
+    "sha256": "2b36022f0ab426c30b56309e375518c5fd01113756cf6a5239da1823df300d7f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10691/sub-10691_Trust-Ratings.csv",
+    "sha256": "c2ad866b48e7030b6dd4f57dd40c42f44464a49693992195316ed55e00cb2f7e"
+  },
+  {
+    "path": "sub-10700/func/sub-10700_task-trust_run-1_events.tsv",
+    "sha256": "0c18001afff8b49093b7291903bedab2cbadc327be85c2d3d82d83ec0208d8af"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10700/sub-10700_task-trust_run-0_raw.csv",
+    "sha256": "e14805af58efbbba18964316114295dd677dbc4c39a5639c624b07afd16f3ff4"
+  },
+  {
+    "path": "sub-10700/func/sub-10700_task-trust_run-2_events.tsv",
+    "sha256": "9cc8378e98dee21c30ae0012986b478bb0df29c865b85ff9b1c6b7f1cac6e308"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10700/sub-10700_task-trust_run-1_raw.csv",
+    "sha256": "6bf9f4f26a49e372936b0a850c58cde90459355edf7de6e72d3555f5c9df0eaf"
+  },
+  {
+    "path": "sub-10701/func/sub-10701_task-trust_run-1_events.tsv",
+    "sha256": "d30343acb112d32e1950d826910f41d1242ec2eda6a3046126613e9f6b0fcc2d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10701/sub-10701_task-trust_run-0_raw.csv",
+    "sha256": "6a773a781fe2df88feba85025e58e05dc3991221b4ee021f0a819da7e330fc5f"
+  },
+  {
+    "path": "sub-10701/func/sub-10701_task-trust_run-2_events.tsv",
+    "sha256": "d2b54e5320a3bfc6ab8c438db8b52fdfdf71ae4dc781c2bf48ade6906c062e3f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10701/sub-10701_task-trust_run-1_raw.csv",
+    "sha256": "6130b30f50a3ac413d1d46b7be248de431eff56cabe1e3dd8e8f37a51329eaf9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10701/sub-10701_Trust-Ratings.csv",
+    "sha256": "0eb67ffaa95efe80795f9cbd225757f28b8a2a180e198060d2df8bee69313764"
+  },
+  {
+    "path": "sub-10713/func/sub-10713_task-trust_run-1_events.tsv",
+    "sha256": "6af90a3c8c6aea7aade14990ce3096835aa9d35f876e3c1f3d58f461338d9b28"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10713/sub-10713_task-trust_run-0_raw.csv",
+    "sha256": "eeb06aa47abc399815fb577043f3343f40cbe981df94c109f8ab52703f9b0521"
+  },
+  {
+    "path": "sub-10713/func/sub-10713_task-trust_run-2_events.tsv",
+    "sha256": "1a4aad643985c8ccb3be532f79ac35a7a4e3f2fe803482377fd710e15126dcbb"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10713/sub-10713_task-trust_run-1_raw.csv",
+    "sha256": "828553d5bdd651d8f02ae3db94f935e1cec18fe65e794147f51406ab81cd5661"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10713/sub-10713_Trust-Ratings.csv",
+    "sha256": "77d9dd94cd6ed512c86375168e04e46e47952ce0bc81b34155b1f4accf1b387d"
+  },
+  {
+    "path": "sub-10716/func/sub-10716_task-trust_run-1_events.tsv",
+    "sha256": "5e550779df8e61f4322af5ad5d7855bec6f2ddc68bf30d57824f0ed50f51f257"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10716/sub-10716_task-trust_run-0_raw.csv",
+    "sha256": "1919239fa97bfce0c357832089bda4a4d23356741cf5a5ae87be69cce622756a"
+  },
+  {
+    "path": "sub-10716/func/sub-10716_task-trust_run-2_events.tsv",
+    "sha256": "b5e97517c91adcb107ff54ce7ac6cc854eaf67f9081640736a49775a666445e8"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10716/sub-10716_task-trust_run-1_raw.csv",
+    "sha256": "06812a972e9e06c8303fb2af34a3811f802a12096f6f7ffe654cdf27e49e9e3a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10716/sub-10716_Trust-Ratings.csv",
+    "sha256": "2663b0a455913043e1781fa496ca6b57152ffdb4b15988ee148687e6374ff52b"
+  },
+  {
+    "path": "sub-10718/func/sub-10718_task-trust_run-1_events.tsv",
+    "sha256": "b737aa5a594245e41fe9af6ccd1459b95b0c8eebe9d081aed166e5dce4e8ccef"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10718/sub-10718_task-trust_run-0_raw.csv",
+    "sha256": "5a3ac95ec38441c642aa844d96d0645c492d57f87025b29bf719493636c30c6a"
+  },
+  {
+    "path": "sub-10718/func/sub-10718_task-trust_run-2_events.tsv",
+    "sha256": "da298c049fcfd46bc756f42a53ef0dbb8462b308114c9584f89ff1b949852a22"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10718/sub-10718_task-trust_run-1_raw.csv",
+    "sha256": "30eba97ee5567ff3b251e539d74822aab14620e3bf5ad09876eae2d8650b3458"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10718/sub-10718_Trust-Ratings.csv",
+    "sha256": "aa3e0a6d6bc4b044f0199b2137ad2df7d18eadee2c0c3265219e8f247d68a4a1"
+  },
+  {
+    "path": "sub-10720/func/sub-10720_task-trust_run-1_events.tsv",
+    "sha256": "3da786a65b5ca3d69b6a1b54804054e344f8b4d3d99ea6308bda76c1e7ad6165"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10720/sub-10720_task-trust_run-0_raw.csv",
+    "sha256": "522c8b44cee62443b985978625929a8ff71d591bfe1d13ddfbe7ea9aae75d6dc"
+  },
+  {
+    "path": "sub-10720/func/sub-10720_task-trust_run-2_events.tsv",
+    "sha256": "a6a78f939813bcecba9f396c93a1d9442a0e6dc1501cd3c876487ddc4ca91ba5"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10720/sub-10720_task-trust_run-1_raw.csv",
+    "sha256": "b911916008433e99969a32fc24534204c64abafd886d1359443bcdccc18fc006"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10720/sub-10720_Trust-Ratings.csv",
+    "sha256": "1c30238da26232196053f368acd4c5d1dc34ccb73b5c914fbb23bd9ba254024f"
+  },
+  {
+    "path": "sub-10723/func/sub-10723_task-trust_run-1_events.tsv",
+    "sha256": "40f4e7e85949b488753e3be661c189e6f8cc912163e67e1c48a0e90ddd49dc0d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10723/sub-10723_task-trust_run-0_raw.csv",
+    "sha256": "ea90c7029ea14ce82eb0c1477c0f2525ebb66d0b0f18c4c7beb1167a9dded737"
+  },
+  {
+    "path": "sub-10723/func/sub-10723_task-trust_run-2_events.tsv",
+    "sha256": "9ab1a2f977b317d38c3648df4ffa8e4a3c3b3332c580b96fc2cea4e7be5b195b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10723/sub-10723_task-trust_run-1_raw.csv",
+    "sha256": "26a7c97f387b2f5ecdfa4b4ff3b18de135eda104968ad00ea2e97d6a1c8f5c45"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10723/sub-10723_Trust-Ratings.csv",
+    "sha256": "98dd225c1cbceefc9635ba863c841524962d46ef44f78069cd050c206c12fa0d"
+  },
+  {
+    "path": "sub-10741/func/sub-10741_task-trust_run-1_events.tsv",
+    "sha256": "a27842b258a8f1a9ff4455a572edda7a1b59033493fdc92e5cb3820c9e80b337"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10741/sub-10741_task-trust_run-0_raw.csv",
+    "sha256": "89e69b8852cfc9e22de57d70bffd37143664fa93e4a8fa85544596ba9d670907"
+  },
+  {
+    "path": "sub-10741/func/sub-10741_task-trust_run-2_events.tsv",
+    "sha256": "3969444e1e5339d7df95e75c6ad615641e4a70e0bd535cb3ccfba72f23f80e7c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10741/sub-10741_task-trust_run-1_raw.csv",
+    "sha256": "06b3bba5c4434de2199cc77a0e17d54796a8bcffdd6f727a1324972664c3078b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10741/sub-10741_Trust-Ratings.csv",
+    "sha256": "19f61f3576ac36750e28fd266aa203419c58b3fa5f73adfd2410860aa019a9bd"
+  },
+  {
+    "path": "sub-10748/func/sub-10748_task-trust_run-1_events.tsv",
+    "sha256": "b99371f267ce16c7af31d8b9a823307314c729b7e5028e42a30d0878f5c85bcd"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10748/sub-10748_task-trust_run-0_raw.csv",
+    "sha256": "cb2754dc44e729ff4b185c9608e3feee76a35a5c946a221ec4a1114fa3840d4c"
+  },
+  {
+    "path": "sub-10748/func/sub-10748_task-trust_run-2_events.tsv",
+    "sha256": "6423c89e08417bdf361e0d2528bda470db4121d91bb2c370fa4bc0666026fcc7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10748/sub-10748_task-trust_run-1_raw.csv",
+    "sha256": "3b77f56ce3754bb4eb84cddec2bdd66b8714137df8d1181dbd7b8687a331012d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10748/sub-10748_Trust-Ratings.csv",
+    "sha256": "43f53a4e820988a97dd4dab65c7e5da85c84afb89c248f76aefd8683272cf7fc"
+  },
+  {
+    "path": "sub-10767/func/sub-10767_task-trust_run-1_events.tsv",
+    "sha256": "b914c5aa27ddf9c8e8ba140aa7501cb2bcfab79c5b625544be1a47db8027e3c7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10767/sub-10767_task-trust_run-0_raw.csv",
+    "sha256": "f2a5bb585a693638ad3a800a835e9b8b8974c7b5a1ceba971d91d3e8739e18ad"
+  },
+  {
+    "path": "sub-10767/func/sub-10767_task-trust_run-2_events.tsv",
+    "sha256": "3d038ef416d37b47905a6d23c31a6a180b4f25929a26b718a94fb27d1469cb8e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10767/sub-10767_task-trust_run-1_raw.csv",
+    "sha256": "9b95ef0aa02c9a8082df94c6eabfbbae2c2e9ed01b5f58b2bc103dd50558e455"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10767/sub-10767_Trust-Ratings.csv",
+    "sha256": "91b0e203cfbc3c3ac4371a455e568bbe1f6e58428afc62fcc6f2dd04db5d39a2"
+  },
+  {
+    "path": "sub-10770/func/sub-10770_task-trust_run-1_events.tsv",
+    "sha256": "3bf8d144c1ccb69ef94dfe1745468470a18d993c1b63471d1a23aa70d6e00116"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10770/sub-10770_task-trust_run-0_raw.csv",
+    "sha256": "ce4c3a0f963ed37a836f47ab2f99809af979dd0ca004d92e31f88a645341d919"
+  },
+  {
+    "path": "sub-10770/func/sub-10770_task-trust_run-2_events.tsv",
+    "sha256": "3092498f65fd8c82c102e5d6ce8b448e5ae6f200149174a0ee485b6414bda9e4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10770/sub-10770_task-trust_run-1_raw.csv",
+    "sha256": "f9789a5f5fb2a67fd401f1e5c5432e430f5228b984f74feded231a0b1c59d614"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10770/sub-10770_Trust-Ratings.csv",
+    "sha256": "ec0b378830dc5e0ac84a7789e756e385ea18097e3418864b7046e8f86e0c62d5"
+  },
+  {
+    "path": "sub-10777/func/sub-10777_task-trust_run-1_events.tsv",
+    "sha256": "2fb5e607d667a93a5d061ab7b42194e9f9fcf888baf242ad8479195c62ebf8d7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10777/sub-10777_task-trust_run-0_raw.csv",
+    "sha256": "be46da17385b6fbac40d88f23f701ea87428e84204e0ef27b86e1ad52594511e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10777/sub-10777_Trust-Ratings.csv",
+    "sha256": "5af2efb1ba1f1aca4d1a7c55c0f049dde1e973c78f21a21f783b9bd32cb6b481"
+  },
+  {
+    "path": "sub-10781/func/sub-10781_task-trust_run-1_events.tsv",
+    "sha256": "7e48cfd61ef14696b9393e4485f5d9f0014f323ded714ea5f781332e4c6f37e9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10781/sub-10781_task-trust_run-0_raw.csv",
+    "sha256": "172aa562a22dd2fa16b92fb6545050e1ebb296e7a657ffe2654fd22f942a3bfb"
+  },
+  {
+    "path": "sub-10781/func/sub-10781_task-trust_run-2_events.tsv",
+    "sha256": "063ba919be1f7044518976ef303dd8d77c02c082e30935c2539ba5ebc8c9d0b2"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10781/sub-10781_task-trust_run-1_raw.csv",
+    "sha256": "f63529abb479db439c008eff66ef3722f95868733bc1279637ce094adf7ce2a2"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10781/sub-10781_Trust-Ratings.csv",
+    "sha256": "a53a5f5d8900487f8162341d71c74576d0d0ab939a8a82b9f17d16df1dbfd664"
+  },
+  {
+    "path": "sub-10783/func/sub-10783_task-trust_run-1_events.tsv",
+    "sha256": "d489d91b5ad3fb714c62eb50dc4721416f34322ad78efdbfa9b282e4fee11536"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10783/sub-10783_task-trust_run-0_raw.csv",
+    "sha256": "2e8163f161cec5d37722853f90b7d80255f45d0cae2df0f596297fa7b82539ad"
+  },
+  {
+    "path": "sub-10783/func/sub-10783_task-trust_run-2_events.tsv",
+    "sha256": "ac865e9873a81c81b0310a0a76bd439d6e98e93901868023f0352a10b34fcff4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10783/sub-10783_task-trust_run-1_raw.csv",
+    "sha256": "97b67ddfc6750ae7746dff367c803d039cd8f3388166e06f053c68b890daea3b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10783/sub-10783_Trust-Ratings.csv",
+    "sha256": "18e03d716c45d2d2b2ed564170251eff39249afab4f2f5d90e6c68051357b8e4"
+  },
+  {
+    "path": "sub-10785/func/sub-10785_task-trust_run-1_events.tsv",
+    "sha256": "e1c3b3d8fb3e154ed0ce27e455bafce621370377fe2152860d7e68dfa2b56d9f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10785/sub-10785_task-trust_run-0_raw.csv",
+    "sha256": "de7effda71a2160c5f0be1257133a2adea433a5a9b71994f4862aca7aa19a56e"
+  },
+  {
+    "path": "sub-10785/func/sub-10785_task-trust_run-2_events.tsv",
+    "sha256": "eeb98dc6c269338bdc3ba415f6c05c5f50f9f4d76bf115f228c964a6a0d75a59"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10785/sub-10785_task-trust_run-1_raw.csv",
+    "sha256": "8daa8a99a9bfc1f3ac3dc0850b20b6bd8eba68a80833e6fa4b6e13e88be14477"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10785/sub-10785_Trust-Ratings.csv",
+    "sha256": "865b95f47e68c82de063c9eab379a0ea2aecdbee7c82d3b4fc879d9022155e13"
+  },
+  {
+    "path": "sub-10794/func/sub-10794_task-trust_run-1_events.tsv",
+    "sha256": "588634b1cb7a119b67f306c53f4439a1a20d1587fd0d41d2d0cde2d38dd6626a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10794/sub-10794_task-trust_run-0_raw.csv",
+    "sha256": "60af81104409329a67a190fb2acd9c12b834ac4efa0802b94e7ca0a4b60ed93f"
+  },
+  {
+    "path": "sub-10794/func/sub-10794_task-trust_run-2_events.tsv",
+    "sha256": "b39c1998c826f98ff9448206d69377cb82b30b3393b496f50096aa408b86cc35"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10794/sub-10794_task-trust_run-1_raw.csv",
+    "sha256": "ffa1a4e8ed07eea29448b45acb347906e00f430ceefc24e374f8af428e807c2e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10794/sub-10794_Trust-Ratings.csv",
+    "sha256": "42722b220f59c68df38d23b63c83412e62fcde432c809f13771a99836fc6fbd8"
+  },
+  {
+    "path": "sub-10800/func/sub-10800_task-trust_run-1_events.tsv",
+    "sha256": "e4cfedccd1fbbab1248763b512bae231a123572999b4f7b79fa3d1cd0924a7cd"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10800/sub-10800_task-trust_run-0_raw.csv",
+    "sha256": "31efc50f3fdbb391dc5a0b4422f09b2c18c1824eecb463bb7d5157114b952fa3"
+  },
+  {
+    "path": "sub-10800/func/sub-10800_task-trust_run-2_events.tsv",
+    "sha256": "2e2aad95edb763134fc21fb5fc4e4644004c9d65ac7c91d90d17fa8e2e8d5ac0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10800/sub-10800_task-trust_run-1_raw.csv",
+    "sha256": "bb73fd02a2bb16913fc064b85d1d14b3d666f02039c0c1370d79d7353b8553e1"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10800/sub-10800_Trust-Ratings.csv",
+    "sha256": "8c64637bcb3e28760b18ca9c4c945c6387fce8daddccff9e76111d7c2aacc1f6"
+  },
+  {
+    "path": "sub-10801/func/sub-10801_task-trust_run-1_events.tsv",
+    "sha256": "6d4378d9f70600e6f5bb3c73cb870ce3defaf01d150ec7f9ccf0c10365e8e2c0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10801/sub-10801_task-trust_run-0_raw.csv",
+    "sha256": "cc96f218182f3cd0bc70eca085b20bb6c2fbb17007d9e25060614c2793b22979"
+  },
+  {
+    "path": "sub-10801/func/sub-10801_task-trust_run-2_events.tsv",
+    "sha256": "d8df42c3e6540f1e3a8083b8857e119b95706f9f24f7ceef07a8a0276d6b47f3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10801/sub-10801_task-trust_run-1_raw.csv",
+    "sha256": "858db6126d40f2f45a0e8eb5496c21084f9ce730f758fb69cc522eb4b6d777cc"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10801/sub-10801_Trust-Ratings.csv",
+    "sha256": "419cd4530e2f0ca81d008b1bbdd5fba5dbf1634fadf7a5e36dcc1009d4f8cf3e"
+  },
+  {
+    "path": "sub-10802/func/sub-10802_task-trust_run-1_events.tsv",
+    "sha256": "320d4faa966bffa24a4be62b72c01d8e6c90a266763020254d55bc472f726787"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10802/sub-10802_task-trust_run-0_raw.csv",
+    "sha256": "37fdc597d940c0f339f5dd1cbafa4e7f4c17bfeb7b736f8c6750dc065ec570b3"
+  },
+  {
+    "path": "sub-10802/func/sub-10802_task-trust_run-2_events.tsv",
+    "sha256": "226e2aabeca8a1a8d727cef2ccd20bd1077ae512f5bf4c41c9087bd7126ec0a8"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10802/sub-10802_task-trust_run-1_raw.csv",
+    "sha256": "27e8460afa45af373f2e7062ff5cef5b802a4b6d40cb031e701335b369997026"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10802/sub-10802_Trust-Ratings.csv",
+    "sha256": "2878039f2fcc5830369f703561dba746a3c3957f09ebbbcacb974666b5b3c1c8"
+  },
+  {
+    "path": "sub-10803/func/sub-10803_task-trust_run-1_events.tsv",
+    "sha256": "b552f600b844b2c7ccc22f3c20993e6f6d90c96c2d79130ef79b589d49f083db"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10803/sub-10803_task-trust_run-0_raw.csv",
+    "sha256": "4e262d1abbb3564db1a7bfe9b7d593de00142de7c20925228949aa344e39b3ac"
+  },
+  {
+    "path": "sub-10804/func/sub-10804_task-trust_run-1_events.tsv",
+    "sha256": "9bdf81fab88ccf5258ce7ec7b0ab174a9ba6165c91c2e5a1230bad5ce934b2ef"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10804/sub-10804_task-trust_run-0_raw.csv",
+    "sha256": "573ac13f9db592695486d3a1bfb1328148a34626881e69e3aab026521cee1a2b"
+  },
+  {
+    "path": "sub-10804/func/sub-10804_task-trust_run-2_events.tsv",
+    "sha256": "c0296d37da128a7b94526b30441a560fab1419b65ca89a0aef5aeb1dafa789c0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10804/sub-10804_task-trust_run-1_raw.csv",
+    "sha256": "707f6677c5d53ef6035d022fd271c505ef025136b0eb749d719586b002d8825e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10804/sub-10804_Trust-Ratings.csv",
+    "sha256": "4b514642d8dccb957cfe0e89d0d999c627ea6076837a613f669bc2bb357dc6bc"
+  },
+  {
+    "path": "sub-10806/func/sub-10806_task-trust_run-1_events.tsv",
+    "sha256": "a469ed2a022af9b02ed95603e9c3433cfbb1c55c70bc8d9788268cee8b14f873"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10806/sub-10806_task-trust_run-0_raw.csv",
+    "sha256": "a4805f158bf3b8794ce2ad92dcded799e335e9dee4e7c826c22f4f4705284aaf"
+  },
+  {
+    "path": "sub-10806/func/sub-10806_task-trust_run-2_events.tsv",
+    "sha256": "fff8a04c5eb69da2ca9f7ce3f0b2b0798420ca16dee835b154d2b5e0bf55c9d8"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10806/sub-10806_task-trust_run-1_raw.csv",
+    "sha256": "14f039b5084ceeeb7edfe52229ec7825a6bbbc151bcb8cb123e53d3ccbe9fe52"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10806/sub-10806_Trust-Ratings.csv",
+    "sha256": "dee825372945666b824e75a2139ccd16244d535863224e68cb1c078de23db400"
+  },
+  {
+    "path": "sub-10807/func/sub-10807_task-trust_run-1_events.tsv",
+    "sha256": "4674f5a6a55449ea4ab07a8e789ac2c8d0fb4309a9fcdcc28d1bea12e4de58c3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10807/sub-10807_task-trust_run-0_raw.csv",
+    "sha256": "fb3e092e86784d31f3146b5a1e1e59313b74f139fd88a4bac9ad6d70f26f5596"
+  },
+  {
+    "path": "sub-10807/func/sub-10807_task-trust_run-2_events.tsv",
+    "sha256": "a3d02ddc7ec7c2d70c89797b1cf0eeb0b8ca94781016f79907518e21d51ecdd6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10807/sub-10807_task-trust_run-1_raw.csv",
+    "sha256": "aa4b017a336e349da62ef891d118fbf5d6e7db7705ed0124a379c8ec76d0273b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10807/sub-10807_Trust-Ratings.csv",
+    "sha256": "c544e2278feddf50653935dc5a6d213d94b1503a7f8b6378cd0c56b5155528df"
+  },
+  {
+    "path": "sub-10809/func/sub-10809_task-trust_run-1_events.tsv",
+    "sha256": "76fb210aedb75d2b34521c65837f7d3fcdf743e03adb6bbf9611adba6c23aedd"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10809/sub-10809_task-trust_run-0_raw.csv",
+    "sha256": "d1aed0096e79128fa6e144a95e8cd59717c1abe74d670fd80b1461c875a7e2c7"
+  },
+  {
+    "path": "sub-10809/func/sub-10809_task-trust_run-2_events.tsv",
+    "sha256": "da5b74a304dacd4681014d7f988145ad4660362afef3ae2c016eb9839982e4b6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10809/sub-10809_task-trust_run-1_raw.csv",
+    "sha256": "4e2f2d96a143c7bfe3d410bf2d19e5096dc5763fa9329d43b1c89c96ab28d779"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10809/sub-10809_Trust-Ratings.csv",
+    "sha256": "17fdbce341f43ce798d41514d0d7006872483bc860ff8df1721e75b2264720f5"
+  },
+  {
+    "path": "sub-10810/func/sub-10810_task-trust_run-1_events.tsv",
+    "sha256": "e16869389f43bd9a5d12b1a7a89402edb38d08afc4a408a014be160a3a58b6a6"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10810/sub-10810_task-trust_run-0_raw.csv",
+    "sha256": "4a13216c9cf7ec6668387b9cbf06d73f43d72e7b9e62fc00ea0b83190721fdbf"
+  },
+  {
+    "path": "sub-10810/func/sub-10810_task-trust_run-2_events.tsv",
+    "sha256": "1a24e2eec9dc71260062b92ddbdf4804e294df181811fa28b708bc54b17a18f0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10810/sub-10810_task-trust_run-1_raw.csv",
+    "sha256": "903a261c2a33d082286dd32e4a2530faef3a4edd53285ab17c44354342ca644d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10810/sub-10810_Trust-Ratings.csv",
+    "sha256": "5abfc696faf5b12ca51b038aed519fdb06ca1f4491b7fca0cbf6087a57991efe"
+  },
+  {
+    "path": "sub-10812/func/sub-10812_task-trust_run-1_events.tsv",
+    "sha256": "4cbc51269677e8bd0322f015b948045aef29dce945a4e63a946033dfd991b78f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10812/sub-10812_task-trust_run-0_raw.csv",
+    "sha256": "9ccb5e9bc1a20f2281041da39a9d13d1f1cd9cc1c10525b55ac6933316662a6e"
+  },
+  {
+    "path": "sub-10812/func/sub-10812_task-trust_run-2_events.tsv",
+    "sha256": "b88081edd38dcded33d6448cf062796e3015c14ad39b36340ca8e26fca5add51"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10812/sub-10812_task-trust_run-1_raw.csv",
+    "sha256": "b126b2f3b29054149608ed75cadfe0045201fb0bb08a8c608a9b5e58d5be4a9b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10812/sub-10812_Trust-Ratings.csv",
+    "sha256": "cc94fb5fe587c215bd6fd4bd18362db6678b7784904f200bba9d7443d5211449"
+  },
+  {
+    "path": "sub-10817/func/sub-10817_task-trust_run-1_events.tsv",
+    "sha256": "7f56bc39dd3289e9b9db9333b8bc48bf871ba6b34834071106d3b752805a55de"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10817/sub-10817_task-trust_run-0_raw.csv",
+    "sha256": "25a102332a139d16e6d3210d296315d3bed976a9f096a3d08d55f060429d8815"
+  },
+  {
+    "path": "sub-10817/func/sub-10817_task-trust_run-2_events.tsv",
+    "sha256": "0fd6a974a76edcb7e742b667a171636b4cc9f59c07ecfcda4e308e362189b21b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10817/sub-10817_task-trust_run-1_raw.csv",
+    "sha256": "7d16f691d3564f53cd3f270d9cf2e7b7a51681d65114788d254a790423a8a87e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10817/sub-10817_Trust-Ratings.csv",
+    "sha256": "95a2e799f0af1ab5a18b67c6ebccbfd1fa76a7bf60ebe58c70b05f53799aa5cb"
+  },
+  {
+    "path": "sub-10827/func/sub-10827_task-trust_run-1_events.tsv",
+    "sha256": "3e96118d9d3ff5fbf097ff62a1f6f72ff6c7322eea861e2ca71e3248a36b5f7c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10827/sub-10827_task-trust_run-0_raw.csv",
+    "sha256": "3533ca2e282e2997f9b85615d4a728f0c53dc3e4f34c38035855aa5d79bb9fe5"
+  },
+  {
+    "path": "sub-10827/func/sub-10827_task-trust_run-2_events.tsv",
+    "sha256": "7d14e6964fb95c8ac5c1ecee418b40e3f69b0f32b2de2b7a0fabf34292c3992b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10827/sub-10827_task-trust_run-1_raw.csv",
+    "sha256": "b7e3327faae3f6f47817b1bd1c66503bf9bf868d6ef8bdb54341fa5adc47b988"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10827/sub-10827_Trust-Ratings.csv",
+    "sha256": "f1bf910a1b8daa85a927e20edfecdf1a0388f83a53a2c906d277eb5489f0c38a"
+  },
+  {
+    "path": "sub-10831/func/sub-10831_task-trust_run-1_events.tsv",
+    "sha256": "f61af13576b01d4197cef6ae1d36033650ca1c19e8bc92231267969853898d8f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10831/sub-10831_task-trust_run-0_raw.csv",
+    "sha256": "3a99793fabd98be0e5c6866c2b022db46f8cdee28374553cf8ed262aee6fa721"
+  },
+  {
+    "path": "sub-10831/func/sub-10831_task-trust_run-2_events.tsv",
+    "sha256": "022d235fbc50896364e1ac17911114fa8ff72c48b8284c34d090dbe23b36bc5b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10831/sub-10831_task-trust_run-1_raw.csv",
+    "sha256": "394cc860af2131759053a8df60bfcbb0ea8c5d007c44c522c3404a11ddb26736"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10831/sub-10831_Trust-Ratings.csv",
+    "sha256": "2035c4383ad9dcade585fc22fd3861fe11feb9c493ab294610f164c56b2d0ce2"
+  },
+  {
+    "path": "sub-10834/func/sub-10834_task-trust_run-1_events.tsv",
+    "sha256": "0bfd1592d5f92fec4fd0c7d68925b593ce718339c056eb7416da869e13ab7141"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10834/sub-10834_task-trust_run-0_raw.csv",
+    "sha256": "90629d98d4b10edfcd042c168adfa6bbf146bb0c97ae33856169cfe9165a1695"
+  },
+  {
+    "path": "sub-10834/func/sub-10834_task-trust_run-2_events.tsv",
+    "sha256": "ed2b5f8937d9f93fe9c171ba0bda71bcd80d80ef983028d14e86b60c5bb0daa3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10834/sub-10834_task-trust_run-1_raw.csv",
+    "sha256": "e501562abfab499110ad98075b2602135b83d1f2b294e0330e823eeccf333348"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10834/sub-10834_Trust-Ratings.csv",
+    "sha256": "2663b0a455913043e1781fa496ca6b57152ffdb4b15988ee148687e6374ff52b"
+  },
+  {
+    "path": "sub-10836/func/sub-10836_task-trust_run-1_events.tsv",
+    "sha256": "1c1dcab94d73fa9a03db0e8c3afd375b4a74fa229555f3d31d269e5e86f97b00"
+  },
+  {
+    "path": "sub-10836/func/sub-10836_task-trust_run-2_events.tsv",
+    "sha256": "c50e3bb423e3a47d7791ca11bbc6a9b49251a9c8eb376ff11bd03c72a9549521"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10836/sub-10836_task-trust_run-1_raw.csv",
+    "sha256": "113104b704a09e42575847cc802ee4eae7806b24329572fceae4fb5b29a11035"
+  },
+  {
+    "path": "sub-10838/func/sub-10838_task-trust_run-1_events.tsv",
+    "sha256": "092c6ca2d965d2a2bae427fd984a9adb7711bfcf804825d739905addcf4f1979"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10838/sub-10838_task-trust_run-0_raw.csv",
+    "sha256": "0181b6297eb9972fd7593d3369f52fd332f44a9843aff6806c0f871f9f70a81b"
+  },
+  {
+    "path": "sub-10838/func/sub-10838_task-trust_run-2_events.tsv",
+    "sha256": "bfa63403b1d7ad49a756a5a8c13cfc5d882cc0e2ade9ec0b02bbf37b67ac713d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10838/sub-10838_task-trust_run-1_raw.csv",
+    "sha256": "bb0c0c2d5055f1f5e0c279b0e42743ca78c1afaa451456bc7d5cd68edc5aa767"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10838/sub-10838_Trust-Ratings.csv",
+    "sha256": "bc0aa8c1b7f51afc0818e3cce689905b7a5820bf17451f533b799a59a1039794"
+  },
+  {
+    "path": "sub-10843/func/sub-10843_task-trust_run-1_events.tsv",
+    "sha256": "4114bc7b335e7d6015f0864163f5a02f2329b374993671f1e675ac647ac67ef4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10843/sub-10843_task-trust_run-0_raw.csv",
+    "sha256": "fd11dfd1a504aa1402b1fc611af7b214fecefed9189dfddbaf4225d7789f5133"
+  },
+  {
+    "path": "sub-10843/func/sub-10843_task-trust_run-2_events.tsv",
+    "sha256": "975dbd38a8a580940f9f11b90c173a55ce494e5b8222e2ffbaf705f609b4acf4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10843/sub-10843_task-trust_run-1_raw.csv",
+    "sha256": "4867bfbf63e35ce3de12a871ed3d637cc5b8caf489f260b6c4c7464b3e816678"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10843/sub-10843_Trust-Ratings.csv",
+    "sha256": "cab5d5fe5be06de70ba1d3fac7fffc5be68677bc4fc9cbc85bcda13372459bd2"
+  },
+  {
+    "path": "sub-10850/func/sub-10850_task-trust_run-1_events.tsv",
+    "sha256": "80b016bd6f1d4900e548d0535ef35a3a27b2dd85c35a07061e4c0a625f4426dc"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10850/sub-10850_task-trust_run-0_raw.csv",
+    "sha256": "1d39eef20dce4ab961e054cf7e18b9089b77e4406c90f7d30c0bc4f4d5fb702c"
+  },
+  {
+    "path": "sub-10850/func/sub-10850_task-trust_run-2_events.tsv",
+    "sha256": "0926f2a71ac8861150f364c37c51769238366c073db35d62e3abda9364c0f5ea"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10850/sub-10850_task-trust_run-1_raw.csv",
+    "sha256": "47c5ef3c1ccd68265cef2f92092879522fcadc99e7e8dbca67a7719d9989ac12"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10850/sub-10850_Trust-Ratings.csv",
+    "sha256": "bab8b1a58e07b52fc765847494252aa607388fec56b9a4349cf9b0edc55273dc"
+  },
+  {
+    "path": "sub-10854/func/sub-10854_task-trust_run-1_events.tsv",
+    "sha256": "1f2249f80c19ebb7eb35840ffc5b60b0944065e518ed0d390ecdeb0219f77fb7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10854/sub-10854_task-trust_run-0_raw.csv",
+    "sha256": "c096723b5a44b4461e88e34585adb5e05c7d0085eb6cb2027993c95706498b2a"
+  },
+  {
+    "path": "sub-10854/func/sub-10854_task-trust_run-2_events.tsv",
+    "sha256": "6f2f81762d6b16fe925242455cd6ac32aa709b32a99d41637676474732f3dfb0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10854/sub-10854_task-trust_run-1_raw.csv",
+    "sha256": "331e09bd88343999dc9c9e739142a4e61a9be2ceb6ad88185f605359e2c82a02"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10854/sub-10854_Trust-Ratings.csv",
+    "sha256": "1ad9517fb8ec820f0c5816083c7e12bd078b5a95ca312ab8136be9886df70eb9"
+  },
+  {
+    "path": "sub-10857/func/sub-10857_task-trust_run-1_events.tsv",
+    "sha256": "670f6b262dd4c24bb87c8612ba672f083d8bae192d778b0c31099e56d2ce5624"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10857/sub-10857_task-trust_run-0_raw.csv",
+    "sha256": "2d09a0a2bec34fde69b1dc58b1fa027c3336ef8f9c6e4f8f42b5e116e722d0eb"
+  },
+  {
+    "path": "sub-10857/func/sub-10857_task-trust_run-2_events.tsv",
+    "sha256": "87997a10c4694cbce6955522e2a9a5eca97dd04f1062d4c471b6b1da8cc2bb12"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10857/sub-10857_task-trust_run-1_raw.csv",
+    "sha256": "cadd1abbe42d46b27f48a3523a1edf4f03f7968582a7acf3d11741ca41c059de"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10857/sub-10857_Trust-Ratings.csv",
+    "sha256": "9ec70e404cb7c56e63ea18f5e75ed4b69db5987bf2c7419ef9e88c9c2115e8fe"
+  },
+  {
+    "path": "sub-10858/func/sub-10858_task-trust_run-1_events.tsv",
+    "sha256": "be61b12b23f3184786a2142bb28db6b985b32ff56469241ffdb0cccb8febe9fb"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10858/sub-10858_task-trust_run-0_raw.csv",
+    "sha256": "0665c1685ed6c847d811b37187112cade9753846b1e62b685f6f8d653a48aea9"
+  },
+  {
+    "path": "sub-10858/func/sub-10858_task-trust_run-2_events.tsv",
+    "sha256": "bde770a88ec8fb7113d700884c8833070337493fa2bb674b503e3545486d61c9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10858/sub-10858_task-trust_run-1_raw.csv",
+    "sha256": "0b2c51cb17a7652e6ff183bf4c391622f01f6a948cc738a37f76e8a3cf385efa"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10858/sub-10858_Trust-Ratings.csv",
+    "sha256": "553de815d9829a32a59e8bccca05b99a3515d31d68bc53c4d346d402267ace2d"
+  },
+  {
+    "path": "sub-10860/func/sub-10860_task-trust_run-1_events.tsv",
+    "sha256": "7713accd58bbb9319fea3c97cebb93cf1d5aca6df5f323e0cc4578d1f858b989"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10860/sub-10860_task-trust_run-0_raw.csv",
+    "sha256": "cf6cc6bd502b162acc9024c740cb24bd593c8f6b54a9196f50bed1cb4e2a2392"
+  },
+  {
+    "path": "sub-10860/func/sub-10860_task-trust_run-2_events.tsv",
+    "sha256": "8ccef441a3bbb72e02b39a0155adb4ec14a3ba8917658f72f68a2203d148015c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10860/sub-10860_task-trust_run-1_raw.csv",
+    "sha256": "104b893aa95895ca7f044fd0be556535e4eab6d51ab276416c7d02c3abcd0fae"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10860/sub-10860_Trust-Ratings.csv",
+    "sha256": "5c701c2bed59c72bb83112781dffc2bad94371e370df7c3c1979e03073ccd30a"
+  },
+  {
+    "path": "sub-10862/func/sub-10862_task-trust_run-1_events.tsv",
+    "sha256": "fb48c24b57c84362d83c5febb159a1e798dd478b17e262f38a5e1feb0c79f33d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10862/sub-10862_task-trust_run-0_raw.csv",
+    "sha256": "6989e5dac9f113758b98c3469ef7f57b832bb31f821150ec977724719d5b9016"
+  },
+  {
+    "path": "sub-10862/func/sub-10862_task-trust_run-2_events.tsv",
+    "sha256": "70aa2e9e2b3532fa5601bf63ec2eea7a25b6ca3dcec264be793ee43f0aed6d0d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10862/sub-10862_task-trust_run-1_raw.csv",
+    "sha256": "c4cd8d1a02fb98b8d470bab6dce12c05bc062dbf782a3064b0d17ab6ec55eb3e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10862/sub-10862_Trust-Ratings.csv",
+    "sha256": "385f0cec6f3dcfae3edcf8e63baf99757e62b393647f514c4d6482e0b8fb527e"
+  },
+  {
+    "path": "sub-10863/func/sub-10863_task-trust_run-1_events.tsv",
+    "sha256": "d506d69ab89f8805e28ce56ed061d305ec1814c5df148842f375c2665a532703"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10863/sub-10863_task-trust_run-0_raw.csv",
+    "sha256": "817fdd703992be0724db8adcb13dd5ee3976239f799a21d739758ac9eed31145"
+  },
+  {
+    "path": "sub-10863/func/sub-10863_task-trust_run-2_events.tsv",
+    "sha256": "ea5417b97a06cc35f912cbee04ff08cb9fa313eb25007f5a90ce9d166e47e677"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10863/sub-10863_task-trust_run-1_raw.csv",
+    "sha256": "44cdea9c735aae085ebf440352c3edbdde6033b59eafbf0716d70fc70370407b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10863/sub-10863_Trust-Ratings.csv",
+    "sha256": "8ec42cdfd5b1148d55fe2eb57ddc38628a60eceae9e916be5d30255a5f808383"
+  },
+  {
+    "path": "sub-10866/func/sub-10866_task-trust_run-1_events.tsv",
+    "sha256": "9cbb4caceb1d6d3bf00a4a8a8735769ff1718f292137ea189947987331ec9d82"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10866/sub-10866_task-trust_run-0_raw.csv",
+    "sha256": "1711b9c6a9f7fe291a42a6a7c466a5f2834625140cd0e9f8370f4987167d48e3"
+  },
+  {
+    "path": "sub-10866/func/sub-10866_task-trust_run-2_events.tsv",
+    "sha256": "ea26068f4ad7d113b47e4818ffd90f1c130203513ba5d3187501bbc7abfb98d7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10866/sub-10866_task-trust_run-1_raw.csv",
+    "sha256": "3ee5ee0fd6ca9da2558c95e96add8d93ef80a80173468502fddb0f6bb8999bf0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10866/sub-10866_Trust-Ratings.csv",
+    "sha256": "7762eb0c6c60c59a08c61001080b624e8b502bc9683db702f6b720afe413bcfb"
+  },
+  {
+    "path": "sub-10875/func/sub-10875_task-trust_run-1_events.tsv",
+    "sha256": "b6eef2b06abac00da1582dbaff792fa6208e60ecf0a42b392e452f67757e64dd"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10875/sub-10875_task-trust_run-0_raw.csv",
+    "sha256": "8a1d2c3ecc6b902c96baad08dd38969b2770857874c0fe0fd73502fbfbfe1d39"
+  },
+  {
+    "path": "sub-10875/func/sub-10875_task-trust_run-2_events.tsv",
+    "sha256": "7576be583a1c1c2e0dbb91bb527dec3ed56e7b07dffb0aa7eb4da1f6d995ee01"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10875/sub-10875_task-trust_run-1_raw.csv",
+    "sha256": "9e03f0823bba00a25524bd8871e02d8e7199dd1ebc7635505f0dfd973df8613b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10875/sub-10875_Trust-Ratings.csv",
+    "sha256": "c3fc8ab83ac883c4f9758175c033a43d81e23e237f273e068d030b6f98cc8d8d"
+  },
+  {
+    "path": "sub-10881/func/sub-10881_task-trust_run-1_events.tsv",
+    "sha256": "b4d96b74f618732dff7ee77b868880a7fca90ca1cb48cbe74ef2269209dd919c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10881/sub-10881_task-trust_run-0_raw.csv",
+    "sha256": "63185c9787c0161066cd12d63b79bc5741fbdd1298e9ba990b6db17995bf1245"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10881/sub-10881_Trust-Ratings.csv",
+    "sha256": "8dd1e436102c70be575b087d2df034d65f5a86ba112729b71f633dd38570ba4a"
+  },
+  {
+    "path": "sub-10886/func/sub-10886_task-trust_run-1_events.tsv",
+    "sha256": "42f15f93db9a816fd28457d8e32cba796b08abca89d4e71da04c977273cec440"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10886/sub-10886_task-trust_run-0_raw.csv",
+    "sha256": "bf78e8f9f2672c90777b9ebd1cc1cbf4d17eaea2c85e290192e080f72b22cbc4"
+  },
+  {
+    "path": "sub-10887/func/sub-10887_task-trust_run-1_events.tsv",
+    "sha256": "ca3e97ffcfd8bdde02af9ff46636932dea8c59a827d06d3d861b802e33d34b94"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10887/sub-10887_task-trust_run-0_raw.csv",
+    "sha256": "e72d8bac6fb363b53c405d962ef97272ce12ebafeff724409642a17d40bfc012"
+  },
+  {
+    "path": "sub-10887/func/sub-10887_task-trust_run-2_events.tsv",
+    "sha256": "26cef0cf412f05f62e82b3225e251c08c51b95547977deb90d6fb532c1fc7d85"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10887/sub-10887_task-trust_run-1_raw.csv",
+    "sha256": "9613c9d26a97b191766d9dc548aeade68170bd8df246af600bd4f45ff4d3bc5d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10887/sub-10887_Trust-Ratings.csv",
+    "sha256": "0756ad84eeb0ad0974ddd755d6195e94fc2c88cd120ff9fe5d379c7f088bcc5c"
+  },
+  {
+    "path": "sub-10896/func/sub-10896_task-trust_run-1_events.tsv",
+    "sha256": "1f6171ba10f25217a0349c7e28cc55219b4bac17c16ee5dfac81e23697901697"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10896/sub-10896_task-trust_run-0_raw.csv",
+    "sha256": "228d97679fed7132cbc9b3583628a0dfc2574050942de4e39f6da35891832c05"
+  },
+  {
+    "path": "sub-10896/func/sub-10896_task-trust_run-2_events.tsv",
+    "sha256": "bd61ed03921737630b174f8db9be16e2002345b83436cb67a6fb52c894e4af8a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10896/sub-10896_task-trust_run-1_raw.csv",
+    "sha256": "5dd9ffb51bc97e2280407784e1f7b56f005a04558e7c8aad4d7151988c86b627"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10896/sub-10896_Trust-Ratings.csv",
+    "sha256": "f9f6f2839beb84d761928e2558c30cfe44e56e29db5ea11124e154736c119434"
+  },
+  {
+    "path": "sub-10897/func/sub-10897_task-trust_run-1_events.tsv",
+    "sha256": "03cf6e9462edaf86cb2c6d2747673aadc74d2842ccdcea6bf0d03d4d984b3470"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10897/sub-10897_task-trust_run-0_raw.csv",
+    "sha256": "37ccb94e17662088be3a5c6940ad8ea4717f7f43f5a8f841f50d118d302431a9"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10897/sub-10897_Trust-Ratings.csv",
+    "sha256": "d11870503dede4f04b7c28c16a28f853f65513653fc5a2be1ea56cd71cfa53b7"
+  },
+  {
+    "path": "sub-10898/func/sub-10898_task-trust_run-1_events.tsv",
+    "sha256": "78d0c2a75b24f6e3ea19d1c6eeab306177c201dbdfe090922e24bb5ad1ce6e91"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10898/sub-10898_task-trust_run-0_raw.csv",
+    "sha256": "35784a006a84663d536bcc395e5e9832346486844eb7cd0a0f4b3e33fd922496"
+  },
+  {
+    "path": "sub-10898/func/sub-10898_task-trust_run-2_events.tsv",
+    "sha256": "b840fb4627c1bbfe092e64a2c6a1daa6dd94e0a49ed1e3479c048f8a152a14d4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10898/sub-10898_task-trust_run-1_raw.csv",
+    "sha256": "ff938cd77eb7808b9d19ad242151ccc219d7d8bf8b224e8651da3204af162b0d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10898/sub-10898_Trust-Ratings.csv",
+    "sha256": "23f0f4b1cba4ef3dd8dcc28071841e0876e8f8e4b60c54f15ef613daaa4dcdaa"
+  },
+  {
+    "path": "sub-10908/func/sub-10908_task-trust_run-1_events.tsv",
+    "sha256": "cff0390aec26eddeb709ada5a17c197f402f6eb49ab68b8f0144442d2cfec58f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10908/sub-10908_task-trust_run-0_raw.csv",
+    "sha256": "8f44e5096477c390df25852f6199f7201762817e58635719e3e0722bf621a731"
+  },
+  {
+    "path": "sub-10908/func/sub-10908_task-trust_run-2_events.tsv",
+    "sha256": "e0189c5145cc1649f1ebdd2898c2a9fb248cd708125478c5e7fb53227aa1fddd"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10908/sub-10908_task-trust_run-1_raw.csv",
+    "sha256": "925633f370f011b242684eae6592b604a2b205470efdb2441303d59af91c0215"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10908/sub-10908_Trust-Ratings.csv",
+    "sha256": "a3cb6288218cfcac7623dbdd0410dfabc75c39e5b917f3388446e3b747c2431d"
+  },
+  {
+    "path": "sub-10918/func/sub-10918_task-trust_run-1_events.tsv",
+    "sha256": "028c8131f02d8dd27e40f7a867bdb82a3ae3503b520bd0ae9f1d172d064351c1"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10918/sub-10918_task-trust_run-0_raw.csv",
+    "sha256": "2b1d4355f633986fa4a2bcb15423aeffec81c539fae3f57f8643e5858f42a1be"
+  },
+  {
+    "path": "sub-10918/func/sub-10918_task-trust_run-2_events.tsv",
+    "sha256": "9b5e44560ed94bc09fbc54ba8212b8494f2fd5a2405cfdd15c87bcb238358dd0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10918/sub-10918_task-trust_run-1_raw.csv",
+    "sha256": "1cea6c9eb861c3650ad25f717126c6af33b68e099591cd51432bb5d0328b6bc1"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10918/sub-10918_Trust-Ratings.csv",
+    "sha256": "abe1f4b7e2c57d35914945e72af0088dfd4e672d867d2745971eb538126d49cd"
+  },
+  {
+    "path": "sub-10924/func/sub-10924_task-trust_run-1_events.tsv",
+    "sha256": "7f4f8bc1bca8cba9eded3f711e4a041c505a42f1e82452b4b14974013ff1d24c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10924/sub-10924_task-trust_run-0_raw.csv",
+    "sha256": "e92b1f5b5a68c06c33ca6e104d6354dfb337d01ac9762a2f881dbf743ed1a752"
+  },
+  {
+    "path": "sub-10924/func/sub-10924_task-trust_run-2_events.tsv",
+    "sha256": "ceac2bc5306fac00ccb8acbe5e404c9b959fb0e1e8b3d2d4757f79938dfacb98"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10924/sub-10924_task-trust_run-1_raw.csv",
+    "sha256": "38985d7dcd6ceaab9f11fb4c35e41a799fe374a826f4eac9d7fbade1462c2b5d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10924/sub-10924_Trust-Ratings.csv",
+    "sha256": "18dc496ff3ead63eb519f64d7594461e2809fc0d4068429865b08fab5b4c6d00"
+  },
+  {
+    "path": "sub-10926/func/sub-10926_task-trust_run-1_events.tsv",
+    "sha256": "d4289f74dcbe4f340d7633d9c408b544003fbb8c767aef2feeb4eddc55d8b9d2"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10926/sub-10926_task-trust_run-0_raw.csv",
+    "sha256": "bfad06a71d623a76c3db0a791f7111145667dd7cdd1086dc597766eb911d8c16"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10926/sub-10926_Trust-Ratings.csv",
+    "sha256": "57c99f269b1a7145312a73971e794cc45076e0ed92a7c4f180b4a9ad13884fc4"
+  },
+  {
+    "path": "sub-10928/func/sub-10928_task-trust_run-1_events.tsv",
+    "sha256": "634bbb7646b912f4157b53df58734961813ed7e5d792ed042c605e6fee3a92f2"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10928/sub-10928_task-trust_run-0_raw.csv",
+    "sha256": "028675ea5e5b8e57ea8ed0da913f1bfa62d355d316ec658588f6c4a4be090cda"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10928/sub-10928_Trust-Ratings.csv",
+    "sha256": "b5f067108ebbaf009b9854ec71537ceb8e611a533a32484b2a712f550236f036"
+  },
+  {
+    "path": "sub-10929/func/sub-10929_task-trust_run-1_events.tsv",
+    "sha256": "3791564cae818bf40c942fa3c0c86cef3a80b6b3764ae0ccab3028f341aa5ca3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10929/sub-10929_task-trust_run-0_raw.csv",
+    "sha256": "5ece8feb6377e67c84a28dfe8369b01c12f7a61b3d9900d97d8ab997058a746d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10929/sub-10929_Trust-Ratings.csv",
+    "sha256": "31492cf2707f1f9a081b37d12d67fd7db0db4f393ae8369ee23eb4e772f9a40e"
+  },
+  {
+    "path": "sub-10930/func/sub-10930_task-trust_run-1_events.tsv",
+    "sha256": "f29f8d85ab7196b555d474446bccf902c01cf4623e630888d64ca196133bf3db"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10930/sub-10930_task-trust_run-0_raw.csv",
+    "sha256": "92392950ac71c696076a96aab2655edfb75793bdfb3ce177b01c31971ab0d30e"
+  },
+  {
+    "path": "sub-10930/func/sub-10930_task-trust_run-2_events.tsv",
+    "sha256": "ea51760cbe7d6917a3d0a15a8ffc5c74ef5932d092b98e93ab2bdd328b72c05b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10930/sub-10930_task-trust_run-1_raw.csv",
+    "sha256": "92ca1548debc232c583e74124592e4015821f8a06f8eb847feedced4dc612ea4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10930/sub-10930_Trust-Ratings.csv",
+    "sha256": "5c9dcb806c651d67571a127b2c0394cf567ab849bd49c6f719fbd7eea0ca105c"
+  },
+  {
+    "path": "sub-10938/func/sub-10938_task-trust_run-1_events.tsv",
+    "sha256": "733bf0213bbbf25d7b8f4ad6079bc1a6f9f767a2a927ce03e82e27379e1dc4b0"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10938/sub-10938_task-trust_run-0_raw.csv",
+    "sha256": "90f8a2ee1b1afb0dfc1fdb7e88e57a7c31314eda6b86b5fb1eadcac4b22e6fe9"
+  },
+  {
+    "path": "sub-10938/func/sub-10938_task-trust_run-2_events.tsv",
+    "sha256": "5f029688c8b9da8bd609dd4f3278052da174409c2560b8d6702287b5d64b471b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10938/sub-10938_task-trust_run-1_raw.csv",
+    "sha256": "ceffcf59ba3c20c437fac11e80e4de559b73c85c8241f26cc899dba7f963f843"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10938/sub-10938_Trust-Ratings.csv",
+    "sha256": "48a27c0ef5ff6fce5843785b9b65e67984ea41bedeba94682b0aaea54112de32"
+  },
+  {
+    "path": "sub-10940/func/sub-10940_task-trust_run-1_events.tsv",
+    "sha256": "c183527b5e90e49da747103d0a3a86c6df76db28637df33082c526c6575d8c36"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10940/sub-10940_task-trust_run-0_raw.csv",
+    "sha256": "867ab9974042b238353f9c566788e230c39db551e16de5ebce85337a9b81f56d"
+  },
+  {
+    "path": "sub-10940/func/sub-10940_task-trust_run-2_events.tsv",
+    "sha256": "a72647bb63455ea43cc40780b8fa49c741662acc01f557e9c11e635a8a2d416d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10940/sub-10940_task-trust_run-1_raw.csv",
+    "sha256": "24926129eb96b933e4299fa9a047efcd9e79d62253e9bed800ef473c8a4377aa"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10940/sub-10940_Trust-Ratings.csv",
+    "sha256": "200a5250373fd9147fd2a0531377740e74897cc4e0e9bcb8eb1714122408ad3e"
+  },
+  {
+    "path": "sub-10950/func/sub-10950_task-trust_run-1_events.tsv",
+    "sha256": "1dc18dd13a2b18504c480c928287ac62879fc4c092f7d702fc5d1adb2439ee38"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10950/sub-10950_task-trust_run-0_raw.csv",
+    "sha256": "ac250feed13cd13ae9458f61ef566cb5bcc3388ffbc4b8dbbf83bb9d7e98011b"
+  },
+  {
+    "path": "sub-10950/func/sub-10950_task-trust_run-2_events.tsv",
+    "sha256": "dbb16f3cc99035710521cff8986fac35ccb443b8b52f50d1fefb05bfdd6c3800"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10950/sub-10950_task-trust_run-1_raw.csv",
+    "sha256": "190addbb2d1d543e4d220a699fa498eb152aeb89e2481f012b51b8a75349cfbc"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10950/sub-10950_Trust-Ratings.csv",
+    "sha256": "a4391ebdd2a01dee0ca0923e82f1f92a426dca677f3bb24aa067f02427e21121"
+  },
+  {
+    "path": "sub-10951/func/sub-10951_task-trust_run-1_events.tsv",
+    "sha256": "417fc597e12467cd3cdd5e886b78895f0221476e5617c364cd8c889b5b26bd0c"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10951/sub-10951_task-trust_run-0_raw.csv",
+    "sha256": "e0e1762fa7795326a7fb642e8e109350c5969206358223eb78accc69f8ff2c29"
+  },
+  {
+    "path": "sub-10951/func/sub-10951_task-trust_run-2_events.tsv",
+    "sha256": "3263eda16bcb8ece43624fc8325d28a0e3a68b45830628662e1f0eee18e5fa98"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10951/sub-10951_task-trust_run-1_raw.csv",
+    "sha256": "8b0e49fbe4213c85a309b2fc1e6d8b3a42ea794a8360374b3455fc119ab62875"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10951/sub-10951_Trust-Ratings.csv",
+    "sha256": "4fc45625428951dfc723dee9200721ce2cbd8c71cecba29c1257c91a25431e05"
+  },
+  {
+    "path": "sub-10952/func/sub-10952_task-trust_run-1_events.tsv",
+    "sha256": "504ca629dfd07f21204db2b00a0e87d30043f4e6a91512bf6b5faf0dff9aeff1"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10952/sub-10952_task-trust_run-0_raw.csv",
+    "sha256": "ebedf53bc76cb9fa4f531b6a52d325c08676ee56f6f429512a3b7fa916b86a0e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10952/sub-10952_Trust-Ratings.csv",
+    "sha256": "476d137b97579fc0b526e76a1d78ae633aaec289ba3885094918cea07346fd98"
+  },
+  {
+    "path": "sub-10953/func/sub-10953_task-trust_run-1_events.tsv",
+    "sha256": "d11c8e4e3141719d5a715c68aaba2c6777bf3d2885e2b7d153b8af31eb0567f4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10953/sub-10953_task-trust_run-0_raw.csv",
+    "sha256": "eeda487ecf8e40cb3ac2b7a94db0b593bf034f96f60689aacb12842abf1b27ec"
+  },
+  {
+    "path": "sub-10953/func/sub-10953_task-trust_run-2_events.tsv",
+    "sha256": "d4cda454c7ca5ccc13ac94c44eba85099b8ad17c06dda6d435a0f998f01ce72d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10953/sub-10953_task-trust_run-1_raw.csv",
+    "sha256": "b90e490223f7b076a8ab657a150e323a30d5ecc04fbd1bf89a78a6e1f204a1a4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10953/sub-10953_Trust-Ratings.csv",
+    "sha256": "fa56c11d64d4d618b7577e8e3d3919e7c153e15f42d5247729c719019e2624f6"
+  },
+  {
+    "path": "sub-10954/func/sub-10954_task-trust_run-1_events.tsv",
+    "sha256": "53187b3cbf34349d4577fd6aa2dd541a17ba1d8ab0d8e852d75813d5f0581e31"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10954/sub-10954_task-trust_run-0_raw.csv",
+    "sha256": "3dba0ed268961053c7fab42b5e332a35abcb71f24efac4e6216326c4c2a26c1f"
+  },
+  {
+    "path": "sub-10954/func/sub-10954_task-trust_run-2_events.tsv",
+    "sha256": "76376485c8a9d0ca2f11ab010be252f4e55d1e8c206b19ee9e79459cec4b7a3e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10954/sub-10954_task-trust_run-1_raw.csv",
+    "sha256": "07e0dbb032deb5b736f15a6ab872840841e880a399d10a5acc7370486d394359"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10954/sub-10954_Trust-Ratings.csv",
+    "sha256": "bba24476863bd8d57646009f9e972d41a6ad4f18802f20b4ea393481c6e12b10"
+  },
+  {
+    "path": "sub-10956/func/sub-10956_task-trust_run-1_events.tsv",
+    "sha256": "56123597ee105ae9e286aeacd706162c919ae40df95e89cbd82aa9bd3323c717"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10956/sub-10956_task-trust_run-0_raw.csv",
+    "sha256": "46dbc16b89f9ff97603a375139107123a00bd841ea159cf87f66d5f7c56dc47f"
+  },
+  {
+    "path": "sub-10956/func/sub-10956_task-trust_run-2_events.tsv",
+    "sha256": "1102063d711235183bca5c481820b43256dc6b57375fd08a930f00a07a6e9796"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10956/sub-10956_task-trust_run-1_raw.csv",
+    "sha256": "871850bfa3c35484b4f9dd00fc00b78d7dfe3879074f3b541b63519fbb205fdc"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10956/sub-10956_Trust-Ratings.csv",
+    "sha256": "5897a53614c151a0fd88d483c3439e9084903f7551ca7cf03c448d4e728a0a4c"
+  },
+  {
+    "path": "sub-10958/func/sub-10958_task-trust_run-1_events.tsv",
+    "sha256": "4ba589771c498cc14feaadb22fafc200b5d6eb3bb76c99b528b135a3acf8017a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10958/sub-10958_task-trust_run-0_raw.csv",
+    "sha256": "bfadc084422698b4cbc18478027d155cca1db8498a7055977bd413b1f2153b2b"
+  },
+  {
+    "path": "sub-10958/func/sub-10958_task-trust_run-2_events.tsv",
+    "sha256": "1a6a3866917aa595bf13f4f8f7a7649e1e76c74543bbb0b4695ffc72d4684c11"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10958/sub-10958_task-trust_run-1_raw.csv",
+    "sha256": "ad7bafab79f1abc868bbf8ea4a0991104bde1665a4cd333bb1d08eea4f8bc498"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10958/sub-10958_Trust-Ratings.csv",
+    "sha256": "8a10d1df70895f4eea888f50e4bfa7412fbcb214192d9293e02e0b9903175cbf"
+  },
+  {
+    "path": "sub-10969/func/sub-10969_task-trust_run-1_events.tsv",
+    "sha256": "304df7c1ad1a74c3213fb37a1b06ac28d26006eb4863432b2fe0747787839862"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10969/sub-10969_task-trust_run-0_raw.csv",
+    "sha256": "0b19689d7fdead67992cdd70b8f46eec60f8a91a76a1162a4c8703749af74822"
+  },
+  {
+    "path": "sub-10969/func/sub-10969_task-trust_run-2_events.tsv",
+    "sha256": "1f82e38369b891b1147484ede6dc18e6c791574c8fd354c8dfe57b8ea74982f7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10969/sub-10969_task-trust_run-1_raw.csv",
+    "sha256": "9049e2d4e67e2c6942c1194e73ad9f715e327c650a250829d761ba96bc596b5e"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10969/sub-10969_Trust-Ratings.csv",
+    "sha256": "febbd4b3ec51030b9f0e3d3a20b3ff1905711ec3494d8d1b09aeff67c3646177"
+  },
+  {
+    "path": "sub-10974/func/sub-10974_task-trust_run-1_events.tsv",
+    "sha256": "ad1124c6fde504b17ff54c1bda09047f3958e8efb0d76619378ddc9d5fa5a67a"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10974/sub-10974_task-trust_run-0_raw.csv",
+    "sha256": "215e7b56e35834109716f0a0e6a74af6cdfcaafb99da96c054e8a92275826730"
+  },
+  {
+    "path": "sub-10974/func/sub-10974_task-trust_run-2_events.tsv",
+    "sha256": "1c1dcab94d73fa9a03db0e8c3afd375b4a74fa229555f3d31d269e5e86f97b00"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10974/sub-10974_Trust-Ratings.csv",
+    "sha256": "41e4c2d5eef6be5b3583c026912778d88804f72fdef625b7d53e9c2d7f77727b"
+  },
+  {
+    "path": "sub-10977/func/sub-10977_task-trust_run-1_events.tsv",
+    "sha256": "84e069a2dd38d71bd56e4907ffa2805deffe8a0e11e1745a3f682031fa908574"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10977/sub-10977_task-trust_run-0_raw.csv",
+    "sha256": "77c68fc7b4a11476528c66f2128e0183cc9e627f89da517f37afd16216a6f322"
+  },
+  {
+    "path": "sub-10983/func/sub-10983_task-trust_run-1_events.tsv",
+    "sha256": "a806c0c78fb726a109fa7eee47520825e3150d17d4d6e5afbbdf316c523db83b"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10983/sub-10983_task-trust_run-0_raw.csv",
+    "sha256": "dc4c0bd8904980da9034ef8a18127055ceff3e9cca75c87fca5ece60dd51fbd3"
+  },
+  {
+    "path": "sub-10983/func/sub-10983_task-trust_run-2_events.tsv",
+    "sha256": "4773538d98d88a47c0a8742d61cb39766c0abcfe6c0563893143ac0333ea9fe3"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10983/sub-10983_task-trust_run-1_raw.csv",
+    "sha256": "212bbf9780bfb144ecf2ddec47e1545fb937813a1baea64b55ba4f6905251e49"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10983/sub-10983_Trust-Ratings.csv",
+    "sha256": "8315ebd6eee90bb27f4c66e12a903fff975515947674ec7608184834ff4fb3f8"
+  },
+  {
+    "path": "sub-10984/func/sub-10984_task-trust_run-1_events.tsv",
+    "sha256": "4f4cc90899155d1aa2ad36502ff1043b13ccff86557e0adf710ba223fe028a4d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10984/sub-10984_task-trust_run-0_raw.csv",
+    "sha256": "88974380387ae6841f7b669ca1c2e67a5284e83095a8064dee1a62992315e98a"
+  },
+  {
+    "path": "sub-10984/func/sub-10984_task-trust_run-2_events.tsv",
+    "sha256": "12c2fb3a9f292a77f78d6230a191276a0f79e4c435a0718f48405b510278e38d"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10984/sub-10984_task-trust_run-1_raw.csv",
+    "sha256": "301431f36a8375c0f64b679c28bba89cea3280aadcc94da123776433986d9356"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/10984/sub-10984_Trust-Ratings.csv",
+    "sha256": "5c183dc9aa2b7fd160baee6b686c09b1e20e5b66192af0fb2ddc675bf2031196"
+  },
+  {
+    "path": "sub-11005/func/sub-11005_task-trust_run-1_events.tsv",
+    "sha256": "12a583ad1ec6b88029071f0fcdcaa63478e15d6dff9403c4d32bc820f6aab64f"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/11005/sub-11005_task-trust_run-0_raw.csv",
+    "sha256": "6f8589401cb66b0dc521aad82dce04d52be36d94d2cce68a20da6564586e8b02"
+  },
+  {
+    "path": "sub-11005/func/sub-11005_task-trust_run-2_events.tsv",
+    "sha256": "e6330549cf964f45dc3257e083a7ffd840f97fa70888d599666aad81a3cdb7a7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/11005/sub-11005_task-trust_run-1_raw.csv",
+    "sha256": "d9ccb4c6cdead24b59c4e4abb5e7483fff66982fe8fb91b72f1183ea1476d8f7"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/11005/sub-11005_Trust-Ratings.csv",
+    "sha256": "16474710073bca830aa7214c2a1b5c39a77f6ed284e4f15dac492550b33b7bf0"
+  },
+  {
+    "path": "sub-11031/func/sub-11031_task-trust_run-1_events.tsv",
+    "sha256": "f8c1bddb343521f05bcbc5e06be51867b09ac8edbe78e201228842c7744d10d4"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/11031/sub-11031_task-trust_run-0_raw.csv",
+    "sha256": "0083e1d677d144411f77ce61736bfe64403629bce4a88a633a21d90e120390ba"
+  },
+  {
+    "path": "sub-11031/func/sub-11031_task-trust_run-2_events.tsv",
+    "sha256": "39ec3a02d9cd5cec85edfc1191cd475c61f5c6ed3fbbb1adab75cc2e6c6a8d18"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/11031/sub-11031_task-trust_run-1_raw.csv",
+    "sha256": "6f45d98eb7760987eb8b1b95008f6f6d6eeed8c22d9ee4d6fe4879c4e36b44a8"
+  },
+  {
+    "path": "sourcedata/Scan-Investment_Game/logs/11031/sub-11031_Trust-Ratings.csv",
+    "sha256": "2679a0d3b2e255d1fcfb39b1dd0905e756549c405779960d5b03b42d1343d565"
+  }
+]

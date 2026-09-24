@@ -1,0 +1,6 @@
+participant_id,model,heldout_n,heldout_log_loss,boundary_parameters
+sub-10806,M7,41,18.10262475416508,kappa;theta
+sub-10806,M3,41,5.0429447260596385,kappa
+sub-10956,M3,42,4.5975336421716895,kappa
+sub-10718,M4,42,3.8095238095238098,alpha;kappa;theta
+sub-10701,M7,42,3.7566976266562944,
