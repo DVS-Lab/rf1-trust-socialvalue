@@ -25,7 +25,7 @@ def main():
     assert np.allclose(confusion.groupby(['metric','generating']).selection_probability.sum(),1)
     assert {'preference','M2_power','M5_power'}.issubset(set(confusion.generating))
     for ext in ['png','pdf','svg']:
-        assert len(list(Path('results/figures').glob('*.'+ext)))==14
+        assert len([p for p in Path('results/figures').glob('*.'+ext) if p.name[:2].isdigit() and int(p.name[:2])<14])==14
     tracked=subprocess.check_output(['git','ls-files'],text=True).splitlines()
     assert not any(x.startswith('data/') or x.endswith(('.nii','.nii.gz','.img','.hdr')) for x in tracked)
     # Installed imaging entries must remain unfetched annex symlinks.

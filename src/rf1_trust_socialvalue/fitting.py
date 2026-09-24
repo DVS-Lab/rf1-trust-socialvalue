@@ -14,19 +14,21 @@ def stable_seed(*parts):
     return int.from_bytes(hashlib.sha256('|'.join(map(str,parts)).encode()).digest()[:4],'little')
 
 
-def fit(a,name,ratings,n_starts=100,seed=0):
+def fit(a,name,ratings,n_starts=100,seed=0,initial_params=None):
     code,names,indices,bounds=specification(name);n=int((a[:,3]>=0).sum());k=len(names)
     if n<=k+1:raise ValueError(f'Insufficient valid trials for {name}: {n}')
     if not k:
         best_nll=n*np.log(2);params={};success=True;near=1;converged=1;bound=[];best_message='exact'
     else:
         rng=np.random.default_rng(seed);solutions=[]
-        for i in range(n_starts):
+        for i in range(n_starts+(initial_params is not None)):
             x=np.array([rng.uniform(l,u) for l,u in bounds])
             for j,key in enumerate(names):
                 if key=='kappa':x[j]=np.exp(rng.uniform(np.log(.01),np.log(5.)))
             if i==0:
                 x=np.array([.2 if p.startswith('alpha') else 1. if p in ['kappa','rho','phi'] else 0. for p in names])
+            if i==n_starts and initial_params is not None:
+                x=np.array([np.clip(initial_params[p],*b) for p,b in zip(names,bounds)])
             result=minimize(value_gradient,x,args=(indices,a,code,ratings,'reset' in name),jac=True,
                 method='L-BFGS-B',bounds=bounds,options={'maxiter':600,'ftol':1e-11,'gtol':1e-6,'maxls':40})
             solutions.append(result)
@@ -48,7 +50,7 @@ def fit(a,name,ratings,n_starts=100,seed=0):
     ll=-best_nll;aic=2*k-2*ll;random_aic=2*n*np.log(2)
     return dict(model=name,n=n,k=k,log_likelihood=ll,AIC=aic,AICc=aic+2*k*(k+1)/(n-k-1),BIC=k*np.log(n)-2*ll,
         pseudo_r2_fareri=(random_aic-aic)/random_aic,pseudo_r2_mcfadden=1-ll/(-n*np.log(2)),
-        converged=success,n_starts=n_starts if k else 1,n_converged=converged,n_near_best=near,
+        converged=success,n_starts=n_starts+(initial_params is not None) if k else 1,n_converged=converged,n_near_best=near,
         boundary_parameters=';'.join(bound),optimizer_message=best_message,**params)
 
 
@@ -60,7 +62,7 @@ def load_inputs():
     return t,s,rating
 
 
-def one_fit(sub,frame,name,rating,config,heldout=False):
+def one_fit(sub,frame,name,rating,config,heldout=False,initial_params=None):
     a=pack(frame);r=rating.get(sub,np.zeros(3)).copy()
     if 'ratingcentered' in name:r=2*r-1
     seed=stable_seed(config['seed'],sub,name,heldout)
@@ -68,7 +70,7 @@ def one_fit(sub,frame,name,rating,config,heldout=False):
     if heldout:
         runs=np.unique(a[:,7])
         split=int(np.flatnonzero(a[:,7]!=runs[0])[0]) if len(runs)>1 else int(np.floor(.65*len(a)))
-    result=fit(a[:split],name,r,config['n_starts'],seed)
+    result=fit(a[:split],name,r,config['n_starts'],seed,initial_params)
     result['participant_id']=sub
     if heldout:
         tr=trajectory(a,name,result,r);valid=a[split:,3]>=0;pred=tr[split:,1][valid];y=a[split:,3][valid]

@@ -11,3 +11,5 @@ for step in 01_build_trial_table 02_behavioral_analysis 03_fit_models 04_robustn
   python "scripts/${step}.py" 2>&1 | tee "work/${step}.log"
 done
 python scripts/07_validate_outputs.py
+
+if [[ "${1:-}" == "--hierarchical" ]]; then bash scripts/98_run_hierarchical.sh; fi

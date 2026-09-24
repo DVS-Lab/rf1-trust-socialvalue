@@ -3,6 +3,7 @@
 Natural bounded parameters include exact no-learning limits. The finite kappa
 cap is explicit and tested with a wider-cap sensitivity analysis.
 """
+import re
 import numpy as np
 from numba import njit
 
@@ -22,19 +23,22 @@ LABELS={'M0':'Random','M1':'Fixed EV','M2':'RL EV','M3':'Rating prior','M4':'Rat
 def specification(name):
     base=name.split('_')[0]
     code,names=CORE[base];names=names.copy()
+    if name=='M3_logitprior':code=10
+    match=re.search(r'_theta(5|10|20)(?:_|$)',name)
+    theta_upper=float(match.group(1)) if match else 5.
     if 'lapse' in name:names+=['lapse']
     if 'side' in name:names+=['side_bias']
     if 'power' in name:names+=['rho']
     bounds=[]
     for p in names:
         if p.startswith('alpha'):b=(0.,1.)
-        elif p=='kappa':b=(1e-5,100. if 'wide' in name else 20.)
+        elif p=='kappa':b=(1e-5,100. if ('kappa100' in name or 'wide' in name) else 20.)
         elif p=='lapse':b=(0.,.2)
         elif p=='side_bias':b=(-5.,5.)
         elif p=='rho':b=(.2,3.)
-        elif p=='phi':b=(0.,5.)
+        elif p=='phi':b=(0.,10. if name in ['M3_phi10','M3_logitprior'] else 5.)
         elif base=='preference' or 'signed' in name:b=(-5.,5.)
-        else:b=(0.,5.)
+        else:b=(0.,theta_upper)
         bounds.append(b)
     return code,names,np.array([INDEX[p] for p in names],dtype=np.int64),bounds
 
@@ -60,6 +64,8 @@ def engine(a, pars, code, ratings, reset=False, simulate=False, uniforms=np.zero
     n=len(a);out=np.zeros((n,5));p=np.full(3,.5)
     if code==3:
         for c in range(3):p[c]=min(pars[4]*ratings[c],1.-1e-9)
+    elif code==10:
+        for c in range(3):p[c]=_sigmoid(pars[4]*(2*ratings[c]-1))
     for t in range(n):
         if reset and t>0 and a[t,7]!=a[t-1,7]:
             p[:]=.5

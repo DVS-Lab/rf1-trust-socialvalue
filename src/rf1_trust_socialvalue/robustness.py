@@ -6,7 +6,7 @@ import statsmodels.api as sm
 from statsmodels.stats.multitest import multipletests
 from .fitting import run_fits,load_inputs
 
-VARIANTS=['M2_reset','M5_reset','M5_signed','M7_signed','M4_signed','M2_lapse','M5_lapse','M2_side','M5_side','M2_power','M5_power','M5_wide','M4_ratingcentered','preference']
+VARIANTS=['M2_reset','M5_reset','M5_signed','M7_signed','M4_signed','M2_lapse','M5_lapse','M2_side','M5_side','M2_power','M5_power','M5_kappa100','M4_ratingcentered','preference']
 
 
 def run_robustness(config):

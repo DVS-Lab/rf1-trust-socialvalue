@@ -93,3 +93,20 @@ work/                       ignored logs and local caches
 The in-sample mean criterion winner, most frequent individual winner, and held-out winner differ. Comparisons involving ratings use complete cases throughout. Recovery correlations measure empirical-distribution recovery, not universal identifiability. Conditional simulation intervals omit parameter uncertainty. Age analyses are exploratory, continuous, multiplicity-corrected, and subject to noisy/bounded estimates. See the report before interpreting parameters.
 
 The analysis-source commit is recorded in provenance; the subsequent generated-results commit contains the report. This avoids pretending a Git commit can contain its own final hash. The input manifest records exact small source files. `scripts/07_validate_outputs.py` verifies that imaging content remains unfetched and no raw-data directory is tracked.
+
+
+## Second-pass analysis
+
+The original audited dataset and samples are unchanged. Historical tables remain available; the revised nonhierarchical primary estimates are in `results/tables/model_fits_theta10.csv`. Explicit 5/10/20 comparisons are in `theta_bound_sensitivity.csv`. H-prefixed outputs are joint Bayesian fits, and ratings remain secondary with timing unverified. The report distinguishes behavioral age moderation, computational age effects, and mechanism.
+
+Optional environment and full workflow:
+
+```bash
+.venv/bin/python -m pip install -e '.[hierarchical,test]'
+.venv/bin/python -c 'import cmdstanpy; cmdstanpy.install_cmdstan(version="2.40.0", dir="work/cmdstan", cores=4)'
+bash scripts/98_run_hierarchical.sh
+```
+
+`requirements-hierarchical.lock.txt` records the tested optional environment. Sampling uses 4 chains × (2,000 warmup + 2,000 retained draws); expect substantial runtime. Chains/builds are ignored under `work/`. Completed fits resume from manifests and actual sampler settings; diagnostic failures are preserved and retried at adapt_delta=.99. Do not delete the cache if you intend to resume. Changed model/data/settings fingerprints stop stale reuse.
+
+Individual steps: `08_bound_sensitivity.py`, `08_age_behavior.py`, `09_fit_hierarchical.py --model H5`, `12_run_hierarchical_suite.py`, `10_hierarchical_validation.py`, `11_hierarchical_figures.py`, and `13_validate_second_pass.py --hierarchical`. The historical full pipeline accepts `--hierarchical` to invoke the second pass afterward. Run `.py` validation scripts with Python, not Bash.
