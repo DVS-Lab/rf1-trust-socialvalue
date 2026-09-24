@@ -30,7 +30,6 @@ pyparsing==3.3.3
 pytest==9.1.1
 python-dateutil==2.9.0.post0
 requests==2.34.2
--e git+https://github.com/DVS-Lab/rf1-trust-socialvalue.git@82cf1b3bb6264cda1928031e475248847a685c3e#egg=rf1_trust_socialvalue
 scipy==1.18.1
 setuptools==84.0.0
 six==1.17.0

@@ -75,4 +75,15 @@ def aggregate():
     paths=sorted(TABLE.glob('recovery_H5_recovery_*.csv'))
     if paths:
         d=pd.concat([pd.read_csv(p) for p in paths],ignore_index=True);d['interval_coverage']=pd.to_numeric(d.interval_coverage.replace({'True':1.,'False':0.}),errors='raise');d.to_csv(TABLE/'hierarchical_recovery_by_dataset.csv',index=False)
-        d.groupby(['condition','method','level','parameter']).agg(datasets=('replicate','nunique'),rmse=('rmse','mean'),bias=('bias','mean'),pearson=('pearson','mean'),spearman=('spearman','mean'),coverage=('interval_coverage','mean'),ceiling_rate=('ceiling_rate','mean')).to_csv(TABLE/'hierarchical_recovery_summary.csv')
+        summary=d.groupby(['condition','method','level','parameter']).agg(datasets=('replicate','nunique'),rmse=('rmse','mean'),bias=('bias','mean'),pearson=('pearson','mean'),spearman=('spearman','mean'),coverage=('interval_coverage','mean'),ceiling_rate=('ceiling_rate','mean'))
+        # Population estimates have one error per complete simulated dataset.
+        pop=d[d.level.eq('population')].copy()
+        pop['squared_error']=pop.bias**2
+        group=pop.groupby(['condition','method','level','parameter'])
+        summary.loc[group.size().index,'rmse']=np.sqrt(group.squared_error.mean())
+        summary.to_csv(TABLE/'hierarchical_recovery_summary.csv')
+        age=pop[pop.parameter.eq('beta_theta')].copy()
+        age['excludes_zero']=(age.ci_low>0)|(age.ci_high<0)
+        age['correct_sign']=np.sign(age['mean'])==np.sign(age['true'])
+        age.groupby('condition').agg(datasets=('replicate','nunique'),true_slope=('true','first'),mean_estimate=('mean','mean'),
+            intervals_excluding_zero=('excludes_zero','sum'),truth_coverage=('interval_coverage','mean')).to_csv(TABLE/'hierarchical_age_recovery.csv')

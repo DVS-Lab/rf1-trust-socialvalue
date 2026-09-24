@@ -79,12 +79,33 @@ def run_name(model,training=False,age_terms=1,bounded=False,independent=False,pr
                     ([f'prior{prior_scale:g}'] if prior_scale!=1 else []))
 
 
-def sample(model,training=False,age_terms=1,bounded=False,independent=False,override=None,label=None,prior_scale=1,settings=None):
+def load_chains(files):
+    """Load unmodified CSVs, including CmdStanPy 1.3's zero-warmup edge case."""
+    from cmdstanpy import from_csv,CmdStanMCMC
+    from cmdstanpy.cmdstan_args import CmdStanArgs,SamplerArgs
+    from cmdstanpy.stanfit.runset import RunSet
+    from cmdstanpy.utils import stancsv
+    try:return from_csv(files)
+    except ValueError as exc:
+        if 'Must specify iter_warmup > 0 when adapt_engaged=True.' not in str(exc):raise
+    comments,*_=stancsv.parse_comments_header_and_draws(files[0]);cfg=stancsv.parse_config(comments)
+    if cfg.get('num_warmup')!=0:raise ValueError('Continuation loader requires zero warmup')
+    if cfg.get('engaged')!=0:raise ValueError('Zero-warmup continuation must have adaptation disabled')
+    if len(set(files))!=len(files):raise ValueError('Chain CSV paths must be distinct')
+    args=SamplerArgs(iter_warmup=0,iter_sampling=cfg['num_samples'],thin=cfg['thin'],save_warmup=False,adapt_engaged=False,max_treedepth=cfg['max_depth'])
+    command=CmdStanArgs(model_name=cfg['model'],model_exe=cfg['model'],chain_ids=list(range(1,len(files)+1)),method_args=args)
+    runs=RunSet(args=command,chains=len(files));runs._csv_files=files
+    for i in range(len(files)):runs._set_retcode(i,0)
+    fit=CmdStanMCMC(runs);fit.draws();return fit
+
+
+def _sample(model,training=False,age_terms=1,bounded=False,independent=False,override=None,label=None,prior_scale=1,settings=None):
     from cmdstanpy import from_csv,set_cmdstan_path
     installed=sorted(Path('work/cmdstan').glob('cmdstan-*'))
     if not installed:raise RuntimeError('Install CmdStan in work/cmdstan before loading or fitting chains')
     set_cmdstan_path(str(installed[-1].resolve()))
     cfg=configuration();cfg.update(settings or {})
+    cfg.setdefault('metric','dense_e' if model in ['HPreference','H7'] else 'diag_e')
     data,meta,arrays,ratings,frames=inputs(model,training,age_terms,bounded,independent,override,prior_scale)
     name=label or run_name(model,training,age_terms,bounded,independent,prior_scale)
     folder=WORK/name;folder.mkdir(parents=True,exist_ok=True)
@@ -93,7 +114,7 @@ def sample(model,training=False,age_terms=1,bounded=False,independent=False,over
     if manifest.exists() and settings is None:
         previous=json.loads(manifest.read_text())
         previous_cfg=previous['settings']
-        if previous_cfg['chains']>=cfg['chains'] and previous_cfg['warmup']>=cfg['warmup'] and previous_cfg['draws']>=cfg['draws']:
+        if previous_cfg['seed']==cfg['seed'] and previous_cfg['chains']>=cfg['chains'] and previous_cfg['warmup']>=cfg['warmup'] and previous_cfg['draws']>=cfg['draws']:
             cfg=previous_cfg
             fingerprint=hashlib.sha256((json.dumps(data,sort_keys=True)+json.dumps(cfg,sort_keys=True)+Path('stan/hierarchical_shared.stan').read_text()).encode()).hexdigest()
     if manifest.exists():
@@ -102,12 +123,12 @@ def sample(model,training=False,age_terms=1,bounded=False,independent=False,over
         if saved.get('implementation')=='exact_analytic_gradient' and saved.get('implementation_sha256')!=implementation_hash:
             raise RuntimeError(f'Analytic likelihood changed since cached fit: {name}')
         if saved['fingerprint']!=fingerprint:raise RuntimeError(f'Stale chain cache: {name}; archive/remove before refitting')
-        fit=from_csv(saved['csv_files'])
+        fit=load_chains(saved['csv_files'])
     else:
         sm=stan_model();start=time.time()
         fit=sm.sample(data=data,chains=cfg['chains'],parallel_chains=cfg['parallel_chains'],
                       iter_warmup=cfg['warmup'],iter_sampling=cfg['draws'],seed=stable_seed(cfg['seed'],name),
-                      adapt_delta=cfg['adapt_delta'],max_treedepth=cfg['max_treedepth'],
+                      adapt_delta=cfg['adapt_delta'],max_treedepth=cfg['max_treedepth'],metric=cfg.get('metric','diag_e'),
                       output_dir=str(folder.resolve()),show_progress=False,show_console=False,refresh=200,
                       sig_figs=10,inits=.15)
         saved=dict(fingerprint=fingerprint,csv_files=fit.runset.csv_files,seconds=time.time()-start,settings=cfg,meta=meta,implementation='exact_analytic_gradient',implementation_sha256=hashlib.sha256(Path('stan/rl_fast.hpp').read_bytes()+Path('stan/hierarchical_fast.stan').read_bytes()).hexdigest())
@@ -117,7 +138,7 @@ def sample(model,training=False,age_terms=1,bounded=False,independent=False,over
         archive=folder.with_name(name+'_attempt95')
         if archive.exists():raise RuntimeError(f'Cannot overwrite archived attempt: {archive}')
         folder.rename(archive)
-        saved['csv_files']=[str((archive/Path(f).name).resolve()) for f in saved['csv_files']]
+        saved['csv_files']=[str((archive/Path(f).relative_to(folder.resolve())).resolve()) for f in saved['csv_files']]
         (archive/'manifest.json').write_text(json.dumps(saved,indent=2)+'\n')
         diag['run']=name+'_attempt95';diag.to_csv(TABLE/f'diagnostics_{name}_attempt95.csv',index=False)
         retry=dict(cfg,adapt_delta=.99)
@@ -126,10 +147,19 @@ def sample(model,training=False,age_terms=1,bounded=False,independent=False,over
         archive=folder.with_name(name+'_attempt99_short')
         if archive.exists():raise RuntimeError(f'Cannot overwrite archived attempt: {archive}')
         folder.rename(archive)
-        saved['csv_files']=[str((archive/Path(f).name).resolve()) for f in saved['csv_files']]
+        saved['csv_files']=[str((archive/Path(f).relative_to(folder.resolve())).resolve()) for f in saved['csv_files']]
         (archive/'manifest.json').write_text(json.dumps(saved,indent=2)+'\n')
         diag['run']=name+'_attempt99_short';diag.to_csv(TABLE/f'diagnostics_{name}_attempt99_short.csv',index=False)
         retry=dict(cfg,warmup=3000,draws=8000)
+        return sample(model,training,age_terms,bounded,independent,override,name,prior_scale,retry)
+    if not diag.passed.all() and cfg['adapt_delta']>=.99 and cfg['draws']==8000 and diag.divergences.max()==0 and diag.max_depth_hits.max()==0 and diag.min_bfmi.min()>.3:
+        archive=folder.with_name(name+'_attempt99_8000')
+        if archive.exists():raise RuntimeError(f'Cannot overwrite archived attempt: {archive}')
+        folder.rename(archive)
+        saved['csv_files']=[str((archive/Path(f).relative_to(folder.resolve())).resolve()) for f in saved['csv_files']]
+        (archive/'manifest.json').write_text(json.dumps(saved,indent=2)+'\n')
+        diag['run']=name+'_attempt99_8000';diag.to_csv(TABLE/f'diagnostics_{name}_attempt99_8000.csv',index=False)
+        retry=dict(cfg,warmup=3000,draws=16000)
         return sample(model,training,age_terms,bounded,independent,override,name,prior_scale,retry)
     return fit,meta,arrays,ratings,frames
 
@@ -144,6 +174,7 @@ def diagnostics(fit,name,meta,cfg):
     method=fit.method_variables();div=int(method['divergent__'].sum());depth=int((method['treedepth__']>=cfg['max_treedepth']).sum())
     e=method['energy__'];bfmi=np.mean(np.diff(e,axis=0)**2,axis=0)/np.var(e,axis=0)
     summary['run']=name;summary['n_subjects']=len(meta['ids']);summary['divergences']=div
+    summary['metric']=cfg.get('metric','diag_e')
     summary['chains']=cfg['chains'];summary['warmup_per_chain']=cfg['warmup'];summary['draws_per_chain']=cfg['draws'];summary['adapt_delta']=cfg['adapt_delta']
     summary['max_depth_hits']=depth;summary['min_bfmi']=bfmi.min()
     summary['passed']=(summary.R_hat<1.01)&(summary.ESS_bulk>=400)&(summary.ESS_tail>=400)&(div==0)&(bfmi.min()>.3)&(depth==0)
@@ -181,7 +212,7 @@ def offer_distribution(frames):
 
 
 def summaries(fit,meta,frames,name):
-    names=SPECS[meta['model']][2];kinds=SPECS[meta['model']][3]
+    names=['preference_friend' if meta['model']=='HPreference' and p=='theta' else p for p in SPECS[meta['model']][2]];kinds=SPECS[meta['model']][3]
     natural=fit.stan_variable('natural');rows=[]
     gaps,weights=offer_distribution(frames)
     for i,sub in enumerate(meta['ids']):
@@ -285,32 +316,33 @@ def predictive(fit,meta,arrays,ratings,frames,name,draws=300):
     pd.DataFrame(rows).to_csv(TABLE/f'predictive_{name}.csv',index=False)
 
 
-def prior_predictive(model='H5',draws=500):
+def prior_predictive(model='H5',draws=500,age_terms=1,bounded=False,prior_scale=1):
     from scipy.stats import random_correlation
-    data,meta,arrays,ratings,frames=inputs(model);rng=np.random.default_rng(stable_seed(20260924,'prior',model))
+    data,meta,arrays,ratings,frames=inputs(model,age_terms=age_terms,bounded=bounded,prior_scale=prior_scale);rng=np.random.default_rng(stable_seed(20260924,'prior',model))
     names=SPECS[model][2];kinds=SPECS[model][3];rows=[]
     # Draw correlation matrices from the exact LKJ(2) prior using Stan's fixed-param RNG model.
     from cmdstanpy import CmdStanModel
     stan_model();file=WORK/'prior_rng.stan'
-    source='''data { int K; int N; int A; matrix[N,A] age; vector[K] loc; vector[K] scale; }
+    source='''data { int K; int N; int A; matrix[N,A] age; vector[K] loc; vector[K] scale; real prior_scale; }
     generated quantities { vector[K] mu; vector[K] tau; matrix[K,A] beta; matrix[K,N] z; matrix[K,N] u; matrix[N,K] eta;
       matrix[K,K] L=lkj_corr_cholesky_rng(K,2);
-      for(j in 1:K) { mu[j]=normal_rng(loc[j],scale[j]); tau[j]=abs(normal_rng(0,.8));
-      for(a in 1:A) beta[j,a]=normal_rng(0,.5); for(i in 1:N) z[j,i]=normal_rng(0,1); }
+      for(j in 1:K) { mu[j]=normal_rng(loc[j],scale[j]*prior_scale); tau[j]=abs(normal_rng(0,.8*prior_scale));
+      for(a in 1:A) beta[j,a]=normal_rng(0,.5*prior_scale); for(i in 1:N) z[j,i]=normal_rng(0,1); }
       u=diag_pre_multiply(tau,L)*z; eta=rep_matrix(mu\',N)+age*beta\'+u\'; }'''
     if not file.exists() or file.read_text()!=source:file.write_text(source)
     sm=CmdStanModel(stan_file=str(file.resolve()))
-    fit=sm.sample(data=dict(K=data['K'],N=data['N'],A=data['A'],age=data['age'],loc=data['mu_location'],scale=data['mu_scale']),
+    fit=sm.sample(data=dict(K=data['K'],N=data['N'],A=data['A'],age=data['age'],loc=data['mu_location'],scale=data['mu_scale'],prior_scale=prior_scale),
                   fixed_param=True,chains=1,iter_sampling=draws,seed=stable_seed(20260924,'prior',model),
                   output_dir=str((WORK/f'prior_{model}').resolve()),show_progress=False)
-    natural=transform(fit.stan_variable('eta'),kinds)
+    natural=transform(fit.stan_variable('eta'),kinds,bounded)
     for d in range(draws):
         stats=[]
         for i,(sub,a) in enumerate(arrays.items()):
             sim,tr=simulate(a,SPECS[model][0],dict(zip(names,natural[d,i])),ratings.get(sub,np.zeros(3)),rng)
             valid=a[:,3]>=0;p=tr[valid,1];stats.append([sim[valid,3].mean(),((p<.01)|(p>.99)).mean(),float(((p<.01)|(p>.99)).mean()>.95)])
         v=np.mean(stats,axis=0);rows.append(dict(model=model,draw=d,high_probability=v[0],extreme_trial_fraction=v[1],nearly_deterministic_participant_fraction=v[2]))
-    pd.DataFrame(rows).to_csv(TABLE/f'prior_predictive_{model}.csv',index=False)
+    tag=model+('_quadratic' if age_terms==2 else '')+('_bounded' if bounded else '')+(f'_prior{prior_scale:g}' if prior_scale!=1 else '')
+    pd.DataFrame(rows).to_csv(TABLE/f'prior_predictive_{tag}.csv',index=False)
     return pd.DataFrame(rows)
 
 
@@ -341,3 +373,27 @@ def run_one(model,training=False,age_terms=1,bounded=False,prior_scale=1):
     if training:heldout(fit,meta,arrays,ratings,name)
     else:summaries(fit,meta,frames,name);predictive(fit,meta,arrays,ratings,frames,name)
     collect()
+
+
+def sample(model,training=False,age_terms=1,bounded=False,independent=False,override=None,label=None,prior_scale=1,settings=None):
+    import os,time
+    name=label or run_name(model,training,age_terms,bounded,independent,prior_scale)
+    WORK.mkdir(parents=True,exist_ok=True);lock=WORK/(name+'.lock');owned=False
+    for attempt in range(480):
+        try:
+            fd=os.open(lock,os.O_CREAT|os.O_EXCL|os.O_WRONLY)
+            with os.fdopen(fd,'w') as f:f.write(str(os.getpid()))
+            owned=True;break
+        except FileExistsError:
+            try:
+                owner=int(lock.read_text());os.kill(owner,0)
+            except ProcessLookupError:
+                lock.unlink(missing_ok=True);continue
+            except (ValueError,FileNotFoundError):
+                time.sleep(1);continue
+            if owner==os.getpid():break
+            time.sleep(15)
+    else:raise RuntimeError(f'Another process still owns fit {name}')
+    try:return _sample(model,training,age_terms,bounded,independent,override,label,prior_scale,settings)
+    finally:
+        if owned:lock.unlink(missing_ok=True)

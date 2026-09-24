@@ -1,0 +1,13 @@
+run,model,parameter,quantity,term,probability_positive,mean,median,ci_low,ci_high
+HPreference_full_age,HPreference,alpha,latent_slope,age_z,0.843375,0.25345774168102714,0.2548822157,-0.2596861237625,0.7352048120925
+HPreference_full_age,HPreference,kappa,latent_slope,age_z,0.057,-0.199575918842759,-0.1997468401,-0.4503017713175,0.04674703503774996
+HPreference_full_age,HPreference,preference_friend,latent_slope,age_z,0.80875,0.1799766127517222,0.1783075963,-0.23662801619749999,0.5953911803474992
+HPreference_full_age,HPreference,preference_stranger,latent_slope,age_z,0.49075,-0.002426527131105664,-0.0042848300545,-0.2960471123625,0.2856365097674999
+HPreference_full_age,HPreference,alpha,latent_age_variance_fraction,age,,0.04870598931483535,0.028318361558276522,7.003351146839033e-05,0.19742402811943965
+HPreference_full_age,HPreference,kappa,latent_age_variance_fraction,age,,0.0336203104212007,0.024266823474241226,9.681877411320846e-05,0.11800493390441885
+HPreference_full_age,HPreference,preference_friend,latent_age_variance_fraction,age,,0.018811331741957205,0.009831653094002323,2.1988011359153788e-05,0.08345039435022282
+HPreference_full_age,HPreference,preference_stranger,latent_age_variance_fraction,age,,0.01053859703379295,0.005156148465808802,1.3559981203946506e-05,0.05228768654892623
+HPreference_full_age,HPreference,alpha,natural_change_25_to_75,age,0.843375,0.09133194146708518,0.07799645339955448,-0.06480702748576855,0.3113784765724628
+HPreference_full_age,HPreference,kappa,natural_change_25_to_75,age,0.057,-0.1370263149883305,-0.13762363085234508,-0.30843195438689064,0.038046099122635534
+HPreference_full_age,HPreference,preference_friend,natural_change_25_to_75,age,0.80875,0.5276468561905142,0.5227537132970188,-0.6937347409990869,1.7455394882183728
+HPreference_full_age,HPreference,preference_stranger,natural_change_25_to_75,age,0.49075,-0.0071139766029219235,-0.012562060553314436,-0.8679368154230265,0.837415506869018

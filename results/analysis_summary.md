@@ -1,3 +1,5 @@
+> **Historical first-pass report.** The second-pass analysis is checkpointed and incomplete. See [current status](second_pass_checkpoint.md) and the [Linux handoff](../docs/linux1_handoff.md).
+
 # Trust, learning, and social value
 
 ## Findings at a glance

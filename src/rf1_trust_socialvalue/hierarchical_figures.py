@@ -29,10 +29,10 @@ def figures():
         heading(fig,'Age effects estimated inside the hierarchy','H5: parameters for a participant with zero latent deviation from the age-specific mean; posterior medians and 95% credible intervals.')
         save(fig,'17_hierarchical_age_parameters')
         fig,axs=plt.subplots(1,2,figsize=(11.8,5),layout='constrained')
-        for run,color,label in [('H5_full_age','#157F86','Positive, unbounded theta'),('H5_full_age_bounded','#D59437','Theta bounded at 10')]:
+        for run,color,label in [('H5_full_age','#157F86','Positive, unbounded theta'),('H5_full_age_bounded','#D59437','Theta bounded at 10'),('H5_full_age_prior1.5','#7D5AA5','Broader priors (1.5 × SDs)')]:
             q=curves[(curves.run==run)&(curves.parameter=='friend_value_probability_effect')]
             if len(q):axs[0].plot(q.age,q['median'],color=color,label=label);axs[0].fill_between(q.age,q.ci_low,q.ci_high,alpha=.13,color=color)
-        axs[0].set(xlabel='Age (years)',ylabel='Friend-value probability effect',ylim=(0,1));axs[0].legend()
+        axs[0].set(xlabel='Age (years)',ylabel='Friend-value probability effect',ylim=(0,1));axs[0].legend(fontsize=8)
         individuals=pd.read_csv(TABLE/'hierarchical_parameter_summary.csv');q=individuals[(individuals.run=='H5_full_age')&(individuals.parameter=='friend_value_probability_effect')]
         axs[1].vlines(q.age,q.ci_low,q.ci_high,color='#157F86',alpha=.18,lw=.7);axs[1].scatter(q.age,q['median'],color='#157F86',s=17,alpha=.6)
         axs[1].set(xlabel='Age (years)',ylabel='Individual friend-value effect',ylim=(0,1))
@@ -86,26 +86,33 @@ def figures():
                     q=d[(d.level=='participant')&(d.parameter==p)&(d.condition==condition)&(d.method==method)]
                     ax.scatter(j+shift+np.linspace(-.04,.04,len(q)),q.rmse,color=color,s=25,alpha=.65,label=method if j==0 else None)
             ax.set(title=p.replace('_',' '),xticks=[0,1,2],xticklabels=['Zero','Positive','Negative'],xlabel='True theta age slope',ylabel='Participant RMSE');ax.legend(fontsize=7)
-        ax=axs.flat[4];q=d[(d.level=='population')&(d.parameter=='beta_theta')].sort_values(['condition','replicate'])
+        ax=axs.flat[4];q=d[(d.level=='population')&(d.parameter=='beta_theta')].copy()
+        q['condition']=pd.Categorical(q.condition,categories=['zero','positive','negative'],ordered=True);q=q.sort_values(['condition','replicate'])
         for j,row in enumerate(q.to_dict('records')):
-            ax.errorbar(j,row['mean'],yerr=[[row['mean']-row['ci_low']],[row['ci_high']-row['mean']]],fmt='o',color='#157F86',capsize=2);ax.scatter(j,row['true'],marker='_',color='#D59437',s=80)
-        ax.set(xlabel='Simulated dataset',ylabel='Theta age coefficient',title='Age-slope recovery');ax.axhline(0,color='#73829A',lw=.7)
-        axs.flat[5].axis('off');axs.flat[5].text(0,.9,'Paired recovery design\n\nSame ages and task schedules\nSame simulated choices\nSame missing-trial patterns\n\n5 datasets per age condition\n111 participants per dataset\n\nSmall simulation count: descriptive\ncoverage, not calibrated SBC.',va='top',fontsize=11)
+            ax.errorbar(j,row['mean'],yerr=[[row['mean']-row['ci_low']],[row['ci_high']-row['mean']]],fmt='o',color='#157F86',capsize=2,label='Posterior mean and 95% interval' if j==0 else None);ax.scatter(j,row['true'],marker='_',color='#D59437',s=80,label='Generating value' if j==0 else None)
+        ax.set(xlabel='Generating slope (5 datasets each)',xticks=[2,7,12],xticklabels=['0','+0.35','−0.35'],ylabel='Theta age coefficient per age SD',title='Age-slope recovery');ax.axhline(0,color='#73829A',lw=.7);ax.legend(fontsize=7,loc='upper left')
+        axs.flat[5].axis('off');axs.flat[5].text(0,.9,'Paired recovery design\n\nSame ages and task schedules\nSame simulated choices\nSame missing-trial patterns\n\n5 datasets per age condition\n111 participants per dataset\n\nLow/moderate theta generating regime\nSmall simulation count: descriptive\ncoverage, not calibrated SBC.',va='top',fontsize=11)
         heading(fig,'Does hierarchy improve individual-difference measurement?','Each point is a complete simulated dataset; MLE and hierarchy see exactly the same choices. Lower RMSE indicates better recovery.')
         save(fig,'21_hierarchical_recovery')
 
 
 def trace_figure(fit,model,name):
     from .hierarchical import SPECS
-    params=SPECS[model][2];variables=[]
+    params=['preference_friend' if model=='HPreference' and p=='theta' else p for p in SPECS[model][2]];variables=[]
     for j,p in enumerate(params):variables.append((f'mu[{j+1}]',f'mean: {p}'))
     if 'beta[1,1]' in fit.column_names:
         for j,p in enumerate(params):variables.append((f'beta[{j+1},1]',f'age: {p}'))
-    draws=fit.draws();fig,axs=plt.subplots(len(variables),1,figsize=(11,1.5*len(variables)+1.3),layout='constrained')
-    for ax,(v,label) in zip(np.atleast_1d(axs),variables):
+    summary=fit.summary()
+    for prefix,label in [('Omega[','correlation: largest R-hat'),('natural[','individual: largest R-hat')]:
+        selected=summary[summary.index.str.startswith(prefix)].dropna(subset=['R_hat'])
+        if len(selected):variables.append((selected.R_hat.idxmax(),label))
+    draws=fit.draws();nr=(len(variables)+1)//2;fig,axs=plt.subplots(nr,2,figsize=(12,1.7*nr+1.3),layout='constrained')
+    flat=np.asarray(axs).ravel()
+    for ax,(v,label) in zip(flat,variables):
         j=fit.column_names.index(v)
         for c in range(draws.shape[1]):ax.plot(draws[:,c,j],alpha=.55,lw=.4)
         ax.set(ylabel=label)
-    np.atleast_1d(axs)[-1].set(xlabel='Retained iteration')
+    for ax in flat[len(variables):]:ax.axis('off')
+    for ax in flat[-2:]:ax.set(xlabel='Retained iteration')
     heading(fig,f'{name}: posterior trace check','Four independent chains; inspect alongside R-hat, ESS, divergences and BFMI in the diagnostic tables.')
     save(fig,'trace_'+name)

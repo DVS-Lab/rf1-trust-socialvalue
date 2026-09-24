@@ -1,0 +1,4 @@
+condition,datasets,true_slope,mean_estimate,intervals_excluding_zero,truth_coverage
+negative,5,-0.35,-0.3263502966857334,4,1.0
+positive,5,0.35,0.36185575923844127,4,1.0
+zero,5,0.0,0.08124544161718641,1,0.8

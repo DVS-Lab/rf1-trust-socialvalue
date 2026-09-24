@@ -1,0 +1,35 @@
+run,status,n_subjects,warmup,draws,adapt_delta,last_max_rhat,last_min_bulk_ess,note
+H2_full_age,complete,111,2000,2000,0.95,1.00512,594.497,Validated completed posterior; raw cache excluded from Git
+H5_full_age,complete,111,2000,2000,0.95,1.00778,531.268,Validated completed posterior; raw cache excluded from Git
+H8_full_age,complete,111,3000,8000,0.99,1.00122,4441.44,Validated completed posterior; raw cache excluded from Git
+HPreference_full_age,complete,111,2000,2000,0.95,1.00796,537.894,Validated completed posterior; raw cache excluded from Git
+H7_full_age,complete,111,2000,2000,0.95,1.00351,779.795,Validated completed posterior; raw cache excluded from Git
+H4_full_age,complete,103,2000,2000,0.99,1.00863,579.444,Validated completed posterior; raw cache excluded from Git
+H5_full_age_bounded,restart_required,111,3000,8000,0.99,1.01186,346.692,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H5_full_quadratic,restart_required,111,2000,2000,0.95,,,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H5_full_age_prior1.5,restart_required,111,2000,2000,0.95,,,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H2_train_age,complete,111,3000,8000,0.99,1.00282,1399.93,Validated completed posterior; raw cache excluded from Git
+H2_train_noage,complete,111,2000,2000,0.95,1.00696,471.095,Validated completed posterior; raw cache excluded from Git
+H5_train_age,restart_required,111,3000,16000,0.99,1.01163,734.512,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H5_train_noage,restart_required,111,2000,2000,0.99,1.03263,245.069,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H8_train_age,restart_required,111,2000,2000,0.95,,,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H8_train_noage,restart_required,111,2000,2000,0.95,,,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+HPreference_train_age,restart_required,111,2000,2000,0.99,1.0104,568.121,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+HPreference_train_noage,restart_required,111,2000,2000,0.99,1.01228,444.015,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H7_train_age,restart_required,111,3000,8000,0.99,1.00479,384.825,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H7_train_noage,restart_required,111,2000,2000,0.95,,,Unfinished/retrying; existing tables for this run may describe an earlier failed attempt
+H5_recovery_zero_0,complete,111,2000,2000,0.95,1.00598,991.25,Validated completed posterior; raw cache excluded from Git
+H5_recovery_zero_1,complete,111,2000,2000,0.95,1.00691,587.998,Validated completed posterior; raw cache excluded from Git
+H5_recovery_zero_2,complete,111,2000,2000,0.95,1.00371,778.314,Validated completed posterior; raw cache excluded from Git
+H5_recovery_zero_3,complete,111,2000,2000,0.95,1.0039,796.1,Validated completed posterior; raw cache excluded from Git
+H5_recovery_zero_4,complete,111,2000,2000,0.95,1.00443,486.336,Validated completed posterior; raw cache excluded from Git
+H5_recovery_positive_0,complete,111,2000,2000,0.95,1.00678,455.278,Validated completed posterior; raw cache excluded from Git
+H5_recovery_positive_1,complete,111,2000,2000,0.95,1.00518,1055.36,Validated completed posterior; raw cache excluded from Git
+H5_recovery_positive_2,complete,111,2000,2000,0.99,1.00177,948.676,Validated completed posterior; raw cache excluded from Git
+H5_recovery_positive_3,complete,111,2000,2000,0.95,1.00572,520.326,Validated completed posterior; raw cache excluded from Git
+H5_recovery_positive_4,complete,111,2000,2000,0.95,1.00902,819.87,Validated completed posterior; raw cache excluded from Git
+H5_recovery_negative_0,complete,111,2000,2000,0.95,1.00395,617.288,Validated completed posterior; raw cache excluded from Git
+H5_recovery_negative_1,complete,111,2000,2000,0.95,1.00575,597.009,Validated completed posterior; raw cache excluded from Git
+H5_recovery_negative_2,complete,111,2000,2000,0.95,1.00687,609.04,Validated completed posterior; raw cache excluded from Git
+H5_recovery_negative_3,complete,111,2000,2000,0.95,1.00366,800.531,Validated completed posterior; raw cache excluded from Git
+H5_recovery_negative_4,complete,111,2000,2000,0.95,1.0087,866.289,Validated completed posterior; raw cache excluded from Git

@@ -79,6 +79,8 @@ def bound_fits(config):
     result=Parallel(n_jobs=config['jobs'],verbose=10)(delayed(one_fit)(sub,f,name,ratings,config,True) for sub,f,name in tasks)
     pd.DataFrame([x[0] for x in result]).to_csv(OUT/'heldout_theta10.csv',index=False)
     pd.concat([x[1] for x in result]).to_csv(OUT/'heldout_theta10_predictions.csv',index=False)
+    from .fitting import run_fits
+    run_fits(config,models=['preference'],heldout=True,filename='heldout_preference')
 
 
 def bound_recovery(config):

@@ -5,7 +5,7 @@ import pandas as pd
 from rf1_trust_socialvalue.hierarchical import run_one,sample,run_name,collect
 from rf1_trust_socialvalue.hierarchical_figures import trace_figure
 
-jobs=[(m,False,1,False,1) for m in ['H8','HPreference','H7','H4','H2','H5']]
+jobs=[(m,False,1,False,1) for m in ['HPreference','H7','H4','H2','H5','H8']]
 jobs += [('H5',False,1,True,1),('H5',False,2,False,1),('H5',False,1,False,1.5)]
 jobs += [(m,True,a,False,1) for m in ['H2','H5','H8','HPreference','H7'] for a in [1,0]]
 for model,train,age,bounded,prior in jobs:

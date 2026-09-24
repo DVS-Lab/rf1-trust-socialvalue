@@ -104,6 +104,7 @@ def run(config,bootstrap=500):
     b=pd.concat(good).groupby(['age','contrast']).estimate.agg(bootstrap_mean='mean',bootstrap_low=lambda x:x.quantile(.025),bootstrap_high=lambda x:x.quantile(.975)).reset_index()
     b['successful_replicates']=len(good);b['requested_replicates']=bootstrap;b.to_csv(OUT/'age_partner_bootstrap.csv',index=False)
     Path('results/age_standardization.json').write_text(json.dumps(dict(n=111,mean=center,sd=scale,weighting='equal participants; empirical offers and trial time'),indent=2)+'\n')
+    age_change()
     figures()
 
 
@@ -123,3 +124,21 @@ def figures():
     axes[1].axhline(0,color='#73829A',lw=.8);axes[1].set(xlabel='Age (years)',ylabel='Difference in high-choice probability');axes[1].legend()
     heading(fig,'Does the friend advantage vary with age?','Continuous-age GEE, 111 participants. Equal participant standardization over offers/time; shaded robust 95% CIs; dotted cluster-bootstrap limits.')
     save(fig,'15_age_partner_behavior')
+
+
+def age_change():
+    d,center,scale=prepare();m=fit_gee(d,FORMULA);ref=reference(d);values={}
+    for age in [25,75]:
+        for partner in ['friend','stranger','computer']:
+            q=ref.copy();q['partner']=pd.Categorical([partner]*len(q),categories=['computer','stranger','friend'])
+            q['age_z']=(age-center)/scale;q['age_z_squared']=q.age_z**2
+            x=np.asarray(dmatrix(FORMULA.split('~')[1],q,return_type='dataframe').reindex(columns=m.params.index))
+            prob=expit(x@m.params);gradient=(q.weight.to_numpy()*prob*(1-prob))@x
+            values[age,partner]=(q.weight@prob,gradient)
+    rows=[]
+    for partner in ['computer','stranger']:
+        estimate=(values[75,'friend'][0]-values[75,partner][0])-(values[25,'friend'][0]-values[25,partner][0])
+        gradient=(values[75,'friend'][1]-values[75,partner][1])-(values[25,'friend'][1]-values[25,partner][1])
+        se=np.sqrt(gradient@m.cov_params()@gradient)
+        rows.append(dict(contrast='friend - '+partner,age_from=25,age_to=75,estimate=estimate,se=se,ci_low=estimate-1.96*se,ci_high=estimate+1.96*se,n_subjects=111))
+    pd.DataFrame(rows).to_csv(OUT/'age_partner_change_25_to_75.csv',index=False)

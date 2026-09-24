@@ -65,7 +65,8 @@ def load_inputs():
 def one_fit(sub,frame,name,rating,config,heldout=False,initial_params=None):
     a=pack(frame);r=rating.get(sub,np.zeros(3)).copy()
     if 'ratingcentered' in name:r=2*r-1
-    seed=stable_seed(config['seed'],sub,name,heldout)
+    seed_name='M5_wide' if name=='M5_kappa100' else name
+    seed=stable_seed(config['seed'],sub,seed_name,heldout)
     split=len(a)
     if heldout:
         runs=np.unique(a[:,7])

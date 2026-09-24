@@ -1,0 +1,35 @@
+{
+  "run": "HPreference_full_age",
+  "passed": true,
+  "csv_files_unchanged": true,
+  "checks": [
+    {
+      "chain": 1,
+      "draws": 2000,
+      "columns": 1938,
+      "max_absolute_difference": 0.0,
+      "sha256": "cc39bdd2c7fdcaab05c068972ae3be419f698ae5de5155f633ebef807cbe9110"
+    },
+    {
+      "chain": 2,
+      "draws": 2000,
+      "columns": 1938,
+      "max_absolute_difference": 0.0,
+      "sha256": "745d21b6134d0b61f84fde0dac9dff7f9915878943994db27fae6e4495bc848c"
+    },
+    {
+      "chain": 3,
+      "draws": 2000,
+      "columns": 1938,
+      "max_absolute_difference": 0.0,
+      "sha256": "9265d715939b66f0e98d1a6085b88e052536c8793ab5201722718fdc954a4b43"
+    },
+    {
+      "chain": 4,
+      "draws": 2000,
+      "columns": 1938,
+      "max_absolute_difference": 0.0,
+      "sha256": "190d312913eca68c451ce411a917d88330f7cddcc3786c0446b2fadac24ca9b5"
+    }
+  ]
+}
