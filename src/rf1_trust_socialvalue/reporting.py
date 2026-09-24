@@ -29,6 +29,9 @@ def report(config):
     recovery=r[r.model.isin(['M5','M7','M8'])]
     pair=paired[(paired['sample']=='primary')&(paired.metric=='AICc')&(paired.model_a=='M2')&(paired.model_b=='M5')].iloc[0]
     bestmetrics=m[m['sample'].eq('primary')].sort_values('mean').groupby('metric').first()
+    heldfits=pd.read_csv(p/'heldout_fits.csv')
+    worst=heldfits.nlargest(5,'heldout_log_loss')[['participant_id','model','heldout_n','heldout_log_loss','boundary_parameters']]
+    worst.to_csv(p/'heldout_extreme_errors.csv',index=False)
     nratings=int(f[f.model.eq('M4')].shape[0]);nprimary=int(s.primary_include.sum());n2=int((s.loc[s.primary_include,'n_runs']==2).sum())
     recm5=r[(r.model=='M5')&(r.parameter=='theta')].iloc[0]
     confusion=pd.read_csv(p/'model_recovery_confusion.csv')
@@ -115,7 +118,11 @@ Train on the first ordinary run and evaluate the second; participants with one r
 
 {markdown_table(h)}
 
-Accuracy uses the deterministic p≥.5 choice rule, so M0's tied prediction defaults to high and its accuracy reflects the held-out high-choice base rate; its log loss is exactly log(2). Log loss is the main predictive measure. Brier scores and binned calibration are supplied. Large individual log losses expose overconfident errors in short-training, unregularized MLE fits. These errors are retained, not winsorized. Paired bootstrap log-loss comparisons are in `heldout_pairwise.csv`.
+Accuracy uses the deterministic p≥.5 choice rule, so M0's tied prediction defaults to high and its accuracy reflects the held-out high-choice base rate; its log loss is exactly log(2). Log loss is the main predictive measure. Brier scores and binned calibration are supplied. Large individual log losses expose overconfident errors in short-training, unregularized MLE fits. These errors are retained, not winsorized. The five largest participant/model losses are reported explicitly:
+
+{markdown_table(worst)}
+
+These are pathological out-of-sample predictions despite converged training fits, not optimizer failures. This is a practical reason not to endorse the in-sample mean winner unconditionally. Paired bootstrap log-loss comparisons are in `heldout_pairwise.csv`.
 
 Simulation checks use {config['predictive_iterations']} stochastic trajectories per participant/model at fitted parameters, on actual offers/order/outcome schedules, holding the observed missing-choice mask fixed. Simulated $0 choices conceal feedback, positive investments reveal programmed outcomes. Checks cover partner, investment, offer pairs, time, and response to most recent same-partner feedback. These are **conditional simulation checks, not Bayesian posterior checks**; their intervals omit parameter uncertainty and are not confidence intervals for a population effect.
 

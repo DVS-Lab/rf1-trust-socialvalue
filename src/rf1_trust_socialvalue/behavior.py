@@ -86,7 +86,7 @@ def compare_models(config):
     pd.DataFrame(deltas).to_csv(out/'model_deltas.csv',index=False)
     p=pd.DataFrame(pairs);p['p_holm']=p.groupby(['sample','metric']).p.transform(lambda x:multipletests(x,method='holm')[1]);p.to_csv(out/'model_pairwise.csv',index=False)
     h=pd.read_csv(out/'heldout_fits.csv')
-    h.groupby('model').agg(n=('participant_id','size'),log_loss=('heldout_log_loss','mean'),accuracy=('heldout_accuracy','mean'),brier=('heldout_brier','mean')).to_csv(out/'heldout_summary.csv')
+    h.groupby('model').agg(n=('participant_id','size'),log_loss=('heldout_log_loss','mean'),median_log_loss=('heldout_log_loss','median'),accuracy=('heldout_accuracy','mean'),brier=('heldout_brier','mean')).to_csv(out/'heldout_summary.csv')
     pp=pd.read_csv(out/'heldout_fits_predictions.csv');pp['probability_bin']=pd.cut(pp.probability,np.linspace(0,1,11),include_lowest=True)
     pp.groupby(['model','probability_bin'],observed=True).agg(mean_prediction=('probability','mean'),observed_frequency=('choice','mean'),n=('choice','size')).to_csv(out/'heldout_calibration.csv')
     comparisons=[]
