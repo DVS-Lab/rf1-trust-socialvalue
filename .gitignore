@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Never publish source data, annex metadata, imaging or local run artifacts.
+data/
+**/.datalad/
+**/.git/annex/
+*.nii
+*.nii.gz
+*.img
+*.hdr
+work/
+.tmp/
+*.tmp
+.DS_Store
