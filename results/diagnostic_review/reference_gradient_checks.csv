@@ -1,0 +1,5 @@
+run,chain,iteration,kind,max_absolute_error,max_scaled_error,worst_parameter,passed
+H4_full_age,4,553,flagged,1.3642420526593924e-12,8.35255387215629e-15,g_z.3.34,True
+H4_full_age,4,552,previous,3.801403636316536e-13,2.81467061182381e-14,g_z.2.34,True
+H5_train_age,2,13242,flagged,4.263256414560601e-14,6.24341574915121e-15,g_z.1.27,True
+H5_train_age,2,13241,previous,1.7763568394002505e-14,3.3014288302090587e-15,g_z.2.27,True

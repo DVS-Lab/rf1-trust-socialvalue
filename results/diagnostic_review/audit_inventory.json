@@ -1,0 +1,36 @@
+[
+  {
+    "run": "H4_full_age",
+    "fingerprint": "53708f5c769c23eab7d06342373ccf242ae6ee6215912c742a0b7cf709e7aaf7",
+    "settings": {
+      "seed": 20260924,
+      "chains": 4,
+      "parallel_chains": 2,
+      "warmup": 4000,
+      "draws": 4000,
+      "adapt_delta": 0.995,
+      "max_treedepth": 12,
+      "recovery_replicates": 5,
+      "recovery_starts": 100,
+      "metric": "diag_e"
+    },
+    "divergences": 1
+  },
+  {
+    "run": "H5_train_age",
+    "fingerprint": "caf96213dfd0274d4241daeb45016a6ad76d811bb5501e14924569c45e0acce7",
+    "settings": {
+      "seed": 20260924,
+      "chains": 4,
+      "parallel_chains": 2,
+      "warmup": 4000,
+      "draws": 16000,
+      "adapt_delta": 0.995,
+      "max_treedepth": 12,
+      "recovery_replicates": 5,
+      "recovery_starts": 100,
+      "metric": "diag_e"
+    },
+    "divergences": 1
+  }
+]
