@@ -1,17 +1,23 @@
-# Second-pass checkpoint — analysis incomplete
+# Second-pass checkpoint — 25 September 2026
 
-The laptop analysis is paused for continuation on linux1. **23 posterior runs are validated; 11 remain unfinished.** Completed code and small outputs are saved in this commit. This is not the final second-pass report.
+**31 of 34 Linux posterior runs passed diagnostics.** The parallel batch finished in approximately 68 minutes (15:07–16:15 UTC). It completed its queue and deliberately blocked final reporting because the following fits each retained one divergent transition:
 
+| Fit | Retained draws, all chains | Max R-hat | Min bulk ESS | Min tail ESS | Divergences |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| H4 full age | 8,000 | 1.00258 | 958.5 | 1600.8 | 1 |
+| H5 training age | 64,000 | 1.00438 | 1571.1 | 2073.3 | 1 |
+| HPreference training no age | 8,000 | 1.00987 | 425.2 | 493.5 | 1 |
+
+All three passed the tree-depth and BFMI requirements and every recorded R-hat/ESS threshold. They remain unaccepted under the zero-divergence criterion. This is not evidence of an out-of-memory or worker crash. Evidence is committed in `71504f8`.
+
+- [Live Linux run status](linux_run_status.json)
+- [Parallel run console and exit record](run_logs/20260925T142200Z-b6bf059e/console.txt)
+- [Per-fit logs](run_logs/parallel-20260925T150717Z-825cb3b8)
 - [Linux continuation instructions](../docs/linux1_handoff.md)
-- [Fit status and diagnostic history](tables/hierarchical_fit_status.csv)
-- [Machine-readable restart settings](hierarchical_checkpoint.json)
-- [Theta-bound sensitivity](tables/theta_bound_sensitivity.csv)
-- [Behavioral age contrasts](tables/age_partner_change_25_to_75.csv)
-- [Hierarchical age effects](tables/hierarchical_age_effects.csv)
-- [Paired recovery](tables/hierarchical_recovery_summary.csv)
+- [Explicit three-fit retry plan](../config/linux_divergence_retry.json)
 
-All six full-data model families and all 15 recovery datasets passed diagnostics. Both H2 training hierarchies are complete. Other prediction and sensitivity fits are unfinished or retrying. H5 training-age prediction files currently describe a failed 8,000-draw attempt and must not be treated as a validated comparison. Some figure files are previews of incomplete comparisons; the final overview/report/gallery are still outstanding.
+The targeted retry preserves the original chains and settings, retains the seed, priors and model, and uses adapt_delta=.995 with 4,000 warmup iterations. H4 and preference no-age use 4,000 retained draws per chain; H5 training age keeps 16,000. Passing fits are reused. Divergent recorded states and population-parameter percentiles will be exported from the archived attempts on Linux for follow-up inspection. The revised sampler has not yet been run or validated on Linux; persistent divergences require further investigation, not repeated seed changes or a relaxed acceptance rule.
 
-Completed findings include continued theta-ceiling dependence, uncertain behavioral/H5 age effects, and improved paired hierarchical recovery in the tested low/moderate-theta regime. See the handoff for scope and interpretation limits.
+The original [fit inventory](tables/hierarchical_fit_status.csv) and [restart checkpoint](hierarchical_checkpoint.json) describe the 24 September laptop snapshot, not current Linux completion. The laptop processes were terminated; completed caches remain on disk. Raw posterior draws are excluded from Git.
 
-Large posterior caches are intentionally excluded from Git. The optional completed-cache transfer is about 4.25 GB uncompressed; without it, Linux must regenerate the hierarchical posteriors needed by the finalizer. The laptop jobs remain paused.
+The final second-pass overview, report and gallery remain outstanding. H5 training-age prediction files from an earlier failed attempt remain provisional, and the preference no-age comparison is incomplete. Existing figure previews must not be presented as the completed second-pass analysis. Full 12-model recovery remains deliberately deferred pending resolution of raw-theta scaling. Rating timing is unresolved and H4 remains secondary.

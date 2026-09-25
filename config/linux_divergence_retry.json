@@ -1,0 +1,34 @@
+{
+  "id": "linux_divergences_20260925",
+  "source_commit": "71504f8",
+  "reason": "All mixing, energy and tree-depth checks passed, but exactly one retained divergent transition remains per named fit. One controlled tighter-integrator retry; no seed or posterior-target changes.",
+  "runs": {
+    "H4_full_age": {
+      "expected_fingerprint": "a7d1a54ecd8bc161fd413ae6099c4919e75c36680c63e0a777fe22d34f041792",
+      "expected_divergences": 1,
+      "overrides": {
+        "adapt_delta": 0.995,
+        "warmup": 4000,
+        "draws": 4000
+      }
+    },
+    "H5_train_age": {
+      "expected_fingerprint": "f265df13b8f2b19853c4d1b087e720749892c83934cd0f7aa9c568066e6607a3",
+      "expected_divergences": 1,
+      "overrides": {
+        "adapt_delta": 0.995,
+        "warmup": 4000,
+        "draws": 16000
+      }
+    },
+    "HPreference_train_noage": {
+      "expected_fingerprint": "98836f31196742af5642b4fc2c581593705bbade7d081b3c29ef1608ee8217b7",
+      "expected_divergences": 1,
+      "overrides": {
+        "adapt_delta": 0.995,
+        "warmup": 4000,
+        "draws": 4000
+      }
+    }
+  }
+}

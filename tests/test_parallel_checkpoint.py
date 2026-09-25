@@ -94,3 +94,21 @@ def test_worker_produces_only_its_own_outputs(monkeypatch,tmp_path):
     monkeypatch.setattr(h,'collect',lambda:pytest.fail('Workers must not write aggregate tables'))
     worker(dict(run='H2_train_age',kind='real_data',model='H2',training=True,age_terms=1,bounded=False,prior_scale=1,settings={}))
     assert calls==['heldout']
+
+
+
+def test_worker_receives_planned_settings_in_logged_task_file(monkeypatch,tmp_path):
+    from types import SimpleNamespace
+    from rf1_trust_socialvalue import parallel_checkpoint as parallel
+    folder=tmp_path/'results/run_logs/test';folder.mkdir(parents=True)
+    entry={'run':'H4_full_age','settings':{'adapt_delta':.995,'warmup':4000}}
+    commands=[]
+    def run(command,**kwargs):
+        commands.append(command)
+        payload=json.loads(Path(command[command.index('--task-file')+1]).read_text())
+        assert payload==entry
+        assert kwargs['env']['RF1_PARALLEL_CHAINS']=='4'
+        return SimpleNamespace(returncode=0)
+    monkeypatch.setattr(parallel.subprocess,'run',run)
+    result=parallel.launch_worker(entry,folder,4,tmp_path)
+    assert result['status']=='complete' and len(commands)==1

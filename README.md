@@ -1,6 +1,6 @@
 # Trust, learning, and social value
 
-> **Checkpoint — second pass incomplete (24 September 2026).** The laptop jobs are paused for Linux continuation: 23 validated posterior runs, 11 unfinished. Read the [handoff](docs/linux1_handoff.md) and [current status](results/second_pass_checkpoint.md). New hierarchical outputs include provisional comparisons; the report/gallery below still contain the historical first pass.
+> **Second pass incomplete (25 September 2026).** Linux completed 31 of 34 posterior runs with passing diagnostics. Three fits each retain one divergence and block final reporting. The laptop jobs have been terminated. Read the [handoff](docs/linux1_handoff.md) and [current status](results/second_pass_checkpoint.md). The report/gallery below still contain the historical first pass; some hierarchical outputs remain provisional.
 
 A reproducible behavioral analysis of **OpenNeuro ds005123 v1.1.3**. Does greater trust in friends reflect added value of reciprocation, optimistic expectations, asymmetric learning, or more general partner preferences?
 

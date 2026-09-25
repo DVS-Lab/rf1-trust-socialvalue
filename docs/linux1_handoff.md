@@ -166,3 +166,36 @@ The handoff locates only the same user's sequential checkpoint worker in this ex
 No change is made to priors, chain count, draws, acceptance thresholds or Stan likelihood. H4's reported failure remains unresolved and can block final reporting even when all other fits finish. Parallelism does not itself repair a problematic posterior. Passing fits are summarized again from cache; failed fits remain subject to the existing bounded retry policy.
 
 `results/linux_run_status.json` records parallel worker state. Per-fit console files live under `results/run_logs/parallel-*/`; the outer console, exit status and diagnostic exports are also retained under `results/run_logs/`. Push the entire `results` directory after the run ends as shown above. The parallel runner was tested locally with mocked fit workers and handoff identity/state checks; actual throughput and memory usage must be observed on Linux.
+
+
+## Three remaining divergent fits — results commit 71504f8
+
+The 32-CPU batch completed in about 68 minutes: **31/34 passed**, while H4 full age, H5 training age and HPreference training no-age each had one retained divergent transition. Every R-hat, ESS, BFMI and maximum-depth requirement passed for those three. The exit was the scientific finalization gate, not a worker crash.
+
+`config/linux_divergence_retry.json` binds one explicit sampler adjustment to the exact failed posterior fingerprints from the Linux logs. It sets adapt_delta=.995 and 4,000 warmup, keeps H5's 16,000 retained draws per chain, and increases the two 2,000-draw fits to 4,000. Seeds, priors, likelihoods, metric and four-chain design remain unchanged. Only those three require fresh sampling; passing caches are reused.
+
+This is a bounded sampler experiment, not a guarantee. Stan cautions that adjustments beyond .99 are seldom a general solution: https://mc-stan.org/learn-stan/diagnostics-warnings.html . If divergences remain, inspect the exported recorded states and posterior geometry before choosing further changes. Do not cycle random seeds until a fit passes. Existing precision-only retries remain capped at 16,000 retained draws; the new plan does not automatically tighten adapt_delta further.
+
+The helper checks every target before moving any cache, archives the failed attempts without overwriting them, and exports `divergence_locations_*` and `divergence_reference_*` tables. Percentile locations describe recorded draws associated with a divergent transition; they do not identify the exact point along its failing numerical trajectory or prove negligible bias. Repeating the same plan reuses the planned retry cache rather than archiving and refitting it again.
+
+On Linux, enter tmux (the prior parallel run has exited):
+
+```bash
+tmux new-session -A -s rf1-parallel
+```
+
+Then run:
+
+```bash
+bash <<'BASH'
+set -euo pipefail
+cd /ZPOOL/data/projects/rf1-trust-socialvalue
+git pull --ff-only
+source .venv/bin/activate
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+export MPLCONFIGDIR="$PWD/work/matplotlib" MPLBACKEND=Agg
+python -u scripts/17_parallel_checkpoint.py --run --jobs 3 --parallel-chains 4 --retry-plan config/linux_divergence_retry.json
+BASH
+```
+
+This allows the three remaining sampling jobs to use up to twelve CPUs together. More chains or CPUs do not accelerate an individual single-threaded chain. Detach with Ctrl-b then d. Finalization runs only if all 34 fits pass; otherwise the run records the remaining failures. After either outcome, commit and push `results` as described above.
