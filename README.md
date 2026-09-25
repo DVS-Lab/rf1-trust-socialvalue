@@ -1,6 +1,6 @@
 # Trust, learning, and social value
 
-> **Second pass incomplete (25 September 2026).** Linux completed 32 of 34 posterior runs with passing diagnostics. H4 full age and H5 training age still each retain one divergence after a targeted retry, and block final reporting. A no-sampling diagnostic audit is the next step. The laptop jobs have been terminated. Read the [handoff](docs/linux1_handoff.md) and [current status](results/second_pass_checkpoint.md). The report/gallery below still contain the historical first pass; some hierarchical outputs remain provisional.
+> **New: [accepted-fit report and six figure sets](results/review/README.md) (25 September 2026).** The diagnostic audit is complete. This scoped report uses the 32 of 34 Linux posterior runs that pass all checks; H4 full-age inference and H5 training-age scoring remain excluded because each has one divergence. Full second-pass finalization is still incomplete. No further sampling is needed to read or rebuild this report. See the [current status](results/second_pass_checkpoint.md). The report/gallery below are historical first-pass outputs.
 
 A reproducible behavioral analysis of **OpenNeuro ds005123 v1.1.3**. Does greater trust in friends reflect added value of reciprocation, optimistic expectations, asymmetric learning, or more general partner preferences?
 
