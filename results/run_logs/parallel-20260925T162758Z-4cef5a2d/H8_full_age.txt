@@ -1,0 +1,1 @@
+H8_full_age: max Rhat=1.0016, min bulk ESS=3482, min tail ESS=7870, divergences=0, max-depth hits=0, BFMI=0.720

@@ -1,0 +1,1 @@
+H8_train_age: max Rhat=1.0018, min bulk ESS=1211, min tail ESS=2244, divergences=0, max-depth hits=0, BFMI=0.813

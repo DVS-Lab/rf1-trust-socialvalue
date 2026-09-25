@@ -1,0 +1,29 @@
+{
+  "run": "H5_recovery_negative_4",
+  "model": "H5",
+  "kind": "recovery",
+  "status": "complete",
+  "settings": {
+    "seed": 20260924,
+    "chains": 4,
+    "parallel_chains": 4,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.95,
+    "max_treedepth": 12,
+    "recovery_replicates": 5,
+    "recovery_starts": 100,
+    "metric": "diag_e"
+  },
+  "n_subjects": 111,
+  "last_diagnostic_passed": true,
+  "manifest": "work/hierarchical/H5_recovery_negative_4/manifest.json",
+  "csv_files": [
+    "work/hierarchical/H5_recovery_negative_4/hierarchical_fast-20260924093200_1.csv",
+    "work/hierarchical/H5_recovery_negative_4/hierarchical_fast-20260924093200_2.csv",
+    "work/hierarchical/H5_recovery_negative_4/hierarchical_fast-20260924093200_3.csv",
+    "work/hierarchical/H5_recovery_negative_4/hierarchical_fast-20260924093200_4.csv"
+  ],
+  "fingerprint": "8b72dd63916ddcb5bb070b59b73df9e1dc6c56a42b4ff8b2d0f435e7fd4c95eb",
+  "cache_bytes": 153414556
+}

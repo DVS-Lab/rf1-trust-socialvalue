@@ -1,0 +1,24 @@
+{
+  "run": "H8_train_age",
+  "model": "H8",
+  "training": true,
+  "age_terms": 1,
+  "bounded": false,
+  "prior_scale": 1,
+  "kind": "real_data",
+  "status": "restart_required",
+  "settings": {
+    "seed": 20260924,
+    "chains": 4,
+    "parallel_chains": 2,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.95,
+    "max_treedepth": 12,
+    "recovery_replicates": 5,
+    "recovery_starts": 100,
+    "metric": "diag_e"
+  },
+  "n_subjects": 111,
+  "last_diagnostic_passed": false
+}

@@ -1,0 +1,81 @@
+H4_full_age: preserved reviewed attempt at /ZPOOL/data/projects/rf1-trust-socialvalue/work/hierarchical/H4_full_age_retry_linux_divergences_20260925; next settings={'seed': 20260924, 'chains': 4, 'parallel_chains': 2, 'warmup': 4000, 'draws': 4000, 'adapt_delta': 0.995, 'max_treedepth': 12, 'recovery_replicates': 5, 'recovery_starts': 100, 'metric': 'diag_e'}
+H5_train_age: preserved reviewed attempt at /ZPOOL/data/projects/rf1-trust-socialvalue/work/hierarchical/H5_train_age_retry_linux_divergences_20260925; next settings={'seed': 20260924, 'chains': 4, 'parallel_chains': 2, 'warmup': 4000, 'draws': 16000, 'adapt_delta': 0.995, 'max_treedepth': 12, 'recovery_replicates': 5, 'recovery_starts': 100, 'metric': 'diag_e'}
+HPreference_train_noage: preserved reviewed attempt at /ZPOOL/data/projects/rf1-trust-socialvalue/work/hierarchical/HPreference_train_noage_retry_linux_divergences_20260925; next settings={'seed': 20260924, 'chains': 4, 'parallel_chains': 2, 'warmup': 4000, 'draws': 4000, 'adapt_delta': 0.995, 'max_treedepth': 12, 'recovery_replicates': 5, 'recovery_starts': 100, 'metric': 'diag_e'}
+H4_full_age: exported 1 divergent recorded state(s) across 18 population parameters
+H5_train_age: exported 1 divergent recorded state(s) across 18 population parameters
+HPreference_train_noage: exported 1 divergent recorded state(s) across 24 population parameters
+H2_full_age: running
+H5_full_age: running
+H8_full_age: running
+HPreference_full_age: running
+H2_full_age: complete
+H7_full_age: running
+H8_full_age: complete
+H4_full_age: running
+H5_full_age: complete
+H5_full_age_bounded: running
+HPreference_full_age: complete
+H5_full_quadratic: running
+H7_full_age: complete
+H5_full_age_prior1.5: running
+H5_full_quadratic: complete
+H2_train_age: running
+H5_full_age_bounded: complete
+H2_train_noage: running
+H5_full_age_prior1.5: complete
+H5_train_age: running
+H2_train_noage: complete
+H5_train_noage: running
+H2_train_age: complete
+H8_train_age: running
+H5_train_noage: complete
+H8_train_noage: running
+H8_train_age: complete
+HPreference_train_age: running
+H8_train_noage: complete
+HPreference_train_noage: running
+HPreference_train_age: complete
+H7_train_age: running
+H5_train_age: diagnostic_failed
+H7_train_noage: running
+H7_train_age: complete
+H5_recovery_zero_0: running
+H7_train_noage: complete
+H5_recovery_zero_1: running
+H5_recovery_zero_0: complete
+H5_recovery_zero_2: running
+H5_recovery_zero_1: complete
+H5_recovery_zero_3: running
+H5_recovery_zero_2: complete
+H5_recovery_zero_4: running
+H5_recovery_zero_3: complete
+H5_recovery_positive_0: running
+H5_recovery_zero_4: complete
+H5_recovery_positive_1: running
+H5_recovery_positive_0: complete
+H5_recovery_positive_2: running
+H5_recovery_positive_1: complete
+H5_recovery_positive_3: running
+H5_recovery_positive_2: complete
+H5_recovery_positive_4: running
+H5_recovery_positive_3: complete
+H5_recovery_negative_0: running
+H5_recovery_positive_4: complete
+H5_recovery_negative_1: running
+H5_recovery_negative_0: complete
+H5_recovery_negative_2: running
+H5_recovery_negative_1: complete
+H5_recovery_negative_3: running
+H5_recovery_negative_2: complete
+H5_recovery_negative_4: running
+H5_recovery_negative_3: complete
+H5_recovery_negative_4: complete
+HPreference_train_noage: complete
+H4_full_age: diagnostic_failed
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from rf1_trust_socialvalue.parallel_checkpoint import main; main()
+                                                                ~~~~^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/parallel_checkpoint.py", line 139, in main
+    raise RuntimeError('Finalization blocked; inspect per-fit logs for: '+', '.join(failed))
+RuntimeError: Finalization blocked; inspect per-fit logs for: H4_full_age, H5_train_age

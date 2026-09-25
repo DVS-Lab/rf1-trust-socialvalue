@@ -1,0 +1,1 @@
+H5_recovery_positive_4: max Rhat=1.0036, min bulk ESS=934, min tail ESS=789, divergences=0, max-depth hits=0, BFMI=0.759

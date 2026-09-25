@@ -1,0 +1,25 @@
+run,chain,retained_iteration,parameter,recorded_value,percentile,note
+HPreference_train_noage,3,1567,mu.1,-1.433543126,0.873125,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,mu.2,-1.223392695,0.544625,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,mu.3,1.97021018,0.395875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,mu.4,0.6970551451,0.80025,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,tau.1,1.001416264,0.377625,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,tau.2,1.183835278,0.586,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,tau.3,1.2761433,0.45175,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,tau.4,1.171082067,0.698,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.1.1,1.0,1.0,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.2.1,-0.6400323535,0.231375,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.3.1,-0.05276797953,0.407,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.4.1,0.01145930481,0.23075,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.1.2,-0.6400323535,0.231375,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.2.2,1.0,1.0,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.3.2,-0.4398691857,0.323375,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.4.2,-0.2480518101,0.691,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.1.3,-0.05276797953,0.407,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.2.3,-0.4398691857,0.323375,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.3.3,1.0,1.0,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.4.3,0.6040254727,0.271,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.1.4,0.01145930481,0.23075,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.2.4,-0.2480518101,0.691,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.3.4,0.6040254727,0.271,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+HPreference_train_noage,3,1567,Omega.4.4,1.0,1.0,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory

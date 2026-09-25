@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-09-25T16:27:43.094606+00:00",
+  "command": [
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/.venv/bin/python",
+    "-u",
+    "-c",
+    "from rf1_trust_socialvalue.parallel_checkpoint import main; main()",
+    "--run",
+    "--jobs",
+    "3",
+    "--parallel-chains",
+    "4",
+    "--retry-plan",
+    "config/linux_divergence_retry.json"
+  ],
+  "git_commit": "53fe79399bb3316afdf0e5b10b361870fdc3d041",
+  "platform": "Linux-6.17.0-23-generic-x86_64-with-glibc2.39",
+  "status": "failed",
+  "exit_code": 1,
+  "finished_at": "2026-09-25T18:11:27.878841+00:00"
+}

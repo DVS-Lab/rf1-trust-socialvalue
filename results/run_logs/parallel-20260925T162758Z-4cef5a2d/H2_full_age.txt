@@ -1,0 +1,1 @@
+H2_full_age: max Rhat=1.0010, min bulk ESS=1627, min tail ESS=2461, divergences=0, max-depth hits=0, BFMI=0.785

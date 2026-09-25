@@ -1,0 +1,1 @@
+H5_recovery_zero_0: max Rhat=1.0053, min bulk ESS=734, min tail ESS=1306, divergences=0, max-depth hits=0, BFMI=0.698

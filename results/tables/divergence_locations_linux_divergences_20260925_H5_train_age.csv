@@ -1,0 +1,19 @@
+run,chain,retained_iteration,parameter,recorded_value,percentile,note
+H5_train_age,4,5774,mu.1,-2.027186133,0.719046875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,mu.2,-1.474678187,0.3746875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,mu.3,5.545952428,0.722828125,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,tau.1,0.6656525449,0.764828125,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,tau.2,1.254184219,0.4901875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,tau.3,3.927964782,0.71171875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,beta.1.1,0.2467282932,0.878421875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,beta.2.1,-0.1622976587,0.37784375,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,beta.3.1,1.000187495,0.953171875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.1.1,1.0,1.0,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.2.1,-0.1396548017,0.685046875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.3.1,-0.1120271488,0.291390625,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.1.2,-0.1396548017,0.685046875,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.2.2,1.0,1.0,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.3.2,-0.3340578705,0.97784375,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.1.3,-0.1120271488,0.291390625,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.2.3,-0.3340578705,0.97784375,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory
+H5_train_age,4,5774,Omega.3.3,1.0,1.0,Recorded state associated with a divergent transition; not the numerical location along the failing trajectory

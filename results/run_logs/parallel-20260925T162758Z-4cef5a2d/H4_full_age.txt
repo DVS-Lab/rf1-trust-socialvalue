@@ -1,0 +1,24 @@
+12:30:43 - cmdstanpy - INFO - CmdStan start processing
+12:30:43 - cmdstanpy - INFO - Chain [1] start processing
+12:30:43 - cmdstanpy - INFO - Chain [2] start processing
+12:30:43 - cmdstanpy - INFO - Chain [3] start processing
+12:30:43 - cmdstanpy - INFO - Chain [4] start processing
+13:58:38 - cmdstanpy - INFO - Chain [2] done processing
+14:07:03 - cmdstanpy - INFO - Chain [1] done processing
+14:08:37 - cmdstanpy - INFO - Chain [4] done processing
+14:10:31 - cmdstanpy - INFO - Chain [3] done processing
+14:10:31 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Consider re-running with show_console=True if the above output is unclear!
+14:10:33 - cmdstanpy - WARNING - Some chains may have failed to converge.
+	Chain 4 had 1 divergent transitions (0.0%)
+	Use the "diagnose()" method on the CmdStanMCMC object to see further information.
+H4_full_age: max Rhat=1.0032, min bulk ESS=1657, min tail ESS=3325, divergences=1, max-depth hits=0, BFMI=0.673
+H4_full_age: max Rhat=1.00322; min bulk ESS=1656.8; min tail ESS=3325.1; divergences=1; max-depth hits=0; min BFMI=0.673

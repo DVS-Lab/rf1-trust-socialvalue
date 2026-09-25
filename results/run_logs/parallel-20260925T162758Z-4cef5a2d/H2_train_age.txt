@@ -1,0 +1,1 @@
+H2_train_age: max Rhat=1.0010, min bulk ESS=1497, min tail ESS=3280, divergences=0, max-depth hits=0, BFMI=0.848

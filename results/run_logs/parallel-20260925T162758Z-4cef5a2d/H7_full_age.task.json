@@ -1,0 +1,33 @@
+{
+  "run": "H7_full_age",
+  "model": "H7",
+  "training": false,
+  "age_terms": 1,
+  "bounded": false,
+  "prior_scale": 1,
+  "kind": "real_data",
+  "status": "complete",
+  "settings": {
+    "seed": 20260924,
+    "chains": 4,
+    "parallel_chains": 4,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.95,
+    "max_treedepth": 12,
+    "recovery_replicates": 5,
+    "recovery_starts": 100,
+    "metric": "diag_e"
+  },
+  "n_subjects": 111,
+  "last_diagnostic_passed": true,
+  "manifest": "work/hierarchical/H7_full_age/manifest.json",
+  "csv_files": [
+    "work/hierarchical/H7_full_age/hierarchical_fast-20260924093530_1.csv",
+    "work/hierarchical/H7_full_age/hierarchical_fast-20260924093530_2.csv",
+    "work/hierarchical/H7_full_age/hierarchical_fast-20260924093530_3.csv",
+    "work/hierarchical/H7_full_age/hierarchical_fast-20260924093530_4.csv"
+  ],
+  "fingerprint": "7f5ee30b1940bd61f24272e9a19412176d36c1765ee3d8dc6162dce186a5de08",
+  "cache_bytes": 199163783
+}
