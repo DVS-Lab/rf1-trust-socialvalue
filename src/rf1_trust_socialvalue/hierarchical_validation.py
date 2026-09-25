@@ -24,6 +24,9 @@ def recover(condition,replicate):
         synthetic[sub],_=simulate(a,'M5',dict(zip(names,truth[i])),ratings.get(sub,np.zeros(3)),rng)
     label=f'H5_recovery_{condition}_{replicate}'
     posterior,pm,_,_,_=sample('H5',override=synthetic,label=label)
+    from .sampling_retry import DiagnosticFailure
+    if not pd.read_csv(TABLE/f'diagnostics_{label}.csv').passed.all():
+        raise DiagnosticFailure(f'Recovery diagnostics failed: {label}')
     natural=posterior.stan_variable('natural');gaps,weights=offer_distribution(frames)
     folder=Path('work/hierarchical')/label;mle_file=folder/'mle.csv'
     if mle_file.exists():mle=pd.read_csv(mle_file)

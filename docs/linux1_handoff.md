@@ -1,6 +1,6 @@
 # Linux continuation checkpoint — 24 September 2026
 
-The laptop analysis is paused. This commit is a checkpoint, not the completed second-pass publication. Continue in:
+The laptop analysis processes were terminated at the user’s request; their completed disk caches remain available. This commit is a checkpoint, not the completed second-pass publication. Continue in:
 
 ```bash
 cd /ZPOOL/data/projects/rf1-trust-socialvalue
@@ -76,9 +76,9 @@ Launch the actual continuation through the site's normal scheduler or a persiste
 python -u scripts/15_resume_checkpoint.py --run --parallel-chains 2
 ```
 
-This command is guarded against running on macOS. It prepares optional copied caches, fits/reuses the real-data posteriors, regenerates missing recovery posteriors, finalizes posterior summaries/comparisons/traces, regenerates figures/report/gallery, and runs `13_validate_second_pass.py --hierarchical`. It stops rather than interpreting a real-data fit that still fails diagnostics. No automatic Git push occurs.
+This command is guarded against running on macOS. It prepares optional copied caches, fits/reuses the real-data posteriors, regenerates missing recovery posteriors, finalizes posterior summaries/comparisons/traces, regenerates figures/report/gallery, and runs `13_validate_second_pass.py --hierarchical`. A fit that still fails diagnostics is recorded as failed, and independent fits continue. Finalization stays blocked until every required fit passes. Operational errors still stop the runner. No automatic Git push occurs.
 
-Do not start the old `98_run_hierarchical.sh` from scratch merely to continue: it also repeats already-completed nonhierarchical analyses. Do not resume the paused laptop queues while Linux writes the replacement results.
+Do not start the old `98_run_hierarchical.sh` from scratch merely to continue: it also repeats already-completed nonhierarchical analyses. Do not start laptop fitting while Linux writes the replacement results.
 
 ## Final review and publication
 
@@ -90,3 +90,46 @@ Do not start the old `98_run_hierarchical.sh` from scratch merely to continue: i
 6. Replace the checkpoint notice with final status only after all required work is complete, update provenance, inspect staged files, commit and push directly to `origin/main` without force. Keep raw data, posterior chains and binaries out of Git.
 
 The requested final interpretation separates behavioral age moderation, computational age effects and mechanism. Theta=10 is inadequate as a scale solution; hierarchy alone does not establish reciprocation-specific social reward. Full 12-model recovery remains deliberately deferred because the raw-theta formulation is unresolved.
+
+
+## Linux failure on 25 September and restart
+
+Linux commit `fcef2ea` contains successful fresh full-data H2/H5/H8 fits. HPreference's .95 attempt narrowly missed precision thresholds (max R-hat 1.01015, minimum bulk ESS 399.762), with zero divergences and zero maximum-depth hits. The old automatic .99 retry hit maximum depth 3,635 times out of 8,000 retained draws. The runner then intentionally raised a diagnostic failure; this was not a demonstrated hardware or memory crash.
+
+The revised policy lengthens chains when only precision thresholds fail, preserving the integrator setting. `--retry-run HPreference_full_age` explicitly preserves the failed current cache and starts 3,000 warmup / 8,000 retained draws per chain at .95 from the geometry-clean attempt's settings. All four chains adapt from scratch; none of the old retained draws are mixed in. The posterior target, priors and acceptance thresholds are unchanged. This is a proposed sampler remedy, not a claim that the new fit already passes.
+
+On Linux, enter or create a persistent session:
+
+```bash
+tmux new-session -A -s rf1-trust
+```
+
+Then run this block inside tmux using the environment created earlier:
+
+```bash
+bash <<'BASH'
+set -euo pipefail
+cd /ZPOOL/data/projects/rf1-trust-socialvalue
+git pull --ff-only
+source .venv/bin/activate
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+export MPLCONFIGDIR="$PWD/work/matplotlib" MPLBACKEND=Agg
+python scripts/16_collect_run_logs.py
+python -u scripts/15_resume_checkpoint.py --run --parallel-chains 2 --retry-run HPreference_full_age
+BASH
+```
+
+Detach with Ctrl-b, then d; reconnect with `tmux attach -t rf1-trust`. Use `--retry-run` for this explicit restart only; ordinary later continuation uses the same command without that option. A passing cache cannot be replaced using this flag. Completed H2/H5/H8 posteriors are reused from the server's disk caches.
+
+Every new `--run` invocation now records combined stdout/stderr in `results/run_logs/<UTC-id>/console.txt` and the command, code revision, timestamps and exit code in `run.json`. While running, `results/linux_run_status.json` distinguishes pending/running/complete/diagnostic_failed/error runs. On normal exit or a caught error, sampler diagnostic text and manifest settings are also exported. Sudden machine termination can leave a run record marked running; inspect the process before treating that as a live job.
+
+The read-only collector imports the existing `work/logs/linux-resume-*.log` tails and CmdStan console/diagnostic text into Git-visible `.txt` files. Large imported logs are explicitly marked as truncated; complete originals remain under `work/`. Raw posterior CSVs and binaries remain excluded. Logs are not pushed automatically. After the job ends (whether successful or failed), publish the evidence with:
+
+```bash
+python scripts/16_collect_run_logs.py
+git add results
+git commit -m "Record Linux continuation results and run logs"
+git push origin main
+```
+
+The original `hierarchical_checkpoint.json` and `hierarchical_fit_status.csv` remain the dated laptop inventory, not the live Linux status. A final report must not be published while the live status records unresolved diagnostic failures.

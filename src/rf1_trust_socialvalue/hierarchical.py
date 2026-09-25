@@ -134,33 +134,16 @@ def _sample(model,training=False,age_terms=1,bounded=False,independent=False,ove
         saved=dict(fingerprint=fingerprint,csv_files=fit.runset.csv_files,seconds=time.time()-start,settings=cfg,meta=meta,implementation='exact_analytic_gradient',implementation_sha256=hashlib.sha256(Path('stan/rl_fast.hpp').read_bytes()+Path('stan/hierarchical_fast.stan').read_bytes()).hexdigest())
         manifest.write_text(json.dumps(saved,indent=2)+'\n')
     diag=diagnostics(fit,name,meta,cfg)
-    if not diag.passed.all() and cfg['adapt_delta']<.99:
-        archive=folder.with_name(name+'_attempt95')
-        if archive.exists():raise RuntimeError(f'Cannot overwrite archived attempt: {archive}')
-        folder.rename(archive)
-        saved['csv_files']=[str((archive/Path(f).relative_to(folder.resolve())).resolve()) for f in saved['csv_files']]
-        (archive/'manifest.json').write_text(json.dumps(saved,indent=2)+'\n')
-        diag['run']=name+'_attempt95';diag.to_csv(TABLE/f'diagnostics_{name}_attempt95.csv',index=False)
-        retry=dict(cfg,adapt_delta=.99)
-        return sample(model,training,age_terms,bounded,independent,override,name,prior_scale,retry)
-    if not diag.passed.all() and cfg['adapt_delta']>=.99 and cfg['draws']<8000 and diag.divergences.max()==0 and diag.max_depth_hits.max()==0 and diag.min_bfmi.min()>.3:
-        archive=folder.with_name(name+'_attempt99_short')
-        if archive.exists():raise RuntimeError(f'Cannot overwrite archived attempt: {archive}')
-        folder.rename(archive)
-        saved['csv_files']=[str((archive/Path(f).relative_to(folder.resolve())).resolve()) for f in saved['csv_files']]
-        (archive/'manifest.json').write_text(json.dumps(saved,indent=2)+'\n')
-        diag['run']=name+'_attempt99_short';diag.to_csv(TABLE/f'diagnostics_{name}_attempt99_short.csv',index=False)
-        retry=dict(cfg,warmup=3000,draws=8000)
-        return sample(model,training,age_terms,bounded,independent,override,name,prior_scale,retry)
-    if not diag.passed.all() and cfg['adapt_delta']>=.99 and cfg['draws']==8000 and diag.divergences.max()==0 and diag.max_depth_hits.max()==0 and diag.min_bfmi.min()>.3:
-        archive=folder.with_name(name+'_attempt99_8000')
-        if archive.exists():raise RuntimeError(f'Cannot overwrite archived attempt: {archive}')
-        folder.rename(archive)
-        saved['csv_files']=[str((archive/Path(f).relative_to(folder.resolve())).resolve()) for f in saved['csv_files']]
-        (archive/'manifest.json').write_text(json.dumps(saved,indent=2)+'\n')
-        diag['run']=name+'_attempt99_8000';diag.to_csv(TABLE/f'diagnostics_{name}_attempt99_8000.csv',index=False)
-        retry=dict(cfg,warmup=3000,draws=16000)
-        return sample(model,training,age_terms,bounded,independent,override,name,prior_scale,retry)
+    from .sampling_retry import retry_settings,archive_fit
+    retry=retry_settings(cfg,passed=bool(diag.passed.all()),divergences=diag.divergences.max(),
+                         max_depth_hits=diag.max_depth_hits.max(),min_bfmi=diag.min_bfmi.min())
+    if retry is not None:
+        reason,settings=retry
+        suffix=f"_attempt{round(cfg['adapt_delta']*100)}_{reason}"
+        archive=archive_fit(folder,saved,suffix)
+        diag['run']=archive.name;diag.to_csv(TABLE/f'diagnostics_{archive.name}.csv',index=False)
+        print(f'{name}: retry {reason}, settings={settings}',flush=True)
+        return sample(model,training,age_terms,bounded,independent,override,name,prior_scale,settings)
     return fit,meta,arrays,ratings,frames
 
 
@@ -180,7 +163,7 @@ def diagnostics(fit,name,meta,cfg):
     summary['passed']=(summary.R_hat<1.01)&(summary.ESS_bulk>=400)&(summary.ESS_tail>=400)&(div==0)&(bfmi.min()>.3)&(depth==0)
     summary.to_csv(TABLE/f'diagnostics_{name}.csv',index=False)
     (WORK/name/'diagnose.txt').write_text(fit.diagnose())
-    print(f'{name}: max Rhat={summary.R_hat.max():.4f}, min bulk ESS={summary.ESS_bulk.min():.0f}, divergences={div}, BFMI={bfmi.min():.3f}',flush=True)
+    print(f'{name}: max Rhat={summary.R_hat.max():.4f}, min bulk ESS={summary.ESS_bulk.min():.0f}, min tail ESS={summary.ESS_tail.min():.0f}, divergences={div}, max-depth hits={depth}, BFMI={bfmi.min():.3f}',flush=True)
     return summary
 
 
