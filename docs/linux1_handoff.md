@@ -199,3 +199,42 @@ BASH
 ```
 
 This allows the three remaining sampling jobs to use up to twelve CPUs together. More chains or CPUs do not accelerate an individual single-threaded chain. Detach with Ctrl-b then d. Finalization runs only if all 34 fits pass; otherwise the run records the remaining failures. After either outcome, commit and push `results` as described above.
+
+
+## Audit instead of another retry — latest results add7e92
+
+The targeted retry resolved HPreference training no-age; 32/34 fits now pass. H4 full age retains one divergence in 16,000 draws, and H5 training age retains one in 64,000 draws. Both pass all other checked diagnostics. Do not increase adapt_delta again or restart these fits simply to seek a zero count. The next step is an audit of the **current** cached states, distinct from the earlier .99 baseline exported by the previous retry command.
+
+The new audit reads chains without modifying them. It may compile the existing reference Stan implementation if its executable is absent; it calls `log_prob` at saved states, never `sample`. It exports population locations and traces, chain step sizes/BFMI/depth counts, attempt-to-attempt posterior shifts, and reference versus custom analytic-gradient checks at each flagged state and its preceding saved draw. Ordinary CSVs do not contain the intermediate trajectory point where the numerical divergence occurred, so passing these checks cannot prove the divergent transition harmless. Further interpretation depends on the resulting evidence.
+
+Enter the existing tmux session:
+
+```bash
+tmux new-session -A -s rf1-parallel
+```
+
+Inside it:
+
+```bash
+bash <<'BASH'
+set -euo pipefail
+cd /ZPOOL/data/projects/rf1-trust-socialvalue
+git pull --ff-only
+source .venv/bin/activate
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+export MPLCONFIGDIR="$PWD/work/matplotlib" MPLBACKEND=Agg
+python -u scripts/18_audit_remaining.py
+BASH
+```
+
+There is no MCMC workload in this command. Detach with Ctrl-b then d if needed. It writes `results/diagnostic_review/` and a tracked console log under `results/run_logs/`. After it finishes, push those outputs (including logs if a check fails):
+
+```bash
+git add results/diagnostic_review results/run_logs
+git commit -m "Audit remaining divergent fits without resampling"
+git push origin main
+```
+
+The audit refuses active fit locks or a changed model/input fingerprint. Unit/integration tests exercise CSV boundaries, parameter reconstruction, matrix orientation, attempt comparison, and a fake-Stan end-to-end run that forbids MCMC and checks original cache bytes remain unchanged. The actual current-state gradient parity and posterior geometry still need evaluation on Linux.
+
+The parallel runner now reports diagnostic-only blockage with a clear summary and exit code 2, without presenting it as an operational traceback. Worker/program errors still retain tracebacks and nonzero exit records. This changes presentation only; finalization criteria are unchanged.

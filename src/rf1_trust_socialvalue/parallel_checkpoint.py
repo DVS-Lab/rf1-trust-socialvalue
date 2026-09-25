@@ -136,7 +136,11 @@ def main():
         failed=[name for name,value in state['runs'].items() if value['status']!='complete']
         if failed:
             state.update(status='incomplete',finished_at=now());write_json(status_path,state)
-            raise RuntimeError('Finalization blocked; inspect per-fit logs for: '+', '.join(failed))
+            print('Sampling queue finished. Finalization blocked by: '+', '.join(failed),flush=True)
+            if all(v['status'] in ('complete','diagnostic_failed') for v in state['runs'].values()):
+                print('These are diagnostic failures, not worker crashes. Review saved evidence before further retries.',flush=True)
+                raise SystemExit(2)
+            raise RuntimeError('Operational worker errors remain; inspect per-fit logs')
         state['status']='finalizing';write_json(status_path,state)
         try:
             from .hierarchical_finish import finish
