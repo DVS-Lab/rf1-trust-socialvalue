@@ -133,3 +133,36 @@ git push origin main
 ```
 
 The original `hierarchical_checkpoint.json` and `hierarchical_fit_status.csv` remain the dated laptop inventory, not the live Linux status. A final report must not be published while the live status records unresolved diagnostic failures.
+
+
+## Using the 48-CPU / 125-GiB Linux server
+
+The sequential runner used two simultaneous chains. The parallel continuation instead runs **eight independent fits, four chains each**, for up to 32 sampling CPUs. Recovery MLE work also uses at most four workers per fit after sampling. BLAS/OpenMP threads stay at one. Each fit writes only its own tables and console log; shared aggregation, figures and final reporting run serially after all workers finish. Existing cached posteriors are reused; their CPU scheduling settings are not treated as a change in the scientific target. New manifests record actual concurrency separately under `execution`.
+
+The user-reported status before this change showed seven completed fits (including HPreference), H4 diagnostic failure, and H5's broader-prior fit still running. Do not interrupt that active fit by hand. In a **second Linux login**, open a separate tmux session:
+
+```bash
+tmux new -s rf1-parallel
+```
+
+Inside it, paste:
+
+```bash
+bash <<'BASH'
+set -euo pipefail
+cd /ZPOOL/data/projects/rf1-trust-socialvalue
+git pull --ff-only
+source .venv/bin/activate
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+export MPLCONFIGDIR="$PWD/work/matplotlib" MPLBACKEND=Agg
+python -u scripts/17_parallel_checkpoint.py --run --jobs 8 --parallel-chains 4 --take-over-after-current
+BASH
+```
+
+Detach with Ctrl-b then d; reconnect using `tmux attach -t rf1-parallel`.
+
+The handoff locates only the same user's sequential checkpoint worker in this exact checkout, using `/proc` process identity and command checks. It waits until the currently active fit's status is `complete` or `diagnostic_failed`, then terminates the old coordinator and its descendants. The old console may consequently show a termination/nonzero exit; the new log records the intentional handoff. Completed files remain on disk. With two-second polling, the following fit may start briefly before handoff detects the boundary; only that just-started work may need repeating. The helper waits for the old logging wrapper to finish exporting before it starts parallel workers. It refuses ambiguous multiple coordinators or live fit locks. Never launch a second sequential runner during handoff.
+
+No change is made to priors, chain count, draws, acceptance thresholds or Stan likelihood. H4's reported failure remains unresolved and can block final reporting even when all other fits finish. Parallelism does not itself repair a problematic posterior. Passing fits are summarized again from cache; failed fits remain subject to the existing bounded retry policy.
+
+`results/linux_run_status.json` records parallel worker state. Per-fit console files live under `results/run_logs/parallel-*/`; the outer console, exit status and diagnostic exports are also retained under `results/run_logs/`. Push the entire `results` directory after the run ends as shown above. The parallel runner was tested locally with mocked fit workers and handoff identity/state checks; actual throughput and memory usage must be observed on Linux.

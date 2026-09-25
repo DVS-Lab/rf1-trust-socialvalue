@@ -76,7 +76,7 @@ def finish():
             if model=='H5':ident+=identifiability(fit,meta,frames,name)
         manifest=json.loads((WORK/name/'manifest.json').read_text())
         provenance.append(dict(run=name,input_model_settings_sha256=manifest['fingerprint'],seconds=manifest['seconds'],
-                               settings=manifest['settings'],n_subjects=len(meta['ids']),n_fitted_trials=meta['n_trials'],training_only=meta['training'],
+                               settings=manifest['settings'],execution=manifest.get('execution',{'parallel_chains':manifest['settings']['parallel_chains']}),n_subjects=len(meta['ids']),n_fitted_trials=meta['n_trials'],training_only=meta['training'],
                                seconds_scope=manifest.get('seconds_scope','Wall time for the final sampling attempt, including warmup'),
                                likelihood_implementation=manifest.get('implementation','Stan reference autodiff'),
                                implementation_sha256=manifest.get('implementation_sha256'),
@@ -94,7 +94,7 @@ def finish():
             meta=manifest['meta'];diagnostics(fit,name,meta,manifest['settings'])
             if name==worst:trace_figure(fit,'H5',name)
             provenance.append(dict(run=name,input_model_settings_sha256=manifest['fingerprint'],seconds=manifest['seconds'],
-                settings=manifest['settings'],n_subjects=len(meta['ids']),n_fitted_trials=meta['n_trials'],training_only=False,
+                settings=manifest['settings'],execution=manifest.get('execution',{'parallel_chains':manifest['settings']['parallel_chains']}),n_subjects=len(meta['ids']),n_fitted_trials=meta['n_trials'],training_only=False,
                 likelihood_implementation=manifest.get('implementation','Stan reference autodiff'),
                 implementation_sha256=manifest.get('implementation_sha256'),sampling_segments=None))
     pd.DataFrame(ident).to_csv(TABLE/'hierarchical_identifiability.csv',index=False)

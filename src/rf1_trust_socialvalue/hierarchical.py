@@ -125,13 +125,15 @@ def _sample(model,training=False,age_terms=1,bounded=False,independent=False,ove
         if saved['fingerprint']!=fingerprint:raise RuntimeError(f'Stale chain cache: {name}; archive/remove before refitting')
         fit=load_chains(saved['csv_files'])
     else:
+        from .parallel_checkpoint import execution_chains
+        parallel=execution_chains(cfg)
         sm=stan_model();start=time.time()
-        fit=sm.sample(data=data,chains=cfg['chains'],parallel_chains=cfg['parallel_chains'],
+        fit=sm.sample(data=data,chains=cfg['chains'],parallel_chains=parallel,
                       iter_warmup=cfg['warmup'],iter_sampling=cfg['draws'],seed=stable_seed(cfg['seed'],name),
                       adapt_delta=cfg['adapt_delta'],max_treedepth=cfg['max_treedepth'],metric=cfg.get('metric','diag_e'),
                       output_dir=str(folder.resolve()),show_progress=False,show_console=False,refresh=200,
                       sig_figs=10,inits=.15)
-        saved=dict(fingerprint=fingerprint,csv_files=fit.runset.csv_files,seconds=time.time()-start,settings=cfg,meta=meta,implementation='exact_analytic_gradient',implementation_sha256=hashlib.sha256(Path('stan/rl_fast.hpp').read_bytes()+Path('stan/hierarchical_fast.stan').read_bytes()).hexdigest())
+        saved=dict(fingerprint=fingerprint,csv_files=fit.runset.csv_files,seconds=time.time()-start,settings=cfg,execution={'parallel_chains':parallel},meta=meta,implementation='exact_analytic_gradient',implementation_sha256=hashlib.sha256(Path('stan/rl_fast.hpp').read_bytes()+Path('stan/hierarchical_fast.stan').read_bytes()).hexdigest())
         manifest.write_text(json.dumps(saved,indent=2)+'\n')
     diag=diagnostics(fit,name,meta,cfg)
     from .sampling_retry import retry_settings,archive_fit

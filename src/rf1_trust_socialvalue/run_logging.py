@@ -25,7 +25,7 @@ def collect_artifacts(root,destination):
         if manifest.exists():
             saved=json.loads(manifest.read_text())
             # A portable record, not a resumable cache or a copy of the raw draws.
-            record={k:saved[k] for k in ('fingerprint','settings','seconds','implementation','implementation_sha256') if k in saved}
+            record={k:saved[k] for k in ('fingerprint','settings','execution','seconds','implementation','implementation_sha256') if k in saved}
             record['posterior_files']=[Path(f).name for f in saved.get('csv_files',[])]
             target=destination/'sampler'/folder.name/'manifest_summary.json'
             target.parent.mkdir(parents=True,exist_ok=True)
