@@ -1,0 +1,22 @@
+11:35:18 - cmdstanpy - INFO - CmdStan start processing
+11:35:18 - cmdstanpy - INFO - Chain [1] start processing
+11:35:18 - cmdstanpy - INFO - Chain [2] start processing
+11:35:18 - cmdstanpy - INFO - Chain [3] start processing
+11:35:18 - cmdstanpy - INFO - Chain [4] start processing
+11:37:47 - cmdstanpy - INFO - Chain [4] done processing
+11:37:49 - cmdstanpy - INFO - Chain [2] done processing
+11:37:58 - cmdstanpy - INFO - Chain [3] done processing
+11:38:04 - cmdstanpy - INFO - Chain [1] done processing
+11:38:04 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Consider re-running with show_console=True if the above output is unclear!
+H5_recovery_positive_2: max Rhat=1.0022, min bulk ESS=643, min tail ESS=1072, divergences=0, max-depth hits=0, BFMI=0.715
+[Parallel(n_jobs=4)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=4)]: Done  10 tasks      | elapsed:    3.8s
+[Parallel(n_jobs=4)]: Done  64 tasks      | elapsed:   12.4s
+[Parallel(n_jobs=4)]: Done 111 out of 111 | elapsed:   20.1s finished

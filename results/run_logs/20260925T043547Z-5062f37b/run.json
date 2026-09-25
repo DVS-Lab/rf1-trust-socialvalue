@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-09-25T04:35:47.750200+00:00",
+  "command": [
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/.venv/bin/python",
+    "-u",
+    "-c",
+    "from rf1_trust_socialvalue.checkpoint_handoff import main; main()",
+    "--run",
+    "--parallel-chains",
+    "2",
+    "--retry-run",
+    "HPreference_full_age"
+  ],
+  "git_commit": "b7a46eddcf6e0afe01ee86a3cf02d50e6652ed97",
+  "platform": "Linux-6.17.0-23-generic-x86_64-with-glibc2.39",
+  "status": "failed",
+  "exit_code": -15,
+  "finished_at": "2026-09-25T15:07:16.083327+00:00"
+}

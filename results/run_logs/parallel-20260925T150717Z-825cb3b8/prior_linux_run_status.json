@@ -1,0 +1,128 @@
+{
+  "started_at": "2026-09-25T04:35:50.418935+00:00",
+  "status": "running",
+  "runs": {
+    "H2_full_age": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T04:37:42.353468+00:00"
+    },
+    "H5_full_age": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T04:40:12.831117+00:00"
+    },
+    "H8_full_age": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T04:42:42.794980+00:00"
+    },
+    "HPreference_full_age": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T08:24:25.922260+00:00"
+    },
+    "H7_full_age": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T09:55:23.599418+00:00"
+    },
+    "H4_full_age": {
+      "status": "diagnostic_failed",
+      "error": "Diagnostic thresholds fail: max Rhat=1.00258, min bulk ESS=958.5, min tail ESS=1600.8, divergences=1, max-depth hits=0, min BFMI=0.650",
+      "updated_at": "2026-09-25T11:26:04.661963+00:00"
+    },
+    "H5_full_age_bounded": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T12:51:17.075902+00:00"
+    },
+    "H5_full_quadratic": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T13:11:29.341383+00:00"
+    },
+    "H5_full_age_prior1.5": {
+      "status": "complete",
+      "error": null,
+      "updated_at": "2026-09-25T15:07:15.217523+00:00"
+    },
+    "H2_train_age": {
+      "status": "running",
+      "error": null,
+      "updated_at": "2026-09-25T15:07:15.218012+00:00"
+    },
+    "H2_train_noage": {
+      "status": "pending"
+    },
+    "H5_train_age": {
+      "status": "pending"
+    },
+    "H5_train_noage": {
+      "status": "pending"
+    },
+    "H8_train_age": {
+      "status": "pending"
+    },
+    "H8_train_noage": {
+      "status": "pending"
+    },
+    "HPreference_train_age": {
+      "status": "pending"
+    },
+    "HPreference_train_noage": {
+      "status": "pending"
+    },
+    "H7_train_age": {
+      "status": "pending"
+    },
+    "H7_train_noage": {
+      "status": "pending"
+    },
+    "H5_recovery_zero_0": {
+      "status": "pending"
+    },
+    "H5_recovery_zero_1": {
+      "status": "pending"
+    },
+    "H5_recovery_zero_2": {
+      "status": "pending"
+    },
+    "H5_recovery_zero_3": {
+      "status": "pending"
+    },
+    "H5_recovery_zero_4": {
+      "status": "pending"
+    },
+    "H5_recovery_positive_0": {
+      "status": "pending"
+    },
+    "H5_recovery_positive_1": {
+      "status": "pending"
+    },
+    "H5_recovery_positive_2": {
+      "status": "pending"
+    },
+    "H5_recovery_positive_3": {
+      "status": "pending"
+    },
+    "H5_recovery_positive_4": {
+      "status": "pending"
+    },
+    "H5_recovery_negative_0": {
+      "status": "pending"
+    },
+    "H5_recovery_negative_1": {
+      "status": "pending"
+    },
+    "H5_recovery_negative_2": {
+      "status": "pending"
+    },
+    "H5_recovery_negative_3": {
+      "status": "pending"
+    },
+    "H5_recovery_negative_4": {
+      "status": "pending"
+    }
+  }
+}

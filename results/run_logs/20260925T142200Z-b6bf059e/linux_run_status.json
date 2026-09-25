@@ -1,0 +1,213 @@
+{
+  "status": "incomplete",
+  "started_at": "2026-09-25T15:07:17.508583+00:00",
+  "jobs": 8,
+  "parallel_chains": 4,
+  "runs": {
+    "H2_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H2_full_age.txt",
+      "updated_at": "2026-09-25T15:09:37.841512+00:00"
+    },
+    "H5_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_full_age.txt",
+      "updated_at": "2026-09-25T15:10:25.798585+00:00"
+    },
+    "H8_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H8_full_age.txt",
+      "updated_at": "2026-09-25T15:10:26.294565+00:00"
+    },
+    "HPreference_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/HPreference_full_age.txt",
+      "updated_at": "2026-09-25T15:11:27.246477+00:00"
+    },
+    "H7_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H7_full_age.txt",
+      "updated_at": "2026-09-25T15:11:19.558207+00:00"
+    },
+    "H4_full_age": {
+      "status": "diagnostic_failed",
+      "exit_code": 2,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H4_full_age.txt",
+      "updated_at": "2026-09-25T15:08:02.228556+00:00"
+    },
+    "H5_full_age_bounded": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_full_age_bounded.txt",
+      "updated_at": "2026-09-25T15:10:28.901330+00:00"
+    },
+    "H5_full_quadratic": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_full_quadratic.txt",
+      "updated_at": "2026-09-25T15:08:32.899835+00:00"
+    },
+    "H5_full_age_prior1.5": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_full_age_prior1.5.txt",
+      "updated_at": "2026-09-25T15:11:14.226441+00:00"
+    },
+    "H2_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H2_train_age.txt",
+      "updated_at": "2026-09-25T15:23:28.222305+00:00"
+    },
+    "H2_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H2_train_noage.txt",
+      "updated_at": "2026-09-25T15:12:28.014773+00:00"
+    },
+    "H5_train_age": {
+      "status": "diagnostic_failed",
+      "exit_code": 2,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_train_age.txt",
+      "updated_at": "2026-09-25T16:15:14.496798+00:00"
+    },
+    "H5_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_train_noage.txt",
+      "updated_at": "2026-09-25T16:06:56.451592+00:00"
+    },
+    "H8_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H8_train_age.txt",
+      "updated_at": "2026-09-25T15:14:25.214211+00:00"
+    },
+    "H8_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H8_train_noage.txt",
+      "updated_at": "2026-09-25T15:15:06.764826+00:00"
+    },
+    "HPreference_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/HPreference_train_age.txt",
+      "updated_at": "2026-09-25T15:48:42.561785+00:00"
+    },
+    "HPreference_train_noage": {
+      "status": "diagnostic_failed",
+      "exit_code": 2,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/HPreference_train_noage.txt",
+      "updated_at": "2026-09-25T15:43:36.750348+00:00"
+    },
+    "H7_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H7_train_age.txt",
+      "updated_at": "2026-09-25T15:46:21.735165+00:00"
+    },
+    "H7_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H7_train_noage.txt",
+      "updated_at": "2026-09-25T16:04:21.568446+00:00"
+    },
+    "H5_recovery_zero_0": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_zero_0.txt",
+      "updated_at": "2026-09-25T15:20:43.443318+00:00"
+    },
+    "H5_recovery_zero_1": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_zero_1.txt",
+      "updated_at": "2026-09-25T15:24:14.201822+00:00"
+    },
+    "H5_recovery_zero_2": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_zero_2.txt",
+      "updated_at": "2026-09-25T15:27:29.483160+00:00"
+    },
+    "H5_recovery_zero_3": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_zero_3.txt",
+      "updated_at": "2026-09-25T15:30:26.854692+00:00"
+    },
+    "H5_recovery_zero_4": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_zero_4.txt",
+      "updated_at": "2026-09-25T15:33:16.186077+00:00"
+    },
+    "H5_recovery_positive_0": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_positive_0.txt",
+      "updated_at": "2026-09-25T15:35:16.004826+00:00"
+    },
+    "H5_recovery_positive_1": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_positive_1.txt",
+      "updated_at": "2026-09-25T15:37:27.333106+00:00"
+    },
+    "H5_recovery_positive_2": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_positive_2.txt",
+      "updated_at": "2026-09-25T15:39:07.677872+00:00"
+    },
+    "H5_recovery_positive_3": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_positive_3.txt",
+      "updated_at": "2026-09-25T15:41:40.384202+00:00"
+    },
+    "H5_recovery_positive_4": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_positive_4.txt",
+      "updated_at": "2026-09-25T15:42:37.418987+00:00"
+    },
+    "H5_recovery_negative_0": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_negative_0.txt",
+      "updated_at": "2026-09-25T15:46:04.178098+00:00"
+    },
+    "H5_recovery_negative_1": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_negative_1.txt",
+      "updated_at": "2026-09-25T15:46:00.127340+00:00"
+    },
+    "H5_recovery_negative_2": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_negative_2.txt",
+      "updated_at": "2026-09-25T15:47:02.997517+00:00"
+    },
+    "H5_recovery_negative_3": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_negative_3.txt",
+      "updated_at": "2026-09-25T15:49:54.163440+00:00"
+    },
+    "H5_recovery_negative_4": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T150717Z-825cb3b8/H5_recovery_negative_4.txt",
+      "updated_at": "2026-09-25T15:49:53.392699+00:00"
+    }
+  },
+  "finished_at": "2026-09-25T16:15:15.306079+00:00"
+}

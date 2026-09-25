@@ -1,0 +1,10 @@
+{
+  "at": "2026-09-25T15:07:16.542004+00:00",
+  "waited_for": "H5_full_age_prior1.5",
+  "stopped_process_ids": [
+    3113840,
+    3113841,
+    2760589
+  ],
+  "note": "Stopped after saved completion of the active fit; a following fit may have started briefly before polling detected the boundary."
+}

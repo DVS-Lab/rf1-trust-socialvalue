@@ -1,0 +1,5 @@
+11:07:20 - cmdstanpy - WARNING - Some chains may have failed to converge.
+	Chain 2 had 1 divergent transitions (0.1%)
+	Use the "diagnose()" method on the CmdStanMCMC object to see further information.
+H4_full_age: max Rhat=1.0026, min bulk ESS=959, min tail ESS=1601, divergences=1, max-depth hits=0, BFMI=0.650
+H4_full_age: max Rhat=1.00258; min bulk ESS=958.5; min tail ESS=1600.8; divergences=1; max-depth hits=0; min BFMI=0.650

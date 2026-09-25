@@ -1,0 +1,1 @@
+H5_full_age_prior1.5: max Rhat=1.0032, min bulk ESS=1643, min tail ESS=3489, divergences=0, max-depth hits=0, BFMI=0.696

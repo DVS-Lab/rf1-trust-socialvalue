@@ -1,0 +1,77 @@
+Waiting for H5_full_age_prior1.5 to finish; current chains stay running.
+H5_full_age_prior1.5 reached its saved fit boundary; old coordinator stopped.
+H2_full_age: running
+H5_full_age: running
+H8_full_age: running
+HPreference_full_age: running
+H7_full_age: running
+H4_full_age: running
+H5_full_age_bounded: running
+H5_full_quadratic: running
+H5_full_age_prior1.5: running
+H4_full_age: diagnostic_failed
+H2_train_age: running
+H5_full_quadratic: complete
+H2_train_noage: running
+H2_full_age: complete
+H5_train_age: running
+H5_full_age: complete
+H5_train_noage: running
+H8_full_age: complete
+H8_train_age: running
+H5_full_age_bounded: complete
+H8_train_noage: running
+H5_full_age_prior1.5: complete
+HPreference_train_age: running
+H7_full_age: complete
+HPreference_train_noage: running
+HPreference_full_age: complete
+H7_train_age: running
+H2_train_noage: complete
+H7_train_noage: running
+H8_train_age: complete
+H5_recovery_zero_0: running
+H8_train_noage: complete
+H5_recovery_zero_1: running
+H5_recovery_zero_0: complete
+H5_recovery_zero_2: running
+H2_train_age: complete
+H5_recovery_zero_3: running
+H5_recovery_zero_1: complete
+H5_recovery_zero_4: running
+H5_recovery_zero_2: complete
+H5_recovery_positive_0: running
+H5_recovery_zero_3: complete
+H5_recovery_positive_1: running
+H5_recovery_zero_4: complete
+H5_recovery_positive_2: running
+H5_recovery_positive_0: complete
+H5_recovery_positive_3: running
+H5_recovery_positive_1: complete
+H5_recovery_positive_4: running
+H5_recovery_positive_2: complete
+H5_recovery_negative_0: running
+H5_recovery_positive_3: complete
+H5_recovery_negative_1: running
+H5_recovery_positive_4: complete
+H5_recovery_negative_2: running
+HPreference_train_noage: diagnostic_failed
+H5_recovery_negative_3: running
+H5_recovery_negative_1: complete
+H5_recovery_negative_4: running
+H5_recovery_negative_0: complete
+H7_train_age: complete
+H5_recovery_negative_2: complete
+HPreference_train_age: complete
+H5_recovery_negative_4: complete
+H5_recovery_negative_3: complete
+H7_train_noage: complete
+H5_train_noage: complete
+H5_train_age: diagnostic_failed
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    from rf1_trust_socialvalue.parallel_checkpoint import main; main()
+                                                                ~~~~^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/parallel_checkpoint.py", line 123, in main
+    raise RuntimeError('Finalization blocked; inspect per-fit logs for: '+', '.join(failed))
+RuntimeError: Finalization blocked; inspect per-fit logs for: H4_full_age, H5_train_age, HPreference_train_noage

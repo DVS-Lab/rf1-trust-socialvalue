@@ -1,0 +1,1 @@
+HPreference_full_age: max Rhat=1.0015, min bulk ESS=1940, min tail ESS=4295, divergences=0, max-depth hits=0, BFMI=0.650

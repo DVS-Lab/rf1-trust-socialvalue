@@ -1,0 +1,1 @@
+H5_full_quadratic: max Rhat=1.0066, min bulk ESS=497, min tail ESS=1132, divergences=0, max-depth hits=0, BFMI=0.669

@@ -1,0 +1,57 @@
+11:14:27 - cmdstanpy - INFO - CmdStan start processing
+11:14:27 - cmdstanpy - INFO - Chain [1] start processing
+11:14:27 - cmdstanpy - INFO - Chain [2] start processing
+11:14:27 - cmdstanpy - INFO - Chain [3] start processing
+11:14:27 - cmdstanpy - INFO - Chain [4] start processing
+11:20:04 - cmdstanpy - INFO - Chain [4] done processing
+11:20:53 - cmdstanpy - INFO - Chain [1] done processing
+11:20:55 - cmdstanpy - INFO - Chain [2] done processing
+11:23:10 - cmdstanpy - INFO - Chain [3] done processing
+11:23:10 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Consider re-running with show_console=True if the above output is unclear!
+11:23:12 - cmdstanpy - WARNING - Some chains may have failed to converge.
+	Chain 1 had 1 divergent transitions (0.1%)
+	Use the "diagnose()" method on the CmdStanMCMC object to see further information.
+H7_train_noage: max Rhat=1.0138, min bulk ESS=350, min tail ESS=841, divergences=1, max-depth hits=0, BFMI=0.696
+H7_train_noage: retry delta, settings={'seed': 20260924, 'chains': 4, 'parallel_chains': 2, 'warmup': 2000, 'draws': 2000, 'adapt_delta': 0.99, 'max_treedepth': 12, 'recovery_replicates': 5, 'recovery_starts': 100, 'metric': 'diag_e'}
+11:24:00 - cmdstanpy - INFO - CmdStan start processing
+11:24:00 - cmdstanpy - INFO - Chain [1] start processing
+11:24:00 - cmdstanpy - INFO - Chain [2] start processing
+11:24:00 - cmdstanpy - INFO - Chain [3] start processing
+11:24:00 - cmdstanpy - INFO - Chain [4] start processing
+11:33:59 - cmdstanpy - INFO - Chain [1] done processing
+11:34:37 - cmdstanpy - INFO - Chain [2] done processing
+11:34:52 - cmdstanpy - INFO - Chain [3] done processing
+11:34:54 - cmdstanpy - INFO - Chain [4] done processing
+11:34:54 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[4] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Consider re-running with show_console=True if the above output is unclear!
+H7_train_noage: max Rhat=1.0138, min bulk ESS=377, min tail ESS=508, divergences=0, max-depth hits=0, BFMI=0.718
+H7_train_noage: retry short, settings={'seed': 20260924, 'chains': 4, 'parallel_chains': 2, 'warmup': 3000, 'draws': 8000, 'adapt_delta': 0.99, 'max_treedepth': 12, 'recovery_replicates': 5, 'recovery_starts': 100, 'metric': 'diag_e'}
+11:35:44 - cmdstanpy - INFO - CmdStan start processing
+11:35:44 - cmdstanpy - INFO - Chain [1] start processing
+11:35:44 - cmdstanpy - INFO - Chain [2] start processing
+11:35:44 - cmdstanpy - INFO - Chain [3] start processing
+11:35:44 - cmdstanpy - INFO - Chain [4] start processing
+11:58:31 - cmdstanpy - INFO - Chain [2] done processing
+11:58:36 - cmdstanpy - INFO - Chain [1] done processing
+11:58:57 - cmdstanpy - INFO - Chain [3] done processing
+11:59:59 - cmdstanpy - INFO - Chain [4] done processing
+11:59:59 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[4] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+Consider re-running with show_console=True if the above output is unclear!
+H7_train_noage: max Rhat=1.0021, min bulk ESS=1325, min tail ESS=1415, divergences=0, max-depth hits=0, BFMI=0.702
