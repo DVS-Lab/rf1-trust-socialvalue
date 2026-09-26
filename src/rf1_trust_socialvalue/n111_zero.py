@@ -174,10 +174,11 @@ def diagnostic(fit, name, cfg):
     return d, diagnostic_pass(d)
 
 
-def fit_entry(entry, parallel_chains):
+def fit_entry(entry, parallel_chains, cfg=None):
     if platform.system() != 'Linux':
         raise RuntimeError('New posterior sampling is permitted only on linux1')
-    cfg = settings(); name = entry['name']; data, meta, arrays = model_data(entry['model'], entry['zero'], entry['training'])
+    cfg = settings() if cfg is None else dict(cfg)
+    name = entry['name']; data, meta, arrays = model_data(entry['model'], entry['zero'], entry['training'])
     folder = WORK/'fits'/name; folder.mkdir(parents=True, exist_ok=True)
     manifest = folder/'manifest.json'
     fingerprint = hashlib.sha256((json.dumps(data, sort_keys=True)+json.dumps(cfg, sort_keys=True)+implementation_hash()).encode()).hexdigest()
@@ -192,7 +193,7 @@ def fit_entry(entry, parallel_chains):
             if list(folder.glob('*.csv')):
                 raise RuntimeError(f'Incomplete posterior files in {folder}; inspect before an explicit restart')
             fit = fast.sample(data=data, chains=cfg['chains'], parallel_chains=parallel_chains,
-                iter_warmup=cfg['warmup'], iter_sampling=cfg['draws'], seed=stable_seed(cfg['seed'], name),
+                iter_warmup=cfg['warmup'], iter_sampling=cfg['draws'], seed=stable_seed(cfg['seed'], entry.get('seed_name', name)),
                 adapt_delta=cfg['adapt_delta'], max_treedepth=cfg['max_treedepth'], metric=cfg['metric'],
                 output_dir=str(folder.resolve()), inits=.15, sig_figs=10, refresh=200, show_progress=False, show_console=False)
             saved = dict(fingerprint=fingerprint, settings=cfg, meta=meta, entry=entry, implementation_sha256=implementation_hash(),
@@ -328,16 +329,25 @@ def gate_stage_a():
         raise RuntimeError('Zero-option experiment is not enabled')
 
 
-def collect_results(states):
+def collect_results(states, source_runs=None):
     from .accepted_review import diagnostic_pass, table
+    source_runs = source_runs or {}
+    allowed = {'N111_HPreference_zero_full': 'N111_HPreference_zero_full_depth14'}
+    if any(allowed.get(k) != v for k, v in source_runs.items()):
+        raise ValueError('Only the reviewed HPreference depth-14 replacement is allowed')
+    source = lambda name: source_runs.get(name, name)
     accepted = set()
     for entry in entries():
-        name = entry['name']
-        if states[name]['status'] == 'complete' and diagnostic_pass(pd.read_csv(TABLE/f'zero_diagnostics_{name}.csv')):
-            accepted.add(name)
+        logical = entry['name']; name = source(logical)
+        if states[logical]['status'] == 'complete':
+            d = pd.read_csv(TABLE/f'zero_diagnostics_{name}.csv')
+            if not d.run.eq(name).all():
+                raise ValueError(f'Diagnostic source mismatch: {name}')
+            if diagnostic_pass(d):
+                accepted.add(name)
     comparisons = []; ppcs = []; pars = []
     for model in FOCAL:
-        train = f'N111_{model}_zero_train'
+        train = source(f'N111_{model}_zero_train')
         for metric in ['log_loss', 'brier', 'accuracy']:
             row = dict(model=model, metric=metric, status='unavailable', source_run=train,
                        n_subjects=np.nan, n_trials=np.nan, base_mean=np.nan, zero_mean=np.nan,
@@ -348,7 +358,7 @@ def collect_results(states):
                 row.update(status='complete', **paired_metric(new, old, metric, stable_seed(20260926, model, metric, 'paired')))
             comparisons.append(row)
         for variant in ['base', 'zero']:
-            run = f'N111_{model}_{variant}_full'
+            run = source(f'N111_{model}_{variant}_full')
             if run in accepted:
                 ppcs.append(pd.read_csv(TABLE/f'zero_ppc_{run}.csv'))
                 pars.append(pd.read_csv(TABLE/f'zero_parameters_{run}.csv'))
@@ -375,7 +385,9 @@ def collect_results(states):
         parameters.to_csv(TABLE/'zero_option_parameter_summary.csv', index=False)
     done = len(accepted) == len(entries())
     message = '# N=111 zero-option comparison\n\n'
-    message += ('All 12 new fits passed the unchanged diagnostic gate.\n\n' if done else 'Partial results: one or more new fits failed or are unavailable. Failed fits are excluded; no automatic retries were attempted.\n\n')
+    message += ('All 12 required comparison sources passed the unchanged diagnostic gate.\n\n' if done else 'Partial results: one or more new fits failed or are unavailable. Failed fits are excluded; no automatic retries were attempted.\n\n')
+    if source_runs:
+        message += 'Reviewed source substitution: '+', '.join(f'{k} uses {v}' for k, v in source_runs.items())+'. Original failed diagnostics and caches remain preserved; the retry must pass the same thresholds.\n\n'
     message += 'This is one common zero-option logit term, partially pooled across participants and shared across partners. New full-data no-age base fits provide the matched PPC/parameter comparison; existing accepted no-age training fits provide the predictive baseline. Negative log-loss/Brier differences favor the extension; positive accuracy differences favor it. Intervals are paired participant bootstrap intervals, conditional on the fitted posteriors.\n\n'
     available = comparison[comparison.status.eq('complete')]
     if len(available):
@@ -389,7 +401,7 @@ def collect_results(states):
     return done
 
 
-def plot_comparison(ppc, comparison):
+def plot_comparison(ppc, comparison, partial=False):
     plt = style()
     fig, axes = plt.subplots(4, 3, figsize=(13, 10), layout='constrained')
     for i, model in enumerate(FOCAL):
@@ -397,11 +409,18 @@ def plot_comparison(ppc, comparison):
             ax = axes[i, j]
             data = ppc[ppc.model.eq(model) & ppc.stratification.eq('zero_option') & ppc.zero_option.eq(group) & ppc.prediction_type.eq('generative_history')]
             for v, offset, color in [('base', -.09, '#64748b'), ('zero', .09, '#007f86')]:
-                frame = data[data.variant.eq(v)].set_index('partner').reindex(['friend', 'stranger', 'computer'])
+                available = data[data.variant.eq(v)]
+                if available.empty:
+                    continue
+                frame = available.set_index('partner').reindex(['friend', 'stranger', 'computer'])
                 x = np.arange(3)+offset
                 ax.vlines(x, frame.ci_low, frame.ci_high, color=color)
                 ax.scatter(x, frame.predicted_high, color=color, s=25, label=v)
-            ax.scatter(range(3), frame.observed_high, color='#222222', marker='x', label='observed')
+            if len(data):
+                observed = data.drop_duplicates('partner').set_index('partner').reindex(['friend', 'stranger', 'computer'])
+                ax.scatter(range(3), observed.observed_high, color='#222222', marker='x', label='observed')
+            if not data.variant.eq('zero').any():
+                ax.text(.5, .05, 'Extension unavailable: diagnostic gate', transform=ax.transAxes, ha='center', fontsize=8)
             ax.set(xticks=range(3), xticklabels=['Friend', 'Stranger', 'Computer'], ylim=(0, 1), title=f'{model}: {group.replace("_", " ")}')
             if j == 0:
                 ax.set_ylabel('High-choice probability')
@@ -413,7 +432,10 @@ def plot_comparison(ppc, comparison):
         ax.set(yticks=range(2), yticklabels=['Log loss', 'Brier'], xlabel='Zero extension − base (lower is better)', title='Paired temporal prediction')
     axes[0, 0].legend(frameon=False, fontsize=8)
     fig.suptitle('One shared zero-option term · matched no-age models · N=111\nLeft: generative 95% predictive intervals. Right: paired participant bootstrap 95% intervals.', fontsize=14)
-    save_figure(fig, OUT/'figures/03_zero_option_comparison')
+    if partial:
+        fig.suptitle('Partial zero-option comparison · N=111 · HPreference full extension excluded\nLeft: generative 95% predictive intervals. Right: paired participant bootstrap 95% intervals.', fontsize=14)
+    suffix = '_partial' if partial else ''
+    save_figure(fig, OUT/f'figures/03_zero_option_comparison{suffix}')
 
 
 def launch(entry, logfolder, chains):

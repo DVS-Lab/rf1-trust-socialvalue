@@ -1,5 +1,7 @@
 # N=111 stage B — one generic zero-option feature
 
+**Initial batch received:** 11/12 fits passed in `e6eb3b3`. See the [scientific review](../results/n111_wrapup/zero_option_initial_review.md) and [one-fit retry command](n111_zero_retry.md). The original launch below is retained for reproducibility; it is not the next command for the existing Linux checkout. A separate explicitly partial Figure 3 is now available; the full figure still requires accepted sources for all comparisons.
+
 Stage A completed on linux1 in commit `d596163` with all five audits successful. In held-out data, observed-history zero-minus-positive residual contrasts are approximately .18 for friends, .29–.30 for strangers, and .20 for computers across the focal models. All corresponding participant-bootstrap intervals exclude zero. The largest absolute conditional-versus-generative prediction difference across held-out partner × offer cells is .005252. These are aggregate descriptive contrasts; they do not identify a psychological mechanism, match offer amounts, or exclude individual/history-specific learning errors.
 
 This evidence supports **testing** the single feature in the user brief. It does not establish retention. The decision is recorded in `config/n111_zero_decision.json`, bound to the exact stage-A evidence hashes.

@@ -1,6 +1,6 @@
 # N=111 developmental-analysis decision record
 
-**Status: closeout in progress.** Stage A is complete and reviewed (Linux results `d596163`). Its evidence supports testing the single shared zero-option feature. Retention, realistic recovery and final synthesis remain pending. This is not a final full-sample analysis plan. See the [fixed scope](n111_wrapup_scope.md) and [closeout status](../results/n111_wrapup/README.md).
+**Status: closeout in progress.** Stage A is complete and reviewed (Linux results `d596163`). Its evidence supports testing the single shared zero-option feature. Stage B initial batch `e6eb3b3` has 11/12 accepted fits, with positive temporal-prediction evidence and mixed positive-positive PPC changes; see the [review](../results/n111_wrapup/zero_option_initial_review.md). Retention, realistic recovery and final synthesis remain pending. This is not a final full-sample analysis plan. See the [fixed scope](n111_wrapup_scope.md) and [closeout status](../results/n111_wrapup/README.md).
 
 ## Sample and trial conventions retained
 
@@ -20,7 +20,7 @@ The zero-option feature is **approved for the scoped comparison**, neither retai
 
 ## Diagnostic evidence so far
 
-The committed full-age PPCs verify substantial underprediction on computer zero-containing offers in H5/H7/HPreference. H8 has a different offer pattern and is retained as a comparator. The new no-age comparison completed successfully. Held-out zero-minus-positive residual contrasts are approximately .18 for friends, .29–.30 for strangers and .20 for computers, with positive bootstrap intervals throughout. The maximum conditional/generative difference across held-out offer cells is .005252. Thus compounding simulated feedback histories do not explain the main aggregate discrepancy; a generic zero-option term merits testing. This is not proof of a mechanism or a claim that every cell has the same sign. Most diagnostic views are partner × exact offer, then zero versus positive-positive, runs, chronological thirds, and pretrial same-partner feedback. Training and held-out data must remain distinguishable.
+The committed full-age PPCs verify substantial underprediction on computer zero-containing offers in H5/H7/HPreference. H8 has a different offer pattern and is retained as a comparator. The stage-A no-age history audit completed successfully. Held-out zero-minus-positive residual contrasts are approximately .18 for friends, .29–.30 for strangers and .20 for computers, with positive bootstrap intervals throughout. The maximum conditional/generative difference across held-out offer cells is .005252. Thus compounding simulated feedback histories do not explain the main aggregate discrepancy; a generic zero-option term merits testing. This is not proof of a mechanism or a claim that every cell has the same sign. Most diagnostic views are partner × exact offer, then zero versus positive-positive, runs, chronological thirds, and pretrial same-partner feedback. Training and held-out data must remain distinguishable.
 
 The stage A history strata use the same actual pretrial labels for both prediction types. This isolates differences in predictions on matched observed subsets; it does not claim to replicate the distribution of simulated feedback-category membership. Sparse cells are flagged. Predictive intervals include replicated-choice variation; participant-bootstrap zero contrasts are separately labeled.
 
@@ -41,3 +41,11 @@ Behavioral age-25-to-75 friend-minus-computer change: +.025 (95% CI −.150 to +
 3. Does it change interpretation of existing value, preference, or learning parameters?
 4. Can H7 and HPreference be distinguished in realistic parameter ranges, including confusion with H8?
 5. Record the answers, finalize the compact synthesis, and stop.
+
+## Stage B initial review and one bounded retry (26 September)
+
+All four training extensions pass and reduce mean participant log loss by .0607–.0856 and Brier score by .0249–.0366; paired bootstrap intervals exclude zero. Matched full-data H5/H7 zero-offer mean absolute cell errors shrink sharply; some positive-positive cells worsen. H5 median participant theta means change 6.33→2.80, H7 3.84→1.88. Thus carry-forward retention is promising but remains pending the missing HPreference PPC/parameter comparison and the mixed no-damage criterion. These exploratory comparisons reuse N=111 diagnostics; they are not confirmatory validation.
+
+`N111_HPreference_zero_full` failed only the zero-depth-hit gate: 8/16000 hits at depth 12, no divergences, all other thresholds passed. One explicitly reviewed depth-14 attempt is prepared in a separate cache with unchanged target, seed, priors, chains, warmup, draws and diagnostic thresholds. Its scientific purpose is the missing matched comparison and an accepted empirical generator for recovery. The original failed attempt remains excluded and preserved. Eleven accepted runs are reused; neither H4_full_age nor H5_train_age is touched. If this attempt fails, there is no automatic further escalation. See [exact plan and Linux command](n111_zero_retry.md) and `config/n111_zero_retry.json`.
+
+Recovery has not started. The feature decision remains open; no final mechanism-discrimination conclusion or full closeout completion is claimed.
