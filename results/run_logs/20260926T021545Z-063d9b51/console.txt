@@ -1,0 +1,6 @@
+H2: read 400 balanced posterior draws; generating history comparisons
+H8: read 400 balanced posterior draws; generating history comparisons
+HPreference: read 400 balanced posterior draws; generating history comparisons
+H5: read 400 balanced posterior draws; generating history comparisons
+H7: read 400 balanced posterior draws; generating history comparisons
+Stage A diagnostic outputs complete. No new fits; zero-option/model-recovery decisions remain pending.

@@ -1,0 +1,27 @@
+{
+  "stage": "A_history_diagnostics",
+  "status": "diagnostics_complete_closeout_pending",
+  "models": {
+    "H2": "complete",
+    "H5": "complete",
+    "H7": "complete",
+    "HPreference": "complete",
+    "H8": "complete"
+  },
+  "posterior_draws": 400,
+  "seed": 20260925,
+  "jobs": 5,
+  "git_commit": "f5b835349af6ffabdb25c80d6330cce207711dc2",
+  "generator_sha256": "3cf88198016d3c3bf0ba38a34217885da08f3b925d23ad666e1f793ac006afcb",
+  "inputs": {
+    "results/tables/trial_table.csv": "b819604280bf12d0325424b727cb6a4ee585966e62f4c1cc7cb968061d73f8d8",
+    "results/tables/sample_audit.csv": "1226af5ad06437764d9238071c9b8c5cae7326ad2a4d0baa9461baf61a10a02a",
+    "results/tables/ratings.csv": "a0bb51734a2231151782fb70b1afddc51e33386796ad9b89737cf69aa8f5ad05"
+  },
+  "excluded_runs": [
+    "H4_full_age",
+    "H5_train_age"
+  ],
+  "sampling_started": false,
+  "next_stage": "Interpret zero-option evidence before any model extension or recovery run"
+}

@@ -1,0 +1,36 @@
+{
+  "run": "H5_train_noage",
+  "fingerprint": "9b273468e1fd9a2c1fd8920459674e9df0bab526440583571248ce552a8a45af",
+  "manifest_sha256": "4f249dd35764d841d982a9e6d4beac63dd99b36911807021517a4e3d2ac31866",
+  "diagnostic_sha256": "72193c7025b059026cbdd1deccacd18e7bd419314dcbc94597b2c41422aca7fa",
+  "chains": [
+    {
+      "file": "work/hierarchical/H5_train_noage/hierarchical_fast-20260925112558_1.csv",
+      "sha256": "87bdb1be8070a6810fa093079cc233d32fe06b326e6b72e099fc188f3df2494b",
+      "retained_draws": 8000,
+      "selected_draws": 100,
+      "bfmi": 0.7282095968642719
+    },
+    {
+      "file": "work/hierarchical/H5_train_noage/hierarchical_fast-20260925112558_2.csv",
+      "sha256": "df834c052608ac1acd29dec54ab4dc188c70bc315efc121d17a86835fee448c3",
+      "retained_draws": 8000,
+      "selected_draws": 100,
+      "bfmi": 0.7847253290223136
+    },
+    {
+      "file": "work/hierarchical/H5_train_noage/hierarchical_fast-20260925112558_3.csv",
+      "sha256": "6756aa936027ef4c3e34e3d7b129fd20b962afa4dc7150e254825640eff3422e",
+      "retained_draws": 8000,
+      "selected_draws": 100,
+      "bfmi": 0.7509607767538077
+    },
+    {
+      "file": "work/hierarchical/H5_train_noage/hierarchical_fast-20260925112558_4.csv",
+      "sha256": "76709b09cd8d0cb87d48e9108745272cc6da09978dcdf14a4f5764e517c13308",
+      "retained_draws": 8000,
+      "selected_draws": 100,
+      "bfmi": 0.7663494508707692
+    }
+  ]
+}
