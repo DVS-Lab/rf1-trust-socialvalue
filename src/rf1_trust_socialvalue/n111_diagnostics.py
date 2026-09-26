@@ -328,7 +328,8 @@ def published_check(root):
     summary['weighting'] = 'equal_offer_cells_not_trial_weighted'
     summary.to_csv(out/'tables/published_zero_contrast.csv', index=False)
     (out/'published_check_provenance.json').write_text(json.dumps(dict(inputs=PINNED | hashes,
-        source_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()), indent=2)+'\n')
+        source_base_commit=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(),
+        generator_sha256=sha(Path(__file__))), indent=2)+'\n')
     plot_published(d, out/'figures/00_published_offer_check')
     if not (out/'audit_status.json').exists():
         write_preview_report(d, out)
@@ -377,6 +378,9 @@ def save_figure(fig, path):
         if ext == 'svg':
             options['metadata'] = {'Date': None}
         fig.savefig(path.with_suffix('.'+ext), **options)
+        if ext == 'svg':
+            svg = path.with_suffix('.svg')
+            svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
     plt.close(fig)
 
 

@@ -1,0 +1,17 @@
+{
+  "inputs": {
+    "results/tables/trial_table.csv": "b819604280bf12d0325424b727cb6a4ee585966e62f4c1cc7cb968061d73f8d8",
+    "results/tables/sample_audit.csv": "1226af5ad06437764d9238071c9b8c5cae7326ad2a4d0baa9461baf61a10a02a",
+    "results/tables/ratings.csv": "a0bb51734a2231151782fb70b1afddc51e33386796ad9b89737cf69aa8f5ad05",
+    "results/tables/predictive_H5_full_age.csv": "9ce90030be1310fcc8eb80af5060ccea635aa1123b1fb134608d2f0b841c758d",
+    "results/tables/diagnostics_H5_full_age.csv": "4405f48bd071509ef4ce38f90e5467842d3665ce4cc84e5ebcff24f5917236a8",
+    "results/tables/predictive_H7_full_age.csv": "3955aafb1143291587da5b6781316c172dc1ae8f17546705aef7b57d9189346e",
+    "results/tables/diagnostics_H7_full_age.csv": "6c261294b7248e9290fefdfeeb7242195bd810ffa455e84efba16740ac240391",
+    "results/tables/predictive_HPreference_full_age.csv": "eecfdfd4732e6473fae4554d78ed273dbd902fa8d352df2aba2295292d4df96e",
+    "results/tables/diagnostics_HPreference_full_age.csv": "fd3e0aedf830b43d4cd6522d7845f2f6509b556a907cd2a884b12e35bcbc8c2b",
+    "results/tables/predictive_H8_full_age.csv": "e1ec3482ae15fd6948b341e513852a34a17a7a55b0b83d26b0e2b042413135ab",
+    "results/tables/diagnostics_H8_full_age.csv": "1c7e542c9ca3f9a63601c3a8b42e31df55ff0f2ddd917ab77facb1264d66c715"
+  },
+  "source_base_commit": "65501f4e350def35702ad1a0522391e0a532e3af",
+  "generator_sha256": "3cf88198016d3c3bf0ba38a34217885da08f3b925d23ad666e1f793ac006afcb"
+}
