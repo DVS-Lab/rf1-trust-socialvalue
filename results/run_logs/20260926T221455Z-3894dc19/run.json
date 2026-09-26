@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-09-26T22:14:55.410324+00:00",
+  "command": [
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/.venv/bin/python",
+    "-u",
+    "-m",
+    "rf1_trust_socialvalue.n111_recovery",
+    "--run",
+    "--jobs",
+    "40"
+  ],
+  "git_commit": "3c63c443449addd1b5141c73b01296cc0c072a32",
+  "platform": "Linux-6.17.0-23-generic-x86_64-with-glibc2.39",
+  "status": "complete",
+  "exit_code": 0,
+  "finished_at": "2026-09-26T22:19:56.482862+00:00"
+}

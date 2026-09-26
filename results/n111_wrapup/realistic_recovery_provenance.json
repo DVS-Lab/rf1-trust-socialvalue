@@ -1,0 +1,390 @@
+{
+  "fingerprint": "fd037cbcd4de5cce906aed77b53f7611bec8994b2bf671bd40136b2fdaa5f8d2",
+  "config_sha256": "e6debdf9479effa9cc858237260b5312766a6ca9fbead021da655a4c4073d483",
+  "implementation_sha256": {
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/n111_recovery.py": "9d380d18ae21b109a2d099a2db94115f6b1b822735c647e6710c427b43e0909a",
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/n111_zero.py": "5332c7c74c40d26f11797b1c37ce4859677987c38da5f99ef4a5bb5595fd7ee3"
+  },
+  "sources": [
+    {
+      "run": "N111_H5_zero_full",
+      "fingerprint": "0f871492bcb818cde20936d78ad363775996a5a7d9abfe2c2f93e4821a866fda",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926083826_1.csv",
+          "sha256": "d1d35cf4b5ab4b0ef61234c77b824786907939cc540e2e9dd9a5645d1a885a26",
+          "chain": 1,
+          "retained_indices": [
+            3271,
+            3881
+          ],
+          "bfmi": 0.6515970172383011
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_2.csv",
+          "sha256": "f68ee5676aa3214f4494c44ea170b63176d2d2ce1a768869557c6a26a4e29c9d",
+          "chain": 2,
+          "retained_indices": [
+            153,
+            1003
+          ],
+          "bfmi": 0.6690194538409242
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_3.csv",
+          "sha256": "44c4d76023b3994f23d1be73fe826016dd2b904e39ad2ec78590b951ceaa96b8",
+          "chain": 3,
+          "retained_indices": [
+            771,
+            1468
+          ],
+          "bfmi": 0.697769919578315
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_4.csv",
+          "sha256": "af2894a43e05718f9579fce111507f0ea4db0a799623aea5c82bff161cbe25d4",
+          "chain": 4,
+          "retained_indices": [
+            1426,
+            1776
+          ],
+          "bfmi": 0.6570342554000189
+        }
+      ]
+    },
+    {
+      "run": "N111_H7_zero_full",
+      "fingerprint": "2456f2db7944a09bf23e4c07616db9e445e88655cf2e37bdca1e52b73844424c",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926083826_1.csv",
+          "sha256": "1628d14dc9d1e09f1829984706f62b97eca42f9e40b214461f9ee573822e3b15",
+          "chain": 1,
+          "retained_indices": [
+            3177,
+            3991
+          ],
+          "bfmi": 0.6883582985245386
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_2.csv",
+          "sha256": "34eb42c7d559942cce439dd6908714355a25f5820dc0b1e703ccd68ee5f73d9a",
+          "chain": 2,
+          "retained_indices": [
+            1839,
+            2769
+          ],
+          "bfmi": 0.7152488995457681
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_3.csv",
+          "sha256": "fe7fedd79421f1f5a954b62290dd0c360d7cd95368e87645b3957c8ac4661687",
+          "chain": 3,
+          "retained_indices": [
+            551,
+            2735
+          ],
+          "bfmi": 0.7122979604013658
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_4.csv",
+          "sha256": "f73a9bdefe6af4517f2b29ffb95d087ecaa85a69a1a5d00498716e44e07beef4",
+          "chain": 4,
+          "retained_indices": [
+            245,
+            480
+          ],
+          "bfmi": 0.7160145143607791
+        }
+      ]
+    },
+    {
+      "run": "N111_HPreference_zero_full_depth14",
+      "fingerprint": "a9068f55a2a4ef5b9f9d03b4779ed171ee4cf3779ab46bb191f9ef1aef48d15f",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926145559_1.csv",
+          "sha256": "3383bce677115fa5d1b507e71a4a6d61c846471beec93f1196bd07dfc2505686",
+          "chain": 1,
+          "retained_indices": [
+            3076,
+            3307
+          ],
+          "bfmi": 0.6732815395768443
+        },
+        {
+          "file": "n111_zero_fast-20260926145559_2.csv",
+          "sha256": "f62bbe377a746a3a19a63c3a9ad9b193fae422d1bf488a3c0e9f444183bdac03",
+          "chain": 2,
+          "retained_indices": [
+            1266,
+            3223
+          ],
+          "bfmi": 0.6845202435089983
+        },
+        {
+          "file": "n111_zero_fast-20260926145559_3.csv",
+          "sha256": "b0613db537cc31c924269372076698e7d4e68903145df1e951835d9957a2d217",
+          "chain": 3,
+          "retained_indices": [
+            905,
+            1857
+          ],
+          "bfmi": 0.6452044722970979
+        },
+        {
+          "file": "n111_zero_fast-20260926145559_4.csv",
+          "sha256": "dbdc5a3f772e72535b556509e25f7558944928292f00f2168ad249981feeeb13",
+          "chain": 4,
+          "retained_indices": [
+            1648,
+            2890
+          ],
+          "bfmi": 0.6447286248766066
+        }
+      ]
+    },
+    {
+      "run": "N111_H8_zero_full",
+      "fingerprint": "ab98dc9f65abbbccbcedbca813704ab61df4648fb358b5efb1d4859241bbe138",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926092851_1.csv",
+          "sha256": "bf1fb73605ad5e3c51cdfa464c9739d0c3b75f3a9c96c7f473a7e44092943c02",
+          "chain": 1,
+          "retained_indices": [
+            3094,
+            3679
+          ],
+          "bfmi": 0.69876931398215
+        },
+        {
+          "file": "n111_zero_fast-20260926092851_2.csv",
+          "sha256": "079592fd26066bdc74f171a1bd9c773da075d90508b66aa60a26edb213b6d2b2",
+          "chain": 2,
+          "retained_indices": [
+            1214,
+            1476
+          ],
+          "bfmi": 0.7238672352253224
+        },
+        {
+          "file": "n111_zero_fast-20260926092851_3.csv",
+          "sha256": "fe5e8663c00b6bcc361efae88f58bb78095fbb83a125a8977483b4e222f4fa3e",
+          "chain": 3,
+          "retained_indices": [
+            3210,
+            3731
+          ],
+          "bfmi": 0.7149386248690739
+        },
+        {
+          "file": "n111_zero_fast-20260926092851_4.csv",
+          "sha256": "59d09a49b8b064dbe3fe7270651793b06ae191372fd31c2617e2529d5aed6854",
+          "chain": 4,
+          "retained_indices": [
+            1487,
+            2968
+          ],
+          "bfmi": 0.6927154024253648
+        }
+      ]
+    },
+    {
+      "run": "N111_H5_base_full",
+      "fingerprint": "6763d410a1f13d6a3df1d33d0974734fa66865c4c2c0623e075ca5119072bc5a",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926083826_1.csv",
+          "sha256": "ba28ab12d3ce0ceb6a9c6368892cce308bdbb5aca11af8b016bb858eb7329fa9",
+          "chain": 1,
+          "retained_indices": [
+            397,
+            3082
+          ],
+          "bfmi": 0.7312991202419044
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_2.csv",
+          "sha256": "a24bb66c3bdeaf77bd40ab528697cc596b1f8a7a1c93bcd355f2c1ceaaa72a7d",
+          "chain": 2,
+          "retained_indices": [
+            48,
+            3969
+          ],
+          "bfmi": 0.6636517630579941
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_3.csv",
+          "sha256": "afd63d98a7587cf30a15f761d2660885549bbf2882bfc7cb39cef747bbe379aa",
+          "chain": 3,
+          "retained_indices": [
+            2587,
+            3135
+          ],
+          "bfmi": 0.6981382266223081
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_4.csv",
+          "sha256": "b892d11761cb326bfd1b058ec5cba243490185bbf094e0eae8bb8cc304ce6434",
+          "chain": 4,
+          "retained_indices": [
+            584,
+            2581
+          ],
+          "bfmi": 0.7041238369750005
+        }
+      ]
+    },
+    {
+      "run": "N111_H7_base_full",
+      "fingerprint": "77a5a3e6c3fa02d3fee0dc961c6107c268c5b8953f87470aa3f293ddc8a302f8",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926083826_1.csv",
+          "sha256": "822502b074a19063ac83097f78da90949bc83d22e8b4fa7e41d6da897e449856",
+          "chain": 1,
+          "retained_indices": [
+            1058,
+            1232
+          ],
+          "bfmi": 0.7151060201509788
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_2.csv",
+          "sha256": "d988c1acc7610826527906fadf06494fd34c6cc4c9fc16f8b61abfe7ada179a3",
+          "chain": 2,
+          "retained_indices": [
+            1077,
+            1837
+          ],
+          "bfmi": 0.6736663382549661
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_3.csv",
+          "sha256": "06b2f15d6964dc09b574d89f318a2a019119161f0e9b1f8174dd36ce6e75dd9c",
+          "chain": 3,
+          "retained_indices": [
+            994,
+            3585
+          ],
+          "bfmi": 0.7332239232398505
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_4.csv",
+          "sha256": "972bbb5c53cfd25b69b55f7147f2ccc6f7101d644da9b71c55af1b92ddcec4f3",
+          "chain": 4,
+          "retained_indices": [
+            633,
+            3225
+          ],
+          "bfmi": 0.736996162661257
+        }
+      ]
+    },
+    {
+      "run": "N111_HPreference_base_full",
+      "fingerprint": "574b5347db3a9934625ded1e1288b9b1b06eec9d5cdb0cca5ee86bae8fc9a4ab",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926083826_1.csv",
+          "sha256": "4e34392dad8d381c11187694cd7f46cf60c76d5f5db0016d21811f8268c725ee",
+          "chain": 1,
+          "retained_indices": [
+            3452,
+            3538
+          ],
+          "bfmi": 0.6984766586722192
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_2.csv",
+          "sha256": "a57a3be3e41e6a58c23f1bbdcfe3774f998d6e23413aea8290d017a15380fa66",
+          "chain": 2,
+          "retained_indices": [
+            2692,
+            3920
+          ],
+          "bfmi": 0.7109648401038482
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_3.csv",
+          "sha256": "67184a48ae9237e341468c0b0334d3eff4dc0ef33b9acce1b43f0497146b7087",
+          "chain": 3,
+          "retained_indices": [
+            1996,
+            2807
+          ],
+          "bfmi": 0.6906473832556173
+        },
+        {
+          "file": "n111_zero_fast-20260926083826_4.csv",
+          "sha256": "86e12b95a8e8e11b1255d00287c75608f47806f9816818d23e0f44b91c1d7194",
+          "chain": 4,
+          "retained_indices": [
+            2043,
+            2372
+          ],
+          "bfmi": 0.7149776658415775
+        }
+      ]
+    },
+    {
+      "run": "N111_H8_base_full",
+      "fingerprint": "580d308f0256c5641f1665f4693c1a2644b473b8b7b42dbc4ad7526c45241c8d",
+      "chains": [
+        {
+          "file": "n111_zero_fast-20260926091727_1.csv",
+          "sha256": "476fcac606cf93503e290941e734bfe94f96975851e3720a31031e0e1b38fa3e",
+          "chain": 1,
+          "retained_indices": [
+            663,
+            2988
+          ],
+          "bfmi": 0.7177362321076435
+        },
+        {
+          "file": "n111_zero_fast-20260926091727_2.csv",
+          "sha256": "1d2495195fb507bf878c59a540a7bf1e956c016c46015003e6ece193c27f8f9b",
+          "chain": 2,
+          "retained_indices": [
+            1822,
+            3649
+          ],
+          "bfmi": 0.7193221003006658
+        },
+        {
+          "file": "n111_zero_fast-20260926091727_3.csv",
+          "sha256": "8ed6b70afa8f3f70fb3ea9b2966a2864effa225b49c9783d5713a4ce1a508ab4",
+          "chain": 3,
+          "retained_indices": [
+            738,
+            2146
+          ],
+          "bfmi": 0.719592318362329
+        },
+        {
+          "file": "n111_zero_fast-20260926091727_4.csv",
+          "sha256": "b3d3b5253b77e3f4059cff07276fe2a54e04f11bd136019587687920ba35f6ec",
+          "chain": 4,
+          "retained_indices": [
+            750,
+            1438
+          ],
+          "bfmi": 0.6928806745621109
+        }
+      ]
+    }
+  ],
+  "population_sha256": "f5537c8c2e6e0fecc72b2e69302aa509ba75056401ce7eb88a385e3a713815b3",
+  "schedule_sha256": "bec9d008d607edf5e7cd32d5a410ea8f65caf6b8dd5f406ada6d921b2164f1b4",
+  "fitting_upper_bounds": {
+    "theta": 24.867589796086783,
+    "kappa": 100.0,
+    "preference": 24.867589796086783,
+    "gamma0": 10.0
+  },
+  "n_datasets": 72,
+  "n_participants": 111,
+  "chains_sampled": 0,
+  "generator": "posterior_population_hyperparameters_with_new_correlated_effects"
+}

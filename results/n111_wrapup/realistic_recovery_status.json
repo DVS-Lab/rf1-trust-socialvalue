@@ -1,0 +1,15 @@
+{
+  "status": "screen_complete_scientific_review_pending",
+  "started_at": "2026-09-26T22:14:56.702094+00:00",
+  "jobs": 40,
+  "source_commit": "3c63c443449addd1b5141c73b01296cc0c072a32",
+  "sampling_started": false,
+  "hierarchical_confirmation": "not_launched_review_required",
+  "expected_cases": 7992,
+  "completed_cases": 7992,
+  "failed_cases": 0,
+  "n_datasets": 72,
+  "fingerprint": "fd037cbcd4de5cce906aed77b53f7611bec8994b2bf671bd40136b2fdaa5f8d2",
+  "exit_code": 0,
+  "finished_at": "2026-09-26T22:19:55.121030+00:00"
+}

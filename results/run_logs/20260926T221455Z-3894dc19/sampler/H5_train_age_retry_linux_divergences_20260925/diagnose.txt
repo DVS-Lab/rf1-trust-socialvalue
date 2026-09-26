@@ -1,0 +1,17 @@
+Checking sampler transitions treedepth.
+Treedepth satisfactory for all transitions.
+
+Checking sampler transitions for divergences.
+1 of 64000 (0.00%) transitions ended with a divergence.
+These divergent transitions indicate that HMC is not fully able to explore the posterior distribution.
+Try increasing adapt delta closer to 1.
+If this doesn't remove all divergences, try to reparameterize the model.
+
+Checking E-BFMI - sampler transitions HMC potential energy.
+E-BFMI satisfactory.
+
+Rank-normalized split effective sample size satisfactory for all parameters.
+
+Rank-normalized split R-hat values satisfactory for all parameters.
+
+Processing complete.
