@@ -1,0 +1,84 @@
+method = sample (Default)
+  sample
+    num_samples = 2000
+    num_warmup = 2000
+    save_warmup = false (Default)
+    thin = 1 (Default)
+    adapt
+      engaged = true (Default)
+      gamma = 0.05 (Default)
+      delta = 0.99
+      kappa = 0.75 (Default)
+      t0 = 10 (Default)
+      init_buffer = 75 (Default)
+      term_buffer = 50 (Default)
+      window = 25 (Default)
+      save_metric = false (Default)
+    algorithm = hmc (Default)
+      hmc
+        engine = nuts (Default)
+          nuts
+            max_depth = 12
+        metric = diag_e (Default)
+        metric_file =  (Default)
+        stepsize = 1 (Default)
+        stepsize_jitter = 0 (Default)
+    num_chains = 1 (Default)
+id = 2
+data
+  file = /tmp/tmpd3kt0kq1/kaqbma0u.json
+init = 0.15
+random
+  seed = 1164024258
+output
+  file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/hierarchical/H7_train_noage/hierarchical_fast-20260925112400_2.csv
+  diagnostic_file =  (Default)
+  refresh = 200
+  sig_figs = 10
+  profile_file = profile.csv (Default)
+  save_cmdstan_config = false (Default)
+num_threads = 1 (Default)
+
+
+Gradient evaluation took 0.001021 seconds
+1000 transitions using 10 leapfrog steps per transition would take 10.21 seconds.
+Adjust your expectations accordingly!
+
+
+Iteration:    1 / 4000 [  0%]  (Warmup)
+Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+Iteration:  200 / 4000 [  5%]  (Warmup)
+Iteration:  400 / 4000 [ 10%]  (Warmup)
+Iteration:  600 / 4000 [ 15%]  (Warmup)
+Iteration:  800 / 4000 [ 20%]  (Warmup)
+Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Exception: lkj_corr_cholesky_lpdf: Random variable[4] is 0, but must be positive! (in 'hierarchical_fast.stan', line 82, column 2 to column 27)
+If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+Iteration: 1000 / 4000 [ 25%]  (Warmup)
+Iteration: 1200 / 4000 [ 30%]  (Warmup)
+Iteration: 1400 / 4000 [ 35%]  (Warmup)
+Iteration: 1600 / 4000 [ 40%]  (Warmup)
+Iteration: 1800 / 4000 [ 45%]  (Warmup)
+Iteration: 2000 / 4000 [ 50%]  (Warmup)
+Iteration: 2001 / 4000 [ 50%]  (Sampling)
+Iteration: 2200 / 4000 [ 55%]  (Sampling)
+Iteration: 2400 / 4000 [ 60%]  (Sampling)
+Iteration: 2600 / 4000 [ 65%]  (Sampling)
+Iteration: 2800 / 4000 [ 70%]  (Sampling)
+Iteration: 3000 / 4000 [ 75%]  (Sampling)
+Iteration: 3200 / 4000 [ 80%]  (Sampling)
+Iteration: 3400 / 4000 [ 85%]  (Sampling)
+Iteration: 3600 / 4000 [ 90%]  (Sampling)
+Iteration: 3800 / 4000 [ 95%]  (Sampling)
+Iteration: 4000 / 4000 [100%]  (Sampling)
+
+ Elapsed Time: 343.74 seconds (Warm-up)
+               293.57 seconds (Sampling)
+               637.31 seconds (Total)
+

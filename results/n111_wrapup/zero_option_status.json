@@ -1,0 +1,85 @@
+{
+  "stage": "B_zero_option_comparison",
+  "status": "incomplete_no_automatic_retry",
+  "settings": {
+    "seed": 20260926,
+    "chains": 4,
+    "warmup": 3000,
+    "draws": 4000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 12,
+    "metric": "diag_e",
+    "predictive_draws": 400,
+    "gamma_population_mean_prior_sd": 1.0,
+    "automatic_retries": false
+  },
+  "git_commit": "22249cefb04dda7362f3d57f7e2ae167ac346296",
+  "excluded_original_runs": [
+    "H4_full_age",
+    "H5_train_age"
+  ],
+  "jobs": 8,
+  "parallel_chains": 4,
+  "runs": {
+    "N111_H5_base_full": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H5_base_full.txt"
+    },
+    "N111_H5_zero_full": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H5_zero_full.txt"
+    },
+    "N111_H5_zero_train": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H5_zero_train.txt"
+    },
+    "N111_H7_base_full": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H7_base_full.txt"
+    },
+    "N111_H7_zero_full": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H7_zero_full.txt"
+    },
+    "N111_H7_zero_train": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H7_zero_train.txt"
+    },
+    "N111_HPreference_base_full": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_HPreference_base_full.txt"
+    },
+    "N111_HPreference_zero_full": {
+      "status": "diagnostic_failed",
+      "exit_code": 2,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_HPreference_zero_full.txt"
+    },
+    "N111_HPreference_zero_train": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_HPreference_zero_train.txt"
+    },
+    "N111_H8_base_full": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H8_base_full.txt"
+    },
+    "N111_H8_zero_full": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H8_zero_full.txt"
+    },
+    "N111_H8_zero_train": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/n111_wrapup/logs/zero-20260926T123825Z/N111_H8_zero_train.txt"
+    }
+  }
+}

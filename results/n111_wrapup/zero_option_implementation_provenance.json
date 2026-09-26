@@ -1,5 +1,5 @@
 {
-  "source_commit": "90ed32655fc5ef7b09b43fe7f91674afec9c07d9",
+  "source_commit": "22249cefb04dda7362f3d57f7e2ae167ac346296",
   "sources": {
     "stan/n111_zero_fast.stan": "6dbb246f1ac6425ef8fabe2fb32c62b434456c73b3dd5b5aab7cd871518c333b",
     "stan/n111_zero_reference.stan": "a0736e782d69249fa0206a65b285f481b48b864213d948ebc50eea67b4cfab4d",

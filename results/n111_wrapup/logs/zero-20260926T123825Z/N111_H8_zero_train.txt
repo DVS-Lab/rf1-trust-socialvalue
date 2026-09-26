@@ -1,0 +1,20 @@
+09:36:11 - cmdstanpy - INFO - CmdStan start processing
+09:36:11 - cmdstanpy - INFO - Chain [1] start processing
+09:36:11 - cmdstanpy - INFO - Chain [2] start processing
+09:36:11 - cmdstanpy - INFO - Chain [3] start processing
+09:36:11 - cmdstanpy - INFO - Chain [4] start processing
+09:45:13 - cmdstanpy - INFO - Chain [3] done processing
+09:45:20 - cmdstanpy - INFO - Chain [4] done processing
+09:45:51 - cmdstanpy - INFO - Chain [2] done processing
+09:47:02 - cmdstanpy - INFO - Chain [1] done processing
+09:47:02 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[4] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Consider re-running with show_console=True if the above output is unclear!
+N111_H8_zero_train: Rhat=1.00401, bulk ESS=1174.0, tail ESS=3728.5, divergences=0, depth=0, BFMI=0.743

@@ -1,0 +1,31 @@
+08:36:52 - cmdstanpy - INFO - compiling stan file /ZPOOL/data/projects/rf1-trust-socialvalue/work/n111_wrapup/build/n111_zero_fast.stan to exe file /ZPOOL/data/projects/rf1-trust-socialvalue/work/n111_wrapup/build/n111_zero_fast
+08:37:44 - cmdstanpy - INFO - compiled model executable: /ZPOOL/data/projects/rf1-trust-socialvalue/work/n111_wrapup/build/n111_zero_fast
+08:37:44 - cmdstanpy - INFO - compiling stan file /ZPOOL/data/projects/rf1-trust-socialvalue/work/n111_wrapup/build/n111_zero_reference.stan to exe file /ZPOOL/data/projects/rf1-trust-socialvalue/work/n111_wrapup/build/n111_zero_reference
+08:38:20 - cmdstanpy - INFO - compiled model executable: /ZPOOL/data/projects/rf1-trust-socialvalue/work/n111_wrapup/build/n111_zero_reference
+Passed 16 full-target/gradient and Python likelihood checks; no MCMC.
+Launching N111_H5_base_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_H5_zero_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_H5_zero_train: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_H7_base_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_H7_zero_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_H7_zero_train: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_HPreference_base_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_HPreference_zero_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+Launching N111_HPreference_zero_train: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+N111_H5_zero_train: complete
+Launching N111_H8_base_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+N111_H7_zero_train: complete
+Launching N111_H8_zero_full: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+N111_H5_base_full: complete
+Launching N111_H8_zero_train: 4 parallel chains; console in results/n111_wrapup/logs/zero-20260926T123825Z
+N111_H7_base_full: complete
+N111_H8_base_full: complete
+N111_H8_zero_train: complete
+N111_H8_zero_full: complete
+N111_HPreference_zero_train: complete
+N111_H5_zero_full: complete
+N111_H7_zero_full: complete
+N111_HPreference_base_full: complete
+N111_HPreference_zero_full: diagnostic_failed
+Zero-option comparison finished; results in results/n111_wrapup/zero_option_report.md
+Some new fits are excluded. Exit 2 records incomplete diagnostics; no automatic retry will run.

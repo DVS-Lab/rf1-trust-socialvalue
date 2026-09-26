@@ -1,0 +1,24 @@
+08:38:26 - cmdstanpy - INFO - CmdStan start processing
+08:38:26 - cmdstanpy - INFO - Chain [1] start processing
+08:38:26 - cmdstanpy - INFO - Chain [2] start processing
+08:38:26 - cmdstanpy - INFO - Chain [3] start processing
+08:38:26 - cmdstanpy - INFO - Chain [4] start processing
+10:37:40 - cmdstanpy - INFO - Chain [4] done processing
+11:21:55 - cmdstanpy - INFO - Chain [3] done processing
+11:24:54 - cmdstanpy - INFO - Chain [1] done processing
+11:31:43 - cmdstanpy - INFO - Chain [2] done processing
+11:31:43 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[4] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'n111_zero_fast.stan', line 85, column 2 to column 27)
+Consider re-running with show_console=True if the above output is unclear!
+N111_HPreference_base_full: Rhat=1.00330, bulk ESS=1200.3, tail ESS=2278.2, divergences=0, depth=0, BFMI=0.691

@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-09-26T12:36:50.948007+00:00",
+  "command": [
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/.venv/bin/python",
+    "-u",
+    "-m",
+    "rf1_trust_socialvalue.n111_zero",
+    "--run",
+    "--jobs",
+    "8",
+    "--parallel-chains",
+    "4"
+  ],
+  "git_commit": "22249cefb04dda7362f3d57f7e2ae167ac346296",
+  "platform": "Linux-6.17.0-23-generic-x86_64-with-glibc2.39",
+  "status": "failed",
+  "exit_code": 2,
+  "finished_at": "2026-09-26T15:54:46.146138+00:00"
+}
