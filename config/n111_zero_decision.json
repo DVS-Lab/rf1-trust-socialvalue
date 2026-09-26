@@ -1,0 +1,12 @@
+{
+  "decision": "test_one_generic_zero_option_term",
+  "evidence_commit": "d596163",
+  "evidence": {
+    "results/n111_wrapup/tables/zero_option_residual_contrasts.csv": "6d0624fcf32d4639eb16afe95d87784b415bdcedd374bb3a9058e3390865eb99",
+    "results/n111_wrapup/tables/conditional_vs_generative.csv": "72eb230e7500e853db5b78a4a7ceed1ec7a8dbf6be839821998711d06283f703",
+    "results/n111_wrapup/audit_status.json": "c49e4ebad299792f6a82afb71240b2a170185327bcbe0ddfcb39126366c8ed5f"
+  },
+  "rationale": "Held-out zero-minus-positive residuals remain about 0.18\u20130.30 under actual histories in all focal models; corresponding conditional/generative offer predictions differ by at most 0.0053. Test one shared gamma0, not further model variants.",
+  "retention": "pending_matched_PPC_and_temporal_prediction",
+  "additional_data_allowed": false
+}

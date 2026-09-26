@@ -33,9 +33,11 @@ Computer trials in the held-out period, paired within participants who contribut
 
 PNG, PDF and SVG are available in [figures](figures/). All partners, exact offers, zero-option status, runs, chronological bins, and prior-feedback categories are in [predictive_residuals.csv](tables/predictive_residuals.csv). [Conditional versus generative](tables/conditional_vs_generative.csv) matches the same observed cells.
 
-## Pending closeout decisions
+## Decision after reviewing stage A
 
-Interpret the signed residuals, exact-offer plots, and paired zero contrasts together. If the common zero-option pattern warrants the extension, fit only the shared gamma0 term specified in the [closeout brief](../../docs/n111_wrapup_scope.md), then assess PPCs and paired held-out log loss/Brier. No code in this stage fits that extension, makes a retention decision, or runs realistic model recovery. Those results and the final synthesis remain pending.
+All five audits completed with exit code 0 in Linux commit `d596163`. The held-out zero-minus-positive residual contrast remains about .18 for friends, .29–.30 for strangers and .20 for computers across the focal models; the bootstrap intervals exclude zero. The largest conditional-versus-generative difference across the held-out partner × offer cells is .005252. At this aggregate scale, errors caused by simulated feedback exposure do not explain the main offer-dependent mismatch. The contrast is descriptive and does not match offer amounts or establish a psychological mechanism.
+
+Proceed with exactly the shared gamma0 experiment in the brief. [Stage B implementation and Linux commands](../../docs/n111_zero_comparison.md) are ready. Twelve new fits provide four matched full-data no-age baselines, four full-data extensions and four training extensions; existing accepted training baselines are reused. Original caches, age analysis and diagnostic thresholds are unchanged. There are no automatic retries. Retention and realistic recovery remain pending; no new posterior sampling has been performed on the laptop.
 
 Age conclusions remain unchanged: behavioral friend-minus-computer age-25-to-75 change +.025, 95% CI [-.150, .201]; friend-minus-stranger +.002 [-.141, .146]; accepted H5 canonical friend-value change −.050, 95% credible interval [-.185, .078]. These admit meaningful effects in either direction. Latent variance fractions are not behavioral variance explained. Ratings timing remains unresolved; no ratings investigation was performed.
 

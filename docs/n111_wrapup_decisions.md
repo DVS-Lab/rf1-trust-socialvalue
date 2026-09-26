@@ -1,6 +1,6 @@
 # N=111 developmental-analysis decision record
 
-**Status: closeout in progress.** Stage A history diagnostics are implemented; their Linux outputs, the zero-option decision, realistic recovery, and final synthesis remain pending. This is not a final full-sample analysis plan. See the [fixed scope](n111_wrapup_scope.md) and [closeout status](../results/n111_wrapup/README.md).
+**Status: closeout in progress.** Stage A is complete and reviewed (Linux results `d596163`). Its evidence supports testing the single shared zero-option feature. Retention, realistic recovery and final synthesis remain pending. This is not a final full-sample analysis plan. See the [fixed scope](n111_wrapup_scope.md) and [closeout status](../results/n111_wrapup/README.md).
 
 ## Sample and trial conventions retained
 
@@ -16,11 +16,11 @@ The accepted H2/H5/H7/HPreference/H8 training no-age fits are the inputs to stag
 
 Existing correlated partial pooling uses logit learning rates, log kappa, softplus nonnegative social values, and untransformed signed preference parameters. Population-location priors on these latent scales are Normal(-1,1.25), Normal(-1.2,.8), Normal(1,1.5), and Normal(0,1), respectively. Population SDs have half-Normal(0,.8) priors; the correlation prior is LKJ(2). Passing diagnostics do not establish robustness to these priors. Raw theta and its tradeoff with kappa remain weakly identified; wider bounds and shrinkage have not resolved that scientific limitation.
 
-The zero-option feature is **pending diagnostic review**, neither retained nor rejected. If fitted, gamma0 is a generic logit addition common across partners, with partial pooling and a documented weakly informative prior. No extension beyond this feature is authorized in this closeout.
+The zero-option feature is **approved for the scoped comparison**, neither retained nor rejected. See [the fixed experiment](n111_zero_comparison.md). If fitted, gamma0 is a generic logit addition common across partners, with partial pooling and a documented weakly informative prior. No extension beyond this feature is authorized in this closeout.
 
 ## Diagnostic evidence so far
 
-The committed full-age PPCs verify substantial underprediction on computer zero-containing offers in H5/H7/HPreference. H8 has a different offer pattern and is retained as a comparator. The new no-age conditional-versus-generative comparison is pending Linux execution. Most diagnostic views are partner × exact offer, then zero versus positive-positive, runs, chronological thirds, and pretrial same-partner feedback. Training and held-out data must remain distinguishable.
+The committed full-age PPCs verify substantial underprediction on computer zero-containing offers in H5/H7/HPreference. H8 has a different offer pattern and is retained as a comparator. The new no-age comparison completed successfully. Held-out zero-minus-positive residual contrasts are approximately .18 for friends, .29–.30 for strangers and .20 for computers, with positive bootstrap intervals throughout. The maximum conditional/generative difference across held-out offer cells is .005252. Thus compounding simulated feedback histories do not explain the main aggregate discrepancy; a generic zero-option term merits testing. This is not proof of a mechanism or a claim that every cell has the same sign. Most diagnostic views are partner × exact offer, then zero versus positive-positive, runs, chronological thirds, and pretrial same-partner feedback. Training and held-out data must remain distinguishable.
 
 The stage A history strata use the same actual pretrial labels for both prediction types. This isolates differences in predictions on matched observed subsets; it does not claim to replicate the distribution of simulated feedback-category membership. Sparse cells are flagged. Predictive intervals include replicated-choice variation; participant-bootstrap zero contrasts are separately labeled.
 
@@ -36,7 +36,7 @@ Behavioral age-25-to-75 friend-minus-computer change: +.025 (95% CI −.150 to +
 
 ## Outstanding closeout decisions
 
-1. Is zero-option misfit present under actual histories as well as simulated histories?
+1. Answered: the relative zero-option misfit persists under actual histories; the main offer-cell discrepancy is not explained by simulated-history compounding.
 2. Does the single shared zero term improve both PPCs and prospective log loss/Brier without damaging positive-positive fit?
 3. Does it change interpretation of existing value, preference, or learning parameters?
 4. Can H7 and HPreference be distinguished in realistic parameter ranges, including confusion with H8?

@@ -1,5 +1,7 @@
 # N=111 closeout — staged Linux handoff
 
+**Stage A has completed successfully in `d596163`. The next execution is the [stage B zero-option comparison](n111_zero_comparison.md).** The commands below document the completed stage A and are retained for reproducibility.
+
 The [closeout scope](n111_wrapup_scope.md) is fixed. This first command performs **stage A only**: read accepted no-age training posterior CSVs, compute conditional and fully generative predictions, and stop. It never launches Stan, fits models, retries failed fits, changes posterior caches, or accesses another dataset. Four hundred draws balanced across the existing chains are used for each of five models; five independent processes can process the models in parallel. More CPUs are not needed for this stage.
 
 The local preview verifies the motivating zero-option pattern using committed full-age PPC tables. It is intentionally distinct from the new no-age history comparison. The full closeout remains pending until stage A is interpreted and the conditional extension/recovery stages have been completed or explicitly ruled out.

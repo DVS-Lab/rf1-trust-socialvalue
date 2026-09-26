@@ -1,0 +1,12 @@
+{
+  "seed": 20260926,
+  "chains": 4,
+  "warmup": 3000,
+  "draws": 4000,
+  "adapt_delta": 0.99,
+  "max_treedepth": 12,
+  "metric": "diag_e",
+  "predictive_draws": 400,
+  "gamma_population_mean_prior_sd": 1.0,
+  "automatic_retries": false
+}
