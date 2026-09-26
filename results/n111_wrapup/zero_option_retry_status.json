@@ -1,0 +1,36 @@
+{
+  "status": "complete",
+  "original": "N111_HPreference_zero_full",
+  "retry": "N111_HPreference_zero_full_depth14",
+  "settings": {
+    "seed": 20260926,
+    "chains": 4,
+    "warmup": 3000,
+    "draws": 4000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "metric": "diag_e",
+    "predictive_draws": 400,
+    "gamma_population_mean_prior_sd": 1.0,
+    "automatic_retries": false
+  },
+  "started_at": "2026-09-26T18:55:59.143682+00:00",
+  "source_commit": "b60746eb514fd961bc3dd65a32080dbb6d642d65",
+  "plan_sha256": "dea0577f83cef2322db21c6874a800c3a99132cdf1791097d6926f5cf0937b1d",
+  "reused_runs": [
+    "N111_H5_base_full",
+    "N111_H5_zero_full",
+    "N111_H5_zero_train",
+    "N111_H7_base_full",
+    "N111_H7_zero_full",
+    "N111_H7_zero_train",
+    "N111_HPreference_base_full",
+    "N111_HPreference_zero_train",
+    "N111_H8_base_full",
+    "N111_H8_zero_full",
+    "N111_H8_zero_train"
+  ],
+  "exit_code": 0,
+  "comparison_status": "complete_retention_review_pending",
+  "finished_at": "2026-09-26T21:29:54.469588+00:00"
+}

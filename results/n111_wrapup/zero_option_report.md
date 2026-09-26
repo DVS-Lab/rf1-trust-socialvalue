@@ -1,6 +1,8 @@
 # N=111 zero-option comparison
 
-Partial results: one or more new fits failed or are unavailable. Failed fits are excluded; no automatic retries were attempted.
+All 12 required comparison sources passed the unchanged diagnostic gate.
+
+Reviewed source substitution: N111_HPreference_zero_full uses N111_HPreference_zero_full_depth14. Original failed diagnostics and caches remain preserved; the retry must pass the same thresholds.
 
 This is one common zero-option logit term, partially pooled across participants and shared across partners. New full-data no-age base fits provide the matched PPC/parameter comparison; existing accepted no-age training fits provide the predictive baseline. Negative log-loss/Brier differences favor the extension; positive accuracy differences favor it. Intervals are paired participant bootstrap intervals, conditional on the fitted posteriors.
 
@@ -22,6 +24,8 @@ This is one common zero-option logit term, partially pooled across participants 
 ## Parameter and model-fit checks
 
 [Parameter summaries](tables/zero_option_parameter_summary.csv), [comparison status](tables/zero_option_model_comparison.csv), and per-fit diagnostics are available in tables/. Full-data conditional intervals describe posterior expected probabilities; generative intervals include replicated choice variation. Comparisons remain exploratory because the zero feature was motivated by this dataset, including held-out diagnostics; these scores are not an untouched confirmatory test.
+
+![Zero-option comparison](figures/03_zero_option_comparison.png)
 
 ## Pending scientific decision
 

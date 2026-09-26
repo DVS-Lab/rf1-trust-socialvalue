@@ -1,0 +1,213 @@
+{
+  "status": "incomplete",
+  "started_at": "2026-09-25T16:27:58.942717+00:00",
+  "jobs": 3,
+  "parallel_chains": 4,
+  "runs": {
+    "H2_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H2_full_age.txt",
+      "updated_at": "2026-09-25T16:29:52.579470+00:00"
+    },
+    "H5_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_full_age.txt",
+      "updated_at": "2026-09-25T16:30:42.148524+00:00"
+    },
+    "H8_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H8_full_age.txt",
+      "updated_at": "2026-09-25T16:30:42.045270+00:00"
+    },
+    "HPreference_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/HPreference_full_age.txt",
+      "updated_at": "2026-09-25T16:33:17.632238+00:00"
+    },
+    "H7_full_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H7_full_age.txt",
+      "updated_at": "2026-09-25T16:34:09.362639+00:00"
+    },
+    "H4_full_age": {
+      "status": "diagnostic_failed",
+      "exit_code": 2,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H4_full_age.txt",
+      "updated_at": "2026-09-25T18:11:26.942548+00:00"
+    },
+    "H5_full_age_bounded": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_full_age_bounded.txt",
+      "updated_at": "2026-09-25T16:36:00.056718+00:00"
+    },
+    "H5_full_quadratic": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_full_quadratic.txt",
+      "updated_at": "2026-09-25T16:35:07.998707+00:00"
+    },
+    "H5_full_age_prior1.5": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_full_age_prior1.5.txt",
+      "updated_at": "2026-09-25T16:37:47.132375+00:00"
+    },
+    "H2_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H2_train_age.txt",
+      "updated_at": "2026-09-25T16:38:48.837638+00:00"
+    },
+    "H2_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H2_train_noage.txt",
+      "updated_at": "2026-09-25T16:38:30.310619+00:00"
+    },
+    "H5_train_age": {
+      "status": "diagnostic_failed",
+      "exit_code": 2,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_train_age.txt",
+      "updated_at": "2026-09-25T17:47:02.375142+00:00"
+    },
+    "H5_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_train_noage.txt",
+      "updated_at": "2026-09-25T16:42:34.401498+00:00"
+    },
+    "H8_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H8_train_age.txt",
+      "updated_at": "2026-09-25T16:43:32.843885+00:00"
+    },
+    "H8_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H8_train_noage.txt",
+      "updated_at": "2026-09-25T16:44:31.677498+00:00"
+    },
+    "HPreference_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/HPreference_train_age.txt",
+      "updated_at": "2026-09-25T16:45:41.322697+00:00"
+    },
+    "HPreference_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/HPreference_train_noage.txt",
+      "updated_at": "2026-09-25T18:09:54.010588+00:00"
+    },
+    "H7_train_age": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H7_train_age.txt",
+      "updated_at": "2026-09-25T17:51:34.649533+00:00"
+    },
+    "H7_train_noage": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H7_train_noage.txt",
+      "updated_at": "2026-09-25T17:56:06.889179+00:00"
+    },
+    "H5_recovery_zero_0": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_zero_0.txt",
+      "updated_at": "2026-09-25T17:56:41.706013+00:00"
+    },
+    "H5_recovery_zero_1": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_zero_1.txt",
+      "updated_at": "2026-09-25T17:57:16.340581+00:00"
+    },
+    "H5_recovery_zero_2": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_zero_2.txt",
+      "updated_at": "2026-09-25T17:57:50.924363+00:00"
+    },
+    "H5_recovery_zero_3": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_zero_3.txt",
+      "updated_at": "2026-09-25T17:58:25.934140+00:00"
+    },
+    "H5_recovery_zero_4": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_zero_4.txt",
+      "updated_at": "2026-09-25T17:59:00.511030+00:00"
+    },
+    "H5_recovery_positive_0": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_positive_0.txt",
+      "updated_at": "2026-09-25T17:59:35.056671+00:00"
+    },
+    "H5_recovery_positive_1": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_positive_1.txt",
+      "updated_at": "2026-09-25T18:00:09.431778+00:00"
+    },
+    "H5_recovery_positive_2": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_positive_2.txt",
+      "updated_at": "2026-09-25T18:00:43.658714+00:00"
+    },
+    "H5_recovery_positive_3": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_positive_3.txt",
+      "updated_at": "2026-09-25T18:01:18.583530+00:00"
+    },
+    "H5_recovery_positive_4": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_positive_4.txt",
+      "updated_at": "2026-09-25T18:01:53.533371+00:00"
+    },
+    "H5_recovery_negative_0": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_negative_0.txt",
+      "updated_at": "2026-09-25T18:02:28.480371+00:00"
+    },
+    "H5_recovery_negative_1": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_negative_1.txt",
+      "updated_at": "2026-09-25T18:03:02.642102+00:00"
+    },
+    "H5_recovery_negative_2": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_negative_2.txt",
+      "updated_at": "2026-09-25T18:03:37.113952+00:00"
+    },
+    "H5_recovery_negative_3": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_negative_3.txt",
+      "updated_at": "2026-09-25T18:04:11.998212+00:00"
+    },
+    "H5_recovery_negative_4": {
+      "status": "complete",
+      "exit_code": 0,
+      "log": "results/run_logs/parallel-20260925T162758Z-4cef5a2d/H5_recovery_negative_4.txt",
+      "updated_at": "2026-09-25T18:04:46.192585+00:00"
+    }
+  },
+  "finished_at": "2026-09-25T18:11:27.715045+00:00"
+}

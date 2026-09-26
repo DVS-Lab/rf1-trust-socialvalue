@@ -1,0 +1,27 @@
+{
+  "fingerprint": "604c634125d6820ea9bff3edaefd11f59bbddd798b5136c4d9935669f0e62f57",
+  "settings": {
+    "seed": 20260924,
+    "chains": 4,
+    "parallel_chains": 2,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.95,
+    "max_treedepth": 12,
+    "recovery_replicates": 5,
+    "recovery_starts": 100,
+    "metric": "diag_e"
+  },
+  "execution": {
+    "parallel_chains": 4
+  },
+  "seconds": 270.79464077949524,
+  "implementation": "exact_analytic_gradient",
+  "implementation_sha256": "4bbbad0496ca36344df04aef01395eb2581996c4f4bf1d623e7133cc4e8add43",
+  "posterior_files": [
+    "hierarchical_fast-20260925112733_1.csv",
+    "hierarchical_fast-20260925112733_2.csv",
+    "hierarchical_fast-20260925112733_3.csv",
+    "hierarchical_fast-20260925112733_4.csv"
+  ]
+}
