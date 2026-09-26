@@ -1,6 +1,6 @@
 # N=111 developmental-analysis decision record
 
-**Status: closeout in progress.** Stage A is complete and reviewed (Linux results `d596163`). Its evidence supports testing the single shared zero-option feature. Stage B initial batch `e6eb3b3` has 11/12 accepted fits, with positive temporal-prediction evidence and mixed positive-positive PPC changes; see the [review](../results/n111_wrapup/zero_option_initial_review.md). Retention, realistic recovery and final synthesis remain pending. This is not a final full-sample analysis plan. See the [fixed scope](n111_wrapup_scope.md) and [closeout status](../results/n111_wrapup/README.md).
+**Status: closeout in progress.** Stage A and the twelve-source stage-B comparison are accepted (latest results `cf9b33d`). The zero-option term is retained as a candidate with unresolved PPC misfit. Realistic recovery and final synthesis remain pending. This is not a final full-sample analysis plan; see [fixed scope](n111_wrapup_scope.md), [feature decision](../results/n111_wrapup/zero_option_decision.md) and [recovery protocol](n111_realistic_recovery.md).
 
 ## Sample and trial conventions retained
 
@@ -16,7 +16,7 @@ The accepted H2/H5/H7/HPreference/H8 training no-age fits are the inputs to stag
 
 Existing correlated partial pooling uses logit learning rates, log kappa, softplus nonnegative social values, and untransformed signed preference parameters. Population-location priors on these latent scales are Normal(-1,1.25), Normal(-1.2,.8), Normal(1,1.5), and Normal(0,1), respectively. Population SDs have half-Normal(0,.8) priors; the correlation prior is LKJ(2). Passing diagnostics do not establish robustness to these priors. Raw theta and its tradeoff with kappa remain weakly identified; wider bounds and shrinkage have not resolved that scientific limitation.
 
-The zero-option feature is **approved for the scoped comparison**, neither retained nor rejected. See [the fixed experiment](n111_zero_comparison.md). If fitted, gamma0 is a generic logit addition common across partners, with partial pooling and a documented weakly informative prior. No extension beyond this feature is authorized in this closeout.
+The zero-option feature is **retained as a candidate with residual misfit** after the scoped comparison. See [the fixed experiment](n111_zero_comparison.md). Gamma0 is a generic logit addition common across partners, with partial pooling and a documented weakly informative prior. No extension beyond this feature is authorized in this closeout.
 
 ## Diagnostic evidence so far
 
@@ -37,15 +37,25 @@ Behavioral age-25-to-75 friend-minus-computer change: +.025 (95% CI −.150 to +
 ## Outstanding closeout decisions
 
 1. Answered: the relative zero-option misfit persists under actual histories; the main offer-cell discrepancy is not explained by simulated-history compounding.
-2. Does the single shared zero term improve both PPCs and prospective log loss/Brier without damaging positive-positive fit?
-3. Does it change interpretation of existing value, preference, or learning parameters?
+2. Answered with qualification: all four temporal comparisons improve and zero-offer PPCs improve markedly in the partner models, but positive-positive changes are mixed. Retain only as a candidate with residual misfit.
+3. Answered: value/preference estimates fall and kappa rises after gamma0, demonstrating sensitivity to the choice specification.
 4. Can H7 and HPreference be distinguished in realistic parameter ranges, including confusion with H8?
 5. Record the answers, finalize the compact synthesis, and stop.
 
 ## Stage B initial review and one bounded retry (26 September)
+
+Historical entry from `e6eb3b3`; the accepted retry and completed feature decision are recorded below.
 
 All four training extensions pass and reduce mean participant log loss by .0607–.0856 and Brier score by .0249–.0366; paired bootstrap intervals exclude zero. Matched full-data H5/H7 zero-offer mean absolute cell errors shrink sharply; some positive-positive cells worsen. H5 median participant theta means change 6.33→2.80, H7 3.84→1.88. Thus carry-forward retention is promising but remains pending the missing HPreference PPC/parameter comparison and the mixed no-damage criterion. These exploratory comparisons reuse N=111 diagnostics; they are not confirmatory validation.
 
 `N111_HPreference_zero_full` failed only the zero-depth-hit gate: 8/16000 hits at depth 12, no divergences, all other thresholds passed. One explicitly reviewed depth-14 attempt is prepared in a separate cache with unchanged target, seed, priors, chains, warmup, draws and diagnostic thresholds. Its scientific purpose is the missing matched comparison and an accepted empirical generator for recovery. The original failed attempt remains excluded and preserved. Eleven accepted runs are reused; neither H4_full_age nor H5_train_age is touched. If this attempt fails, there is no automatic further escalation. See [exact plan and Linux command](n111_zero_retry.md) and `config/n111_zero_retry.json`.
 
 Recovery has not started. The feature decision remains open; no final mechanism-discrimination conclusion or full closeout completion is claimed.
+
+## Accepted retry and feature decision (results cf9b33d)
+
+The one selected HPreference depth-14 attempt passed: no divergences or depth hits, Rhat max 1.00446, bulk ESS min 727.878, tail ESS min 1888.57, minimum BFMI .6447. All twelve comparison sources are now accepted. Its original failed attempt is preserved and excluded; no additional empirical posterior fits are requested.
+
+Retain the common zero-option term as an important candidate feature, because all four temporal comparisons improve and zero-offer PPC errors shrink sharply in H5/H7/HPreference. The strict no-damage criterion is not uniformly met: some positive-positive cells worsen. This qualified retention is explicitly not a claim of complete PPC repair. The larger sample must evaluate the feature independently; no further feature is added here. Partner/value estimates fall materially after adjustment. See the numerical [feature decision](../results/n111_wrapup/zero_option_decision.md).
+
+Prepare exactly the bounded [realistic recovery screen](n111_realistic_recovery.md), with adjusted models primarily, originals secondarily, eight posterior population draws per generator and two separately labeled high-theta stress datasets for each social-value generator/family. Fit all four competing models to each simulated participant with 32 starts and wide, range-audited bounds; preserve the actual schedules and missingness. Report individual and complete-dataset AICc/BIC and temporal prediction separately. Up to 40 single-threaded workers are allowed on linux1. Caches and logs support resumption. No hierarchical confirmation launches automatically; first inspect H7↔HPreference confusion, H8 confusion, prediction differences and optimizer boundaries.

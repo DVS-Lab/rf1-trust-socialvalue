@@ -7,6 +7,8 @@
     "results/n111_wrapup/audit_status.json": "c49e4ebad299792f6a82afb71240b2a170185327bcbe0ddfcb39126366c8ed5f"
   },
   "rationale": "Held-out zero-minus-positive residuals remain about 0.18\u20130.30 under actual histories in all focal models; corresponding conditional/generative offer predictions differ by at most 0.0053. Test one shared gamma0, not further model variants.",
-  "retention": "pending_matched_PPC_and_temporal_prediction",
-  "additional_data_allowed": false
+  "retention": "retain_candidate_with_residual_misfit",
+  "additional_data_allowed": false,
+  "retention_evidence_commit": "cf9b33d",
+  "retention_rationale": "All four training extensions improve log loss/Brier; H5/H7/HPreference markedly repair zero-offer PPCs. Positive-positive errors are mixed, including worse computer cells, so retain only as a candidate feature, not a fully adequate model or confirmed psychological mechanism. Use zero-adjusted recovery primarily and originals secondarily; no further choice extension."
 }

@@ -1,6 +1,14 @@
 # N=111 closeout — history diagnostics and zero-option comparison
 
-**Closeout in progress.** Stage A is complete; the first stage-B batch has 11/12 accepted fits. Read the [zero-option batch review](zero_option_initial_review.md): all four training extensions improve temporal prediction, H5/H7 zero-offer PPCs improve markedly, positive-positive changes are mixed, and existing value parameters shift. The full-data HPreference extension is excluded for eight depth hits; [one reviewed retry](../../docs/n111_zero_retry.md) is prepared. Retention and realistic recovery remain pending.
+**Closeout in progress: stage A and the matched zero-option comparison are complete.** All twelve required stage-B sources pass the unchanged diagnostic gate, using the accepted HPreference depth-14 retry. Read the [feature decision and complete evidence](zero_option_decision.md). The shared zero term is retained as a candidate for the larger sample, with explicit remaining offer-level errors; it is not a fully adequate or uniquely mechanistic explanation. Realistic recovery and final synthesis remain pending.
+
+## Stage B decision
+
+All four extensions improve temporal log loss and Brier score. H5/H7/HPreference mean absolute zero-offer cell residuals shrink from .211/.177/.173 to .030/.015/.018. Positive-positive changes are mixed, including worse computer cells, so the strict no-damage condition is not uniformly met. H5 median participant theta means fall 6.33→2.80 and HPreference friend-preference means 2.29→.91. The original parameter interpretation was sensitive to the omitted choice feature. These comparisons are exploratory because the same N=111 diagnostics motivated the extension.
+
+![Complete zero-option comparison](figures/03_zero_option_comparison.png)
+
+The next step is the [finite realistic recovery screen and Linux command](../../docs/n111_realistic_recovery.md): eight empirical population draws per generator, separate high-theta stress, zero-adjusted models primarily and originals secondarily. It uses fast nonhierarchical fitting across at most 40 workers and launches no hierarchical confirmation automatically. No new recovery results or mechanism-discrimination conclusions are available yet. `tables/n111_conclusions.csv` marks the remaining question pending.
 
 ## Stage A history diagnostics
 
@@ -41,10 +49,10 @@ PNG, PDF and SVG are available in [figures](figures/). All partners, exact offer
 
 All five audits completed with exit code 0 in Linux commit `d596163`. The held-out zero-minus-positive residual contrast remains about .18 for friends, .29–.30 for strangers and .20 for computers across the focal models; the bootstrap intervals exclude zero. The largest conditional-versus-generative difference across the held-out partner × offer cells is .005252. At this aggregate scale, errors caused by simulated feedback exposure do not explain the main offer-dependent mismatch. The contrast is descriptive and does not match offer amounts or establish a psychological mechanism.
 
-Proceed with exactly the shared gamma0 experiment in the brief. [Stage B implementation and Linux commands](../../docs/n111_zero_comparison.md) are ready. The original twelve-fit batch provides four matched full-data no-age baselines, four full-data extensions and four training extensions; existing accepted training baselines are reused. Original caches, age analysis and diagnostic thresholds are unchanged. There are no automatic retries. Retention and realistic recovery remain pending; no new posterior sampling has been performed on the laptop.
+The shared gamma0 experiment authorized by this diagnostic has now completed. Its [decision record](zero_option_decision.md) and accepted source substitution are separate from these stage-A training-posterior diagnostics. Original caches, age analysis and diagnostic thresholds remain unchanged. No new posterior sampling has been performed on the laptop.
 
 Age conclusions remain unchanged: behavioral friend-minus-computer age-25-to-75 change +.025, 95% CI [-.150, .201]; friend-minus-stranger +.002 [-.141, .146]; accepted H5 canonical friend-value change −.050, 95% credible interval [-.185, .078]. These admit meaningful effects in either direction. Latent variance fractions are not behavioral variance explained. Ratings timing remains unresolved; no ratings investigation was performed.
 
 ## What should carry forward to the full dataset
 
-Decisions about the zero-option term and mechanism distinguishability remain pending. Preserve the sample/trial conventions, separate conditional and generative checks, report age uncertainty, and retain the unresolved ratings limitation. No additional participant data have been accessed by this workflow.
+Carry forward the generic zero-option term as a candidate with remaining PPC limitations, and the sensitivity of partner/value estimates to its inclusion. Mechanism distinguishability remains pending the realistic screen. Preserve the sample/trial conventions, separate conditional and generative checks, report age uncertainty, and retain the unresolved ratings limitation. No additional participant data have been accessed by this workflow.

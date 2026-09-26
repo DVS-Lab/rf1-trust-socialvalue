@@ -1,0 +1,17 @@
+model,prediction_type,zero_option,n_cells,base_mean_absolute_cell_error,zero_mean_absolute_cell_error
+H5,conditional_history,positive_positive,9,0.05985242347134535,0.0710508702392117
+H5,conditional_history,zero,9,0.21065809509069824,0.029819697083585
+H5,generative_history,positive_positive,9,0.059568026359692966,0.07050599111015772
+H5,generative_history,zero,9,0.21078078078078075,0.030032115448782076
+H7,conditional_history,positive_positive,9,0.0819598912308106,0.0703038560204125
+H7,conditional_history,zero,9,0.17698550855598844,0.015230659015201134
+H7,generative_history,positive_positive,9,0.08266482256065588,0.07044168871252199
+H7,generative_history,zero,9,0.17646730063396723,0.015173298298298301
+H8,conditional_history,positive_positive,9,0.14508594211122372,0.12361539312524955
+H8,conditional_history,zero,9,0.1786919416968818,0.10157327309587617
+H8,generative_history,positive_positive,9,0.14921125291958617,0.12711608036608033
+H8,generative_history,zero,9,0.18107127961294622,0.10344490323656982
+HPreference,conditional_history,positive_positive,9,0.07712077217740354,0.06755308644996218
+HPreference,conditional_history,zero,9,0.1729755953000666,0.018005154696111733
+HPreference,generative_history,positive_positive,9,0.07758043758043752,0.06759442180275504
+HPreference,generative_history,zero,9,0.172291041041041,0.017487487487487487

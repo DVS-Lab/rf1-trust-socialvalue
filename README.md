@@ -2,7 +2,7 @@
 
 > **New: [accepted-fit report and six figure sets](results/review/README.md) (25 September 2026).** The diagnostic audit is complete. This scoped report uses the 32 of 34 Linux posterior runs that pass all checks; H4 full-age inference and H5 training-age scoring remain excluded because each has one divergence. Full second-pass finalization is still incomplete. No further sampling is needed to read or rebuild this report. See the [current status](results/second_pass_checkpoint.md). The report/gallery below are historical first-pass outputs.
 
-> **N=111 closeout in progress:** the [zero-option review](results/n111_wrapup/zero_option_initial_review.md) finds consistent temporal prediction gains with mixed PPC tradeoffs; 11/12 fits passed. [One reviewed HPreference retry](docs/n111_zero_retry.md) is prepared for the missing full-data comparison. Feature retention and targeted recovery remain pending; additional participants are outside scope.
+> **N=111 closeout in progress:** the [completed zero-option decision](results/n111_wrapup/zero_option_decision.md) retains one generic candidate feature, with explicit residual misfit. All twelve comparison sources pass. The [finite realistic recovery screen](docs/n111_realistic_recovery.md) is ready for linux1; mechanism discrimination and final synthesis remain pending. Additional participants are outside scope.
 
 A reproducible behavioral analysis of **OpenNeuro ds005123 v1.1.3**. Does greater trust in friends reflect added value of reciprocation, optimistic expectations, asymmetric learning, or more general partner preferences?
 

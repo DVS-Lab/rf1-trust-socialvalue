@@ -27,6 +27,6 @@ This is one common zero-option logit term, partially pooled across participants 
 
 ![Zero-option comparison](figures/03_zero_option_comparison.png)
 
-## Pending scientific decision
+## Scientific decision
 
-Review exact-offer and zero/positive-positive PPC changes alongside held-out log loss/Brier and parameter shifts before deciding retention. No automatic retention rule or additional model extension is applied. The targeted realistic recovery screen is the next stage after that decision; it has not run. Age and rating conclusions, N=111 scope, and exclusion of H4_full_age/H5_train_age remain unchanged.
+Retain the shared term as a candidate with unresolved residual misfit; see the [accepted feature decision](zero_option_decision.md) for the PPC tradeoffs, parameter shifts and finite recovery plan. The initial no-damage criterion is not uniformly met. Realistic recovery and final synthesis remain pending.

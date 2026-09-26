@@ -1,0 +1,51 @@
+{
+  "seed": 20260927,
+  "models": [
+    "H5",
+    "H7",
+    "HPreference",
+    "H8"
+  ],
+  "variants": [
+    "zero",
+    "base"
+  ],
+  "empirical_replicates": 8,
+  "stress_replicates": 2,
+  "starts": 32,
+  "automatic_hierarchical_confirmation": false,
+  "source_runs": {
+    "zero:H5": "N111_H5_zero_full",
+    "zero:H7": "N111_H7_zero_full",
+    "zero:HPreference": "N111_HPreference_zero_full_depth14",
+    "zero:H8": "N111_H8_zero_full",
+    "base:H5": "N111_H5_base_full",
+    "base:H7": "N111_H7_base_full",
+    "base:HPreference": "N111_HPreference_base_full",
+    "base:H8": "N111_H8_base_full"
+  },
+  "evidence_commit": "cf9b33d",
+  "evidence_sha256": {
+    "config/n111_zero_decision.json": "b386cc5679e5fe6008e3d1b2ab9cd73e442f7282deedeff518f0d6a4eba17290",
+    "results/n111_wrapup/zero_option_retry_status.json": "fdfb69ef0002c5cae1e426f451f3288b010c59caa81a10cd86275fedf5473ae2",
+    "results/n111_wrapup/tables/zero_option_model_comparison.csv": "ab34975d8f946f051ecbea6b4564ebc680867febe67f0b4e3c9379a1ade83c05",
+    "results/n111_wrapup/tables/zero_option_ppc_comparison.csv": "700eedbe1444a5a25c5b48deb2f5fcb14d9dde06a512a6b805804711ada71826",
+    "results/n111_wrapup/tables/zero_option_parameter_changes.csv": "ce8edd15d15f081b3b718451abe1bcdb7b6f41d0b8835827e4ec4859683465c6",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_H5_zero_full.csv": "a9c42a6b8f9f8be128f5e8578f1c659cd0571bea7801e73734051bd9dab0371d",
+    "results/n111_wrapup/sampler_evidence/N111_H5_zero_full/manifest_summary.json": "8b5c2d4f83e4ce87f66b897466aaede52b649969cd4bbd79dca3e3978df5af89",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_H7_zero_full.csv": "d8bb9db839fb554360b14cd828f46807ab37f898ca53722fd1dc6d5715926cbe",
+    "results/n111_wrapup/sampler_evidence/N111_H7_zero_full/manifest_summary.json": "8f52edf939a9d6a3a561dd54d2f3c29e2c04795c67c643cdb29428de2ad8ec2a",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_HPreference_zero_full_depth14.csv": "cb5e81c0e40489b4dd8b4d19186858d8db180e09417e1e895fa7b9d3d5d0f7a2",
+    "results/n111_wrapup/sampler_evidence/N111_HPreference_zero_full_depth14/manifest_summary.json": "a23ed367f2750c13b8339818c937aaffb8da5d11b58d698e14c4e7514163bfff",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_H8_zero_full.csv": "658c4d9cad1d1d95851921653b1737aea5f8d0b29fc821e33e35360196ce73de",
+    "results/n111_wrapup/sampler_evidence/N111_H8_zero_full/manifest_summary.json": "924e13ba2cde69ee4b2f51221d6ee0ebab7cb168325231fec3b52835990973c5",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_H5_base_full.csv": "fc9229ebf022300cf9424d35e8a4b2f1bb1958328d19fc293955a279648e5e1e",
+    "results/n111_wrapup/sampler_evidence/N111_H5_base_full/manifest_summary.json": "54a40eba6ab633b17c60b4c459a4cf3b5ea1b241d69876813c81176305274975",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_H7_base_full.csv": "e03603f35cbc0feb75662cc6a73ec5c27ed8fb6d4e8043d94f7566f71cb95510",
+    "results/n111_wrapup/sampler_evidence/N111_H7_base_full/manifest_summary.json": "676abfc759c8a7f26d5fa83deb3c1090d98079319530529f3586d4d4cd48b9f4",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_HPreference_base_full.csv": "79d422c1368c35a157b832cb469132c1977e45f5c4a96f640aea10474a3b63ab",
+    "results/n111_wrapup/sampler_evidence/N111_HPreference_base_full/manifest_summary.json": "0d06bd58c9b3b7cd854ec2316b2f017a29eb2c47bdb1878b90f6da7cb378ba67",
+    "results/n111_wrapup/tables/zero_diagnostics_N111_H8_base_full.csv": "9ab496a91773de5f17a50baa7c9e919205a370043b08f80e39e768b805970288",
+    "results/n111_wrapup/sampler_evidence/N111_H8_base_full/manifest_summary.json": "6059c4b730e9f49b974a450e9ae34e3783ef47510e6479ec73ef33aad97864f2"
+  }
+}
