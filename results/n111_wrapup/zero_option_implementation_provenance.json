@@ -1,0 +1,12 @@
+{
+  "source_commit": "90ed32655fc5ef7b09b43fe7f91674afec9c07d9",
+  "sources": {
+    "stan/n111_zero_fast.stan": "6dbb246f1ac6425ef8fabe2fb32c62b434456c73b3dd5b5aab7cd871518c333b",
+    "stan/n111_zero_reference.stan": "a0736e782d69249fa0206a65b285f481b48b864213d948ebc50eea67b4cfab4d",
+    "stan/n111_zero_fast.hpp": "3d7b47bba4f762b736f2d83bc419053f495a245880774e3b7f028d0941a48afc"
+  },
+  "generator_sha256": "a520d6512b9b8a8d3de3bfbf70529576ffbb4322bc7fcb2622c6c042ff31f97b",
+  "config_sha256": "cb9c453c02f1a4fcfccba107ea98c9e199bd94521f1cc4b6cc102fabc1dd1b41",
+  "cases": 16,
+  "sampling_started": false
+}
