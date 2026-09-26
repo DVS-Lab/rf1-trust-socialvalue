@@ -1,8 +1,9 @@
 # Trust, learning, and social value
 
-> **New: [accepted-fit report and six figure sets](results/review/README.md) (25 September 2026).** The diagnostic audit is complete. This scoped report uses the 32 of 34 Linux posterior runs that pass all checks; H4 full-age inference and H5 training-age scoring remain excluded because each has one divergence. Full second-pass finalization is still incomplete. No further sampling is needed to read or rebuild this report. See the [current status](results/second_pass_checkpoint.md). The report/gallery below are historical first-pass outputs.
+> **N=111 closeout complete:** read the [final synthesis and five figure sets](results/n111_wrapup/README.md). The generic zero-option term is retained as a candidate with residual misfit; realistic recovery shows criterion-dependent mechanism confusion. All 7,992 simulated participant cases completed. No further hierarchical confirmation is warranted in this scoped phase; no additional participants were accessed.
 
-> **N=111 closeout in progress:** the [completed zero-option decision](results/n111_wrapup/zero_option_decision.md) retains one generic candidate feature, with explicit residual misfit. All twelve comparison sources pass. The [finite realistic recovery screen](docs/n111_realistic_recovery.md) is ready for linux1; mechanism discrimination and final synthesis remain pending. Additional participants are outside scope.
+> **Historical accepted-fit review: [report and six figure sets](results/review/README.md) (25 September 2026).** The diagnostic audit is complete. This scoped report uses the 32 of 34 Linux posterior runs that pass all checks; H4 full-age inference and H5 training-age scoring remain excluded because each has one divergence. Full second-pass finalization is still incomplete. No further sampling is needed to read or rebuild this report. See the [current status](results/second_pass_checkpoint.md). The report/gallery below are historical first-pass outputs.
+
 
 A reproducible behavioral analysis of **OpenNeuro ds005123 v1.1.3**. Does greater trust in friends reflect added value of reciprocation, optimistic expectations, asymmetric learning, or more general partner preferences?
 

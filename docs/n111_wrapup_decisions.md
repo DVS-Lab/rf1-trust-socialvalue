@@ -1,6 +1,7 @@
 # N=111 developmental-analysis decision record
 
-**Status: closeout in progress.** Stage A and the twelve-source stage-B comparison are accepted (latest results `cf9b33d`). The zero-option term is retained as a candidate with unresolved PPC misfit. Realistic recovery and final synthesis remain pending. This is not a final full-sample analysis plan; see [fixed scope](n111_wrapup_scope.md), [feature decision](../results/n111_wrapup/zero_option_decision.md) and [recovery protocol](n111_realistic_recovery.md).
+**Status: N=111 closeout complete.** The zero-option diagnostic, one-feature comparison and realistic structural screen are complete; final recovery evidence is `46ad9c2`. Retain the generic zero term as a candidate with remaining PPC limitations. Do not launch hierarchical confirmation: mechanism separation is asymmetric and criterion-dependent, with weak short-task MLE estimation. The [authoritative final report](../results/n111_wrapup/README.md), [stopping record](../results/n111_wrapup/closeout_status.json) and five figure sets are complete. No additional participants were accessed. Earlier entries below record the historical sequence.
+
 
 ## Sample and trial conventions retained
 
@@ -26,7 +27,7 @@ The stage A history strata use the same actual pretrial labels for both predicti
 
 ## Recovery interpretation
 
-The existing hierarchical recovery uses a lower theta range than the empirical fits. Its improved RMSE does not establish calibration or mechanism discrimination in the upper empirical range. Realistic targeted H5/H7/HPreference/H8 recovery is pending. The key reportable quantities are H7→H7/HPreference/H8 and HPreference→HPreference/H7/H8 selection rates. No discrimination conclusion is inferred from the present predictive tie alone.
+The existing hierarchical recovery uses a lower theta range than the empirical fits. Its improved RMSE does not establish calibration or mechanism discrimination in the upper empirical range. Realistic targeted H5/H7/HPreference/H8 recovery is complete; the final review below records criterion-dependent confusion and stops hierarchical confirmation. The key reportable quantities are H7→H7/HPreference/H8 and HPreference→HPreference/H7/H8 selection rates. No discrimination conclusion is inferred from the present predictive tie alone.
 
 ## Ratings and age questions left open
 
@@ -34,13 +35,13 @@ Ratings exist for 103 primary participants, but pre/post timing is not establish
 
 Behavioral age-25-to-75 friend-minus-computer change: +.025 (95% CI −.150 to +.201); friend-minus-stranger: +.002 (−.141 to +.146). Accepted H5 canonical friend-value probability change: −.050 (95% credible interval −.185 to +.078). These intervals allow meaningful effects in either direction. H5 latent variance fractions must not be described as percentages of all behavioral variability. No new N=111 age analyses are planned in this closeout.
 
-## Outstanding closeout decisions
+## Closeout decisions (resolved)
 
 1. Answered: the relative zero-option misfit persists under actual histories; the main offer-cell discrepancy is not explained by simulated-history compounding.
 2. Answered with qualification: all four temporal comparisons improve and zero-offer PPCs improve markedly in the partner models, but positive-positive changes are mixed. Retain only as a candidate with residual misfit.
 3. Answered: value/preference estimates fall and kappa rises after gamma0, demonstrating sensitivity to the choice specification.
-4. Can H7 and HPreference be distinguished in realistic parameter ranges, including confusion with H8?
-5. Record the answers, finalize the compact synthesis, and stop.
+4. Answered with limits: the realistic fast screen shows substantial, asymmetric H7/HPreference confusion, additional H8/H5 confusion and criterion-dependent dataset choices. It does not establish reliable mechanism discrimination or mathematical impossibility.
+5. Complete: answers, five figure sets, machine-readable conclusions and the final synthesis are saved. Stop this N=111 phase; no new sampling requested.
 
 ## Stage B initial review and one bounded retry (26 September)
 
@@ -59,3 +60,15 @@ The one selected HPreference depth-14 attempt passed: no divergences or depth hi
 Retain the common zero-option term as an important candidate feature, because all four temporal comparisons improve and zero-offer PPC errors shrink sharply in H5/H7/HPreference. The strict no-damage criterion is not uniformly met: some positive-positive cells worsen. This qualified retention is explicitly not a claim of complete PPC repair. The larger sample must evaluate the feature independently; no further feature is added here. Partner/value estimates fall materially after adjustment. See the numerical [feature decision](../results/n111_wrapup/zero_option_decision.md).
 
 Prepare exactly the bounded [realistic recovery screen](n111_realistic_recovery.md), with adjusted models primarily, originals secondarily, eight posterior population draws per generator and two separately labeled high-theta stress datasets for each social-value generator/family. Fit all four competing models to each simulated participant with 32 starts and wide, range-audited bounds; preserve the actual schedules and missingness. Report individual and complete-dataset AICc/BIC and temporal prediction separately. Up to 40 single-threaded workers are allowed on linux1. Caches and logs support resumption. No hierarchical confirmation launches automatically; first inspect H7↔HPreference confusion, H8 confusion, prediction differences and optimizer boundaries.
+
+## Final recovery review and stopping decision (results 46ad9c2)
+
+All 72 simulated N=111 datasets completed: 7,992 participant cases, 63,936 full/training candidate fits, no unresolved optimizer errors. Eight empirical posterior population draws per generator/family and two separately labeled high-theta stress draws per social-value generator/family used the actual schedules and missingness. The generating theta tail reached 22.61; the fitting ceiling expanded to 24.87, so no generator was clipped or placed outside the fitted range.
+
+In the primary zero-adjusted empirical screen, individual AICc selected H7/HPreference/H8 at .1796/.2033/.1233 when H7 generated, and HPreference/H7/H8 at .4234/.1993/.0940 when HPreference generated (remaining selections were H5). Whole-dataset AICc selected H7 in 2/8 H7 datasets and HPreference in 6/8; it selected HPreference in 8/8 HPreference datasets. BIC and temporal criteria differed. This asymmetric performance does not support robust separation of both mechanisms. Whole-dataset comparisons sum nonhierarchical criteria, not hierarchical marginal likelihoods. Eight population draws constrain rate precision.
+
+MLE boundary behavior is common even for the correct generator: H7 69.5% full /78.8% training; HPreference 51.1%/65.5%. Independent short training fits sometimes give extreme test losses (primary empirical maximum about 727.9), making mean-log-loss ranks sensitive to overconfident errors. No losses were clipped or removed to improve rankings. The 32-start near-best audit and nested-likelihood checks passed, but numerical convergence is not statistical identification. Parameter-boundary details and loss tails are exported.
+
+**No hierarchical confirmation is launched.** Under the user's stopping rule, the screen's strong confusion and estimation limitations do not justify expensive confirmation in this closeout. This is a qualified evidence limitation, not proof that a different estimator/design could never distinguish mechanisms. The final report states the zero-option PPC tradeoff, parameter shifts, existing age uncertainty, unresolved rating timing and preserved exclusions. No more models, age forms, ratings work or additional participants are introduced.
+
+Rebuild the final audit and synthesis with `python scripts/26_finalize_n111.py`; it starts no fits and requires only committed tables. It reconstructs all confusion rates and checks coverage, original splits, likelihood criteria, optimizer summaries, source fingerprints, generating ranges and paired predictive scores. The earlier accepted-fit report remains preserved.

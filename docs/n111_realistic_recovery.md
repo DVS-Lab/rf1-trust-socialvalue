@@ -1,5 +1,7 @@
 # N=111 realistic mechanism recovery — finite structural screen
 
+**Completed in results commit `46ad9c2`:** all 7,992 cases succeeded. The [final review](../results/n111_wrapup/realistic_recovery_review.md) stops without hierarchical confirmation. The launch below is retained for reproducibility, not a request for another run.
+
 The [stage-B decision](../results/n111_wrapup/zero_option_decision.md) retains gamma0 as a candidate, with explicit remaining PPC errors. All twelve comparison sources are now accepted using the isolated HPreference depth-14 source. No further empirical posterior fits are requested.
 
 ## Generators and fixed scope

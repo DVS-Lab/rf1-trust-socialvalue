@@ -1,0 +1,18 @@
+{
+  "status": "N111_closeout_complete",
+  "recovery_evidence_commit": "46ad9c2",
+  "feature": "retain_candidate_with_residual_misfit",
+  "hierarchical_confirmation": "not_warranted_in_scoped_closeout",
+  "rationale": "Strong, asymmetric and criterion-dependent confusion; frequent MLE boundaries and extreme temporal losses limit mechanistic interpretation. Stop after the fast screen under the scoped brief.",
+  "further_sampling_requested": false,
+  "additional_participants_accessed": false,
+  "excluded_original_runs": [
+    "H4_full_age",
+    "H5_train_age"
+  ],
+  "n_primary": 111,
+  "recovery_cases": 7992,
+  "recovery_datasets": 72,
+  "failed_cases": 0,
+  "builder_commit": "46ad9c244499c27d5a3dd8aa714e02c313add990"
+}

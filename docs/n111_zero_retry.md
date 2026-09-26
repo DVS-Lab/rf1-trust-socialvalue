@@ -1,5 +1,7 @@
 # One reviewed HPreference retry on linux1
 
+**Closeout complete.** The selected retry passed in `cf9b33d`; the full N=111 closeout is now complete. The commands below are historical reproduction instructions, not a new run request.
+
 The original batch `e6eb3b3` finished all twelve fits in about 3 h 18 min; eleven passed. The full-data HPreference extension alone failed the unchanged zero-depth-hit gate (8/16,000 retained transitions at depth 12). It had no divergences and passed Rhat, ESS and BFMI. Its accepted training fit already provides held-out scores. See the [scientific review](../results/n111_wrapup/zero_option_initial_review.md).
 
 This is one explicit, evidence-bound retry to obtain the missing matched PPC and preference-parameter comparison, and an accepted empirical recovery generator. It is not an automatic escalation to reach a passing count. Only maximum depth increases from 12 to 14. The seed, target, priors, four chains, 3,000 warmup, 4,000 retained draws per chain, adapt_delta .99 and metric are unchanged. The depth-14 gate still requires no depth hits, zero divergences, Rhat <1.01, bulk/tail ESS >=400, BFMI >.3.
