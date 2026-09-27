@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "frozen_at": "2026-09-27T17:19:06.026676+00:00",
+  "frozen_at": "2026-09-27T17:30:23.570209+00:00",
   "upstream_git_sha": "c44dd97dfe0a778fb48113546a3e60d776be38c2",
-  "analysis_git_sha": "e098fda830ff8ea4d7658c69379298ab371b80d0",
+  "analysis_git_sha": "bfe5b49298e712d135b7109aa3c362ac79f5166b",
   "frozen_n111_commit": "beac6f4d48421b546aa0c7011d4f60adec21ec56",
   "config": {
     "frozen_n111_commit": "beac6f4d48421b546aa0c7011d4f60adec21ec56",
@@ -16,6 +16,7 @@
     "source_provenance": "/ZPOOL/data/projects/rf1-sra-linux2/qc/trust_analysis/provenance.json",
     "legacy_trials": "/ZPOOL/data/projects/rf1-trust-socialvalue/results/tables/trial_table.csv",
     "legacy_sample": "/ZPOOL/data/projects/rf1-trust-socialvalue/results/tables/sample_audit.csv",
+    "parity_run_mappings": "/ZPOOL/data/projects/rf1-trust-socialvalue/config/full_sample_run_mappings.tsv",
     "parity_resolutions": "/ZPOOL/data/projects/rf1-trust-socialvalue/config/full_sample_parity_resolutions.tsv",
     "output": "/ZPOOL/data/projects/rf1-trust-socialvalue/results/full_sample",
     "work": "/ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample",
@@ -2044,8 +2045,9 @@
     "/ZPOOL/data/projects/rf1-trust-socialvalue/results/tables/trial_table.csv": "b819604280bf12d0325424b727cb6a4ee585966e62f4c1cc7cb968061d73f8d8",
     "/ZPOOL/data/projects/rf1-trust-socialvalue/results/tables/sample_audit.csv": "1226af5ad06437764d9238071c9b8c5cae7326ad2a4d0baa9461baf61a10a02a",
     "/ZPOOL/data/projects/rf1-trust-socialvalue/config/full_sample_parity_resolutions.tsv": "4b6119a6e6b5b0ab3974f3cd786faf3cb97b1241601141e7df918eba42b7a874",
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/config/full_sample_run_mappings.tsv": "7ed6a8885a0435d10d86e08b70033aacc43373fb1f53318a86f40ece9de4dcec",
     "/ZPOOL/data/projects/rf1-sra-linux2/bids/task-trust_events.json": "fbbff9720b88501c183a2913d0d290abd9389776f8903a20f7dc3466aaa13836",
-    "/ZPOOL/data/projects/rf1-trust-socialvalue/config/full_sample_linux2.json": "771dc4e2b980e08414e6af0a570829c0d12fae9dfd94364417bc7ba405e3ba38",
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/config/full_sample_linux2.json": "30af4de3b2793621e4ca4e8aac64fb5213b3ffd9498ede0b17a44b5bc2d8105e",
     "/ZPOOL/data/projects/rf1-sra-linux2/code/convert_behavior.py": "3cd52e980a37e5d42ec6a5c2197345891f371161f7ddfc1cd14f1546a9095121",
     "/ZPOOL/data/projects/rf1-sra-linux2/code/behavior_curation.tsv": "9ee378e3da40657a7cea9a77d71c1ae045104e4f1fa2169d1b0a3fb79f171585",
     "/ZPOOL/data/projects/rf1-sra-linux2/qc/events/policy.json": "59b44f4255de034e13ba3e3c2b3347cc25b450bb0f09dd2e32e311aaeebbf507"
@@ -2063,8 +2065,8 @@
     "cmdstan": null
   },
   "implementation_hashes": {
-    "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py": "4856b83dc778cdd72ac9db1f5887796b7194b3e89e7e102b385a9fc2c3f590d5",
-    "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample_behavior.py": "3cd389b8e209fc55734b5f7cf9f03b114dccc9ab26db256919de73158e17105f"
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py": "66c6ff96aacc9dcff1abcca0feb7af9985d36a0ca5a5e463c600153ba866d563",
+    "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample_behavior.py": "66669ce3c7e51bde5133ed7157207acebf5f7f118504f75072d7e3b48a437ee6"
   },
   "artifact_hashes": {
     "/ZPOOL/data/projects/rf1-trust-socialvalue/results/full_sample/tables/cohort_manifest.tsv": "9a64b8c102b081535976477321134a72b6ffb428f0447d0e7842723a8d92b8da",

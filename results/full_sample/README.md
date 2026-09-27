@@ -2,7 +2,7 @@
 
 N=111 remains frozen at `beac6f4d48421b546aa0c7011d4f60adec21ec56`.
 
-Status: **parity review required**. No hierarchical models launched.
+Status: **first milestone ready for scientific review**. No hierarchical models launched.
 
 ## Cohort and migration
 
@@ -22,9 +22,9 @@ Status: **parity review required**. No hierarchical models launched.
 - qc_review_runs: 8
 - qc_review_participants: 6
 - n111_overlap_n: 109
-- unexplained_parity_fields: 168
-- expected_canonical_corrections: 0
-- expected_public_omissions: 84
+- unexplained_parity_fields: 0
+- expected_canonical_corrections: 128
+- expected_public_omissions: 0
 
 ## Behavior
 
@@ -40,14 +40,14 @@ Estimates weight participants equally; intervals resample participants. Zero-ver
 - chose_high, friend: zero - positive-positive: 0.110 (95% CI 0.088, 0.133; N=343).
 - chose_high, stranger: zero - positive-positive: 0.205 (95% CI 0.175, 0.234; N=342).
 
-Age model status: blocked_by_parity.
+Age model status: complete.
 
 Review `tables/cohort_heterogeneity.tsv`, `tables/behavior_contrasts.tsv`, and `figures/02_zero_option_cohort_check.png` before pooling for computational interpretation.
 
 ## Provenance
 
 - Upstream SHA at freeze: `c44dd97dfe0a778fb48113546a3e60d776be38c2`
-- Analysis SHA at execution: `e098fda830ff8ea4d7658c69379298ab371b80d0`
+- Analysis SHA at execution: `bfe5b49298e712d135b7109aa3c362ac79f5166b`
 - Refreshed QC hash: `0024397bb42f80739b04a3832531a1157d00d65c0731c20d09aff7be4f143f57`
 
 Ratings inventory/export is deferred to upstream work and does not gate this milestone.

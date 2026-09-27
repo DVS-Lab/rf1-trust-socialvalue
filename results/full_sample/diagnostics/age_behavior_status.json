@@ -1,3 +1,12 @@
 {
-  "status": "blocked_by_parity"
+  "status": "complete",
+  "formula": "chose_high ~ C(partner)*age_z + C(offer_pair) + C(run) + trial_scaled + C(partner):trial_scaled",
+  "simplification": null,
+  "n_participants": 343,
+  "n_choices": 26560,
+  "age_center": 47.07871720116618,
+  "age_scale": 17.781052141649212,
+  "uncertainty": "GEE participant-cluster robust covariance; delta-method marginal intervals",
+  "warnings": [],
+  "quadratic_sensitivity": "prespecified for next phase; not run at integration gate"
 }

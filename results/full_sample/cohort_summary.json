@@ -15,7 +15,7 @@
   "qc_review_runs": 8,
   "qc_review_participants": 6,
   "n111_overlap_n": 109,
-  "unexplained_parity_fields": 168,
-  "expected_canonical_corrections": 0,
-  "expected_public_omissions": 84
+  "unexplained_parity_fields": 0,
+  "expected_canonical_corrections": 128,
+  "expected_public_omissions": 0
 }
