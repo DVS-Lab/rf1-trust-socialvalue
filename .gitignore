@@ -229,3 +229,6 @@ work/
 .tmp/
 *.tmp
 .DS_Store
+
+# Dedicated Linux2 Conda prefix for the full-sample handoff.
+.venv-linux2/
