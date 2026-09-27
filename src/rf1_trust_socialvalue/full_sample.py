@@ -17,6 +17,9 @@ import numpy as np
 import pandas as pd
 
 PARTNERS = ['friend', 'stranger', 'computer']
+PARITY_FIELDS = ['partner','c_left','c_right','c_low','c_high','chosen_amount','chose_high',
+                 'response_time','feedback_observed','observed_reciprocation',
+                 'scheduled_reciprocation','trial_in_run']
 FROZEN_N111 = 'beac6f4d48421b546aa0c7011d4f60adec21ec56'
 N111_HASHES = {'legacy_trials': 'b819604280bf12d0325424b727cb6a4ee585966e62f4c1cc7cb968061d73f8d8',
                'legacy_sample': '1226af5ad06437764d9238071c9b8c5cae7326ad2a4d0baa9461baf61a10a02a'}
@@ -47,7 +50,7 @@ def resolve_config(path):
     root = path.parent.parent
     for key in ['upstream_root', 'bids_root', 'response_qc', 'qc_provenance', 'eligibility',
                 'source_exclusions', 'source_provenance', 'participants', 'legacy_trials',
-                'legacy_sample', 'parity_resolutions', 'output', 'work']:
+                'legacy_sample', 'parity_resolutions', 'parity_run_mappings', 'output', 'work']:
         c[key] = str((root / c[key]).resolve())
     c['_root'] = str(root); c['_config_path'] = str(path)
     if Path(c['output']) != root / 'results/full_sample' or Path(c['work']) != root / 'work/full_sample':
@@ -124,7 +127,7 @@ def preflight(c):
     """Check the upstream handoff before running tests or hashing event files."""
     paths = {key: Path(c[key]) for key in ['participants', 'response_qc', 'qc_provenance',
         'eligibility', 'source_exclusions', 'source_provenance', 'legacy_trials',
-        'legacy_sample', 'parity_resolutions']}
+        'legacy_sample', 'parity_resolutions', 'parity_run_mappings']}
     paths.update(trust_sidecar=Path(c['bids_root'])/'task-trust_events.json',
         converter=Path(c['upstream_root'])/'code/convert_behavior.py',
         curation=Path(c['upstream_root'])/'code/behavior_curation.tsv',
@@ -175,7 +178,7 @@ def inventory(c):
         if p.resolve().parent != (bids / match[1] / ('ses-'+match[2]) / 'func').resolve():
             raise ValueError('event filename/directory identity mismatch')
     paths = files + imaging_templates + [Path(c[k]) for k in ['participants','response_qc','qc_provenance','eligibility',
-        'source_exclusions','source_provenance','legacy_trials','legacy_sample','parity_resolutions']]
+        'source_exclusions','source_provenance','legacy_trials','legacy_sample','parity_resolutions','parity_run_mappings']]
     paths += [bids/'task-trust_events.json', Path(c['_config_path']),
               Path(c['upstream_root'])/'code/convert_behavior.py',
               Path(c['upstream_root'])/'code/behavior_curation.tsv',
@@ -299,21 +302,84 @@ def comparable(a,b):
     return bool(np.isclose(float(a),float(b),atol=1.1e-6,rtol=0))
 
 
-def parity(t,c):
+def mapped_legacy(t,c):
+    """Apply explicit, hash-bound run mappings only after full trial equality."""
     old=pd.read_csv(c['legacy_trials'])
+    old['trial_id']=old.trial_in_run.astype(int).astype(str)
+    old['session']='01'
+    rules=tsv(c['parity_run_mappings'])
+    corrections=[]
+    if rules.empty:return old,corrections
+    if rules.duplicated(['participant_id','legacy_run']).any():
+        raise ValueError('duplicate legacy run mapping')
+    rules=rules.assign(legacy_run=pd.to_numeric(rules.legacy_run,errors='raise'),
+                       canonical_run=pd.to_numeric(rules.canonical_run,errors='raise'),
+                       expected_legacy_trials=pd.to_numeric(rules.expected_legacy_trials,errors='raise'))
+    if rules.duplicated(['participant_id','legacy_run']).any():
+        raise ValueError('duplicate numeric legacy run mapping')
+    mapped=old.copy(); removed=[]; verified=set()
+    for r in rules.itertuples():
+        if r.action not in {'map','omit_aborted_segment'} or not r.evidence:
+            raise ValueError('invalid run mapping action/evidence')
+        if r.canonical_run < 1 or r.canonical_run != int(r.canonical_run):
+            raise ValueError('canonical run mapping must be a positive integer')
+        if r.legacy_trials_sha256 != sha(c['legacy_trials']):
+            raise ValueError('stale run mapping legacy hash')
+        event=Path(c['bids_root'])/f'{r.participant_id}/ses-01/func/{r.participant_id}_ses-01_task-trust_run-{int(r.canonical_run)}_events.tsv'
+        if not event.is_file() or r.events_sha256 != sha(event):
+            raise ValueError('stale run mapping canonical event hash')
+        o=old[old.participant_id.eq(r.participant_id)&old.run.eq(r.legacy_run)]
+        n=t[t.participant_id.eq(r.participant_id)&t.run.eq(r.canonical_run)]
+        if o.empty or n.empty or len(o)!=r.expected_legacy_trials:
+            raise ValueError('run mapping missing rows or unexpected trial count')
+        if o.trial_id.duplicated().any() or n.trial_id.duplicated().any():
+            raise ValueError('duplicate trial ID in run mapping')
+        if r.action=='map':
+            key=(r.participant_id,int(r.canonical_run))
+            if key in verified:raise ValueError('multiple legacy runs map to one canonical run')
+            if len(o)!=c['expected_trials'] or set(o.trial_id)!=set(n.trial_id):
+                raise ValueError('run mapping requires identical complete trial sets')
+            nn=n.set_index('trial_id')
+            for a in o.itertuples():
+                b=nn.loc[a.trial_id]
+                for field in PARITY_FIELDS:
+                    av,bv=getattr(a,field),b[field]
+                    if field=='chose_high' and pd.notna(av):av=float(av)
+                    if not comparable(av,bv):
+                        raise ValueError(f'run mapping trial mismatch: {r.participant_id} legacy {r.legacy_run} -> {r.canonical_run}, trial {a.trial_id}, {field}: {av!r} vs {bv!r}')
+            verified.add(key)
+            mapped.loc[o.index,'run']=r.canonical_run
+        else:
+            if not 0<len(o)<c['expected_trials'] or 'ambiguous_session' not in o or not o.ambiguous_session.eq(True).all():
+                raise ValueError('only a documented incomplete ambiguous segment can be omitted')
+            removed.extend(o.index)
+        for a in o.itertuples():
+            corrections.append(dict(participant_id=r.participant_id,session='01',run=r.canonical_run,
+                trial_id=a.trial_id,field='run_identity' if r.action=='map' else 'aborted_segment_presence',
+                legacy_value=str(r.legacy_run) if r.action=='map' else 'present',
+                canonical_value=str(int(r.canonical_run)) if r.action=='map' else 'absent',
+                classification='expected canonical correction',evidence=r.evidence,
+                legacy_run=r.legacy_run,events_sha256=r.events_sha256))
+    for r in rules[rules.action.eq('omit_aborted_segment')].itertuples():
+        if (r.participant_id,int(r.canonical_run)) not in verified:
+            raise ValueError('aborted segment omission requires a verified complete replacement mapping')
+    mapped=mapped.drop(index=removed)
+    if mapped.duplicated(['participant_id','session','run','trial_id']).any():
+        raise ValueError('run mapping collides with another historical run')
+    return mapped,corrections
+
+
+def parity(t,c):
+    old,corrections=mapped_legacy(t,c)
     sample=pd.read_csv(c['legacy_sample'])
     overlap=set(t.participant_id)&set(sample.loc[sample.primary_include,'participant_id'])
     release=set(sample.participant_id)
-    old['trial_id']=old.trial_in_run.astype(int).astype(str)
-    old['session']='01'
-    # Fractional runs denote known uncurated appended sessions, not a run mapping.
-    fields=['partner','c_left','c_right','c_low','c_high','chosen_amount','chose_high',
-            'response_time','feedback_observed','observed_reciprocation','scheduled_reciprocation','trial_in_run']
+    fields=PARITY_FIELDS
     key=['participant_id','session','run','trial_id']
     resolutions=tsv(c['parity_resolutions'])
     if len(resolutions) and resolutions.duplicated(key+['field']).any():
         raise ValueError('duplicate parity resolution')
-    rows=[]
+    rows=[dict(r,in_n111_primary=r['participant_id'] in overlap) for r in corrections]
     oldgroups={k:v for k,v in old.groupby(['participant_id','run'])}
     newgroups={k:v for k,v in t.groupby(['participant_id','run']) if k[0] in release}
     for sub,run in sorted(set(oldgroups)|set(newgroups)):
@@ -362,6 +428,7 @@ def freeze(c,refresh=False):
         raise ValueError('cohort already frozen; use verify/run or explicit freeze --refresh')
     hashes,files=inventory(c)
     t,m,a=build_tables(c,files)
+    mapped_legacy(t,c)  # Validate proposed mappings before replacing any existing freeze.
     if provenance.exists():
         backup=work/('previous_freeze_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
         shutil.copytree(out,backup)

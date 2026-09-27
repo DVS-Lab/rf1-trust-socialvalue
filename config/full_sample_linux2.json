@@ -10,6 +10,7 @@
   "source_provenance": "/ZPOOL/data/projects/rf1-sra-linux2/qc/trust_analysis/provenance.json",
   "legacy_trials": "results/tables/trial_table.csv",
   "legacy_sample": "results/tables/sample_audit.csv",
+  "parity_run_mappings": "config/full_sample_run_mappings.tsv",
   "parity_resolutions": "config/full_sample_parity_resolutions.tsv",
   "output": "results/full_sample",
   "work": "work/full_sample",

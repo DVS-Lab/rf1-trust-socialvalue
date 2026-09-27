@@ -214,7 +214,7 @@ def run(c):
         'Stop for review here. The planned next phase includes H2/H5/H7/HPreference/H8, each with and without generic gamma0; representative no-age fits first, then run-1 → run-2 prediction.']
     (out/'README.md').write_text('\n'.join(text)+'\n')
     (diagnostics/'parity_report.md').write_text('# Canonical migration audit\n\n'+f'{overlap} N111 primary participants overlap; {unexplained} unexplained field discrepancies.\n\n'+
-        'Joins use participant, session, run and source trial_id. All shared-release participants with primary canonical data are audited. New canonical runs absent from the historical trial table are public omissions; all within-run or observed-field differences require a value- and hash-bound reviewed resolution. Historical appended sessions are never silently reassigned.\n')
+        'Joins use participant, session, run and source trial_id. All shared-release participants with primary canonical data are audited. New canonical runs absent from the historical trial table are public omissions; all within-run or observed-field differences require a value- and hash-bound reviewed resolution. Run/segment mappings are explicit in config/full_sample_run_mappings.tsv, bound to the legacy table and canonical event hashes, and require equality of every shared trial field. Run-identity corrections and the documented aborted segment remain visible in the audit.\n')
     verify(c)
     status=dict(status='blocked_parity' if unexplained else 'ready_for_review',generated_at=datetime.now(timezone.utc).isoformat(),
         hierarchical_launch_authorized=False,analysis_git_sha=git_sha(c['_root']),cohort_summary=stats,

@@ -349,3 +349,12 @@ The default cohort conversion concurrency is 12 processes; Stan is not involved.
 Keep and push `qc/trust_analysis/cohort_run_plan.tsv` along with the QC exports
 and all run logs. A successful gate reports the eligible and excluded runs
 separately. Do not proceed to the scientific gate until this stage exits zero.
+
+## Reviewed historical run/segment alignment
+
+The first full-sample run reached 343 participants but stopped on 168 parity
+entries concentrated in three historical run/segment cases. See
+[the parity review](full_sample_parity_review.md) for the evidence, exact mapping
+checks, and one-time logged `--refresh` command. The mappings require full live
+trial equality; do not treat the proposed resolution as passed before the Linux2
+run verifies it.

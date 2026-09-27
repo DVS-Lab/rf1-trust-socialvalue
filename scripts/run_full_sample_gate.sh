@@ -3,6 +3,13 @@
 set -euo pipefail
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$root"
+refresh=false
+if [[ $# -eq 1 && "$1" == "--refresh" ]]; then
+  refresh=true
+elif [[ $# -ne 0 ]]; then
+  echo "Usage: bash scripts/run_full_sample_gate.sh [--refresh]" >&2
+  exit 2
+fi
 stamp="$(date -u +%Y%m%dT%H%M%SZ)-full-sample"
 record="results/run_logs/$stamp"
 mkdir -p "$record"
@@ -31,7 +38,9 @@ if [[ -n "$(git status --porcelain --untracked-files=normal -- src scripts tests
 fi
 python3 -m rf1_trust_socialvalue.full_sample preflight
 python3 -m pytest -q
-if [[ ! -f results/full_sample/provenance.json ]]; then
+if [[ "$refresh" == true ]]; then
+  python3 -m rf1_trust_socialvalue.full_sample freeze --refresh
+elif [[ ! -f results/full_sample/provenance.json ]]; then
   python3 -m rf1_trust_socialvalue.full_sample freeze
 else
   python3 -m rf1_trust_socialvalue.full_sample verify

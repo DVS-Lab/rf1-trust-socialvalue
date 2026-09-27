@@ -61,9 +61,10 @@ def setup_cohort(tmp_path,monkeypatch):
     c.update(upstream_root=str(up),bids_root=str(bids),participants=str(bids/'participants.tsv'),
         response_qc=str(up/'qc.tsv'),qc_provenance=str(up/'qc.json'),eligibility=str(up/'eligibility.tsv'),
         source_exclusions=str(up/'exclusions.tsv'),source_provenance=str(up/'source.json'),
-        legacy_trials='legacy.csv',legacy_sample='sample.csv',parity_resolutions='config/resolutions.tsv',bootstrap_iterations=10)
+        legacy_trials='legacy.csv',legacy_sample='sample.csv',parity_resolutions='config/resolutions.tsv',parity_run_mappings='config/run_mappings.tsv',bootstrap_iterations=10)
     (root/'config/full_sample_linux2.json').write_text(json.dumps(c))
     (root/'config/resolutions.tsv').write_text('participant_id\tsession\trun\ttrial_id\tfield\tlegacy_value\tcanonical_value\tclassification\tevidence\tlegacy_trials_sha256\tevents_sha256\n')
+    (root/'config/run_mappings.tsv').write_text('participant_id\tlegacy_run\tcanonical_run\taction\texpected_legacy_trials\tlegacy_trials_sha256\tevents_sha256\tevidence\n')
     qc=[];elig=[];old=[]
     for sub,age in [('sub-1',25),('sub-2',75)]:
         rel=f'{sub}/ses-01/func/{sub}_ses-01_task-trust_run-1_events.tsv';p=bids/rel;p.parent.mkdir(parents=True,exist_ok=True)
@@ -255,3 +256,78 @@ def test_metadata_preflight_allows_explicit_missing_age(tmp_path, monkeypatch):
     t, _, audit = fs.build_tables(c, files)
     assert len(audit) == 2
     assert t.loc[t.participant_id.eq('sub-1'), 'age'].isna().all()
+
+
+def mapped_cohort(tmp_path, monkeypatch, aborted=False):
+    c=setup_cohort(tmp_path,monkeypatch)
+    _,files=fs.inventory(c);t,_,_=fs.build_tables(c,files)
+    c['expected_trials']=4
+    old=pd.read_csv(c['legacy_trials'])
+    selected=old.participant_id.eq('sub-1')
+    stub=old[selected].iloc[:2].copy()
+    old['run']=old.run.astype(float)
+    old.loc[selected,'run']=1.1
+    old['ambiguous_session']=True
+    if aborted:
+        stub['ambiguous_session']=True
+        # The aborted attempt is a different response sequence, not overwritten RTs.
+        stub['response_time']=2.5
+        old=pd.concat([old,stub],ignore_index=True)
+    old.to_csv(c['legacy_trials'],index=False)
+    rule=dict(participant_id='sub-1',legacy_run='1.1',canonical_run='1',action='map',
+        expected_legacy_trials=4,legacy_trials_sha256=fs.sha(c['legacy_trials']),
+        events_sha256=fs.sha(files[0]),evidence='synthetic reviewed segment correction')
+    rules=[rule]
+    if aborted:rules.append(dict(rule,legacy_run='1',action='omit_aborted_segment',expected_legacy_trials=2))
+    pd.DataFrame(rules).to_csv(c['parity_run_mappings'],sep='\t',index=False)
+    return c,t
+
+
+def test_run_mapping_compares_complete_trials_and_keeps_correction_audit(tmp_path,monkeypatch):
+    c,t=mapped_cohort(tmp_path,monkeypatch,aborted=True)
+    p,n=fs.parity(t,c)
+    assert n==2
+    assert p.classification.eq('identical').sum()==8
+    assert p.classification.eq('expected canonical correction').sum()==6
+    assert p.field.eq('run_identity').sum()==4
+    assert p.field.eq('aborted_segment_presence').sum()==2
+    assert not p.classification.eq('new unexplained discrepancy').any()
+    fs.freeze(c);fs.verify(c)
+
+
+@pytest.mark.parametrize('field',fs.PARITY_FIELDS)
+def test_run_mapping_cannot_hide_trial_value_changes(tmp_path,monkeypatch,field):
+    c,t=mapped_cohort(tmp_path,monkeypatch)
+    ix=t.index[(t.participant_id=='sub-1') & t.feedback_observed][0]
+    value=t.loc[ix,field]
+    if isinstance(value,(bool,np.bool_)):replacement=not value
+    elif isinstance(value,str):replacement='different'
+    else:replacement=value+1
+    t.loc[ix,field]=replacement
+    with pytest.raises(ValueError,match='run mapping trial mismatch'):
+        fs.parity(t,c)
+
+
+@pytest.mark.parametrize('problem',['legacy_hash','event_hash','count','missing_trial','duplicate_rule','collision','omit_without_replacement'])
+def test_run_mapping_guards(tmp_path,monkeypatch,problem):
+    c,t=mapped_cohort(tmp_path,monkeypatch,aborted=problem in {'collision','omit_without_replacement'})
+    rules=fs.tsv(c['parity_run_mappings'])
+    if problem=='legacy_hash':rules.loc[0,'legacy_trials_sha256']='wrong'
+    if problem=='event_hash':rules.loc[0,'events_sha256']='wrong'
+    if problem=='count':rules.loc[0,'expected_legacy_trials']='3'
+    if problem=='missing_trial':t=t.drop(t.index[0])
+    if problem=='duplicate_rule':rules=pd.concat([rules,rules.iloc[:1]])
+    if problem=='collision':rules=rules[rules.action.eq('map')]
+    if problem=='omit_without_replacement':rules=rules[rules.action.eq('omit_aborted_segment')]
+    rules.to_csv(c['parity_run_mappings'],sep='\t',index=False)
+    with pytest.raises(ValueError):fs.parity(t,c)
+
+
+def test_bad_mapping_does_not_replace_existing_freeze(tmp_path,monkeypatch):
+    c,t=mapped_cohort(tmp_path,monkeypatch)
+    fs.freeze(c)
+    path=Path(c['output'])/'provenance.json';original=path.read_bytes()
+    rules=fs.tsv(c['parity_run_mappings']);rules.loc[0,'events_sha256']='wrong'
+    rules.to_csv(c['parity_run_mappings'],sep='\t',index=False)
+    with pytest.raises(ValueError,match='canonical event hash'):fs.freeze(c,refresh=True)
+    assert path.read_bytes()==original
