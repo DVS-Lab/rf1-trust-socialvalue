@@ -1,0 +1,33 @@
+{
+  "stage": "full_cohort_noage_pilot",
+  "launch_authorized": true,
+  "integration_commit": "a785eb6",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "cohort_config": "config/full_sample_linux2.json",
+  "cmdstan_version": "2.40.0",
+  "compile_cores": 8,
+  "parallel_fits": 4,
+  "cpu_budget": 80,
+  "metric": "diag_e",
+  "gamma_population_mean_prior_sd": 1.0,
+  "automatic_retries": false,
+  "pilot": [
+    {
+      "model": "H2",
+      "variant": "base"
+    },
+    {
+      "model": "H5",
+      "variant": "zero"
+    },
+    {
+      "model": "H7",
+      "variant": "zero"
+    },
+    {
+      "model": "HPreference",
+      "variant": "zero"
+    }
+  ],
+  "note": "User requested full-cohort modeling after the integration review. Production-length representative no-age fits first; stop for runtime/diagnostic review before the broad full/train batch. Sampling settings are read from the frozen cohort configuration; no N111 launchers are called."
+}
