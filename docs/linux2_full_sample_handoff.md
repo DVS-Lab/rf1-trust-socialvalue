@@ -15,7 +15,7 @@ new analysis N.
 On **Linux2**, not Linux1 or the laptop:
 
 ```bash
-tmux new -s rf1-trust-full
+tmux new-session -A -s rf1-trust-full 'bash --noprofile --norc -i'
 ```
 
 Detach using **Ctrl-b**, then **d**. Reattach with:
@@ -24,10 +24,23 @@ Detach using **Ctrl-b**, then **d**. Reattach with:
 tmux attach -t rf1-trust-full
 ```
 
+The explicit Bash command bypasses login/startup files that could immediately
+close the session. Keep fail-fast options out of the interactive shell:
+
+```bash
+set +e
+set +u
+set +o pipefail
+```
+
+The child workflow scripts stop on failures and save their exit status; the
+interactive shell should remain available to inspect those failures.
+
 Inside that session, synchronize both repositories. These commands stop if a
 checkout has uncommitted work; they do not reset, stash, or force-push anything.
 
 ```bash
+(
 set -e
 cd /ZPOOL/data/projects/rf1-sra-linux2
 git status --short
@@ -43,9 +56,10 @@ cd rf1-trust-socialvalue
 git status --short
 test -z "$(git status --porcelain)"
 git pull --ff-only
+)
 ```
 
-If either clean-check fails, preserve the local changes and reconcile them before
+The parentheses confine `set -e` to this setup subprocess. If either clean-check fails, preserve the local changes and reconcile them before
 continuing. Do not use a force push to resolve a rejected push.
 
 ## 2. Create an isolated environment
@@ -61,6 +75,7 @@ cd /ZPOOL/data/projects/rf1-trust-socialvalue
 if [ ! -x .venv-linux2/bin/python ]; then
     conda create -y -p "$PWD/.venv-linux2" python=3.12 pip
 fi
+source "$(conda info --base)/etc/profile.d/conda.sh"
 conda activate "$PWD/.venv-linux2"
 python --version
 python -m pip install -e '.[test,hierarchical]' \
@@ -240,3 +255,30 @@ prediction task. Hierarchical age effects and whole-dataset recovery follow only
 after accepted fits. Ratings inventory/timing remains upstream and does not block
 this integration milestone. No unique H7-versus-HPreference claim is inherited
 from the N111 screen.
+
+
+## Recover an unexpectedly closed tmux session
+
+`[exited]` means the session ended; it does not identify the failing command.
+Read the latest upstream stage log from the ordinary login shell first. This
+command does not restart conversion, need Conda activation, or enable fail-fast
+shell options:
+
+```bash
+/ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/bin/python - <<'PYLOG'
+from pathlib import Path
+root = Path('/ZPOOL/data/projects/rf1-sra-linux2/qc/trust_analysis/run_logs')
+logs = sorted(root.glob('*/console.txt'), key=lambda p: p.stat().st_mtime)
+if not logs:
+    print('No validation log found; the workflow may not have started.')
+else:
+    log = logs[-1]
+    print(f'Latest log: {log}')
+    print('\n'.join(log.read_text(errors='replace').splitlines()[-100:]))
+    status = log.with_name('status.json')
+    print(status.read_text() if status.exists() else 'No saved exit status.')
+PYLOG
+```
+
+The production workflow repository is `rf1-sra-linux2`. A clean Git status in
+`rf1-sra` (the separate source-data project) does not report the workflow's status.
