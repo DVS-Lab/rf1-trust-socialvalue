@@ -42,15 +42,58 @@ def save(path, value):
 def configuration(path='config/full_sample_sampling.json'):
     path=Path(path).resolve();phase=json.loads(path.read_text());root=path.parent.parent
     c=fs.resolve_config(root/phase['cohort_config'])
-    if phase['stage']!='full_cohort_noage_pilot' or not phase['launch_authorized'] or phase['automatic_retries']:
-        raise ValueError('Only the authorized pilot, without automatic retries, is available')
+    if phase['stage'] not in {'full_cohort_noage_pilot','full_cohort_noage_retry'} or not phase['launch_authorized'] or phase['automatic_retries']:
+        raise ValueError('Only the authorized pilot or reviewed retry, without automatic retries, is available')
     h=c['hierarchical']
     if h['chains']!=4 or h['parallel_chains']!=4 or phase['parallel_fits']<1:
         raise ValueError('Pilot requires four parallel chains per fit')
     settings={k:h[k] for k in ['chains','warmup','draws','adapt_delta','max_treedepth']}
     settings.update(seed=c['seed'],metric=phase['metric'],inits=.15,sig_figs=10)
     phase['_path']=str(path);phase['_root']=str(root)
+    if phase['stage']=='full_cohort_noage_retry':validate_retry(phase,c,settings)
     return phase,c,settings
+
+
+def validate_retry(phase,c,settings):
+    """One explicit ESS-only retry, bound to the reviewed failed attempt."""
+    r=phase['retry'];source='Full_HPreference_zero_noage'
+    if (r['source_run']!=source or r['replacement_run']!=source+'_draws4000' or r['max_attempts']!=1
+            or r['draws']!=4000 or phase['parallel_fits']!=1
+            or phase['pilot']!=[dict(model='HPreference',variant='zero')]):
+        raise ValueError('Only the reviewed HPreference draws4000 retry is allowed')
+    folder=Path('results/full_sample/hierarchical/fits')/source
+    required={str(folder/p) for p in ['status.json','diagnostics.tsv','manifest_summary.json']}|{'config/full_sample_sampling.json'}
+    if set(r['evidence_sha256'])!=required:raise ValueError('Incomplete retry evidence')
+    for name,h in r['evidence_sha256'].items():
+        if fs.sha(Path(c['_root'])/name)!=h:raise ValueError('Reviewed retry evidence changed: '+name)
+    old=json.loads((Path(c['_root'])/folder/'status.json').read_text())
+    if old['status']!='diagnostic_failed' or old['passed'] or old['settings']!=settings:
+        raise ValueError('Retry must retain the original sampler settings except retained draws')
+    if old['integration_status_sha256']!=phase['integration_status_sha256']:
+        raise ValueError('Retry cohort differs from failed attempt')
+    a=c['hierarchical']['acceptance']
+    if (old['max_rhat']>=a['rhat_less_than'] or old['min_tail_ess']<a['minimum_tail_ess']
+            or old['divergences']!=0 or old['max_depth_hits']!=0 or old['min_bfmi']<=a['bfmi_greater_than']
+            or not 0<old['min_bulk_ess']<a['minimum_bulk_ess']):
+        raise ValueError('Retry rationale applies only to a bulk-ESS failure')
+    original=json.loads((Path(c['_root'])/'config/full_sample_sampling.json').read_text())
+    for key in ['gamma_population_mean_prior_sd','cmdstan_version','metric','cohort_config','integration_status_sha256']:
+        if phase[key]!=original[key]:raise ValueError('Retry must preserve the reviewed target: '+key)
+    settings['draws']=r['draws']
+
+
+def verify_retry_target(phase,c,payload):
+    if phase['stage']!='full_cohort_noage_retry':return
+    source=Path(c['output'])/'hierarchical/fits'/phase['retry']['source_run']/'status.json'
+    old=json.loads(source.read_text())
+    original=dict(payload,settings=old['settings'])
+    if digest(original)!=old['fingerprint']:
+        raise ValueError('Retry data, priors, Stan implementation or seed differ from original target')
+
+
+def phase_output(phase,c):
+    out,_=paths(c)
+    return out/'retries'/phase['retry']['replacement_run'] if phase['stage']=='full_cohort_noage_retry' else out
 
 
 def paths(c):
@@ -59,6 +102,8 @@ def paths(c):
 
 def entries(phase):
     rows=[dict(e,name=f"Full_{e['model']}_{e['variant']}_noage") for e in phase['pilot']]
+    if phase['stage']=='full_cohort_noage_retry':
+        rows=[dict(rows[0],name=phase['retry']['replacement_run'],seed_name=phase['retry']['source_run'])]
     if len({e['name'] for e in rows})!=len(rows) or any(e['model'] not in MODELS or e['variant'] not in ['base','zero'] for e in rows):
         raise ValueError('Invalid or duplicate pilot entry')
     return rows
@@ -156,7 +201,7 @@ def models(phase,c,reference=False):
 
 
 def check_implementation(phase,c,t):
-    fast,reference=models(phase,c,reference=True);out,_=paths(c);rng=np.random.default_rng(c['seed']);rows=[]
+    fast,reference=models(phase,c,reference=True);out=phase_output(phase,c);rng=np.random.default_rng(c['seed']);rows=[]
     small=t[t.participant_id.isin(sorted(t.participant_id.unique())[:4])]
     for model in MODELS:
         for zero,gamma in [(False,0.),(True,-2.),(True,0.),(True,2.)]:
@@ -184,7 +229,7 @@ def check_implementation(phase,c,t):
 
 
 def implementation_gate(phase,c):
-    out,_=paths(c);s=json.loads((out/'implementation_status.json').read_text())
+    out=phase_output(phase,c);s=json.loads((out/'implementation_status.json').read_text())
     if s['status']!='passed' or s['source_hashes']!=implementation(c['_root']) or s['integration_status_sha256']!=phase['integration_status_sha256'] or s['cmdstan_version']!=phase['cmdstan_version'] or s['checks_sha256']!=fs.sha(out/'implementation_checks.tsv'):
         raise ValueError('Implementation check missing or stale')
 
@@ -206,8 +251,10 @@ def fit_entry(phase,c,cfg,entry):
     data,meta,arrays=model_data(t,entry['model'],entry['variant']=='zero',phase['gamma_population_mean_prior_sd'])
     out,work=paths(c);name=entry['name'];folder=work/'fits'/name;evidence=out/'fits'/name
     folder.mkdir(parents=True,exist_ok=True);evidence.mkdir(parents=True,exist_ok=True)
-    sampler_seed=stable_seed(cfg['seed'],name)
-    target=digest(dict(data=data,settings=cfg,sampler_seed=sampler_seed,stan={p:fs.sha(Path(c['_root'])/p) for p in SOURCES},cmdstan_version=phase['cmdstan_version']))
+    sampler_seed=stable_seed(cfg['seed'],entry.get('seed_name',name))
+    payload=dict(data=data,settings=cfg,sampler_seed=sampler_seed,stan={p:fs.sha(Path(c['_root'])/p) for p in SOURCES},cmdstan_version=phase['cmdstan_version'])
+    verify_retry_target(phase,c,payload)
+    target=digest(payload)
     source_hashes=implementation(c['_root'])
     state=dict(name=name,entry=entry,status='running',started_at=now(),n_participants=data['N'],n_choices=data['T'],fingerprint=target,
         settings=cfg,sampler_seed=sampler_seed,parallel_chains=cfg['chains'],analysis_git_sha=fs.git_sha(c['_root']),integration_status_sha256=phase['integration_status_sha256'])
@@ -268,7 +315,7 @@ def fit_entry(phase,c,cfg,entry):
 
 def pilot(phase,c,cfg):
     import fcntl
-    require_linux();out,work=paths(c);work.mkdir(parents=True,exist_ok=True)
+    require_linux();out,work=paths(c);out=phase_output(phase,c);work.mkdir(parents=True,exist_ok=True)
     with (work/'pilot.lock').open('w') as lock:
         try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         except BlockingIOError:raise RuntimeError('A full-cohort pilot is already running')
@@ -282,14 +329,14 @@ def pilot(phase,c,cfg):
 
 
 def run_pilot(phase,c,cfg):
-    out,work=paths(c)
+    out,work=paths(c);batch=phase_output(phase,c)
     t=integrated_trials(phase,c);cmdstan(phase,c,install=True);check_implementation(phase,c,t)
     available=len(os.sched_getaffinity(0)) if hasattr(os,'sched_getaffinity') else os.cpu_count() or 1
     workers=min(len(entries(phase)),phase['parallel_fits'],min(phase['cpu_budget'],available)//cfg['chains'])
     if workers<1:raise RuntimeError('Fewer than four CPUs available for four-chain sampling')
     record=dict(status='running',started_at=now(),n_participants=t.participant_id.nunique(),parallel_fits=workers,
         parallel_chains=cfg['chains'],maximum_active_chains=workers*cfg['chains'],runs={},next_stage='review runtime and diagnostics before broad full/train batch')
-    save(out/'pilot_status.json',record)
+    save(batch/'pilot_status.json',record)
     print(f"Pilot: {record['n_participants']} participants, {workers} concurrent fits × {cfg['chains']} chains = {workers*cfg['chains']} active cores.",flush=True)
     def launch(entry):
         dest=out/'fits'/entry['name'];dest.mkdir(parents=True,exist_ok=True)
@@ -306,10 +353,10 @@ def run_pilot(phase,c,cfg):
         pending={pool.submit(launch,e):e for e in entries(phase)}
         for future in as_completed(pending):
             entry=pending[future];code=future.result();record['runs'][entry['name']]=dict(exit_code=code)
-            save(out/'pilot_status.json',record);print(f"{entry['name']}: exit {code}",flush=True)
+            save(batch/'pilot_status.json',record);print(f"{entry['name']}: exit {code}",flush=True)
     integrated_trials(phase,c)
     record.update(status='ready_for_runtime_review' if all(r['exit_code']==0 for r in record['runs'].values()) else 'blocked_diagnostics_or_error',finished_at=now())
-    save(out/'pilot_status.json',record)
+    save(batch/'pilot_status.json',record)
     print(json.dumps(record,indent=2),flush=True)
     return 0 if record['status']=='ready_for_runtime_review' else 2
 

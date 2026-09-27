@@ -1,19 +1,28 @@
 #!/usr/bin/env bash
-# Full-cohort production pilot only. No interactive shell options are changed.
+# Full-cohort pilot or reviewed single-model retry. No interactive shell options are changed.
 set -euo pipefail
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$root"
-record="results/run_logs/$(date -u +%Y%m%dT%H%M%SZ)-full-cohort-pilot"
+phase_config="config/full_sample_sampling.json"
+stage="full-cohort-pilot"
+if [[ $# -eq 1 && "$1" == "--preference-retry" ]]; then
+  phase_config="config/full_sample_preference_retry.json"
+  stage="full-cohort-preference-retry"
+elif [[ $# -ne 0 ]]; then
+  echo 'Usage: bash scripts/run_full_sample_pilot.sh [--preference-retry]' >&2
+  exit 2
+fi
+record="results/run_logs/$(date -u +%Y%m%dT%H%M%SZ)-$stage"
 mkdir -p "$record"
 exec > >(tee "$record/console.txt") 2>&1
 finish() {
   result=$?
   trap - EXIT
-  python3 - "$record/status.json" "$result" <<'PY'
+  python3 - "$record/status.json" "$result" "$stage" <<'PY'
 import json,subprocess,sys
 from datetime import datetime,timezone
 from pathlib import Path
-Path(sys.argv[1]).write_text(json.dumps(dict(stage='full_cohort_noage_pilot',exit_code=int(sys.argv[2]),
+Path(sys.argv[1]).write_text(json.dumps(dict(stage=sys.argv[3],exit_code=int(sys.argv[2]),
  finished_at=datetime.now(timezone.utc).isoformat(),git_sha=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()),indent=2)+'\n')
 PY
   echo "Pilot exit=$result. Preserve results/full_sample/hierarchical and $record when committing."
@@ -29,4 +38,4 @@ if [[ -n "$(git status --porcelain --untracked-files=normal -- src scripts tests
   exit 1
 fi
 python3 -m pytest -q
-python3 -m rf1_trust_socialvalue.full_sample_sampling pilot
+python3 -m rf1_trust_socialvalue.full_sample_sampling pilot --config "$phase_config"

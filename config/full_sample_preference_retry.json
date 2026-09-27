@@ -1,0 +1,35 @@
+{
+  "stage": "full_cohort_noage_retry",
+  "launch_authorized": true,
+  "integration_commit": "a785eb6",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "cohort_config": "config/full_sample_linux2.json",
+  "cmdstan_version": "2.40.0",
+  "compile_cores": 8,
+  "parallel_fits": 1,
+  "cpu_budget": 80,
+  "metric": "diag_e",
+  "gamma_population_mean_prior_sd": 1.0,
+  "automatic_retries": false,
+  "pilot": [
+    {
+      "model": "HPreference",
+      "variant": "zero"
+    }
+  ],
+  "note": "One reviewed HPreference zero full-cohort retry. Preserve the original attempt and all three accepted pilot fits. No broad batch or automatic retries.",
+  "retry": {
+    "source_run": "Full_HPreference_zero_noage",
+    "replacement_run": "Full_HPreference_zero_noage_draws4000",
+    "draws": 4000,
+    "max_attempts": 1,
+    "evidence_commit": "9c78665",
+    "evidence_sha256": {
+      "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage/status.json": "884bb10bce88114f683d0f1dcec32786ab344fefeb5fa4eaf5b8e1004961fe0a",
+      "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage/diagnostics.tsv": "1007106a8970cd782cd132387cedba1d583353b28ee0a449ec7bd6a965fbcc72",
+      "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage/manifest_summary.json": "7bbe257c16a8113087d178daf32f3551c16f86d2e4980dd0e4f68002e319533d",
+      "config/full_sample_sampling.json": "d5bdef427bbeead7d85c670c9180f3b51e1305fb84c802ff990a4fa0c88b8ed4"
+    },
+    "reason": "Only two unique population correlations fail bulk ESS (329.406 and 358.074 versus 400). Rhat, tail ESS, divergences, depth and BFMI pass. One reviewed retry doubles retained draws with the same seed, warmup, priors, metric, target and acceptance thresholds."
+  }
+}

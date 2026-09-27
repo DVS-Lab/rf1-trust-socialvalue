@@ -116,3 +116,38 @@ After reviewing these four fits, retain the accepted pilot fits and expand to
 matched base/zero models across H2/H5/H7/HPreference/H8 and actual run-1→run-2
 prediction among eligible two-run participants. The historical 65/35 single-run
 fallback must not be used for that full-cohort comparison.
+
+## Pilot review and one HPreference ESS retry
+
+The pilot results pushed at `9c78665` contain three accepted fits (H2 base, H5z,
+H7z). HPreferencez completed but has bulk ESS 329 and 358 for two unique
+population correlations; all its other diagnostics pass. The full review and
+source hashes are in `results/full_sample/hierarchical/pilot_review.md` and
+`pilot_review.json`.
+
+One explicitly reviewed retry keeps the same target, seed, warmup and thresholds,
+and increases retained draws from 2,000 to 4,000 per chain. It uses a new cache
+name, separate preparation logs, and only four active cores. The other three fits
+are not rerun. Do not erase original posterior files or refresh the cohort.
+
+Inside Linux2 tmux:
+
+```bash
+export PATH="/ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/bin:$PATH"
+cd /ZPOOL/data/projects/rf1-trust-socialvalue &&
+git pull --ff-only &&
+bash scripts/run_full_sample_pilot.sh --preference-retry
+```
+
+For retry status from a second terminal:
+
+```bash
+cd /ZPOOL/data/projects/rf1-trust-socialvalue &&
+NUMBA_CACHE_DIR="$PWD/work/numba" .venv-linux2/bin/python -m rf1_trust_socialvalue.full_sample_sampling status \
+  --config config/full_sample_preference_retry.json
+```
+
+Use the same results/log commit block above after completion or failure. The
+original pilot status remains a historical failure record; retry status is
+separate under `results/full_sample/hierarchical/retries/`. No broader batch is
+automatically launched by the retry.

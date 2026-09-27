@@ -173,3 +173,57 @@ def test_completed_fit_reuses_draws_and_rejects_cache_drift(tmp_path,monkeypatch
     with pytest.raises(ValueError,match='Cached posterior changed'):
         sampling.fit_entry(phase,c,cfg,entry)
     assert len(calls)==1
+
+
+def test_preference_retry_is_evidence_bound_and_preserves_seed_and_settings():
+    phase,c,cfg=sampling.configuration('config/full_sample_preference_retry.json')
+    _,_,original=sampling.configuration()
+    assert cfg==dict(original,draws=4000)
+    entry=sampling.entries(phase)[0]
+    assert entry['name']=='Full_HPreference_zero_noage_draws4000'
+    source=Path(c['output'])/'hierarchical/fits'/entry['seed_name']/'status.json'
+    old=json.loads(source.read_text())
+    assert sampling.stable_seed(cfg['seed'],entry['seed_name'])==old['sampler_seed']
+    assert sampling.phase_output(phase,c)==Path(c['output'])/'hierarchical/retries'/entry['name']
+
+
+@pytest.mark.parametrize('problem',['hash','attempts','draws','metric','prior','replacement'])
+def test_unreviewed_retry_changes_are_rejected(problem):
+    phase,c,_=sampling.configuration('config/full_sample_preference_retry.json')
+    _,_,settings=sampling.configuration()
+    phase=copy.deepcopy(phase)
+    if problem=='hash':
+        key=next(iter(phase['retry']['evidence_sha256']));phase['retry']['evidence_sha256'][key]='changed'
+    if problem=='attempts':phase['retry']['max_attempts']=2
+    if problem=='draws':phase['retry']['draws']=8000
+    if problem=='metric':phase['metric']='dense_e'
+    if problem=='prior':phase['gamma_population_mean_prior_sd']=2.
+    if problem=='replacement':phase['retry']['replacement_run']='another_fit'
+    with pytest.raises(ValueError):sampling.validate_retry(phase,c,settings)
+
+
+def test_retry_preparation_preserves_original_pilot_status(tmp_path,monkeypatch):
+    phase,_,cfg=sampling.configuration('config/full_sample_preference_retry.json')
+    c={'output':str(tmp_path/'out'),'work':str(tmp_path/'work')}
+    original=Path(c['output'])/'hierarchical/pilot_status.json'
+    sampling.save(original,{'status':'blocked_diagnostics_or_error','original':True})
+    before=original.read_bytes()
+    monkeypatch.setattr(sampling,'require_linux',lambda:None)
+    def fail(*a):raise RuntimeError('test preparation error')
+    monkeypatch.setattr(sampling,'integrated_trials',fail)
+    with pytest.raises(RuntimeError,match='test preparation error'):sampling.pilot(phase,c,cfg)
+    assert original.read_bytes()==before
+    assert json.loads((sampling.phase_output(phase,c)/'pilot_status.json').read_text())['status']=='error'
+
+
+def test_retry_reconstructs_original_target_fingerprint(tmp_path):
+    phase={'stage':'full_cohort_noage_retry','retry':{'source_run':'source'}}
+    c={'output':str(tmp_path)}
+    old_settings={'draws':2000,'chains':4}
+    payload={'data':{'y':[1,0],'mu_scale':[1.]},'settings':dict(old_settings,draws=4000),'sampler_seed':123,'stan':{'model':'hash'},'cmdstan_version':'2.40.0'}
+    source=tmp_path/'hierarchical/fits/source/status.json'
+    sampling.save(source,{'settings':old_settings,'fingerprint':sampling.digest(dict(payload,settings=old_settings))})
+    sampling.verify_retry_target(phase,c,payload)
+    for changed in [dict(payload,data={'y':[0,0],'mu_scale':[1.]}),dict(payload,data={'y':[1,0],'mu_scale':[2.]}),dict(payload,sampler_seed=456),dict(payload,stan={'model':'changed'})]:
+        with pytest.raises(ValueError,match='differ from original target'):
+            sampling.verify_retry_target(phase,c,changed)
