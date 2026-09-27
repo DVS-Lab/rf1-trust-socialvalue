@@ -200,3 +200,30 @@ def test_all_miss_run_retained_for_participant_missingness(tmp_path,monkeypatch)
     _,files=fs.inventory(c);t,m,a=fs.build_tables(c,files)
     assert m.loc[(m.participant_id=='sub-1')&(m.run==1),'include_primary'].item()
     assert a.set_index('participant_id').loc['sub-1','miss_fraction']==5/8
+
+
+def test_inventory_separates_empty_imaging_templates_and_preserves_freeze(tmp_path,monkeypatch):
+    c=setup_cohort(tmp_path,monkeypatch)
+    hashes,files=fs.inventory(c)
+    paths=[]
+    for part in ['mag','phase']:
+        path=files[0].with_name(files[0].name.replace('_events.tsv',f'_part-{part}_events.tsv'))
+        path.write_text('onset\tduration\ttrial_type\tTODO -- fill in rows\n');paths.append(path)
+    with_templates,behavioral=fs.inventory(c)
+    assert behavioral==files
+    assert set(with_templates)-set(hashes)=={str(p) for p in paths}
+    t,m,a=fs.build_tables(c,behavioral)
+    assert len(m)==2 and len(a)==2 and len(t)==8
+    fs.freeze(c);fs.verify(c)
+    paths[0].write_text('onset\tduration\n0\t1\n')
+    with pytest.raises(ValueError,match='nonempty noncanonical'):
+        fs.verify(c)
+
+
+def test_unknown_noncanonical_trust_file_still_blocks(tmp_path,monkeypatch):
+    c=setup_cohort(tmp_path,monkeypatch)
+    _,files=fs.inventory(c)
+    unexpected=files[0].with_name(files[0].name.replace('_events.tsv','_desc-alternative_events.tsv'))
+    unexpected.write_text('onset\tduration\n')
+    with pytest.raises(ValueError,match='noncanonical Trust events'):
+        fs.inventory(c)

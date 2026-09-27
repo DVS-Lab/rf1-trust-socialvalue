@@ -20,7 +20,8 @@ PARTNERS = ['friend', 'stranger', 'computer']
 FROZEN_N111 = 'beac6f4d48421b546aa0c7011d4f60adec21ec56'
 N111_HASHES = {'legacy_trials': 'b819604280bf12d0325424b727cb6a4ee585966e62f4c1cc7cb968061d73f8d8',
                'legacy_sample': '1226af5ad06437764d9238071c9b8c5cae7326ad2a4d0baa9461baf61a10a02a'}
-EVENT_RE = re.compile(r'^(sub-\d+)_ses-(\d+)_task-trust_run-(\d+)_events.tsv$')
+EVENT_RE = re.compile(r'^(sub-\d+)_ses-(\d+)_task-trust_run-(\d+)_events\.tsv$')
+IMAGING_TEMPLATE_RE = re.compile(r'^sub-\d+_ses-\d+_task-trust_run-\d+_part-(?:mag|phase)_events\.tsv$')
 
 
 def sha(path):
@@ -125,7 +126,15 @@ def inventory(c):
         if sha(c[key]) != expected:
             raise ValueError('frozen N111 reference changed: '+key)
     bids = Path(c['bids_root'])
-    files = sorted(bids.glob('sub-*/ses-*/func/*task-trust*_events.tsv'))
+    files, imaging_templates = [], []
+    for path in sorted(bids.glob('sub-*/ses-*/func/*task-trust*_events.tsv')):
+        if EVENT_RE.fullmatch(path.name):
+            files.append(path)
+        elif IMAGING_TEMPLATE_RE.fullmatch(path.name) and tsv(path).empty:
+            # Not behavioral runs. Hash them so any later change invalidates the freeze.
+            imaging_templates.append(path)
+        else:
+            raise ValueError(f'unreviewed or nonempty noncanonical Trust events file: {path}')
     if not files:
         raise ValueError('no canonical Trust events')
     for p in files:
@@ -134,7 +143,7 @@ def inventory(c):
             raise ValueError(f'unreviewed session or ambiguous filename: {p}')
         if p.resolve().parent != (bids / match[1] / ('ses-'+match[2]) / 'func').resolve():
             raise ValueError('event filename/directory identity mismatch')
-    paths = files + [Path(c[k]) for k in ['participants','response_qc','qc_provenance','eligibility',
+    paths = files + imaging_templates + [Path(c[k]) for k in ['participants','response_qc','qc_provenance','eligibility',
         'source_exclusions','source_provenance','legacy_trials','legacy_sample','parity_resolutions']]
     paths += [bids/'task-trust_events.json', Path(c['_config_path']),
               Path(c['upstream_root'])/'code/convert_behavior.py',

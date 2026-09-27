@@ -282,3 +282,30 @@ PYLOG
 
 The production workflow repository is `rf1-sra-linux2`. A clean Git status in
 `rf1-sra` (the separate source-data project) does not report the workflow's status.
+
+
+## Empty imaging-template validation fix
+
+Canonical behavioral files end in `_run-N_events.tsv`. Empty
+`_run-N_part-mag_events.tsv` and `_run-N_part-phase_events.tsv` files are imaging
+conversion templates, not extra behavioral runs. The upstream validator and
+scientific inventory distinguish those files explicitly. Nonempty templates are
+still a review error; nothing is deleted. The scientific freeze hashes the empty
+templates separately so later changes are detected.
+
+To resume the initial validation after this discovery fix, keep the original
+`work/trust_schema/validation.json` and the failed run log. Pull both repositories,
+then use the existing Python environment and the check-only entry point:
+
+```bash
+export PATH="/ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/bin:$PATH"
+cd /ZPOOL/data/projects/rf1-trust-socialvalue && git pull --ff-only
+cd /ZPOOL/data/projects/rf1-sra-linux2 && git pull --ff-only
+bash code/run_trust_handoff.sh validation --check-only
+```
+
+The retry records a new console/status, tests the updated upstream code, and
+checks the existing converted files against the original pre-conversion snapshot.
+It never recreates the snapshot or reruns conversion. A successful report counts
+canonical behavioral runs only and lists ignored empty imaging templates
+separately. Review `Stage validation exit=0` before proceeding to the cohort stage.
