@@ -227,3 +227,31 @@ def test_unknown_noncanonical_trust_file_still_blocks(tmp_path,monkeypatch):
     unexpected.write_text('onset\tduration\n')
     with pytest.raises(ValueError,match='noncanonical Trust events'):
         fs.inventory(c)
+
+
+@pytest.mark.parametrize('problem', ['missing_file', 'missing_column', 'missing_subject', 'duplicate_subject'])
+def test_metadata_preflight_blocks_incomplete_handoff(tmp_path, monkeypatch, problem):
+    c = setup_cohort(tmp_path, monkeypatch)
+    p = Path(c['participants'])
+    if problem == 'missing_file':
+        p.unlink()
+    elif problem == 'missing_column':
+        p.write_text('participant_id\tsex\nsub-1\tF\nsub-2\tM\n')
+    elif problem == 'missing_subject':
+        p.write_text('participant_id\tage\tsex\nsub-1\t25\tF\n')
+    else:
+        p.write_text(p.read_text()+'sub-1\t25\tF\n')
+    with pytest.raises(ValueError, match='participants'):
+        fs.freeze(c)
+    assert not (Path(c['output'])/'provenance.json').exists()
+
+
+def test_metadata_preflight_allows_explicit_missing_age(tmp_path, monkeypatch):
+    c = setup_cohort(tmp_path, monkeypatch)
+    p = Path(c['participants'])
+    p.write_text(p.read_text().replace('25', 'n/a'))
+    fs.preflight(c)
+    _, files = fs.inventory(c)
+    t, _, audit = fs.build_tables(c, files)
+    assert len(audit) == 2
+    assert t.loc[t.participant_id.eq('sub-1'), 'age'].isna().all()

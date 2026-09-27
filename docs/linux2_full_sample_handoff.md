@@ -162,7 +162,8 @@ cd /ZPOOL/data/projects/rf1-trust-socialvalue
 bash scripts/run_full_sample_gate.sh
 ```
 
-The wrapper runs the scientific regression suite and creates the manifest only
+The wrapper first checks required canonical files and demographics coverage, then
+runs the scientific regression suite and creates the manifest only
 if one does not exist. It then verifies the frozen inputs, audits overlap, and
 writes behavior tables/figures. The primary age model uses continuous standardized
 age, partner interactions, exact offer pair, run, trial position, and participant-
@@ -173,7 +174,18 @@ entry point.
 The canonical BIDS `participants.tsv` must contain `participant_id`, `age` in
 years, and `sex`. Missing age is reported and excluded only from age inference;
 missing required metadata columns stop the loader rather than guessing a private
-source. If Linux2 lacks this canonical demographics export, create it upstream.
+source. If Linux2 lacks this canonical demographics export, create it upstream
+from the authoritative full-cohort metadata, with documented source and age
+reference time. Do not substitute the old public-release table or create
+placeholder demographics merely to bypass this gate. To check the handoff
+without rerunning tests or analysis:
+
+```bash
+python3 -m rf1_trust_socialvalue.full_sample preflight
+```
+
+A failure before the freeze writes `provenance.json` requires no reset or refresh;
+provide the missing input and rerun the wrapper. Preserve the failed run logs.
 
 The primary cohort retains response-QC review flags and curated short runs.
 Sensitivity rules are fixed in `config/full_sample_linux2.json`: at most 20%

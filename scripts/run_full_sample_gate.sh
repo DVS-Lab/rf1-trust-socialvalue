@@ -29,6 +29,7 @@ if [[ -n "$(git status --porcelain --untracked-files=normal -- src scripts tests
   echo 'Scientific code/config checkout has local changes; reconcile before freezing.' >&2
   exit 1
 fi
+python3 -m rf1_trust_socialvalue.full_sample preflight
 python3 -m pytest -q
 if [[ ! -f results/full_sample/provenance.json ]]; then
   python3 -m rf1_trust_socialvalue.full_sample freeze

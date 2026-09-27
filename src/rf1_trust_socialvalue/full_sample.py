@@ -120,8 +120,39 @@ def load_run(events, participant_id, session, run):
     return pd.DataFrame(records)
 
 
+def preflight(c):
+    """Check the upstream handoff before running tests or hashing event files."""
+    paths = {key: Path(c[key]) for key in ['participants', 'response_qc', 'qc_provenance',
+        'eligibility', 'source_exclusions', 'source_provenance', 'legacy_trials',
+        'legacy_sample', 'parity_resolutions']}
+    paths.update(trust_sidecar=Path(c['bids_root'])/'task-trust_events.json',
+        converter=Path(c['upstream_root'])/'code/convert_behavior.py',
+        curation=Path(c['upstream_root'])/'code/behavior_curation.tsv',
+        qc_policy=Path(c['upstream_root'])/'qc/events/policy.json')
+    missing = [f'{key}: {path}' for key, path in paths.items() if not path.is_file()]
+    if missing:
+        raise ValueError('Required canonical inputs are missing:\n  '+'\n  '.join(missing)+
+            '\nCreate missing exports upstream before freezing. The demographics export must '
+            'contain participant_id, age in years, and sex from the authoritative cohort source; '
+            'do not substitute the historical N111 table or fabricate missing ages.')
+    people = tsv(c['participants'])
+    if {'participant_id', 'age', 'sex'}-set(people):
+        raise ValueError('participants.tsv must contain participant_id, age and sex')
+    if people.participant_id.eq('').any() or people.participant_id.duplicated().any():
+        raise ValueError('participants.tsv must have nonempty, unique participant_id values')
+    elig = tsv(c['eligibility'])
+    excluded = set(tsv(c['source_exclusions']).participant_id)
+    required = set(elig.loc[elig.structural_status.eq('pass') & elig.events_sha256.ne(''),
+                            'participant_id'])-excluded
+    missing_ids = sorted(required-set(people.participant_id))
+    if missing_ids:
+        raise ValueError('participants.tsv lacks rows for structurally eligible participants: '+
+                         ', '.join(missing_ids))
+
+
 def inventory(c):
     """Hash canonical products only. Never consult private sources downstream."""
+    preflight(c)
     for key, expected in N111_HASHES.items():
         if sha(c[key]) != expected:
             raise ValueError('frozen N111 reference changed: '+key)
@@ -376,12 +407,15 @@ def verify(c):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('command',choices=['freeze','verify','run'])
+    p.add_argument('command',choices=['preflight','freeze','verify','run'])
     p.add_argument('--config',default='config/full_sample_linux2.json')
     p.add_argument('--refresh',action='store_true')
     a=p.parse_args();c=resolve_config(a.config)
     if a.refresh and a.command!='freeze':p.error('--refresh applies only to freeze')
-    if a.command=='freeze':freeze(c,a.refresh)
+    if a.command=='preflight':
+        preflight(c)
+        print('Canonical input paths and demographics coverage passed preflight.',flush=True)
+    elif a.command=='freeze':freeze(c,a.refresh)
     elif a.command=='verify':verify(c)
     else:
         from .full_sample_behavior import run
