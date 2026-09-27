@@ -1,0 +1,69 @@
+Canonical input paths and demographics coverage passed preflight.
+........................................................................ [ 47%]
+........................................................................ [ 95%]
+.......                                                                  [100%]
+=============================== warnings summary ===============================
+tests/test_full_sample.py::test_milestone_integration_synthetic
+tests/test_full_sample.py::test_milestone_integration_synthetic
+  /ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/lib/python3.12/site-packages/matplotlib/cbook.py:1811: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+    return math.isfinite(val)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:288: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['complete_run_sensitivity']=m.include_primary & m.participant_id.map(a.complete_run_sensitivity).fillna(False).astype(bool)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:289: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['include_sensitivity']=m.include_primary&m.participant_id.map(a.include_sensitivity).fillna(False).astype(bool)
+
+tests/test_n111_closeout.py: 150 warnings
+tests/test_n111_diagnostics.py: 50 warnings
+tests/test_n111_zero.py: 850 warnings
+tests/test_second_pass.py: 50 warnings
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/models.py:49: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    frame.chose_high.fillna(-1).astype(float),frame.feedback_observed.astype(float),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+151 passed, 1104 warnings in 27.01s
+/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:288: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  m['complete_run_sensitivity']=m.include_primary & m.participant_id.map(a.complete_run_sensitivity).fillna(False).astype(bool)
+/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:289: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  m['include_sensitivity']=m.include_primary&m.participant_id.map(a.include_sensitivity).fillna(False).astype(bool)
+13:19:06 - cmdstanpy - INFO - No CmdStan installation found.
+Frozen 343 primary participants; run parity/behavior next.
+Frozen canonical inputs and derived tables verified.
+Frozen canonical inputs and derived tables verified.
+{
+  "total_canonical_participants": 343,
+  "primary_n": 343,
+  "sensitivity_n": 338,
+  "two_run_primary_n": 304,
+  "total_valid_choices": 26560,
+  "age_n": 343,
+  "age_missing_n": 0,
+  "age_min": 20.0,
+  "age_max": 89.0,
+  "age_mean": 47.07871720116618,
+  "age_sd": 17.807028856948275,
+  "source_excluded_trust_n": 2,
+  "source_exclusion_inventory_n": 12,
+  "qc_review_runs": 8,
+  "qc_review_participants": 6,
+  "n111_overlap_n": 109,
+  "unexplained_parity_fields": 168,
+  "expected_canonical_corrections": 0,
+  "expected_public_omissions": 84
+}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py", line 424, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py", line 422, in main
+    run(c)
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample_behavior.py", line 224, in run
+    if unexplained:raise RuntimeError(f'{unexplained} unexplained parity fields; review saved audit before modeling')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: 168 unexplained parity fields; review saved audit before modeling
+Integration exit=1. Preserve results/run_logs/20260927T171827Z-full-sample and results/full_sample when committing.

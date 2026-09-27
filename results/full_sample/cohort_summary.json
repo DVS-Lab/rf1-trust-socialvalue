@@ -1,0 +1,21 @@
+{
+  "total_canonical_participants": 343,
+  "primary_n": 343,
+  "sensitivity_n": 338,
+  "two_run_primary_n": 304,
+  "total_valid_choices": 26560,
+  "age_n": 343,
+  "age_missing_n": 0,
+  "age_min": 20.0,
+  "age_max": 89.0,
+  "age_mean": 47.07871720116618,
+  "age_sd": 17.807028856948275,
+  "source_excluded_trust_n": 2,
+  "source_exclusion_inventory_n": 12,
+  "qc_review_runs": 8,
+  "qc_review_participants": 6,
+  "n111_overlap_n": 109,
+  "unexplained_parity_fields": 168,
+  "expected_canonical_corrections": 0,
+  "expected_public_omissions": 84
+}

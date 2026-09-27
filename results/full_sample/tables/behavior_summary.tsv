@@ -1,0 +1,433 @@
+grouping	partner	metric	estimate	ci_low	ci_high	n_participants	n_presented	n_valid	uncertainty	offer_pair	zero_option_present	run	trial_bin	previous_feedback	cohort_tag
+partner	computer	investment	3.418969104058736	3.269401089479408	3.562980434190251	343	9047	8857	participant bootstrap; equally weighted participant means						
+partner	computer	high_choice	0.4454859472016272	0.4131442551620256	0.4766367444743657	343	9047	8857	participant bootstrap; equally weighted participant means						
+partner	computer	response_time	1.8526619097057193	1.8239630491949177	1.8791652274212607	343	9047	8857	participant bootstrap; equally weighted participant means						
+partner	computer	response_fraction	0.9782035263084825	0.9732750242954326	0.9827858184089963	343	9047	8857	participant bootstrap; equally weighted participant means						
+partner	friend	investment	5.017601240225966	4.908676892287213	5.122178108250737	343	9049	8872	participant bootstrap; equally weighted participant means						
+partner	friend	high_choice	0.7876668500209096	0.7639969998384758	0.8102485825517651	343	9049	8872	participant bootstrap; equally weighted participant means						
+partner	friend	response_time	1.7888118689319938	1.763587100236834	1.8141513572366204	343	9049	8872	participant bootstrap; equally weighted participant means						
+partner	friend	response_fraction	0.9808413161182841	0.9757392753019576	0.9854253436068304	343	9049	8872	participant bootstrap; equally weighted participant means						
+partner	stranger	investment	3.812396075386715	3.6802671826366398	3.950563797078182	343	9047	8831	participant bootstrap; equally weighted participant means						
+partner	stranger	high_choice	0.5373540630913989	0.5079119170878225	0.5656253088185917	343	9047	8831	participant bootstrap; equally weighted participant means						
+partner	stranger	response_time	1.8420572750013646	1.8151100397796842	1.8683882756774812	343	9047	8831	participant bootstrap; equally weighted participant means						
+partner	stranger	response_fraction	0.9746633347216437	0.9692133486047478	0.979419165625434	343	9047	8831	participant bootstrap; equally weighted participant means						
+offer	computer	investment	1.1427875243664718	1.060916179337232	1.2173611111111111	342	1293	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	computer	high_choice	0.5713937621832359	0.5316703216374268	0.6101364522417154	342	1293	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	computer	response_time	1.843252490253411	1.8103378326206139	1.877108456633772	342	1293	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	computer	response_fraction	0.9759475218658892	0.9657434402332361	0.9854227405247813	343	1293	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	computer	investment	2.1783625730994154	2.0155945419103314	2.341130604288499	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	computer	high_choice	0.5445906432748538	0.50510477582846	0.5845577485380117	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	computer	response_time	1.8342650285087718	1.8020948562134502	1.8670060330409355	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	computer	response_fraction	0.9692982456140351	0.9576023391812866	0.97953216374269	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	computer	investment	3.838206627680312	3.5243664717348926	4.154044834307992	342	1292	1261	participant bootstrap; equally weighted participant means	0-8					
+offer	computer	high_choice	0.479775828460039	0.44102704678362564	0.5204739278752436	342	1292	1261	participant bootstrap; equally weighted participant means	0-8					
+offer	computer	response_time	1.867029378654971	1.833991353496589	1.9002760175743176	342	1292	1261	participant bootstrap; equally weighted participant means	0-8					
+offer	computer	response_fraction	0.9773391812865497	0.9678362573099415	0.9853801169590644	342	1292	1261	participant bootstrap; equally weighted participant means	0-8					
+offer	computer	investment	2.871345029239766	2.793360136452242	2.952729044834308	342	1292	1271	participant bootstrap; equally weighted participant means	2-4					
+offer	computer	high_choice	0.43567251461988304	0.3978923001949317	0.4741776315789473	342	1292	1271	participant bootstrap; equally weighted participant means	2-4					
+offer	computer	response_time	1.8452786805555554	1.8145960259076515	1.87579754149001	342	1292	1271	participant bootstrap; equally weighted participant means	2-4					
+offer	computer	response_fraction	0.9839181286549707	0.9773391812865497	0.9904970760233918	342	1292	1271	participant bootstrap; equally weighted participant means	2-4					
+offer	computer	investment	4.273635985006247	4.058504269054561	4.501819554352353	343	2586	2537	participant bootstrap; equally weighted participant means	2-8					
+offer	computer	high_choice	0.3789393308343746	0.34128097667638485	0.4170545258919894	343	2586	2537	participant bootstrap; equally weighted participant means	2-8					
+offer	computer	response_time	1.850051566829793	1.8212720445803832	1.8796518681512908	343	2586	2537	participant bootstrap; equally weighted participant means	2-8					
+offer	computer	response_fraction	0.9814139941690962	0.9744897959183674	0.9872448979591837	343	2586	2537	participant bootstrap; equally weighted participant means	2-8					
+offer	computer	investment	5.360623781676414	5.206627680311891	5.519493177387915	342	1292	1269	participant bootstrap; equally weighted participant means	4-8					
+offer	computer	high_choice	0.34015594541910327	0.30068226120857705	0.3791483918128654	342	1292	1269	participant bootstrap; equally weighted participant means	4-8					
+offer	computer	response_time	1.8713324256822614	1.84204847146077	1.9036976536732453	342	1292	1269	participant bootstrap; equally weighted participant means	4-8					
+offer	computer	response_fraction	0.9817251461988304	0.972953216374269	0.9897660818713451	342	1292	1269	participant bootstrap; equally weighted participant means	4-8					
+offer	friend	investment	1.693469785575049	1.6379020467836256	1.745151072124756	342	1292	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	friend	high_choice	0.8467348927875245	0.8184697855750486	0.8723257797270956	342	1292	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	friend	response_time	1.8090328884015594	1.7793533963023878	1.839079568195663	342	1292	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	friend	response_fraction	0.9802631578947368	0.9722222222222222	0.9875730994152047	342	1292	1265	participant bootstrap; equally weighted participant means	0-2					
+offer	friend	investment	3.4210526315789473	3.3128654970760234	3.5233918128654973	342	1292	1268	participant bootstrap; equally weighted participant means	0-4					
+offer	friend	high_choice	0.8552631578947368	0.8299220272904483	0.880610380116959	342	1292	1268	participant bootstrap; equally weighted participant means	0-4					
+offer	friend	response_time	1.7669391440058482	1.7365356757309942	1.796777230707846	342	1292	1268	participant bootstrap; equally weighted participant means	0-4					
+offer	friend	response_fraction	0.9817251461988304	0.972953216374269	0.9897660818713451	342	1292	1268	participant bootstrap; equally weighted participant means	0-4					
+offer	friend	investment	6.769679300291545	6.553935860058309	6.989310009718172	343	1293	1255	participant bootstrap; equally weighted participant means	0-8					
+offer	friend	high_choice	0.8462099125364432	0.8189990281827018	0.8726980077745385	343	1293	1255	participant bootstrap; equally weighted participant means	0-8					
+offer	friend	response_time	1.7780769506802723	1.7437055881681243	1.814003106808795	343	1293	1255	participant bootstrap; equally weighted participant means	0-8					
+offer	friend	response_fraction	0.9693877551020408	0.9591654518950437	0.9788629737609329	343	1293	1255	participant bootstrap; equally weighted participant means	0-8					
+offer	friend	investment	3.616618075801749	3.5544096209912532	3.67445335276968	343	1294	1267	participant bootstrap; equally weighted participant means	2-4					
+offer	friend	high_choice	0.8083090379008746	0.7764820213799807	0.836491739552964	343	1294	1267	participant bootstrap; equally weighted participant means	2-4					
+offer	friend	response_time	1.7944674803206997	1.7663561165634112	1.82299447037172	343	1294	1267	participant bootstrap; equally weighted participant means	2-4					
+offer	friend	response_fraction	0.9803206997084548	0.9708454810495627	0.9876093294460642	343	1294	1267	participant bootstrap; equally weighted participant means	2-4					
+offer	friend	investment	6.441566014160766	6.244006143273636	6.632640566430654	343	2585	2544	participant bootstrap; equally weighted participant means	2-8					
+offer	friend	high_choice	0.7402610023601277	0.7090897889768152	0.7697502776620853	343	2585	2544	participant bootstrap; equally weighted participant means	2-8					
+offer	friend	response_time	1.784615385832292	1.7544008898004304	1.8157255877229976	343	2585	2544	participant bootstrap; equally weighted participant means	2-8					
+offer	friend	response_fraction	0.98432944606414	0.9788629737609329	0.9897959183673469	343	2585	2544	participant bootstrap; equally weighted participant means	2-8					
+offer	friend	investment	6.70748299319728	6.560714285714285	6.84645286686103	343	1293	1273	participant bootstrap; equally weighted participant means	4-8					
+offer	friend	high_choice	0.6768707482993198	0.6389698736637512	0.7116132167152575	343	1293	1273	participant bootstrap; equally weighted participant means	4-8					
+offer	friend	response_time	1.8074950706997084	1.7771873166302234	1.837985032252187	343	1293	1273	participant bootstrap; equally weighted participant means	4-8					
+offer	friend	response_fraction	0.9854227405247813	0.9788629737609329	0.9912536443148688	343	1293	1273	participant bootstrap; equally weighted participant means	4-8					
+offer	stranger	investment	1.4264132553606237	1.3596491228070176	1.4956262183235867	342	1292	1264	participant bootstrap; equally weighted participant means	0-2					
+offer	stranger	high_choice	0.7132066276803118	0.6786062378167642	0.7461013645224172	342	1292	1264	participant bootstrap; equally weighted participant means	0-2					
+offer	stranger	response_time	1.819988710282651	1.789088272173489	1.8503100499878167	342	1292	1264	participant bootstrap; equally weighted participant means	0-2					
+offer	stranger	response_fraction	0.9788011695906432	0.9700292397660819	0.9861111111111112	342	1292	1264	participant bootstrap; equally weighted participant means	0-2					
+offer	stranger	investment	2.7046783625730995	2.5487085769980506	2.858698830409357	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	stranger	high_choice	0.6761695906432749	0.6386330409356724	0.7127192982456141	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	stranger	response_time	1.839342269005848	1.8076720629325047	1.8712286935063351	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	stranger	response_fraction	0.9692982456140351	0.9583333333333334	0.97953216374269	342	1292	1254	participant bootstrap; equally weighted participant means	0-4					
+offer	stranger	investment	4.590643274853801	4.280701754385965	4.908430799220272	342	1292	1246	participant bootstrap; equally weighted participant means	0-8					
+offer	stranger	high_choice	0.5738304093567251	0.5355750487329435	0.6118421052631579	342	1292	1246	participant bootstrap; equally weighted participant means	0-8					
+offer	stranger	response_time	1.8831989332358676	1.8500165846369396	1.9172973848927877	342	1292	1246	participant bootstrap; equally weighted participant means	0-8					
+offer	stranger	response_fraction	0.9619883040935673	0.9502923976608187	0.972953216374269	342	1292	1246	participant bootstrap; equally weighted participant means	0-8					
+offer	stranger	investment	3.041423001949317	2.9634502923976607	3.1159844054580894	342	1292	1272	participant bootstrap; equally weighted participant means	2-4					
+offer	stranger	high_choice	0.5207115009746588	0.4836744639376218	0.5579982943469786	342	1292	1272	participant bootstrap; equally weighted participant means	2-4					
+offer	stranger	response_time	1.8496839692982456	1.8176375036915204	1.8803761456384018	342	1292	1272	participant bootstrap; equally weighted participant means	2-4					
+offer	stranger	response_fraction	0.9839181286549707	0.975858918128655	0.9904970760233918	342	1292	1272	participant bootstrap; equally weighted participant means	2-4					
+offer	stranger	investment	4.696022490628906	4.481020928779675	4.924233132028322	343	2586	2536	participant bootstrap; equally weighted participant means	2-8					
+offer	stranger	high_choice	0.4493370817714841	0.4120644176037762	0.4839828023045953	343	2586	2536	participant bootstrap; equally weighted participant means	2-8					
+offer	stranger	response_time	1.8295849401464672	1.8005733793777767	1.8606906739406321	343	2586	2536	participant bootstrap; equally weighted participant means	2-8					
+offer	stranger	response_fraction	0.9792274052478134	0.9719387755102041	0.9857871720116618	343	2586	2536	participant bootstrap; equally weighted participant means	2-8					
+offer	stranger	investment	5.522837706511176	5.361491739552964	5.677380952380952	343	1293	1259	participant bootstrap; equally weighted participant means	4-8					
+offer	stranger	high_choice	0.38070942662779395	0.3432883867832847	0.41910228377065106	343	1293	1259	participant bootstrap; equally weighted participant means	4-8					
+offer	stranger	response_time	1.8453108768221573	1.8155472555758017	1.8754000833697764	343	1293	1259	participant bootstrap; equally weighted participant means	4-8					
+offer	stranger	response_fraction	0.9737609329446064	0.9642857142857143	0.9825072886297376	343	1293	1259	participant bootstrap; equally weighted participant means	4-8					
+zero	computer	investment	4.192534004706016	4.037333856619571	4.3451344369511276	343	5170	5077	participant bootstrap; equally weighted participant means		False				
+zero	computer	high_choice	0.3832782013904463	0.34813888310426216	0.41741544321810353	343	5170	5077	participant bootstrap; equally weighted participant means		False				
+zero	computer	response_time	1.854756856548687	1.826415168232881	1.882432324052545	343	5170	5077	participant bootstrap; equally weighted participant means		False				
+zero	computer	response_fraction	0.9821428571428571	0.9768586005830904	0.9870626822157434	343	5170	5077	participant bootstrap; equally weighted participant means		False				
+zero	computer	investment	2.382536729027957	2.222114461237268	2.546299735027805	342	3877	3780	participant bootstrap; equally weighted participant means		True				
+zero	computer	high_choice	0.5310486865311427	0.4978587013619909	0.5661718664295419	342	3877	3780	participant bootstrap; equally weighted participant means		True				
+zero	computer	response_time	1.847959852723138	1.8188993409175451	1.8772075746865584	342	3877	3780	participant bootstrap; equally weighted participant means		True				
+zero	computer	response_fraction	0.9723032069970845	0.9637998056365403	0.979834791059281	343	3877	3780	participant bootstrap; equally weighted participant means		True				
+zero	friend	investment	5.804453005692073	5.674834270442871	5.927971071081493	343	5172	5084	participant bootstrap; equally weighted participant means		False				
+zero	friend	high_choice	0.7412779397473276	0.7132936797167847	0.7674429491184229	343	5172	5084	participant bootstrap; equally weighted participant means		False				
+zero	friend	response_time	1.7926618013362485	1.7656876475961836	1.8183128384782383	343	5172	5084	participant bootstrap; equally weighted participant means		False				
+zero	friend	response_fraction	0.983600583090379	0.9784985422740525	0.9879737609329446	343	5172	5084	participant bootstrap; equally weighted participant means		False				
+zero	friend	investment	3.967091153096985	3.861082103837206	4.067210411066096	343	3877	3788	participant bootstrap; equally weighted participant means		True				
+zero	friend	high_choice	0.851088771934253	0.8285475485803475	0.8716421582547674	343	3877	3788	participant bootstrap; equally weighted participant means		True				
+zero	friend	response_time	1.7841397746113783	1.755844257621498	1.8123356048919197	343	3877	3788	participant bootstrap; equally weighted participant means		True				
+zero	friend	response_fraction	0.977162293488824	0.9706025267249759	0.9829931972789114	343	3877	3788	participant bootstrap; equally weighted participant means		True				
+zero	stranger	investment	4.489744779030493	4.342214930963108	4.6392196075304675	343	5171	5067	participant bootstrap; equally weighted participant means		False				
+zero	stranger	high_choice	0.4505417687268999	0.41521112360671397	0.4859031195966327	343	5171	5067	participant bootstrap; equally weighted participant means		False				
+zero	stranger	response_time	1.8383576507395425	1.8107071917857098	1.8650178666111552	343	5171	5067	participant bootstrap; equally weighted participant means		False				
+zero	stranger	response_fraction	0.978802235179786	0.9732719873663751	0.9837858357628766	343	5171	5067	participant bootstrap; equally weighted participant means		False				
+zero	stranger	investment	2.895398428731762	2.7354549884813046	3.048613326244905	342	3876	3764	participant bootstrap; equally weighted participant means		True				
+zero	stranger	high_choice	0.65507487152224	0.6246153604761061	0.6845152918069585	342	3876	3764	participant bootstrap; equally weighted participant means		True				
+zero	stranger	response_time	1.847364442952921	1.8183842719492809	1.8745891239620436	342	3876	3764	participant bootstrap; equally weighted participant means		True				
+zero	stranger	response_fraction	0.9700292397660819	0.9639376218323588	0.9758771929824561	342	3876	3764	participant bootstrap; equally weighted participant means		True				
+time	computer	investment	3.3512392091339462	3.164759468114731	3.537171922862712	342	1531	1493	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	computer	high_choice	0.41201963241436934	0.3759790100250626	0.4488380673906989	342	1531	1493	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	computer	response_time	1.941527876298385	1.9071426590455307	1.9739269715838206	342	1531	1493	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	computer	response_fraction	0.9752018936229463	0.9665947855750489	0.9829016986911725	342	1531	1493	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	computer	investment	3.244747899159664	3.056474089635854	3.434657037815126	340	1605	1574	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	computer	high_choice	0.4412044817927171	0.4046033788515406	0.4792948179271708	340	1605	1574	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	computer	response_time	1.8680434149054623	1.8352557791415443	1.9005924319632355	340	1605	1574	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	computer	response_fraction	0.981764705882353	0.9747540266106444	0.9881306022408964	340	1605	1574	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	computer	investment	3.444702032859928	3.247834516847675	3.6405206302794024	342	1655	1625	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	computer	high_choice	0.44840109533092	0.4133347257031468	0.48592859463473503	342	1655	1625	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	computer	response_time	1.8448569301146387	1.815521276976208	1.8740202501564964	342	1655	1625	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	computer	response_fraction	0.9828877749930381	0.9751459377610693	0.9896690510999723	342	1655	1625	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	computer	investment	3.4926475980931433	3.2869708994708997	3.6948640578343546	303	1509	1473	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	computer	high_choice	0.45946880402325946	0.4189060781078107	0.4996960946094609	303	1509	1473	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	computer	response_time	1.8114821856082035	1.7793211098228034	1.8447353073370465	303	1509	1473	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	computer	response_fraction	0.9771255696998272	0.9674873290900518	0.9858539603960395	303	1509	1473	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	computer	investment	3.5200344611528824	3.3238655231829575	3.7262020285087716	304	1358	1335	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	computer	high_choice	0.4814771303258145	0.4418182174185464	0.5249872728696742	304	1358	1335	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	computer	response_time	1.8181143666275064	1.7855918452209627	1.850763715190809	304	1358	1335	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	computer	response_fraction	0.9843358395989975	0.9756494752506265	0.9913618029448622	304	1358	1335	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	computer	investment	3.6464546783625735	3.438158090538847	3.8445248538011696	304	1389	1357	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	computer	high_choice	0.4871083959899749	0.4427508223684211	0.5290529057017543	304	1389	1357	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	computer	response_time	1.8042364811364346	1.7708601271439341	1.8393602735306038	304	1389	1357	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	computer	response_fraction	0.9762531328320803	0.9652332001879699	0.9858946193609023	304	1389	1357	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	friend	investment	5.431068073487899	5.281739842195382	5.583213070942662	343	1595	1565	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	friend	high_choice	0.8449592762274978	0.8196695531954279	0.8678178363182008	343	1595	1565	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	friend	response_time	1.8524114370216112	1.8218949550511074	1.8847925305269217	343	1595	1565	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	friend	response_fraction	0.9806099310472488	0.973203005692073	0.9872918691286038	343	1595	1565	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	friend	investment	4.932681240137381	4.764114800891117	5.110274238837835	342	1628	1605	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	friend	high_choice	0.795310034345122	0.7670604752622296	0.8216201383087347	342	1628	1605	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	friend	response_time	1.7923765676424857	1.761797406737068	1.8240353800635851	342	1628	1605	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	friend	response_fraction	0.9843323586744639	0.9773879142300195	0.9906195175438595	342	1628	1605	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	friend	investment	4.92593984962406	4.7662075907361	5.081061623967326	342	1570	1536	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	friend	high_choice	0.7765200037129862	0.7444767590271976	0.8062709725703148	342	1570	1536	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	friend	response_time	1.784735014185928	1.7523941157141985	1.8171874375513144	342	1570	1536	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	friend	response_fraction	0.9801065162907268	0.9720258110554163	0.9873933096630464	342	1570	1536	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	friend	investment	4.940696941028066	4.760794701986756	5.114562046672974	302	1344	1323	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	friend	high_choice	0.7861873226111638	0.7553413749605802	0.8185848312835068	302	1344	1323	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	friend	response_time	1.7460595630400506	1.712773703845199	1.780073378400741	302	1344	1323	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	friend	response_fraction	0.9833804809052334	0.97251100110011	0.9917495678139242	303	1344	1323	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	friend	investment	4.963862781954887	4.774669486215538	5.149661849937344	304	1459	1427	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	friend	high_choice	0.7679393796992481	0.7365748355263159	0.7998043937969925	304	1459	1427	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	friend	response_time	1.7590939553375626	1.7242844377348643	1.7921354286048128	304	1459	1427	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	friend	response_fraction	0.9788768796992481	0.9698038063909774	0.9869911105889726	304	1459	1427	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	friend	investment	4.9592261904761905	4.779065045426066	5.143033168859649	304	1453	1416	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	friend	high_choice	0.7736202485380117	0.7412128955200501	0.8043725851086048	304	1453	1416	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	friend	response_time	1.761604502307853	1.724333222739368	1.7969014856550556	304	1453	1416	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	friend	response_fraction	0.9762531328320803	0.9658987312030075	0.9856564262218045	304	1453	1416	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	stranger	investment	3.9475982229626547	3.772153443009857	4.117861481327225	343	1673	1614	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	stranger	high_choice	0.5552929334999306	0.5212781132861307	0.5907518568651952	343	1673	1614	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	stranger	response_time	1.9556745611863113	1.9245386450536237	1.9883790498695857	343	1673	1614	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	stranger	response_fraction	0.9644384284325974	0.9539072261557683	0.9741454949326669	343	1673	1614	participant bootstrap; equally weighted participant means			1.0	1.0		
+time	stranger	investment	3.692126148705096	3.499962986169127	3.8660391720040836	342	1555	1527	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	stranger	high_choice	0.5270502645502646	0.48606672932330824	0.5640130418639191	342	1555	1527	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	stranger	response_time	1.8460518780214428	1.8146509171287015	1.8772992641373112	342	1555	1527	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	stranger	response_fraction	0.9818713450292398	0.9739278752436649	0.98864522417154	342	1555	1527	participant bootstrap; equally weighted participant means			1.0	2.0		
+time	stranger	investment	3.80896686159844	3.615471839320524	4.0006055068226125	342	1563	1527	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	stranger	high_choice	0.5394910888331942	0.5012527847396269	0.5774950396825396	342	1563	1527	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	stranger	response_time	1.830979816962545	1.799900525258894	1.8619577336176376	342	1563	1527	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	stranger	response_fraction	0.9749895572263992	0.9649201127819549	0.9836447020328599	342	1563	1527	participant bootstrap; equally weighted participant means			1.0	3.0		
+time	stranger	investment	3.8200657894736842	3.6222816807644107	4.024494830827067	304	1403	1379	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	stranger	high_choice	0.5359414160401003	0.4954173519736842	0.5751830748746866	304	1403	1379	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	stranger	response_time	1.7906618139411028	1.7576553175711738	1.8254005984829262	304	1403	1379	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	stranger	response_fraction	0.9843084273182958	0.9766043037280703	0.9910087719298245	304	1403	1379	participant bootstrap; equally weighted participant means			2.0	1.0		
+time	stranger	investment	3.8939901837928157	3.6821807121971593	4.1184569496658305	304	1439	1409	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	stranger	high_choice	0.55796914160401	0.5181524122807017	0.5990215121136174	304	1439	1409	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	stranger	response_time	1.7977656747350144	1.7654436473183284	1.8306430907751805	304	1439	1409	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	stranger	response_fraction	0.979033521303258	0.969928434367168	0.987422070802005	304	1439	1409	participant bootstrap; equally weighted participant means			2.0	2.0		
+time	stranger	investment	3.8454234544695067	3.6431862860275688	4.044813988095238	304	1414	1375	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	stranger	high_choice	0.533721021303258	0.49215333255012533	0.5737196506892229	304	1414	1375	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	stranger	response_time	1.793635948739035	1.7607485760664356	1.8284918097759046	304	1414	1375	participant bootstrap; equally weighted participant means			2.0	3.0		
+time	stranger	response_fraction	0.971185776942356	0.9600328947368422	0.981140742481203	304	1414	1375	participant bootstrap; equally weighted participant means			2.0	3.0		
+recent_feedback	computer	investment	3.3578832446350884	3.2097625944793036	3.5184083774559247	343	4415	4323	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	computer	high_choice	0.42942776106684527	0.39887550283778417	0.4599695085029397	343	4415	4323	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	computer	response_time	1.841250484022278	1.813495305991668	1.8698025663187234	343	4415	4323	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	computer	response_fraction	0.9797909036273179	0.9745990386219561	0.9848260217803729	343	4415	4323	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	computer	investment	3.7834791059280857	3.506000971817298	4.049567541302235	343	437	417	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	computer	high_choice	0.4450923226433431	0.395505344995141	0.4970845481049563	343	437	417	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	computer	response_time	2.0495922773080664	2.0029782697424685	2.0960782736783283	343	437	417	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	computer	response_fraction	0.9742468415937803	0.9611273080660835	0.9844509232264335	343	437	417	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	computer	investment	3.551979943478912	3.397693754867711	3.717111044950635	342	4195	4117	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	computer	high_choice	0.47471838184557485	0.4422700585340872	0.5063410661203166	342	4195	4117	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	computer	response_time	1.8417900708528472	1.8136414956823943	1.8692312511921532	342	4195	4117	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	computer	response_fraction	0.983171757197815	0.9774188825140193	0.988341334483943	342	4195	4117	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	friend	investment	4.942495318854434	4.809988215827694	5.07156914691332	343	4356	4281	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	friend	high_choice	0.7673634265085132	0.7432531046646336	0.7922745811611358	343	4356	4281	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	friend	response_time	1.7879868105470396	1.7616538685475036	1.8148047004564447	343	4356	4281	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	friend	response_fraction	0.9842563118201947	0.9788012170045699	0.989103416073865	343	4356	4281	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	friend	investment	5.5830903790087465	5.317784256559767	5.845481049562682	343	363	350	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	friend	high_choice	0.8994169096209913	0.8673469387755102	0.9285714285714286	343	363	350	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	friend	response_time	1.9518472988338194	1.9109712675291541	1.9918621720481047	343	363	350	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	friend	response_fraction	0.9815354713313897	0.9713313896987367	0.9902818270165209	343	363	350	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	friend	investment	5.066703583103	4.927171012701261	5.1928864379465685	343	4330	4241	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	friend	high_choice	0.8013978853993431	0.7764417437923269	0.8242673008680662	343	4330	4241	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	friend	response_time	1.7761534383777342	1.7499859501168606	1.8030939236974237	343	4330	4241	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	friend	response_fraction	0.9799262508064827	0.9742568664625684	0.9854120408557165	343	4330	4241	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	stranger	investment	3.6977914581514666	3.5443249337365232	3.843168741413626	343	4364	4262	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	stranger	high_choice	0.5112628172283237	0.47979237721806367	0.5416779636755615	343	4364	4262	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	stranger	response_time	1.8349740640505412	1.806856278697944	1.8624171067006607	343	4364	4262	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	stranger	response_fraction	0.9755971947791534	0.9692013962773159	0.9814725237652265	343	4364	4262	participant bootstrap; equally weighted participant means					defect	
+recent_feedback	stranger	investment	4.368179925031237	4.087414965986395	4.625898931000972	343	411	390	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	stranger	high_choice	0.6695821185617103	0.6234207968901847	0.718172983479106	343	411	390	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	stranger	response_time	2.0433335352630846	2.0008520847632933	2.083104554364501	343	411	390	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	stranger	response_fraction	0.9724246841593779	0.9601554907677358	0.982996234207969	343	411	390	participant bootstrap; equally weighted participant means					none_observed	
+recent_feedback	stranger	investment	3.9647764029342976	3.8089902280501478	4.117824927862337	342	4272	4179	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	stranger	high_choice	0.5650581824149935	0.5325963547403176	0.5971751219256701	342	4272	4179	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	stranger	response_time	1.8287272937279924	1.800291501757346	1.8554596515101436	342	4272	4179	participant bootstrap; equally weighted participant means					recip	
+recent_feedback	stranger	response_fraction	0.9795030920804915	0.974188127010302	0.9847027122380257	342	4272	4179	participant bootstrap; equally weighted participant means					recip	
+cohort	computer	investment	3.519456245947474	3.264259652443863	3.777183086972561	111	2814	2754	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	computer	high_choice	0.4757650407650407	0.42015569729166213	0.5297543701556858	111	2814	2754	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	computer	response_time	1.8456842824197586	1.7984680745987804	1.8940237474713235	111	2814	2754	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	computer	response_fraction	0.9774774774774775	0.9665299227799226	0.9868082368082367	111	2814	2754	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	friend	investment	4.958781535721007	4.768205763301031	5.147833530806037	111	2814	2745	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	friend	high_choice	0.7780733933206226	0.7358488073010665	0.8177655370290707	111	2814	2745	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	friend	response_time	1.7757426644119607	1.733261645669951	1.8183959789731217	111	2814	2745	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	friend	response_fraction	0.9761904761904759	0.9652509652509652	0.9858429858429859	111	2814	2745	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	stranger	investment	3.7254720268755355	3.48261129965516	3.984472678674433	111	2814	2752	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	stranger	high_choice	0.5237886002111783	0.4715224695005397	0.5733601293769104	111	2814	2752	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	stranger	response_time	1.8201924764758277	1.7716831628348937	1.8663028511829005	111	2814	2752	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	stranger	response_fraction	0.9781209781209781	0.9694256756756755	0.9855212355212356	111	2814	2752	participant bootstrap; equally weighted participant means						in_original_openneuro_release
+cohort	computer	investment	3.370891204275762	3.1950826578469007	3.5564399431084217	232	6233	6103	participant bootstrap; equally weighted participant means						later_participant
+cohort	computer	high_choice	0.43099896709154584	0.39359221804695943	0.46965287777356746	232	6233	6103	participant bootstrap; equally weighted participant means						later_participant
+cohort	computer	response_time	1.8560003434502956	1.8230182694097645	1.8882860884283987	232	6233	6103	participant bootstrap; equally weighted participant means						later_participant
+cohort	computer	response_fraction	0.9785509031198686	0.972803776683087	0.9834782943349754	232	6233	6103	participant bootstrap; equally weighted participant means						later_participant
+cohort	friend	investment	5.045743426433082	4.9169927290142805	5.166166291802068	232	6235	6127	participant bootstrap; equally weighted participant means						later_participant
+cohort	friend	high_choice	0.7922568228387192	0.7655326302249794	0.817561909255336	232	6235	6127	participant bootstrap; equally weighted participant means						later_participant
+cohort	friend	response_time	1.7950648073014925	1.7634223220512668	1.8303891328884436	232	6235	6127	participant bootstrap; equally weighted participant means						later_participant
+cohort	friend	response_fraction	0.9830665024630542	0.9781365455665023	0.9875307881773397	232	6235	6127	participant bootstrap; equally weighted participant means						later_participant
+cohort	stranger	investment	3.85398473652784	3.691053201627555	4.022192848578624	232	6233	6079	participant bootstrap; equally weighted participant means						later_participant
+cohort	stranger	high_choice	0.5438444354177114	0.5091845375848608	0.5809383208984502	232	6233	6079	participant bootstrap; equally weighted participant means						later_participant
+cohort	stranger	response_time	1.8525184501579788	1.8203868759478716	1.8850454608368532	232	6233	6079	participant bootstrap; equally weighted participant means						later_participant
+cohort	stranger	response_fraction	0.9730090311986863	0.9665435139573071	0.9790640394088669	232	6233	6079	participant bootstrap; equally weighted participant means						later_participant
+cohort_zero	computer	investment	4.215522940522941	3.945524453024453	4.48404557029557	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	computer	high_choice	0.3954674454674455	0.33622546653796653	0.46051259363759356	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	computer	response_time	1.8415485488268488	1.7926345273759923	1.8870603127779737	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	computer	response_fraction	0.9780405405405406	0.964527027027027	0.9881756756756757	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	computer	investment	2.6011037011037006	2.3154177879177875	2.8967025467025462	111	1206	1180	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	computer	high_choice	0.5852462852462852	0.5226651651651653	0.6449380874380872	111	1206	1180	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	computer	response_time	1.8518434630084628	1.7979449287981162	1.9031623002627625	111	1206	1180	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	computer	response_fraction	0.9767267267267267	0.9632132132132133	0.9872372372372373	111	1206	1180	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	friend	investment	5.640744315744316	5.399291613041614	5.875076147576148	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	friend	high_choice	0.7065100815100815	0.6545785070785071	0.755716698841699	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	friend	response_time	1.7828022591216217	1.738165824162913	1.8231760544790327	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	friend	response_fraction	0.9797297297297297	0.9679054054054054	0.9893018018018018	111	1608	1574	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	friend	investment	4.042725842725843	3.8696033371033374	4.214074204074204	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	friend	high_choice	0.8755115505115505	0.8400311025311027	0.9094552425802426	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	friend	response_time	1.767610534057109	1.7227500171713352	1.8120157532788308	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	friend	response_fraction	0.9714714714714714	0.9579391891891892	0.9834834834834837	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	stranger	investment	4.260326235326236	3.985010335010335	4.528634364884365	111	1608	1581	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	stranger	high_choice	0.40306296556296556	0.3453666125541126	0.46614693020943015	111	1608	1581	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	stranger	response_time	1.8189295063136188	1.771363404102182	1.864240462919116	111	1608	1581	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	stranger	response_fraction	0.9836711711711712	0.9746621621621622	0.9904279279279279	111	1608	1581	participant bootstrap; equally weighted participant means		False				in_original_openneuro_release
+cohort_zero	stranger	investment	3.0097825097825104	2.725588543088543	3.2768793793793796	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	stranger	high_choice	0.6885931385931388	0.6341428928928932	0.7424523387023388	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	stranger	response_time	1.8209683232755483	1.7731112311267518	1.866915749521965	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	stranger	response_fraction	0.9707207207207207	0.9587087087087088	0.9819819819819818	111	1206	1171	participant bootstrap; equally weighted participant means		True				in_original_openneuro_release
+cohort_zero	computer	investment	4.1815349880005055	3.98234401643615	4.369305470032841	232	3562	3503	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	computer	high_choice	0.3774462785777441	0.33856642549261073	0.41834218000031576	232	3562	3503	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	computer	response_time	1.861076348605256	1.8267557417806077	1.8960436575786035	232	3562	3503	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	computer	response_fraction	0.9841056034482759	0.9787176724137931	0.9889614762931035	232	3562	3503	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	computer	investment	2.2775110411474047	2.0750083081901263	2.470451047269229	231	2671	2600	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	computer	high_choice	0.505005684551139	0.46509035156762424	0.5468261347238621	231	2671	2600	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	computer	response_time	1.8460937023262933	1.8106277110638307	1.8821212768858497	231	2671	2600	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	computer	response_fraction	0.9701867816091954	0.9583333333333333	0.9798850574712643	232	2671	2600	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	friend	investment	5.882779146141216	5.726588669950739	6.021238711001642	232	3564	3510	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	friend	high_choice	0.7579125615763547	0.7256716954022989	0.7863279967159278	232	3564	3510	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	friend	response_time	1.7973790823096265	1.7667322454399503	1.829847411646013	232	3564	3510	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	friend	response_fraction	0.9854525862068966	0.980596713362069	0.9900390625	232	3564	3510	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	friend	investment	3.9309038662486935	3.792051005747126	4.063636690177638	232	2671	2617	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	friend	high_choice	0.8394037356321838	0.8110024000783698	0.8655176495559037	232	2671	2617	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	friend	response_time	1.7920481612558778	1.7581172624213852	1.8265860434179075	232	2671	2617	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	friend	response_fraction	0.9798850574712643	0.9730603448275862	0.9859913793103449	232	2671	2617	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	stranger	investment	4.5995096857165825	4.407203417990056	4.780394816211087	232	3563	3486	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	stranger	high_choice	0.4732579202406789	0.4336989263430535	0.5147654213602489	232	3563	3486	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	stranger	response_time	1.8476530129433248	1.814835980908801	1.8813252494849877	232	3563	3486	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	stranger	response_fraction	0.9764727011494254	0.969555944683908	0.9829382183908045	232	3563	3486	participant bootstrap; equally weighted participant means		False				later_participant
+cohort_zero	stranger	investment	2.840434649525559	2.6576936026936027	3.028965630329267	231	2670	2593	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	stranger	high_choice	0.6389686912414185	0.601217341160523	0.6772709781800691	231	2670	2593	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	stranger	response_time	1.860048292668022	1.825777527874716	1.896947278680911	231	2670	2593	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_zero	stranger	response_fraction	0.9696969696969697	0.9617604617604617	0.9769119769119768	231	2670	2593	participant bootstrap; equally weighted participant means		True				later_participant
+cohort_offer	computer	investment	1.2897897897897896	1.1606606606606606	1.4174174174174172	111	402	395	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	computer	high_choice	0.6448948948948948	0.5825825825825824	0.7109609609609608	111	402	395	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	computer	response_time	1.837480476726727	1.780129863250751	1.8957474634384388	111	402	395	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	computer	response_fraction	0.9797297297297297	0.963963963963964	0.9932432432432432	111	402	395	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	computer	investment	2.393393393393393	2.1170420420420424	2.6607357357357357	111	402	392	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	computer	high_choice	0.5983483483483483	0.527027027027027	0.6659159159159158	111	402	392	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	computer	response_time	1.8339011291291292	1.775335223160661	1.8883450454204205	111	402	392	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	computer	response_fraction	0.9707207207207207	0.9481981981981982	0.9864864864864865	111	402	392	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	computer	investment	4.126126126126126	3.573423423423423	4.684684684684685	111	402	393	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	computer	high_choice	0.5157657657657657	0.44594594594594594	0.5848536036036036	111	402	393	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	computer	response_time	1.8823423603603604	1.814966919707207	1.9471010027214712	111	402	393	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	computer	response_fraction	0.9797297297297297	0.9617117117117117	0.9932432432432432	111	402	393	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	computer	investment	2.9654654654654657	2.824324324324324	3.1051051051051046	111	402	396	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	computer	high_choice	0.4827327327327327	0.4166478978978979	0.5540540540540541	111	402	396	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	computer	response_time	1.8402342214714709	1.781850944256757	1.9017501433933934	111	402	396	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	computer	response_fraction	0.9842342342342343	0.9684684684684685	0.9954954954954955	111	402	396	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	computer	investment	4.2528957528957525	3.8603523166023166	4.64261583011583	111	804	783	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	computer	high_choice	0.37548262548262545	0.3122332153582154	0.4447152509652509	111	804	783	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	computer	response_time	1.828081806038181	1.7793895289293757	1.8803839617465685	111	804	783	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	computer	response_fraction	0.9740990990990991	0.956081081081081	0.9876126126126126	111	804	783	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	computer	investment	5.381381381381381	5.126126126126126	5.6427177177177175	111	402	395	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	computer	high_choice	0.3453453453453453	0.28603603603603606	0.4091591591591592	111	402	395	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	computer	response_time	1.8757753948948952	1.822035792811562	1.9320777965653153	111	402	395	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	computer	response_fraction	0.9797297297297297	0.9617117117117117	0.9932432432432432	111	402	395	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	friend	investment	1.7597597597597596	1.6636636636636635	1.8453453453453452	111	402	390	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	friend	high_choice	0.8798798798798798	0.831831831831832	0.9226726726726726	111	402	390	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	friend	response_time	1.7857436193693692	1.7374649258821322	1.8331567248686187	111	402	390	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	friend	response_fraction	0.972972972972973	0.954954954954955	0.9887387387387387	111	402	390	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	friend	investment	3.5165165165165164	3.3332582582582586	3.684684684684685	111	402	395	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	friend	high_choice	0.8791291291291291	0.8333145645645647	0.9211711711711712	111	402	395	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	friend	response_time	1.7406308040540543	1.690401542755255	1.7897693653153155	111	402	395	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	friend	response_fraction	0.9842342342342343	0.9662162162162162	0.9977477477477478	111	402	395	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	friend	investment	6.864864864864865	6.4744744744744755	7.219219219219219	111	402	386	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	friend	high_choice	0.8581081081081081	0.8070570570570571	0.9031531531531531	111	402	386	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	friend	response_time	1.782505725975976	1.7204763822447449	1.8444553351351352	111	402	386	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	friend	response_fraction	0.9572072072072072	0.9324324324324325	0.9774774774774775	111	402	386	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	friend	investment	3.5795795795795793	3.4623873873873876	3.690690690690691	111	402	389	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	friend	high_choice	0.7897897897897899	0.7319819819819819	0.8445945945945946	111	402	389	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	friend	response_time	1.7847943776276274	1.7372814259759757	1.8329439432244745	111	402	389	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	friend	response_fraction	0.9707207207207207	0.9504504504504504	0.9887387387387387	111	402	389	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	friend	investment	6.2024453024453035	5.851219433719433	6.550860682110682	111	804	788	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	friend	high_choice	0.7004075504075504	0.6398729086229086	0.7567607786357786	111	804	788	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	friend	response_time	1.7661092800085805	1.7142428126056417	1.8128999074959784	111	804	788	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	friend	response_fraction	0.9797297297297297	0.9673423423423423	0.9898648648648649	111	804	788	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	friend	investment	6.558558558558558	6.285285285285285	6.822822822822822	111	402	397	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	friend	high_choice	0.6396396396396397	0.5720533033033034	0.7057432432432431	111	402	397	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	friend	response_time	1.8079435495495493	1.754720863907658	1.8577390868806312	111	402	397	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	friend	response_fraction	0.9887387387387387	0.9774774774774775	0.9977477477477478	111	402	397	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	stranger	investment	1.5330330330330333	1.4249249249249247	1.635135135135135	111	402	394	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	stranger	high_choice	0.7665165165165166	0.7116929429429429	0.8183183183183182	111	402	394	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	stranger	response_time	1.8029363325825827	1.75068672743994	1.8552309876689188	111	402	394	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	stranger	response_fraction	0.9819819819819819	0.9707207207207207	0.9932432432432432	111	402	394	participant bootstrap; equally weighted participant means	0-2					in_original_openneuro_release
+cohort_offer	stranger	investment	2.843843843843844	2.549474474474474	3.1081831831831828	111	402	388	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	stranger	high_choice	0.710960960960961	0.6403903903903905	0.777027027027027	111	402	388	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	stranger	response_time	1.7920799294294296	1.7348689157845347	1.846262753246997	111	402	388	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	stranger	response_fraction	0.9662162162162162	0.9481981981981982	0.9842342342342343	111	402	388	participant bootstrap; equally weighted participant means	0-4					in_original_openneuro_release
+cohort_offer	stranger	investment	4.678678678678679	4.09009009009009	5.26156156156156	111	402	389	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	stranger	high_choice	0.5848348348348349	0.5134947447447448	0.6561749249249248	111	402	389	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	stranger	response_time	1.8701832184684684	1.8097002817192192	1.9320409002627623	111	402	389	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	stranger	response_fraction	0.963963963963964	0.9414414414414415	0.9842342342342343	111	402	389	participant bootstrap; equally weighted participant means	0-8					in_original_openneuro_release
+cohort_offer	stranger	investment	2.974474474474474	2.8272897897897895	3.118618618618618	111	402	398	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	stranger	high_choice	0.4872372372372373	0.4121433933933934	0.5600600600600601	111	402	398	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	stranger	response_time	1.8258670495495493	1.7711409367304807	1.8810043065503004	111	402	398	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	stranger	response_fraction	0.9887387387387387	0.9752252252252253	0.9977477477477478	111	402	398	participant bootstrap; equally weighted participant means	2-4					in_original_openneuro_release
+cohort_offer	stranger	investment	4.371492921492921	3.9914977477477476	4.737471042471041	111	804	791	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	stranger	high_choice	0.3952488202488203	0.334070945945946	0.45826898326898324	111	804	791	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	stranger	response_time	1.8065056933504937	1.75611783325236	1.8560458698107036	111	804	791	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	stranger	response_fraction	0.9842342342342343	0.9718468468468469	0.9943693693693694	111	804	791	participant bootstrap; equally weighted participant means	2-8					in_original_openneuro_release
+cohort_offer	stranger	investment	5.345345345345344	5.084009009009009	5.606606606606607	111	402	392	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	stranger	high_choice	0.3363363363363363	0.2747747747747748	0.4016516516516516	111	402	392	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	stranger	response_time	1.8343737282282284	1.7821294305930933	1.8872811841966968	111	402	392	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	stranger	response_fraction	0.9774774774774775	0.9639076576576577	0.990990990990991	111	402	392	participant bootstrap; equally weighted participant means	4-8					in_original_openneuro_release
+cohort_offer	computer	investment	1.0721500721500723	0.9783549783549783	1.1637806637806638	231	891	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	computer	high_choice	0.5360750360750361	0.4909722222222222	0.5826118326118326	231	891	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	computer	response_time	1.8460260551948051	1.8064892145743146	1.884512876902958	231	891	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	computer	response_fraction	0.9741379310344828	0.9601293103448276	0.9859913793103449	232	891	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	computer	investment	2.075036075036075	1.8801948051948048	2.2641053391053387	231	890	862	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	computer	high_choice	0.5187590187590188	0.4704184704184704	0.5674603174603173	231	890	862	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	computer	response_time	1.834439889249639	1.795270738555195	1.8739749900703462	231	890	862	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	computer	response_fraction	0.9686147186147186	0.9556277056277056	0.9805194805194806	231	890	862	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	computer	investment	3.6998556998556995	3.2929292929292933	4.072222222222222	231	890	868	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	computer	high_choice	0.46248196248196244	0.41522366522366516	0.5097402597402597	231	890	868	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	computer	response_time	1.8596711926406926	1.8183963652867965	1.902164480582612	231	890	868	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	computer	response_fraction	0.9761904761904762	0.9653679653679653	0.9859307359307359	231	890	868	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	computer	investment	2.8261183261183263	2.7301587301587307	2.916305916305917	231	890	875	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	computer	high_choice	0.41305916305916307	0.3643578643578643	0.46176046176046176	231	890	875	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	computer	response_time	1.8477026414141415	1.8116722439484128	1.8851482274621212	231	890	875	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	computer	response_fraction	0.9837662337662337	0.9751082251082251	0.9913419913419913	231	890	875	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	computer	investment	4.283559113300492	4.0038485221674875	4.54358066502463	232	1782	1754	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	computer	high_choice	0.38059318555008204	0.33628194273399015	0.42553045463875205	232	1782	1754	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	computer	response_time	1.860562961001642	1.8238351706691298	1.895920653190425	232	1782	1754	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	computer	response_fraction	0.9849137931034483	0.9789870689655172	0.9908405172413793	232	1782	1754	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	computer	investment	5.35064935064935	5.1688311688311686	5.542604617604618	231	890	874	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	computer	high_choice	0.33766233766233766	0.2932810245310245	0.3842081529581529	231	890	874	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	computer	response_time	1.8691974924242427	1.8304299310335501	1.9078971059343433	231	890	874	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	computer	response_fraction	0.9826839826839827	0.9729437229437229	0.9913419913419913	231	890	874	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	friend	investment	1.6616161616161615	1.5880050505050505	1.7316017316017316	231	890	875	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	friend	high_choice	0.8308080808080808	0.7958152958152959	0.8665223665223666	231	890	875	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	friend	response_time	1.8202238358585858	1.7810767602813853	1.8580520572420636	231	890	875	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	friend	response_fraction	0.9837662337662337	0.974025974025974	0.9913419913419913	231	890	875	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	friend	investment	3.3751803751803755	3.239538239538239	3.5093795093795093	231	890	873	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	friend	high_choice	0.8437950937950939	0.812049062049062	0.8748196248196247	231	890	873	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	friend	response_time	1.7795808138528137	1.741998922447691	1.8189465529401156	231	890	873	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	friend	response_fraction	0.9805194805194806	0.9696969696969697	0.9902597402597403	231	890	873	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	friend	investment	6.724137931034483	6.445330459770115	6.974209770114943	232	891	869	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	friend	high_choice	0.8405172413793104	0.8056752873563218	0.8710488505747127	232	891	869	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	friend	response_time	1.7759580107758621	1.735182000080819	1.8181613228448275	232	891	869	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	friend	response_fraction	0.9752155172413793	0.9644396551724138	0.9849137931034483	232	891	869	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	friend	investment	3.63433908045977	3.5660919540229887	3.6997126436781604	232	892	878	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	friend	high_choice	0.8171695402298851	0.7823186063218391	0.8512931034482759	232	892	878	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	friend	response_time	1.7990955596264369	1.7661873226472702	1.8338360748024425	232	892	878	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	friend	response_fraction	0.9849137931034483	0.9762931034482759	0.9924568965517241	232	892	878	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	friend	investment	6.555972906403942	6.342753232758621	6.7701585591133	232	1781	1756	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	friend	high_choice	0.7593288177339901	0.7231097341954024	0.7933756670771757	232	1781	1756	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	friend	response_time	1.7934696002565682	1.7568709849279045	1.8298908701448329	232	1781	1756	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	friend	response_fraction	0.9865301724137931	0.9795258620689655	0.9924568965517241	232	1781	1756	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	friend	investment	6.778735632183908	6.600574712643679	6.9468749999999995	232	891	876	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	friend	high_choice	0.694683908045977	0.6519396551724138	0.737787356321839	232	891	876	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	friend	response_time	1.8072804967672413	1.7701815880657326	1.845115692555675	232	891	876	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	friend	response_fraction	0.9838362068965517	0.9752155172413793	0.9913793103448276	232	891	876	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	stranger	investment	1.375180375180375	1.2871572871572872	1.4639249639249639	231	890	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	stranger	high_choice	0.6875901875901875	0.6428391053391054	0.7294462481962481	231	890	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	stranger	response_time	1.8281827099567103	1.7908287561868688	1.865172546139971	231	890	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	stranger	response_fraction	0.9772727272727273	0.9664502164502164	0.987012987012987	231	890	870	participant bootstrap; equally weighted participant means	0-2					later_participant
+cohort_offer	stranger	investment	2.637806637806638	2.45021645021645	2.8167388167388165	231	890	866	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	stranger	high_choice	0.6594516594516595	0.6161435786435786	0.7034632034632035	231	890	866	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	stranger	response_time	1.8620527438672438	1.8236848312229437	1.902676376767677	231	890	866	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	stranger	response_fraction	0.9707792207792207	0.9577922077922078	0.9826839826839827	231	890	866	participant bootstrap; equally weighted participant means	0-4					later_participant
+cohort_offer	stranger	investment	4.548340548340549	4.167388167388168	4.909090909090909	231	890	857	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	stranger	high_choice	0.5685425685425686	0.5202020202020202	0.6143578643578643	231	890	857	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	stranger	response_time	1.8894532377344877	1.846608202065296	1.9307763225018038	231	890	857	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	stranger	response_fraction	0.961038961038961	0.9491071428571429	0.9729437229437229	231	890	857	participant bootstrap; equally weighted participant means	0-8					later_participant
+cohort_offer	stranger	investment	3.0735930735930737	2.978336940836941	3.1659451659451654	231	890	874	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	stranger	high_choice	0.5367965367965368	0.4895382395382395	0.5822510822510822	231	890	874	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	stranger	response_time	1.861128463203463	1.8246602884108944	1.8962383133297254	231	890	874	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	stranger	response_fraction	0.9816017316017316	0.9718614718614719	0.9902597402597403	231	890	874	participant bootstrap; equally weighted participant means	2-4					later_participant
+cohort_offer	stranger	investment	4.851293103448276	4.597966440886699	5.109779094827586	232	1782	1745	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	stranger	high_choice	0.47521551724137934	0.43236709770114945	0.5180149322660098	232	1782	1745	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	stranger	response_time	1.8406271659841953	1.804770712820197	1.8751343020557525	232	1782	1745	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	stranger	response_fraction	0.9768318965517241	0.9671336206896551	0.9849272629310344	232	1782	1745	participant bootstrap; equally weighted participant means	2-8					later_participant
+cohort_offer	stranger	investment	5.607758620689655	5.408010057471264	5.795977011494252	232	891	867	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	stranger	high_choice	0.4019396551724138	0.35524425287356326	0.451867816091954	232	891	867	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	stranger	response_time	1.8505437367097701	1.814272994854526	1.8853078275323276	232	891	867	participant bootstrap; equally weighted participant means	4-8					later_participant
+cohort_offer	stranger	response_fraction	0.9719827586206896	0.9601293103448276	0.9838362068965517	232	891	867	participant bootstrap; equally weighted participant means	4-8					later_participant
