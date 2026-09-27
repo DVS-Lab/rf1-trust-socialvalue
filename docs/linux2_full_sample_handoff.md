@@ -84,7 +84,7 @@ python -m pip install -e '.[test,hierarchical]' \
 
 After detaching/reconnecting, activate the same environment again before running
 any stage. All entry points use `python3` from that environment. The upstream
-wrapper uses four behavior-conversion jobs; downstream numerical libraries use
+wrapper uses four jobs for validation and 12 for the run-planned cohort conversion; downstream numerical libraries use
 one thread. This milestone does not need dozens of processors.
 
 ## 3. Validate the small upstream cohort first
@@ -126,10 +126,14 @@ exclusions, repeats dry-run/backfill/checks, refreshes all canonical events
 response QC, runs its checker, and exports a deidentified Trust eligibility
 contract. No private source logs are copied into the analysis repository.
 
-If conversion/checking fails for an unresolved source/run, the wrapper stops.
-Those failures must be inspected upstream; do not add blanket curation approvals.
-The downstream manifest supports source-excluded/unresolved runs as exclusions,
-but the migration does not silently certify a failed backfill.
+The cohort stage creates a source-hash-bound run plan first. Unresolved BOLD-only
+runs (missing/ambiguous/invalid sources) are explicitly excluded and reported in
+`qc/trust_analysis/cohort_run_plan.tsv`. A participant's usable other run remains
+included. Run-specific subject lists drive the existing converter, with a full
+dry-run before writes. Failures affecting existing canonical events, or unexpected
+failures in a planned usable run, still stop for review. Do not add blanket
+curation approvals or trim appended logs. The plan is revalidated against live
+sources before conversion and final certification.
 
 Inspect and commit **upstream** products (including failure logs, if applicable):
 
@@ -309,3 +313,27 @@ checks the existing converted files against the original pre-conversion snapshot
 It never recreates the snapshot or reruns conversion. A successful report counts
 canonical behavioral runs only and lists ignored empty imaging templates
 separately. Review `Stage validation exit=0` before proceeding to the cohort stage.
+
+
+## Resume the run-level cohort plan
+
+The 20260927T014643Z attempt stopped during the dry-run: 647 existing canonical
+runs passed, while five BOLD-only runs lacked sources and one had an appended
+source log. None of those six runs had canonical behavioral events. The repaired
+wrapper records these as run-level exclusions under the prespecified policy and
+converts only source-valid runs. These counts are logged evidence, not fixed N
+or hard-coded IDs. The original cohort snapshot is reused.
+
+On Linux2, in the existing tmux shell:
+
+```bash
+export PATH="/ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/bin:$PATH"
+cd /ZPOOL/data/projects/rf1-sra-linux2 &&
+git pull --ff-only &&
+bash code/run_trust_handoff.sh cohort
+```
+
+The default cohort conversion concurrency is 12 processes; Stan is not involved.
+Keep and push `qc/trust_analysis/cohort_run_plan.tsv` along with the QC exports
+and all run logs. A successful gate reports the eligible and excluded runs
+separately. Do not proceed to the scientific gate until this stage exits zero.
