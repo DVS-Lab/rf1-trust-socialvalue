@@ -1,0 +1,52 @@
+........................................................................ [ 49%]
+........................................................................ [ 98%]
+..                                                                       [100%]
+=============================== warnings summary ===============================
+tests/test_full_sample.py::test_milestone_integration_synthetic
+tests/test_full_sample.py::test_milestone_integration_synthetic
+  /ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/lib/python3.12/site-packages/matplotlib/cbook.py:1811: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+    return math.isfinite(val)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:257: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['complete_run_sensitivity']=m.include_primary & m.participant_id.map(a.complete_run_sensitivity).fillna(False).astype(bool)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:258: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['include_sensitivity']=m.include_primary&m.participant_id.map(a.include_sensitivity).fillna(False).astype(bool)
+
+tests/test_n111_closeout.py: 150 warnings
+tests/test_n111_diagnostics.py: 50 warnings
+tests/test_n111_zero.py: 850 warnings
+tests/test_second_pass.py: 50 warnings
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/models.py:49: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    frame.chose_high.fillna(-1).astype(float),frame.feedback_observed.astype(float),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+146 passed, 1104 warnings in 31.64s
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py", line 390, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py", line 384, in main
+    if a.command=='freeze':freeze(c,a.refresh)
+                           ^^^^^^^^^^^^^^^^^^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py", line 332, in freeze
+    hashes,files=inventory(c)
+                 ^^^^^^^^^^^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py", line 152, in inventory
+    return {str(p): sha(p) for p in paths}, files
+                    ^^^^^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py", line 28, in sha
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/ZPOOL/data/projects/rf1-sra-linux2/bids/participants.tsv'
+Integration exit=1. Preserve results/run_logs/20260927T024639Z-full-sample and results/full_sample when committing.
