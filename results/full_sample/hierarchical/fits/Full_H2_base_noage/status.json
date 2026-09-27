@@ -1,0 +1,46 @@
+{
+  "name": "Full_H2_base_noage",
+  "entry": {
+    "model": "H2",
+    "variant": "base",
+    "name": "Full_H2_base_noage"
+  },
+  "status": "complete",
+  "started_at": "2026-09-27T17:49:16.233703+00:00",
+  "n_participants": 343,
+  "n_choices": 26560,
+  "fingerprint": "141bce94d3f495e5a425abf5874a45a59e32fd9fb8d7d5fd2bf28b7b81e422c4",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 1116090428,
+  "parallel_chains": 4,
+  "analysis_git_sha": "23a45df1ff8f2fadd3ba96f80ecad8cd4ff26ac3",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": true,
+  "max_rhat": 1.00488,
+  "min_bulk_ess": 466.61,
+  "min_tail_ess": 697.063,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.7754848373425182,
+  "sampling_seconds": 1231.0350779280998,
+  "diagnostics_sha256": "6786e653e792cc9d1a67d061410664f343211178961136b46b2231f7e5cfc460",
+  "summary_hashes": {
+    "population_parameters.tsv": "2010d51491c872d5c1ab13fe04a9ec6465cacc9c44687a6b5ac1f74fa1b454f9",
+    "participant_parameters.tsv": "cad71068300da068ed3092efe88824efadd5996ef17ef9c98a3fa2f85f91108b"
+  },
+  "finished_at": "2026-09-27T18:10:27.418618+00:00",
+  "elapsed_seconds": 1271.1824411000125,
+  "peak_python_rss_mib": 601.9921875,
+  "peak_child_rss_mib": 601.9921875
+}

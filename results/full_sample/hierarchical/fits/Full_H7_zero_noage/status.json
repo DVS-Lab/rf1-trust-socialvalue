@@ -1,0 +1,46 @@
+{
+  "name": "Full_H7_zero_noage",
+  "entry": {
+    "model": "H7",
+    "variant": "zero",
+    "name": "Full_H7_zero_noage"
+  },
+  "status": "complete",
+  "started_at": "2026-09-27T17:49:16.228658+00:00",
+  "n_participants": 343,
+  "n_choices": 26560,
+  "fingerprint": "e2fe8bed36addd2df315c489cb10b429c4489a0b8c32a4a6e9d1722e58ca1a2c",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 2932246756,
+  "parallel_chains": 4,
+  "analysis_git_sha": "23a45df1ff8f2fadd3ba96f80ecad8cd4ff26ac3",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": true,
+  "max_rhat": 1.0059,
+  "min_bulk_ess": 597.112,
+  "min_tail_ess": 1241.84,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6334592563460261,
+  "sampling_seconds": 8984.66181377368,
+  "diagnostics_sha256": "e470f35e1b2e0f708d3e8022162b1deb7e1731b7c50f630949095338d58f1171",
+  "summary_hashes": {
+    "participant_parameters.tsv": "93cc5a26576ebedef2fda4e21b25a52f43ebb6857b45e1922d856da950d75e5a",
+    "population_parameters.tsv": "01682e28e660d81a966c5c5f35e2b47b6790c50b86fb0066639c50c0b20c29cc"
+  },
+  "finished_at": "2026-09-27T20:20:23.210183+00:00",
+  "elapsed_seconds": 9066.979040735867,
+  "peak_python_rss_mib": 1194.46484375,
+  "peak_child_rss_mib": 1194.46484375
+}

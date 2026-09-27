@@ -1,0 +1,24 @@
+{
+  "status": "blocked_diagnostics_or_error",
+  "started_at": "2026-09-27T17:49:13.919206+00:00",
+  "n_participants": 343,
+  "parallel_fits": 4,
+  "parallel_chains": 4,
+  "maximum_active_chains": 16,
+  "runs": {
+    "Full_H2_base_noage": {
+      "exit_code": 0
+    },
+    "Full_H5_zero_noage": {
+      "exit_code": 0
+    },
+    "Full_H7_zero_noage": {
+      "exit_code": 0
+    },
+    "Full_HPreference_zero_noage": {
+      "exit_code": 2
+    }
+  },
+  "next_stage": "review runtime and diagnostics before broad full/train batch",
+  "finished_at": "2026-09-27T20:43:46.135824+00:00"
+}

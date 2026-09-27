@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "source_hashes": {
+    "stan/n111_zero_fast.stan": "6dbb246f1ac6425ef8fabe2fb32c62b434456c73b3dd5b5aab7cd871518c333b",
+    "stan/n111_zero_reference.stan": "a0736e782d69249fa0206a65b285f481b48b864213d948ebc50eea67b4cfab4d",
+    "stan/n111_zero_fast.hpp": "3d7b47bba4f762b736f2d83bc419053f495a245880774e3b7f028d0941a48afc",
+    "src/rf1_trust_socialvalue/full_sample_sampling.py": "bc34b2e200bba841ce6a3a6e19e2448c81d674f440adcb04c48ac490e4499d3d",
+    "src/rf1_trust_socialvalue/n111_zero.py": "5332c7c74c40d26f11797b1c37ce4859677987c38da5f99ef4a5bb5595fd7ee3",
+    "src/rf1_trust_socialvalue/models.py": "25d2ae8531e3aa1f7bd3aab84f94619f95251026a402d301bed1c9dd9b2cc7f8",
+    "src/rf1_trust_socialvalue/hierarchical.py": "8a01e9ba712488c71bb4705b1d086bf2eac03740d97f519b47988d998ddb8854"
+  },
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "checks_sha256": "a4f75deca7ab34d3a73847f86eb2603405b5bc0929a57051d939279027c29e7e",
+  "cmdstan_version": "2.40.0",
+  "generated_at": "2026-09-27T17:49:13.918850+00:00"
+}
