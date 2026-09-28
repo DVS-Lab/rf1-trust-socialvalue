@@ -1,0 +1,43 @@
+{
+  "name": "Train_HPreference_base_noage",
+  "entry": {
+    "model": "HPreference",
+    "variant": "base",
+    "subset": "train",
+    "name": "Train_HPreference_base_noage"
+  },
+  "status": "diagnostic_failed",
+  "started_at": "2026-09-28T02:00:45.417341+00:00",
+  "n_participants": 304,
+  "n_choices": 12498,
+  "fingerprint": "3f7883ca6e6b7eaa7eb3ae1e240e610ab2be9bab9b41424dc82549a548b04107",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 4000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 713091533,
+  "parallel_chains": 4,
+  "analysis_git_sha": "4bd029194931cffba508879bcde119eb14e7a2a9",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": false,
+  "max_rhat": 1.01098,
+  "min_bulk_ess": 685.098,
+  "min_tail_ess": 1369.95,
+  "divergences": 1,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.631884416549493,
+  "sampling_seconds": 3827.9949686839245,
+  "diagnostics_sha256": "c5bb044e542b6e5ec45cdafae1aa780a05d21d89034a5af218cf4de8b1e3b83e",
+  "finished_at": "2026-09-28T03:06:49.024774+00:00",
+  "elapsed_seconds": 3963.6047743898816,
+  "peak_python_rss_mib": 1636.625,
+  "peak_child_rss_mib": 1636.625
+}

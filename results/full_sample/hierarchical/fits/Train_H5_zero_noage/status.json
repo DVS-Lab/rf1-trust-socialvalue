@@ -1,0 +1,43 @@
+{
+  "name": "Train_H5_zero_noage",
+  "entry": {
+    "model": "H5",
+    "variant": "zero",
+    "subset": "train",
+    "name": "Train_H5_zero_noage"
+  },
+  "status": "diagnostic_failed",
+  "started_at": "2026-09-28T02:00:45.425901+00:00",
+  "n_participants": 304,
+  "n_choices": 12498,
+  "fingerprint": "ede15e2196dc4a0573cbd350d630981b817a1181cca6030eac1290e14c43202b",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 4280505610,
+  "parallel_chains": 4,
+  "analysis_git_sha": "4bd029194931cffba508879bcde119eb14e7a2a9",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": false,
+  "max_rhat": 1.01358,
+  "min_bulk_ess": 352.382,
+  "min_tail_ess": 896.003,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6724098399923756,
+  "sampling_seconds": 2403.5668898699805,
+  "diagnostics_sha256": "9896cdfea9fa83353c332f4f47d5a639ed5affac6e996f06bdbab2b497cec62b",
+  "finished_at": "2026-09-28T02:41:55.154221+00:00",
+  "elapsed_seconds": 2469.7259656931274,
+  "peak_python_rss_mib": 900.05078125,
+  "peak_child_rss_mib": 900.05078125
+}

@@ -1,0 +1,111 @@
+{
+  "status": "blocked_diagnostics_or_error",
+  "started_at": "2026-09-28T02:00:38.853089+00:00",
+  "analysis_git_sha": "4bd029194931cffba508879bcde119eb14e7a2a9",
+  "runs": {
+    "Train_H2_base_noage": {
+      "exit_code": 2
+    },
+    "Train_H8_base_noage": {
+      "exit_code": 0
+    },
+    "Train_H2_zero_noage": {
+      "exit_code": 2
+    },
+    "Train_H8_zero_noage": {
+      "exit_code": 2
+    },
+    "Train_H5_base_noage": {
+      "exit_code": 2
+    },
+    "Full_H8_base_noage": {
+      "exit_code": 0
+    },
+    "Full_H2_zero_noage": {
+      "exit_code": 2
+    },
+    "Full_H8_zero_noage": {
+      "exit_code": 0
+    },
+    "Train_H7_base_noage": {
+      "exit_code": 0
+    },
+    "Train_H5_zero_noage": {
+      "exit_code": 2
+    },
+    "Train_H7_zero_noage": {
+      "exit_code": 0
+    },
+    "Train_HPreference_base_noage": {
+      "exit_code": 2
+    },
+    "Train_HPreference_zero_noage": {
+      "exit_code": 0
+    },
+    "Full_H5_base_noage": {
+      "exit_code": 2
+    },
+    "Full_H7_base_noage": {
+      "exit_code": 0
+    },
+    "Full_HPreference_base_noage": {
+      "exit_code": 2
+    }
+  },
+  "reused": [
+    {
+      "model": "H2",
+      "variant": "base",
+      "name": "Full_H2_base_noage",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "141bce94d3f495e5a425abf5874a45a59e32fd9fb8d7d5fd2bf28b7b81e422c4"
+    },
+    {
+      "model": "H5",
+      "variant": "zero",
+      "name": "Full_H5_zero_noage",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "cc8d0a5de9dad8bb1f6e3110dbde9fff615812fc6d60abbfacd0ce750ad986dd"
+    },
+    {
+      "model": "H7",
+      "variant": "zero",
+      "name": "Full_H7_zero_noage",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "e2fe8bed36addd2df315c489cb10b429c4489a0b8c32a4a6e9d1722e58ca1a2c"
+    },
+    {
+      "model": "HPreference",
+      "variant": "zero",
+      "name": "Full_HPreference_zero_noage_draws4000",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "d3d0ddaf9d020d5a95ee5109e76b29adce0c7e109aa76ae5a3f0d93fbace9a49"
+    }
+  ],
+  "n_full": 343,
+  "n_train": 304,
+  "parallel_fits": 16,
+  "parallel_chains": 4,
+  "maximum_active_chains": 64,
+  "phase_config_sha256": "29634508c9a2689d2ce435d0f601e832be8da0b25194ae175bb8afaa18b5ab24",
+  "source_hashes": {
+    "stan/n111_zero_fast.stan": "6dbb246f1ac6425ef8fabe2fb32c62b434456c73b3dd5b5aab7cd871518c333b",
+    "stan/n111_zero_reference.stan": "a0736e782d69249fa0206a65b285f481b48b864213d948ebc50eea67b4cfab4d",
+    "stan/n111_zero_fast.hpp": "3d7b47bba4f762b736f2d83bc419053f495a245880774e3b7f028d0941a48afc",
+    "src/rf1_trust_socialvalue/full_sample_sampling.py": "1ed134d6d7eb267b1cbd67d91392a9e2f98b5db69e4273864bd284c30799ad09",
+    "src/rf1_trust_socialvalue/n111_zero.py": "5332c7c74c40d26f11797b1c37ce4859677987c38da5f99ef4a5bb5595fd7ee3",
+    "src/rf1_trust_socialvalue/models.py": "25d2ae8531e3aa1f7bd3aab84f94619f95251026a402d301bed1c9dd9b2cc7f8",
+    "src/rf1_trust_socialvalue/hierarchical.py": "8a01e9ba712488c71bb4705b1d086bf2eac03740d97f519b47988d998ddb8854",
+    "src/rf1_trust_socialvalue/full_sample_batch.py": "fca191f9914f7e88bb7a9f26e6cdcbb5aa225d60647e674b4ee19ab8595dd97b"
+  },
+  "finished_at": "2026-09-28T08:06:06.146622+00:00",
+  "next_stage": "Review heldout comparisons and full-fit parameters, then posterior predictive checks, age/sensitivity and targeted recovery"
+}

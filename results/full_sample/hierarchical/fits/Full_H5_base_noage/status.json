@@ -1,0 +1,43 @@
+{
+  "name": "Full_H5_base_noage",
+  "entry": {
+    "model": "H5",
+    "variant": "base",
+    "subset": "full",
+    "name": "Full_H5_base_noage"
+  },
+  "status": "diagnostic_failed",
+  "started_at": "2026-09-28T02:00:45.497255+00:00",
+  "n_participants": 343,
+  "n_choices": 26560,
+  "fingerprint": "5014394b86075ac21b3478b3c2d2d9c4d130830e897c7e2b8c446b0576a9c5df",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 2821653830,
+  "parallel_chains": 4,
+  "analysis_git_sha": "4bd029194931cffba508879bcde119eb14e7a2a9",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": false,
+  "max_rhat": 1.00431,
+  "min_bulk_ess": 487.83,
+  "min_tail_ess": 264.882,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6431233685256121,
+  "sampling_seconds": 4710.846903800033,
+  "diagnostics_sha256": "d71b00fb2549ebe2ecb84aa0d693b332d3733e46d550dcfcfff3e12bc08e73f2",
+  "finished_at": "2026-09-28T03:20:13.355091+00:00",
+  "elapsed_seconds": 4767.855459111277,
+  "peak_python_rss_mib": 798.00390625,
+  "peak_child_rss_mib": 798.00390625
+}

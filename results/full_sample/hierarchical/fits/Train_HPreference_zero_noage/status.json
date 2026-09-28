@@ -1,0 +1,50 @@
+{
+  "name": "Train_HPreference_zero_noage",
+  "entry": {
+    "model": "HPreference",
+    "variant": "zero",
+    "subset": "train",
+    "name": "Train_HPreference_zero_noage"
+  },
+  "status": "complete",
+  "started_at": "2026-09-28T02:00:45.417096+00:00",
+  "n_participants": 304,
+  "n_choices": 12498,
+  "fingerprint": "fd26fc8bb847f7910cc6688a7ec021b97501e7ee9f4bbe831edd0a33f36d0960",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 4000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 1858209557,
+  "parallel_chains": 4,
+  "analysis_git_sha": "4bd029194931cffba508879bcde119eb14e7a2a9",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": true,
+  "max_rhat": 1.00478,
+  "min_bulk_ess": 1062.7,
+  "min_tail_ess": 2525.69,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.611569994215572,
+  "sampling_seconds": 4149.059879058041,
+  "diagnostics_sha256": "c2b779832e45bb84aa53766f9e4111a0cb2726a4cd6a84ead242dfe142604ce1",
+  "heldout_sha256": "7e6fabd8b059d6dcefcb312a3e9b81f5b60659d05e42ae16b333634cc921b9ba",
+  "heldout_n": 304,
+  "heldout_choices": 12494,
+  "summary_hashes": {
+    "participant_parameters.tsv": "33626231000a1a8af0344bfce7380a35f5e62724fc59ccb45fcf6a4800a8e884",
+    "population_parameters.tsv": "7dd7b37ca0c539f6abf5a39a231a1aeb281d8a2a09dab2a1ae904eba8fe5ecc7"
+  },
+  "finished_at": "2026-09-28T03:13:22.444094+00:00",
+  "elapsed_seconds": 4357.024502384011,
+  "peak_python_rss_mib": 1994.328125,
+  "peak_child_rss_mib": 1994.328125
+}

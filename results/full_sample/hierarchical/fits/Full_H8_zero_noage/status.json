@@ -1,0 +1,47 @@
+{
+  "name": "Full_H8_zero_noage",
+  "entry": {
+    "model": "H8",
+    "variant": "zero",
+    "subset": "full",
+    "name": "Full_H8_zero_noage"
+  },
+  "status": "complete",
+  "started_at": "2026-09-28T02:00:45.516520+00:00",
+  "n_participants": 343,
+  "n_choices": 26560,
+  "fingerprint": "4043053cc3f065b993d6b489ec4f5c0f4d81ce7c7d751fa228bbae002e7fe704",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 2000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 1384308559,
+  "parallel_chains": 4,
+  "analysis_git_sha": "4bd029194931cffba508879bcde119eb14e7a2a9",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": true,
+  "max_rhat": 1.0097,
+  "min_bulk_ess": 603.091,
+  "min_tail_ess": 1120.09,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6785722796301885,
+  "sampling_seconds": 1645.161483479198,
+  "diagnostics_sha256": "8e9855c08138f8212ded3d85dcfd6f2408fdfe8b11f8cd550e7d12fefcc01bca",
+  "summary_hashes": {
+    "population_parameters.tsv": "5ba534f8fe2b5d7ca65360a448f3c624450f2396d15c6eda104c3661c24bf805",
+    "participant_parameters.tsv": "cfca33b1fb46e2993b3fc4e8e496e5868d4d6e6ab0ed430e217a8180ee0a3d0b"
+  },
+  "finished_at": "2026-09-28T02:29:26.609422+00:00",
+  "elapsed_seconds": 1721.0903023309074,
+  "peak_python_rss_mib": 996.0,
+  "peak_child_rss_mib": 996.0
+}
