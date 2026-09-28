@@ -1,0 +1,47 @@
+{
+  "name": "Full_HPreference_zero_noage_draws4000",
+  "entry": {
+    "model": "HPreference",
+    "variant": "zero",
+    "name": "Full_HPreference_zero_noage_draws4000",
+    "seed_name": "Full_HPreference_zero_noage"
+  },
+  "status": "complete",
+  "started_at": "2026-09-27T21:33:21.774904+00:00",
+  "n_participants": 343,
+  "n_choices": 26560,
+  "fingerprint": "d3d0ddaf9d020d5a95ee5109e76b29adce0c7e109aa76ae5a3f0d93fbace9a49",
+  "settings": {
+    "chains": 4,
+    "warmup": 2000,
+    "draws": 4000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 3692711808,
+  "parallel_chains": 4,
+  "analysis_git_sha": "637a574b21f8a9b5f5bbe2934558822738e79320",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": true,
+  "max_rhat": 1.00498,
+  "min_bulk_ess": 702.858,
+  "min_tail_ess": 1377.5,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6272412893219443,
+  "sampling_seconds": 14658.011428638827,
+  "diagnostics_sha256": "3da428fe561c9ee36a1b637783e5d5dba4430a8f920887f4aa5bfa90f820be9a",
+  "summary_hashes": {
+    "population_parameters.tsv": "e5b3963adb14b9dbfd5806dc47b615b16e0e8ae7c95fdd0c04d149fe85d8ad33",
+    "participant_parameters.tsv": "7397d31962811a6ac8b721a6db5a873eca433afea96b73cae83d8a3a438e5217"
+  },
+  "finished_at": "2026-09-28T01:40:26.145875+00:00",
+  "elapsed_seconds": 14824.368370544165,
+  "peak_python_rss_mib": 2230.33203125,
+  "peak_child_rss_mib": 2230.33203125
+}

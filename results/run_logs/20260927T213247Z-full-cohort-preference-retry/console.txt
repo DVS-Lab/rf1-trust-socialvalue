@@ -1,0 +1,47 @@
+........................................................................ [ 34%]
+........................................................................ [ 69%]
+..............................................................           [100%]
+=============================== warnings summary ===============================
+tests/test_full_sample.py::test_milestone_integration_synthetic
+tests/test_full_sample.py::test_milestone_integration_synthetic
+  /ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/lib/python3.12/site-packages/matplotlib/cbook.py:1811: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+    return math.isfinite(val)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:291: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['complete_run_sensitivity']=m.include_primary & m.participant_id.map(a.complete_run_sensitivity).fillna(False).astype(bool)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:292: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['include_sensitivity']=m.include_primary&m.participant_id.map(a.include_sensitivity).fillna(False).astype(bool)
+
+tests/test_n111_closeout.py: 150 warnings
+tests/test_n111_diagnostics.py: 50 warnings
+tests/test_n111_zero.py: 850 warnings
+tests/test_second_pass.py: 50 warnings
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/models.py:49: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    frame.chose_high.fillna(-1).astype(float),frame.feedback_observed.astype(float),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+206 passed, 1104 warnings in 28.50s
+Frozen canonical inputs and derived tables verified.
+Passed 20 Stan target/gradient and Python likelihood checks.
+Pilot: 343 participants, 1 concurrent fits × 4 chains = 4 active cores.
+Full_HPreference_zero_noage_draws4000: exit 0
+Frozen canonical inputs and derived tables verified.
+{
+  "status": "ready_for_runtime_review",
+  "started_at": "2026-09-27T21:33:19.651322+00:00",
+  "n_participants": 343,
+  "parallel_fits": 1,
+  "parallel_chains": 4,
+  "maximum_active_chains": 4,
+  "runs": {
+    "Full_HPreference_zero_noage_draws4000": {
+      "exit_code": 0
+    }
+  },
+  "next_stage": "review runtime and diagnostics before broad full/train batch",
+  "finished_at": "2026-09-28T01:40:27.497306+00:00"
+}
+Pilot exit=0. Preserve results/full_sample/hierarchical and results/run_logs/20260927T213247Z-full-cohort-preference-retry when committing.

@@ -1,0 +1,15 @@
+{
+  "status": "ready_for_runtime_review",
+  "started_at": "2026-09-27T21:33:19.651322+00:00",
+  "n_participants": 343,
+  "parallel_fits": 1,
+  "parallel_chains": 4,
+  "maximum_active_chains": 4,
+  "runs": {
+    "Full_HPreference_zero_noage_draws4000": {
+      "exit_code": 0
+    }
+  },
+  "next_stage": "review runtime and diagnostics before broad full/train batch",
+  "finished_at": "2026-09-28T01:40:27.497306+00:00"
+}
