@@ -42,7 +42,7 @@ def save(path, value):
 def configuration(path='config/full_sample_sampling.json'):
     path=Path(path).resolve();phase=json.loads(path.read_text());root=path.parent.parent
     c=fs.resolve_config(root/phase['cohort_config'])
-    if phase['stage'] not in {'full_cohort_noage_pilot','full_cohort_noage_retry','full_cohort_noage_batch'} or not phase['launch_authorized'] or phase['automatic_retries']:
+    if phase['stage'] not in {'full_cohort_noage_pilot','full_cohort_noage_retry','full_cohort_noage_batch','full_cohort_noage_batch_retry'} or not phase['launch_authorized'] or phase['automatic_retries']:
         raise ValueError('Only authorized full-cohort phases without automatic retries are available')
     h=c['hierarchical']
     if h['chains']!=4 or h['parallel_chains']!=4 or phase['parallel_fits']<1:
@@ -53,6 +53,9 @@ def configuration(path='config/full_sample_sampling.json'):
     if phase['stage']=='full_cohort_noage_retry':validate_retry(phase,c,settings)
     if phase['stage']=='full_cohort_noage_batch':
         from .full_sample_batch import validate_configuration
+        validate_configuration(phase,c,settings)
+    if phase['stage']=='full_cohort_noage_batch_retry':
+        from .full_sample_retries import validate_configuration
         validate_configuration(phase,c,settings)
     return phase,c,settings
 
@@ -86,6 +89,10 @@ def validate_retry(phase,c,settings):
 
 
 def verify_retry_target(phase,c,payload):
+    if phase['stage']=='full_cohort_noage_batch_retry':
+        from .full_sample_retries import verify_target
+        verify_target(phase,c,payload)
+        return
     if phase['stage']!='full_cohort_noage_retry':return
     source=Path(c['output'])/'hierarchical/fits'/phase['retry']['source_run']/'status.json'
     old=json.loads(source.read_text())
@@ -96,7 +103,7 @@ def verify_retry_target(phase,c,payload):
 
 def phase_output(phase,c):
     out,_=paths(c)
-    if phase['stage']=='full_cohort_noage_batch':return out/'batch'/'implementation'/phase.get('_subset','full')
+    if phase['stage'] in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'}:return out/('batch_retry' if phase['stage']=='full_cohort_noage_batch_retry' else 'batch')/'implementation'/phase.get('_subset','full')
     return out/'retries'/phase['retry']['replacement_run'] if phase['stage']=='full_cohort_noage_retry' else out
 
 
@@ -105,7 +112,7 @@ def paths(c):
 
 
 def entries(phase):
-    if phase['stage']=='full_cohort_noage_batch':
+    if phase['stage'] in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'}:
         from .full_sample_batch import new_entries
         return new_entries(phase)
     rows=[dict(e,name=f"Full_{e['model']}_{e['variant']}_noage") for e in phase['pilot']]
@@ -176,7 +183,7 @@ def model_data(t,model,zero,gamma_sd=1.):
 def implementation(root):
     files=SOURCES+['src/rf1_trust_socialvalue/full_sample_sampling.py',
         'src/rf1_trust_socialvalue/n111_zero.py','src/rf1_trust_socialvalue/models.py',
-        'src/rf1_trust_socialvalue/hierarchical.py','src/rf1_trust_socialvalue/full_sample_batch.py']
+        'src/rf1_trust_socialvalue/hierarchical.py','src/rf1_trust_socialvalue/full_sample_batch.py','src/rf1_trust_socialvalue/full_sample_retries.py']
     return {p:fs.sha(Path(root)/p) for p in files}
 
 
@@ -230,7 +237,7 @@ def check_implementation(phase,c,t):
     out.mkdir(parents=True,exist_ok=True);pd.DataFrame(rows).to_csv(out/'implementation_checks.tsv',sep='\t',index=False)
     record=dict(status='passed' if all(r['passed'] for r in rows) else 'failed',source_hashes=implementation(c['_root']),
         integration_status_sha256=phase['integration_status_sha256'],checks_sha256=fs.sha(out/'implementation_checks.tsv'),cmdstan_version=phase['cmdstan_version'],generated_at=now())
-    if phase['stage']=='full_cohort_noage_batch':record['phase_config_sha256']=fs.sha(phase['_path'])
+    if phase['stage'] in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'}:record['phase_config_sha256']=fs.sha(phase['_path'])
     save(out/'implementation_status.json',record)
     if record['status']!='passed':raise RuntimeError('Implementation check failed; sampling blocked')
     print('Passed 20 Stan target/gradient and Python likelihood checks.',flush=True)
@@ -238,7 +245,7 @@ def check_implementation(phase,c,t):
 
 def implementation_gate(phase,c):
     out=phase_output(phase,c);s=json.loads((out/'implementation_status.json').read_text())
-    if phase['stage']=='full_cohort_noage_batch' and s.get('phase_config_sha256')!=fs.sha(phase['_path']):
+    if phase['stage'] in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'} and s.get('phase_config_sha256')!=fs.sha(phase['_path']):
         raise ValueError('Batch configuration changed after implementation checks')
     if s['status']!='passed' or s['source_hashes']!=implementation(c['_root']) or s['integration_status_sha256']!=phase['integration_status_sha256'] or s['cmdstan_version']!=phase['cmdstan_version'] or s['checks_sha256']!=fs.sha(out/'implementation_checks.tsv'):
         raise ValueError('Implementation check missing or stale')
@@ -259,11 +266,11 @@ def diagnostics(fit,cfg,thresholds):
 def fit_entry(phase,c,cfg,entry):
     require_linux();t=integrated_trials(phase,c)
     all_trials=t
-    if phase['stage']=='full_cohort_noage_batch':
+    if phase['stage'] in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'}:
         from . import full_sample_batch as batch
         cfg=batch.entry_settings(phase,cfg,entry)
         t=batch.entry_trials(t,entry)
-        phase=dict(phase,_subset=entry['subset'])
+        phase=dict(phase,_subset=entry['subset'],_entry=entry)
     implementation_gate(phase,c);cmdstan(phase,c)
     data,meta,arrays=model_data(t,entry['model'],entry['variant']=='zero',phase['gamma_population_mean_prior_sd'])
     out,work=paths(c);name=entry['name'];folder=work/'fits'/name;evidence=out/'fits'/name
@@ -301,6 +308,9 @@ def fit_entry(phase,c,cfg,entry):
         (evidence/'diagnose.txt').write_text(fit.diagnose())
         state['diagnostics_sha256']=fs.sha(evidence/'diagnostics.tsv')
         if not info['passed']:
+            if phase['stage']=='full_cohort_noage_batch_retry':
+                from .full_sample_retries import trace_evidence
+                state['trace_hashes']=trace_evidence(fit,d,evidence)
             state['status']='diagnostic_failed';return 2
         natural=fit.stan_variable('natural');rows=[]
         for i,sub in enumerate(meta['ids']):
@@ -312,7 +322,7 @@ def fit_entry(phase,c,cfg,entry):
             for quantity,x in [('latent_population_location',mu[:,j]),('latent_population_sd',tau[:,j])]:
                 population.append(dict(parameter=parameter,quantity=quantity,**summarize(x)))
         pd.DataFrame(population).to_csv(evidence/'population_parameters.tsv',sep='\t',index=False)
-        if phase['stage']=='full_cohort_noage_batch' and entry['subset']=='train':
+        if phase['stage'] in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'} and entry['subset']=='train':
             scores=batch.heldout_scores(all_trials,entry,natural,meta)
             scores.to_csv(evidence/'heldout_participants.tsv',sep='\t',index=False)
             state['heldout_sha256']=fs.sha(evidence/'heldout_participants.tsv')
@@ -398,7 +408,7 @@ def main():
         selected=[e for e in entries(phase) if e['name']==a.name]
         if len(selected)!=1:parser.error('--name must identify a configured pilot fit')
         raise SystemExit(fit_entry(phase,c,cfg,selected[0]))
-    if phase['stage']=='full_cohort_noage_batch':parser.error('Use full_sample_batch run for the batch parent')
+    if phase['stage'] in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'}:parser.error('Use full_sample_batch run for the batch parent')
     raise SystemExit(pilot(phase,c,cfg))
 
 

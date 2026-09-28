@@ -38,12 +38,14 @@ def validate_configuration(phase,c,cfg):
 
 
 def new_entries(phase):
+    if phase['stage']=='full_cohort_noage_batch_retry':return phase['retries']
     return [dict(model=m,variant=v,subset=subset,name=f"{'Full' if subset=='full' else 'Train'}_{m}_{v}_noage")
             for subset in ['full','train'] for m in s.MODELS for v in ['base','zero']
             if subset=='train' or (m,v) not in REUSED]
 
 
 def entry_settings(phase,cfg,entry):
+    if phase['stage']=='full_cohort_noage_batch_retry':return dict(cfg,**entry['settings'])
     return dict(cfg,draws=phase['draws_by_model'].get(entry['model'],cfg['draws']))
 
 
@@ -104,12 +106,15 @@ def review_reused(phase,c,t):
                 or (d.ESS_tail<a['minimum_tail_ess']).any() or status['divergences']!=a['divergences']
                 or status['max_depth_hits']!=a['treedepth_hits'] or status['min_bfmi']<=a['bfmi_greater_than']):
             raise ValueError('Reused fit no longer passes diagnostics')
-        data,meta,_=s.model_data(t,entry['model'],entry['variant']=='zero',phase['gamma_population_mean_prior_sd'])
+        subset=entry.get('subset','full')
+        if subset=='train' and s.fs.sha(folder/'heldout_participants.tsv')!=status['heldout_sha256']:
+            raise ValueError('Accepted heldout scores changed')
+        data,meta,_=s.model_data(entry_trials(t,dict(entry,subset=subset)),entry['model'],entry['variant']=='zero',phase['gamma_population_mean_prior_sd'])
         payload=dict(data=data,settings=status['settings'],sampler_seed=status['sampler_seed'],
             stan={p:s.fs.sha(Path(c['_root'])/p) for p in s.SOURCES},cmdstan_version=phase['cmdstan_version'])
         if s.digest(payload)!=status['fingerprint'] or manifest['fingerprint']!=status['fingerprint'] or manifest['meta']!=meta:
             raise ValueError('Accepted fit differs from current full-data target')
-        rows.append(dict(entry,subset='full',status='complete',reused=True,fingerprint=status['fingerprint']))
+        rows.append(dict(entry,subset=subset,status='complete',reused=True,fingerprint=status['fingerprint']))
     return rows
 
 
@@ -142,14 +147,20 @@ def compare_scores(frames,seed,iterations):
 
 
 def comparison_outputs(phase,c):
-    out,_=s.paths(c);batch=out/'batch';frames=[];hashes={}
+    out,_=s.paths(c);batch=out/('batch_retry' if phase['stage']=='full_cohort_noage_batch_retry' else 'batch');frames=[];hashes={}
+    replacements={}
+    if phase['stage']=='full_cohort_noage_batch_retry':
+        replacements={e['source_name']:e['name'] for e in phase['retries']}
+        phase=json.loads((Path(c['_root'])/'config/full_sample_batch.json').read_text())
     for entry in new_entries(phase):
         if entry['subset']!='train':continue
-        folder=out/'fits'/entry['name'];status=json.loads((folder/'status.json').read_text());file=folder/'heldout_participants.tsv'
+        actual=replacements.get(entry['name'],entry['name'])
+        folder=out/'fits'/actual;status=json.loads((folder/'status.json').read_text());file=folder/'heldout_participants.tsv'
         if status['status']!='complete' or not status['passed'] or s.fs.sha(file)!=status['heldout_sha256']:
             raise ValueError('Heldout comparison requires ten accepted training fits with verified scores')
         frame=pd.read_csv(file,sep='\t')
-        if set(frame.name)!={entry['name']} or frame.participant_id.duplicated().any():raise ValueError('Invalid heldout table')
+        if set(frame.name)!={actual} or frame.participant_id.duplicated().any():raise ValueError('Invalid heldout table')
+        frame['name']=entry['name']
         frames.append(frame);hashes[str(file.relative_to(out))]=s.fs.sha(file)
     summary,paired=compare_scores(frames,c['seed'],c['bootstrap_iterations'])
     summary.to_csv(batch/'heldout_comparison.tsv',sep='\t',index=False)
@@ -173,7 +184,7 @@ def comparison_outputs(phase,c):
 
 def run(phase,c,cfg):
     import fcntl
-    s.require_linux();out,work=s.paths(c);batch=out/'batch';work.mkdir(parents=True,exist_ok=True)
+    s.require_linux();out,work=s.paths(c);batch=out/('batch_retry' if phase['stage']=='full_cohort_noage_batch_retry' else 'batch');work.mkdir(parents=True,exist_ok=True)
     # Same parent lock as the pilot: code upgrades must wait until a pilot/retry finishes.
     with (work/'pilot.lock').open('w') as lock:
         try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -188,12 +199,14 @@ def run(phase,c,cfg):
             s.cmdstan(phase,c,install=False)
             for subset in ['full','train']:
                 s.check_implementation(dict(phase,_subset=subset),c,entry_trials(t,{'subset':subset}))
-            entries=new_entries(phase);workers=worker_count(phase,cfg,len(entries))
+            entries=new_entries(phase)
+            resource_cfg=dict(cfg,chains=max(entry_settings(phase,cfg,e)['chains'] for e in entries))
+            workers=worker_count(phase,resource_cfg,len(entries))
             record.update(status='running',n_full=int(t.participant_id.nunique()),n_train=len(counts),parallel_fits=workers,
-                parallel_chains=cfg['chains'],maximum_active_chains=workers*cfg['chains'],
+                parallel_chains=resource_cfg['chains'],maximum_active_chains=workers*resource_cfg['chains'],
                 phase_config_sha256=s.fs.sha(phase['_path']),source_hashes=s.implementation(c['_root']))
             s.save(batch/'status.json',record)
-            print(f"Batch: {len(entries)} new fits; {workers} concurrent fits x {cfg['chains']} chains = {workers*cfg['chains']} active cores; four full fits reused.",flush=True)
+            print(f"Batch: {len(entries)} new fits; {workers} concurrent fits x {resource_cfg['chains']} chains = {workers*resource_cfg['chains']} active cores; {len(record['reused'])} accepted fits reused.",flush=True)
             def launch(entry):
                 dest=out/'fits'/entry['name'];dest.mkdir(parents=True,exist_ok=True)
                 # Preserve accepted statuses while a cached fit is verified/reloaded.
@@ -231,7 +244,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['run','status'])
     parser.add_argument('--config',default='config/full_sample_batch.json');a=parser.parse_args()
     phase,c,cfg=s.configuration(a.config)
-    if phase['stage']!='full_cohort_noage_batch':parser.error('A batch configuration is required')
+    if phase['stage'] not in {'full_cohort_noage_batch','full_cohort_noage_batch_retry'}:parser.error('A batch configuration is required')
     if a.command=='status':
         out,_=s.paths(c)
         for e in new_entries(phase):

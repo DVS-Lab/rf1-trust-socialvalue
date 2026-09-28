@@ -1,0 +1,285 @@
+{
+  "stage": "full_cohort_noage_batch_retry",
+  "launch_authorized": true,
+  "integration_commit": "a785eb6",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "cohort_config": "config/full_sample_linux2.json",
+  "cmdstan_version": "2.40.0",
+  "compile_cores": 8,
+  "parallel_fits": 9,
+  "cpu_budget": 80,
+  "metric": "diag_e",
+  "gamma_population_mean_prior_sd": 1.0,
+  "automatic_retries": false,
+  "note": "Review f08e77f: preserve eleven accepted targets; one retry of nine failed targets. Eight chains per fit (72 total), longer warmup and draws, adapt_delta .995 only for the three divergent fits; unchanged model/prior/data/thresholds. Original attempts remain separate, never combined.",
+  "draws_by_model": {
+    "HPreference": 4000
+  },
+  "reuse": [
+    {
+      "model": "H2",
+      "variant": "base",
+      "name": "Full_H2_base_noage"
+    },
+    {
+      "model": "H5",
+      "variant": "zero",
+      "name": "Full_H5_zero_noage"
+    },
+    {
+      "model": "H7",
+      "variant": "zero",
+      "name": "Full_H7_zero_noage"
+    },
+    {
+      "model": "HPreference",
+      "variant": "zero",
+      "name": "Full_HPreference_zero_noage_draws4000"
+    },
+    {
+      "model": "H7",
+      "variant": "base",
+      "subset": "full",
+      "name": "Full_H7_base_noage"
+    },
+    {
+      "model": "H8",
+      "variant": "base",
+      "subset": "full",
+      "name": "Full_H8_base_noage"
+    },
+    {
+      "model": "H8",
+      "variant": "zero",
+      "subset": "full",
+      "name": "Full_H8_zero_noage"
+    },
+    {
+      "model": "H7",
+      "variant": "base",
+      "subset": "train",
+      "name": "Train_H7_base_noage"
+    },
+    {
+      "model": "H7",
+      "variant": "zero",
+      "subset": "train",
+      "name": "Train_H7_zero_noage"
+    },
+    {
+      "model": "HPreference",
+      "variant": "zero",
+      "subset": "train",
+      "name": "Train_HPreference_zero_noage"
+    },
+    {
+      "model": "H8",
+      "variant": "base",
+      "subset": "train",
+      "name": "Train_H8_base_noage"
+    }
+  ],
+  "accepted_evidence_sha256": {
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/status.json": "94a4829bd9694d89547b6c3b923f025d2fcca908d0613793fb2f7ad2e2f2f82b",
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/manifest_summary.json": "229d251b14d6c6eeefd10b6e20da68a2f8284ae6284c5eb65f387c0f97076b7a",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/status.json": "c7908f4b7ce4d7fca507b74068cd37844f0d3622cfdb85ed0bf05ab93e621d2d",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/manifest_summary.json": "1160128a8ce79487c92275cbec8f48a2eab0e77e6aca3f8072a16aa2ef8c59ea",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/status.json": "cca640e684825c3c0448749560595a9828f743dd2e1ed33d0038fccb49771faa",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/manifest_summary.json": "4f72cdb42224161fd5e99ae6e28a6b5fc7facd1338a8d947909d0a43d697888b",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/status.json": "c5ed2a0779f7c2c54d3f3316c607df7a3cf29dd75c5846b83a4d902804af00f6",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/manifest_summary.json": "f4fce1ca6f7549ac7d55f5aeae96dce53171fc75c1319681a9324bccc9f47124"
+  },
+  "max_attempts": 1,
+  "retries": [
+    {
+      "model": "H2",
+      "variant": "zero",
+      "subset": "full",
+      "name": "Full_H2_zero_noage_retry1",
+      "source_name": "Full_H2_zero_noage",
+      "seed_name": "Full_H2_zero_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 8000,
+        "adapt_delta": 0.99
+      }
+    },
+    {
+      "model": "H5",
+      "variant": "base",
+      "subset": "full",
+      "name": "Full_H5_base_noage_retry1",
+      "source_name": "Full_H5_base_noage",
+      "seed_name": "Full_H5_base_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 4000,
+        "adapt_delta": 0.99
+      }
+    },
+    {
+      "model": "HPreference",
+      "variant": "base",
+      "subset": "full",
+      "name": "Full_HPreference_base_noage_retry1",
+      "source_name": "Full_HPreference_base_noage",
+      "seed_name": "Full_HPreference_base_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 4000,
+        "adapt_delta": 0.995
+      }
+    },
+    {
+      "model": "H2",
+      "variant": "base",
+      "subset": "train",
+      "name": "Train_H2_base_noage_retry1",
+      "source_name": "Train_H2_base_noage",
+      "seed_name": "Train_H2_base_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 4000,
+        "adapt_delta": 0.99
+      }
+    },
+    {
+      "model": "H2",
+      "variant": "zero",
+      "subset": "train",
+      "name": "Train_H2_zero_noage_retry1",
+      "source_name": "Train_H2_zero_noage",
+      "seed_name": "Train_H2_zero_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 8000,
+        "adapt_delta": 0.99
+      }
+    },
+    {
+      "model": "H5",
+      "variant": "base",
+      "subset": "train",
+      "name": "Train_H5_base_noage_retry1",
+      "source_name": "Train_H5_base_noage",
+      "seed_name": "Train_H5_base_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 4000,
+        "adapt_delta": 0.995
+      }
+    },
+    {
+      "model": "H5",
+      "variant": "zero",
+      "subset": "train",
+      "name": "Train_H5_zero_noage_retry1",
+      "source_name": "Train_H5_zero_noage",
+      "seed_name": "Train_H5_zero_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 4000,
+        "adapt_delta": 0.99
+      }
+    },
+    {
+      "model": "HPreference",
+      "variant": "base",
+      "subset": "train",
+      "name": "Train_HPreference_base_noage_retry1",
+      "source_name": "Train_HPreference_base_noage",
+      "seed_name": "Train_HPreference_base_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 4000,
+        "adapt_delta": 0.995
+      }
+    },
+    {
+      "model": "H8",
+      "variant": "zero",
+      "subset": "train",
+      "name": "Train_H8_zero_noage_retry1",
+      "source_name": "Train_H8_zero_noage",
+      "seed_name": "Train_H8_zero_noage",
+      "settings": {
+        "chains": 8,
+        "warmup": 4000,
+        "draws": 4000,
+        "adapt_delta": 0.99
+      }
+    }
+  ],
+  "evidence_sha256": {
+    "config/full_sample_batch.json": "29634508c9a2689d2ce435d0f601e832be8da0b25194ae175bb8afaa18b5ab24",
+    "results/full_sample/hierarchical/batch/status.json": "e424e19046c93b26613d7d976ed4058bec7e1a201cae3df091f617cdec1c64ca",
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/status.json": "94a4829bd9694d89547b6c3b923f025d2fcca908d0613793fb2f7ad2e2f2f82b",
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/manifest_summary.json": "229d251b14d6c6eeefd10b6e20da68a2f8284ae6284c5eb65f387c0f97076b7a",
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/diagnostics.tsv": "6786e653e792cc9d1a67d061410664f343211178961136b46b2231f7e5cfc460",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/status.json": "c7908f4b7ce4d7fca507b74068cd37844f0d3622cfdb85ed0bf05ab93e621d2d",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/manifest_summary.json": "1160128a8ce79487c92275cbec8f48a2eab0e77e6aca3f8072a16aa2ef8c59ea",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/diagnostics.tsv": "8af5d746148b7deb0419b1957bd825377b6d863de26a48e43478525e1b8399d1",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/status.json": "cca640e684825c3c0448749560595a9828f743dd2e1ed33d0038fccb49771faa",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/manifest_summary.json": "4f72cdb42224161fd5e99ae6e28a6b5fc7facd1338a8d947909d0a43d697888b",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/diagnostics.tsv": "e470f35e1b2e0f708d3e8022162b1deb7e1731b7c50f630949095338d58f1171",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/status.json": "c5ed2a0779f7c2c54d3f3316c607df7a3cf29dd75c5846b83a4d902804af00f6",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/manifest_summary.json": "f4fce1ca6f7549ac7d55f5aeae96dce53171fc75c1319681a9324bccc9f47124",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/diagnostics.tsv": "3da428fe561c9ee36a1b637783e5d5dba4430a8f920887f4aa5bfa90f820be9a",
+    "results/full_sample/hierarchical/fits/Full_H2_zero_noage/status.json": "7e46466684bcd82d6e5c3551bed5f43c59703ab3dd8faac3beecd3056e52b3ab",
+    "results/full_sample/hierarchical/fits/Full_H2_zero_noage/manifest_summary.json": "dba0d916e9fb20a5e72277f75c09f04e129898083ee802c2fb23a260378af3ac",
+    "results/full_sample/hierarchical/fits/Full_H2_zero_noage/diagnostics.tsv": "993bc870aafbf2a51296c20b59b1b24e23dc8878728c38cde7867f4b9db0d2b5",
+    "results/full_sample/hierarchical/fits/Full_H5_base_noage/status.json": "c4046c381f6bf15ddf514b3ba90b0daddf32bf12907950bd5a5a29975315fbe7",
+    "results/full_sample/hierarchical/fits/Full_H5_base_noage/manifest_summary.json": "33b54878893f108f20fef31a7ac2f3b49a04427aad14f6ae862b82fe16366337",
+    "results/full_sample/hierarchical/fits/Full_H5_base_noage/diagnostics.tsv": "d71b00fb2549ebe2ecb84aa0d693b332d3733e46d550dcfcfff3e12bc08e73f2",
+    "results/full_sample/hierarchical/fits/Full_H7_base_noage/status.json": "7c826c96ebb67f17369d01899ca29fb3725c6e14abad548df88c05277ed72fc9",
+    "results/full_sample/hierarchical/fits/Full_H7_base_noage/manifest_summary.json": "53bde0ba1c943c76a5a4f26c22b5565b5a911b68284f56871c259bde0dbeee56",
+    "results/full_sample/hierarchical/fits/Full_H7_base_noage/diagnostics.tsv": "0dca498043d96585e3a3b9d9021baa3fb1b0516ccfa916c2c4c19aef925a1c5e",
+    "results/full_sample/hierarchical/fits/Full_HPreference_base_noage/status.json": "e0bd2f328b3dd40783effb13968713c72dee1ecdab31c79ccbd7729b46795498",
+    "results/full_sample/hierarchical/fits/Full_HPreference_base_noage/manifest_summary.json": "b519d7b8251d848d3c73f1bd90de6974ea677bbd0c84d42d2add6c728e834b54",
+    "results/full_sample/hierarchical/fits/Full_HPreference_base_noage/diagnostics.tsv": "57c49137a6c03d2aefabba35aa611683e122c008e89cc6c14f7b9cff41c4e582",
+    "results/full_sample/hierarchical/fits/Full_H8_base_noage/status.json": "6d7b9a155a3850304daed108523aab014748d6d30229dc79301a5b9ae8748036",
+    "results/full_sample/hierarchical/fits/Full_H8_base_noage/manifest_summary.json": "a6971bdc5673f3899fa307e7670c6912f7bb29267b08d1ad75d3b0a44cdfd7d2",
+    "results/full_sample/hierarchical/fits/Full_H8_base_noage/diagnostics.tsv": "6df4492cf595c3710375190c3afc47d553b164164b42b8cb42c121b23c5eb90a",
+    "results/full_sample/hierarchical/fits/Full_H8_zero_noage/status.json": "40032455d29db3d5ad5084dbc43da0a5136ee9d22172947dac84b6e7ef73bb8e",
+    "results/full_sample/hierarchical/fits/Full_H8_zero_noage/manifest_summary.json": "8faa8cc75ae070da795885f7d8bc810d95fa15f63cdfedc9453b89cc2c611674",
+    "results/full_sample/hierarchical/fits/Full_H8_zero_noage/diagnostics.tsv": "8e9855c08138f8212ded3d85dcfd6f2408fdfe8b11f8cd550e7d12fefcc01bca",
+    "results/full_sample/hierarchical/fits/Train_H2_base_noage/status.json": "acf26a35d9109a0a8afa460a81ccd59372b7eca2b8157d7e137e50f5844aee7a",
+    "results/full_sample/hierarchical/fits/Train_H2_base_noage/manifest_summary.json": "3cbfc1b7c3c147d5d402fd7703c15d337e29ecfdcca735cf4f4fddfd52a85cd6",
+    "results/full_sample/hierarchical/fits/Train_H2_base_noage/diagnostics.tsv": "d347b50b8265c7cd43111ab1f3600adb72e8d9cebca875430d374f185cc63be4",
+    "results/full_sample/hierarchical/fits/Train_H2_zero_noage/status.json": "f062ac1055daa1c7baab960b56b9940861ac3c7aa6ec5671a0a043a7adb3c04f",
+    "results/full_sample/hierarchical/fits/Train_H2_zero_noage/manifest_summary.json": "aedf646cf634cf49004a1ca85bdc3581c97cd911739d27233db5e7256463a972",
+    "results/full_sample/hierarchical/fits/Train_H2_zero_noage/diagnostics.tsv": "98011e27e74572d0958dd8b7f6630ca9e9dcea9fc3e119a6cef3617f8e211534",
+    "results/full_sample/hierarchical/fits/Train_H5_base_noage/status.json": "da0d3b1fc7e1559595c1bd4a64cc38904602cad777c7b4b3dc59d949c3628c37",
+    "results/full_sample/hierarchical/fits/Train_H5_base_noage/manifest_summary.json": "daa219e5f9148c566f2a99b16014d007404a01410a1cf370e6aa7e8ef0cf93a5",
+    "results/full_sample/hierarchical/fits/Train_H5_base_noage/diagnostics.tsv": "3afb8131f9db90ab95534a812a7c12e72cab736b9ee0f3bcf819d4f4f5f690f3",
+    "results/full_sample/hierarchical/fits/Train_H5_zero_noage/status.json": "1c61d642924ef251e7b4202073b975f9a205664a8f9ccf2dce9eb1e3545ef6fe",
+    "results/full_sample/hierarchical/fits/Train_H5_zero_noage/manifest_summary.json": "f53adbdec27d075a58a46b767f672bc44a84b5f6f8cdb5d4b55c634454c227d1",
+    "results/full_sample/hierarchical/fits/Train_H5_zero_noage/diagnostics.tsv": "9896cdfea9fa83353c332f4f47d5a639ed5affac6e996f06bdbab2b497cec62b",
+    "results/full_sample/hierarchical/fits/Train_H7_base_noage/status.json": "2af4f7817d0f440e2818a23ddaf3fb367852b268d56dfa58b73325b40535b446",
+    "results/full_sample/hierarchical/fits/Train_H7_base_noage/manifest_summary.json": "a792b4119c47c1f2f3c0e01a91afb5706ffc586e24dcb4d76b83f93c29632c29",
+    "results/full_sample/hierarchical/fits/Train_H7_base_noage/diagnostics.tsv": "ae17ed8c5c9c5ed673a6a406a335b7d1d50a98a3032f61e7784d6daf16bf21c9",
+    "results/full_sample/hierarchical/fits/Train_H7_zero_noage/status.json": "114c6ae76a1cac42b55ab18f14167f199f47f263593c315feecd62586e8479ea",
+    "results/full_sample/hierarchical/fits/Train_H7_zero_noage/manifest_summary.json": "ffe9e60e03d075d4670da6918c24ec46fbeda794d6c052addb3bfd1be221a465",
+    "results/full_sample/hierarchical/fits/Train_H7_zero_noage/diagnostics.tsv": "54077d0c56e5a2bccf21981fccec5032d6ccdbbbc61c31eceb68557224deb267",
+    "results/full_sample/hierarchical/fits/Train_HPreference_base_noage/status.json": "41bc990320f974d638ed45e0e8852a6d6d7804f7b536943d14104b0994c6f347",
+    "results/full_sample/hierarchical/fits/Train_HPreference_base_noage/manifest_summary.json": "6a8c7ba329eecf82e7368b9e227ee9e44540033c6cb6fb25059a80d310dd8396",
+    "results/full_sample/hierarchical/fits/Train_HPreference_base_noage/diagnostics.tsv": "c5bb044e542b6e5ec45cdafae1aa780a05d21d89034a5af218cf4de8b1e3b83e",
+    "results/full_sample/hierarchical/fits/Train_HPreference_zero_noage/status.json": "de112baffacb4ce12c77109062ad586935e8f460dec66351ca33db16850aae8c",
+    "results/full_sample/hierarchical/fits/Train_HPreference_zero_noage/manifest_summary.json": "435bde254d110038af6a7980e6a195b9bebbfbd0e01c03e53a097965dc2ffb32",
+    "results/full_sample/hierarchical/fits/Train_HPreference_zero_noage/diagnostics.tsv": "c2b779832e45bb84aa53766f9e4111a0cb2726a4cd6a84ead242dfe142604ce1",
+    "results/full_sample/hierarchical/fits/Train_H8_base_noage/status.json": "e43699e992e04efa5e2ba2746eb0a99e64385d89c820f1c3298a291b98ce0e99",
+    "results/full_sample/hierarchical/fits/Train_H8_base_noage/manifest_summary.json": "14f67ef0df38fb0d13f7d3160128d03e3f4cdd00f3971dfa2067027c8f071562",
+    "results/full_sample/hierarchical/fits/Train_H8_base_noage/diagnostics.tsv": "d8aa36f5959e1b3b4a793548ece576a1d692b50a6dd38d4f9136f83f63a3b96d",
+    "results/full_sample/hierarchical/fits/Train_H8_zero_noage/status.json": "709e8a86e0df702acc9094fc6b0327bfa4294265f02a15102376d7016b91cfe8",
+    "results/full_sample/hierarchical/fits/Train_H8_zero_noage/manifest_summary.json": "06965dcdd9e6a13d9cb648c27964ed8d3cb936fb6c8574e09096e7e51b7844fc",
+    "results/full_sample/hierarchical/fits/Train_H8_zero_noage/diagnostics.tsv": "c01970512ebde01a45c0c8a8615f8128a8f4a066d66017c9e225b99b5a4d9b70"
+  }
+}
