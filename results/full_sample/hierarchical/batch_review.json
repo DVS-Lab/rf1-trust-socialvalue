@@ -1,0 +1,80 @@
+{
+  "evidence_commit": "182d8c7",
+  "status": "four_pilot_fits_accepted_ready_for_matched_batch",
+  "accepted_fits": [
+    {
+      "name": "Full_H2_base_noage",
+      "status": "complete",
+      "n_participants": 343,
+      "n_choices": 26560,
+      "max_rhat": 1.00488,
+      "min_bulk_ess": 466.61,
+      "min_tail_ess": 697.063,
+      "divergences": 0,
+      "max_depth_hits": 0,
+      "min_bfmi": 0.7754848373425182,
+      "sampling_seconds": 1231.0350779280998
+    },
+    {
+      "name": "Full_H5_zero_noage",
+      "status": "complete",
+      "n_participants": 343,
+      "n_choices": 26560,
+      "max_rhat": 1.00946,
+      "min_bulk_ess": 477.666,
+      "min_tail_ess": 770.509,
+      "divergences": 0,
+      "max_depth_hits": 0,
+      "min_bfmi": 0.6740084498526541,
+      "sampling_seconds": 5219.947320390027
+    },
+    {
+      "name": "Full_H7_zero_noage",
+      "status": "complete",
+      "n_participants": 343,
+      "n_choices": 26560,
+      "max_rhat": 1.0059,
+      "min_bulk_ess": 597.112,
+      "min_tail_ess": 1241.84,
+      "divergences": 0,
+      "max_depth_hits": 0,
+      "min_bfmi": 0.6334592563460261,
+      "sampling_seconds": 8984.66181377368
+    },
+    {
+      "name": "Full_HPreference_zero_noage_draws4000",
+      "status": "complete",
+      "n_participants": 343,
+      "n_choices": 26560,
+      "max_rhat": 1.00498,
+      "min_bulk_ess": 702.858,
+      "min_tail_ess": 1377.5,
+      "divergences": 0,
+      "max_depth_hits": 0,
+      "min_bfmi": 0.6272412893219443,
+      "sampling_seconds": 14658.011428638827
+    }
+  ],
+  "evidence_sha256": {
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/status.json": "94a4829bd9694d89547b6c3b923f025d2fcca908d0613793fb2f7ad2e2f2f82b",
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/manifest_summary.json": "229d251b14d6c6eeefd10b6e20da68a2f8284ae6284c5eb65f387c0f97076b7a",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/status.json": "c7908f4b7ce4d7fca507b74068cd37844f0d3622cfdb85ed0bf05ab93e621d2d",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/manifest_summary.json": "1160128a8ce79487c92275cbec8f48a2eab0e77e6aca3f8072a16aa2ef8c59ea",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/status.json": "cca640e684825c3c0448749560595a9828f743dd2e1ed33d0038fccb49771faa",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/manifest_summary.json": "4f72cdb42224161fd5e99ae6e28a6b5fc7facd1338a8d947909d0a43d697888b",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/status.json": "c5ed2a0779f7c2c54d3f3316c607df7a3cf29dd75c5846b83a4d902804af00f6",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/manifest_summary.json": "f4fce1ca6f7549ac7d55f5aeae96dce53171fc75c1319681a9324bccc9f47124"
+  },
+  "replacement": {
+    "source": "Full_HPreference_zero_noage",
+    "accepted": "Full_HPreference_zero_noage_draws4000",
+    "combine_posteriors": false
+  },
+  "next_phase": "config/full_sample_batch.json",
+  "new_full_fits": 6,
+  "new_train_fits": 10,
+  "maximum_active_chains": 64,
+  "expected_paired_n": 304,
+  "expected_train_choices": 12498,
+  "expected_test_choices": 12494
+}

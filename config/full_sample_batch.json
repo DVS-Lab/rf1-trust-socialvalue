@@ -1,0 +1,50 @@
+{
+  "stage": "full_cohort_noage_batch",
+  "launch_authorized": true,
+  "integration_commit": "a785eb6",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "cohort_config": "config/full_sample_linux2.json",
+  "cmdstan_version": "2.40.0",
+  "compile_cores": 8,
+  "parallel_fits": 16,
+  "cpu_budget": 80,
+  "metric": "diag_e",
+  "gamma_population_mean_prior_sd": 1.0,
+  "automatic_retries": false,
+  "note": "Reviewed all four pilots including accepted HPreference ESS retry at 182d8c7. Six remaining full fits and ten actual run-1 fits concurrently. HPreference family uses 4000 retained draws based on pilot ESS; others retain 2000. Fixed thresholds, no automatic retries.",
+  "draws_by_model": {
+    "HPreference": 4000
+  },
+  "reuse": [
+    {
+      "model": "H2",
+      "variant": "base",
+      "name": "Full_H2_base_noage"
+    },
+    {
+      "model": "H5",
+      "variant": "zero",
+      "name": "Full_H5_zero_noage"
+    },
+    {
+      "model": "H7",
+      "variant": "zero",
+      "name": "Full_H7_zero_noage"
+    },
+    {
+      "model": "HPreference",
+      "variant": "zero",
+      "name": "Full_HPreference_zero_noage_draws4000"
+    }
+  ],
+  "accepted_evidence_sha256": {
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/status.json": "94a4829bd9694d89547b6c3b923f025d2fcca908d0613793fb2f7ad2e2f2f82b",
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/manifest_summary.json": "229d251b14d6c6eeefd10b6e20da68a2f8284ae6284c5eb65f387c0f97076b7a",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/status.json": "c7908f4b7ce4d7fca507b74068cd37844f0d3622cfdb85ed0bf05ab93e621d2d",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/manifest_summary.json": "1160128a8ce79487c92275cbec8f48a2eab0e77e6aca3f8072a16aa2ef8c59ea",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/status.json": "cca640e684825c3c0448749560595a9828f743dd2e1ed33d0038fccb49771faa",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/manifest_summary.json": "4f72cdb42224161fd5e99ae6e28a6b5fc7facd1338a8d947909d0a43d697888b",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/status.json": "c5ed2a0779f7c2c54d3f3316c607df7a3cf29dd75c5846b83a4d902804af00f6",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/manifest_summary.json": "f4fce1ca6f7549ac7d55f5aeae96dce53171fc75c1319681a9324bccc9f47124"
+  }
+}
