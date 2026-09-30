@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-30T14:47:02.806148+00:00",
+  "new_sampling": false,
+  "runs": {
+    "Full_H7_zero_noage": 0,
+    "Full_HPreference_zero_noage_draws4000": 0
+  },
+  "workers": 2,
+  "output_sha256": {
+    "age_residual_by_offer.pdf": "420e9d6fa63c4a82661b172753f2ac424d1307eec6bd2acee1b136b3a45aa67c",
+    "age_residual_by_offer.png": "6c8223c2a3724afced057bd96428136db27b95a0602e6f84bd2854d3c61573f0",
+    "residual_by_offer.png": "b89d3e88c3db55a4bc9278a43488500e931a23ffd6ac46ba5ae26ea070631f46",
+    "residual_by_offer.pdf": "d311dd4c9b37dda1504dab8d336ac2877ae8cb88ff0261b0b63cab896146d427",
+    "offer_age_residuals.tsv": "0549f04a59f90f91ca9bae90e434502edff746c2bfd4b1b96b76886e37866d46"
+  },
+  "finished_at": "2026-09-30T14:47:28.582784+00:00"
+}
