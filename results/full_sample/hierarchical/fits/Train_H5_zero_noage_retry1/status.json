@@ -1,0 +1,58 @@
+{
+  "name": "Train_H5_zero_noage_retry1",
+  "entry": {
+    "model": "H5",
+    "variant": "zero",
+    "subset": "train",
+    "name": "Train_H5_zero_noage_retry1",
+    "source_name": "Train_H5_zero_noage",
+    "seed_name": "Train_H5_zero_noage",
+    "settings": {
+      "chains": 8,
+      "warmup": 4000,
+      "draws": 4000,
+      "adapt_delta": 0.99
+    }
+  },
+  "status": "complete",
+  "started_at": "2026-09-28T20:31:59.367821+00:00",
+  "n_participants": 304,
+  "n_choices": 12498,
+  "fingerprint": "779a0b7c3cc6aec2ad8504116e928e5b548dc579d9a6a969d3a0dd5dd5ad1213",
+  "settings": {
+    "chains": 8,
+    "warmup": 4000,
+    "draws": 4000,
+    "adapt_delta": 0.99,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 4280505610,
+  "parallel_chains": 8,
+  "analysis_git_sha": "9644c78f4bab444f3d3fbb33ab31869d20402e5d",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": true,
+  "max_rhat": 1.00511,
+  "min_bulk_ess": 1996.09,
+  "min_tail_ess": 4368.1,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6637128800739814,
+  "sampling_seconds": 3695.78714478435,
+  "diagnostics_sha256": "16b3dc26afd223c8f3932424ad64e07d54f9b06ddd42cd27a860218fd4d82032",
+  "heldout_sha256": "fcdf905daf0bd5876f06a430b3fc90c41dca1c242ef0c46310ead5a3477ae68a",
+  "heldout_n": 304,
+  "heldout_choices": 12494,
+  "summary_hashes": {
+    "participant_parameters.tsv": "c9fd6eb85e1a43d1af5391fcef6a8f15837353b03978b3f055870a35357a0a01",
+    "population_parameters.tsv": "9a190e392b01b49b3ea6c3ff5aee1bb171555a4b067e0b8880ffee6cfcfd2443"
+  },
+  "finished_at": "2026-09-28T21:39:50.245370+00:00",
+  "elapsed_seconds": 4070.875388049055,
+  "peak_python_rss_mib": 2271.28125,
+  "peak_child_rss_mib": 2550.77734375
+}

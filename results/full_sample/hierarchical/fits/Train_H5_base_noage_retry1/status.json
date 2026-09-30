@@ -1,0 +1,55 @@
+{
+  "name": "Train_H5_base_noage_retry1",
+  "entry": {
+    "model": "H5",
+    "variant": "base",
+    "subset": "train",
+    "name": "Train_H5_base_noage_retry1",
+    "source_name": "Train_H5_base_noage",
+    "seed_name": "Train_H5_base_noage",
+    "settings": {
+      "chains": 8,
+      "warmup": 4000,
+      "draws": 4000,
+      "adapt_delta": 0.995
+    }
+  },
+  "status": "diagnostic_failed",
+  "started_at": "2026-09-28T20:31:59.366797+00:00",
+  "n_participants": 304,
+  "n_choices": 12498,
+  "fingerprint": "5c0a15f27e1e7694d80222bcabe7a3730d22a9b18a77eeb83b0989844c53a6e9",
+  "settings": {
+    "chains": 8,
+    "warmup": 4000,
+    "draws": 4000,
+    "adapt_delta": 0.995,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 592639868,
+  "parallel_chains": 8,
+  "analysis_git_sha": "9644c78f4bab444f3d3fbb33ab31869d20402e5d",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": false,
+  "max_rhat": 1.00409,
+  "min_bulk_ess": 2087.86,
+  "min_tail_ess": 3484.82,
+  "divergences": 1,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.7077350131823094,
+  "sampling_seconds": 3282.7826797622256,
+  "diagnostics_sha256": "48f3c4dbcafc4975c6dd881ccd5536d06f5857fc6767dbc06dc23f4aa99576ff",
+  "trace_hashes": {
+    "chain_trace_excerpt.tsv": "d26abc8176163e0b79a5c7171f956439a018b3fb651fb49f313c9c96bbb46b53",
+    "chain_summary.tsv": "e9855a2081cfb0c3bc295c57b33daf2e405b7cb707a22679a91c05c8f99f7cfe"
+  },
+  "finished_at": "2026-09-28T21:30:21.440240+00:00",
+  "elapsed_seconds": 3502.0711502609774,
+  "peak_python_rss_mib": 1778.953125,
+  "peak_child_rss_mib": 1949.01953125
+}

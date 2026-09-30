@@ -1,0 +1,945 @@
+
+BATCH WORKER 2026-09-28T20:31:57.038791+00:00
+Frozen canonical inputs and derived tables verified.
+16:31:59 - cmdstanpy - INFO - Chain [1] start processing
+16:31:59 - cmdstanpy - INFO - Chain [2] start processing
+16:31:59 - cmdstanpy - INFO - Chain [3] start processing
+16:31:59 - cmdstanpy - INFO - Chain [4] start processing
+16:31:59 - cmdstanpy - INFO - Chain [5] start processing
+16:31:59 - cmdstanpy - INFO - Chain [6] start processing
+16:31:59 - cmdstanpy - INFO - Chain [7] start processing
+16:31:59 - cmdstanpy - INFO - Chain [8] start processing
+Chain [1] method = sample (Default)
+Chain [1] sample
+Chain [2] method = sample (Default)
+Chain [2] sample
+Chain [2] num_samples = 4000
+Chain [2] num_warmup = 4000
+Chain [2] save_warmup = false (Default)
+Chain [2] thin = 1 (Default)
+Chain [2] adapt
+Chain [2] engaged = true (Default)
+Chain [1] num_samples = 4000
+Chain [1] num_warmup = 4000
+Chain [1] save_warmup = false (Default)
+Chain [1] thin = 1 (Default)
+Chain [1] adapt
+Chain [1] engaged = true (Default)
+Chain [1] gamma = 0.05 (Default)
+Chain [1] delta = 0.995
+Chain [1] kappa = 0.75 (Default)
+Chain [1] t0 = 10 (Default)
+Chain [1] init_buffer = 75 (Default)
+Chain [1] term_buffer = 50 (Default)
+Chain [1] window = 25 (Default)
+Chain [2] gamma = 0.05 (Default)
+Chain [1] save_metric = false (Default)
+Chain [1] algorithm = hmc (Default)
+Chain [2] delta = 0.995
+Chain [2] kappa = 0.75 (Default)
+Chain [2] t0 = 10 (Default)
+Chain [3] method = sample (Default)
+Chain [3] sample
+Chain [3] num_samples = 4000
+Chain [3] num_warmup = 4000
+Chain [3] save_warmup = false (Default)
+Chain [3] thin = 1 (Default)
+Chain [3] adapt
+Chain [3] engaged = true (Default)
+Chain [2] init_buffer = 75 (Default)
+Chain [3] gamma = 0.05 (Default)
+Chain [3] delta = 0.995
+Chain [2] term_buffer = 50 (Default)
+Chain [2] window = 25 (Default)
+Chain [2] save_metric = false (Default)
+Chain [3] kappa = 0.75 (Default)
+Chain [3] t0 = 10 (Default)
+Chain [3] init_buffer = 75 (Default)
+Chain [1] hmc
+Chain [1] engine = nuts (Default)
+Chain [1] nuts
+Chain [3] term_buffer = 50 (Default)
+Chain [3] window = 25 (Default)
+Chain [3] save_metric = false (Default)
+Chain [2] algorithm = hmc (Default)
+Chain [2] hmc
+Chain [1] max_depth = 14
+Chain [1] metric = diag_e (Default)
+Chain [1] metric_file =  (Default)
+Chain [1] stepsize = 1 (Default)
+Chain [1] stepsize_jitter = 0 (Default)
+Chain [2] engine = nuts (Default)
+Chain [2] nuts
+Chain [3] algorithm = hmc (Default)
+Chain [3] hmc
+Chain [1] num_chains = 1 (Default)
+Chain [1] id = 1 (Default)
+Chain [1] data
+Chain [1] file = /tmp/tmperznmkop/b3913pht.json
+Chain [1] init = 0.15
+Chain [1] random
+Chain [1] seed = 592639868
+Chain [1] output
+Chain [1] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_1.csv
+Chain [1] diagnostic_file =  (Default)
+Chain [1] refresh = 200
+Chain [1] sig_figs = 10
+Chain [2] max_depth = 14
+Chain [2] metric = diag_e (Default)
+Chain [3] engine = nuts (Default)
+Chain [3] nuts
+Chain [3] max_depth = 14
+Chain [2] metric_file =  (Default)
+Chain [2] stepsize = 1 (Default)
+Chain [1] profile_file = profile.csv (Default)
+Chain [1] save_cmdstan_config = false (Default)
+Chain [1] num_threads = 1 (Default)
+Chain [2] stepsize_jitter = 0 (Default)
+Chain [2] num_chains = 1 (Default)
+Chain [4] method = sample (Default)
+Chain [4] sample
+Chain [4] num_samples = 4000
+Chain [2] id = 2
+Chain [2] data
+Chain [1] 
+Chain [4] num_warmup = 4000
+Chain [4] save_warmup = false (Default)
+Chain [2] file = /tmp/tmperznmkop/b3913pht.json
+Chain [2] init = 0.15
+Chain [2] random
+Chain [2] seed = 592639868
+Chain [2] output
+Chain [3] metric = diag_e (Default)
+Chain [3] metric_file =  (Default)
+Chain [2] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_2.csv
+Chain [2] diagnostic_file =  (Default)
+Chain [2] refresh = 200
+Chain [2] sig_figs = 10
+Chain [3] stepsize = 1 (Default)
+Chain [3] stepsize_jitter = 0 (Default)
+Chain [3] num_chains = 1 (Default)
+Chain [2] profile_file = profile.csv (Default)
+Chain [2] save_cmdstan_config = false (Default)
+Chain [3] id = 3
+Chain [3] data
+Chain [3] file = /tmp/tmperznmkop/b3913pht.json
+Chain [3] init = 0.15
+Chain [3] random
+Chain [3] seed = 592639868
+Chain [4] thin = 1 (Default)
+Chain [4] adapt
+Chain [3] output
+Chain [3] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_3.csv
+Chain [2] num_threads = 1 (Default)
+Chain [3] diagnostic_file =  (Default)
+Chain [4] engaged = true (Default)
+Chain [4] gamma = 0.05 (Default)
+Chain [4] delta = 0.995
+Chain [2] 
+Chain [3] refresh = 200
+Chain [3] sig_figs = 10
+Chain [3] profile_file = profile.csv (Default)
+Chain [4] kappa = 0.75 (Default)
+Chain [4] t0 = 10 (Default)
+Chain [4] init_buffer = 75 (Default)
+Chain [3] save_cmdstan_config = false (Default)
+Chain [3] num_threads = 1 (Default)
+Chain [3] 
+Chain [4] term_buffer = 50 (Default)
+Chain [4] window = 25 (Default)
+Chain [4] save_metric = false (Default)
+Chain [4] algorithm = hmc (Default)
+Chain [4] hmc
+Chain [4] engine = nuts (Default)
+Chain [4] nuts
+Chain [4] max_depth = 14
+Chain [4] metric = diag_e (Default)
+Chain [4] metric_file =  (Default)
+Chain [4] stepsize = 1 (Default)
+Chain [4] stepsize_jitter = 0 (Default)
+Chain [4] num_chains = 1 (Default)
+Chain [4] id = 4
+Chain [4] data
+Chain [4] file = /tmp/tmperznmkop/b3913pht.json
+Chain [4] init = 0.15
+Chain [4] random
+Chain [4] seed = 592639868
+Chain [4] output
+Chain [4] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_4.csv
+Chain [4] diagnostic_file =  (Default)
+Chain [4] refresh = 200
+Chain [4] sig_figs = 10
+Chain [4] profile_file = profile.csv (Default)
+Chain [4] save_cmdstan_config = false (Default)
+Chain [4] num_threads = 1 (Default)
+Chain [4] 
+Chain [6] method = sample (Default)
+Chain [6] sample
+Chain [6] num_samples = 4000
+Chain [6] num_warmup = 4000
+Chain [6] save_warmup = false (Default)
+Chain [6] thin = 1 (Default)
+Chain [6] adapt
+Chain [6] engaged = true (Default)
+Chain [6] gamma = 0.05 (Default)
+Chain [6] delta = 0.995
+Chain [6] kappa = 0.75 (Default)
+Chain [6] t0 = 10 (Default)
+Chain [6] init_buffer = 75 (Default)
+Chain [6] term_buffer = 50 (Default)
+Chain [6] window = 25 (Default)
+Chain [6] save_metric = false (Default)
+Chain [6] algorithm = hmc (Default)
+Chain [6] hmc
+Chain [6] engine = nuts (Default)
+Chain [6] nuts
+Chain [6] max_depth = 14
+Chain [6] metric = diag_e (Default)
+Chain [6] metric_file =  (Default)
+Chain [6] stepsize = 1 (Default)
+Chain [6] stepsize_jitter = 0 (Default)
+Chain [6] num_chains = 1 (Default)
+Chain [6] id = 6
+Chain [6] data
+Chain [6] file = /tmp/tmperznmkop/b3913pht.json
+Chain [6] init = 0.15
+Chain [6] random
+Chain [6] seed = 592639868
+Chain [6] output
+Chain [6] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_6.csv
+Chain [6] diagnostic_file =  (Default)
+Chain [6] refresh = 200
+Chain [6] sig_figs = 10
+Chain [6] profile_file = profile.csv (Default)
+Chain [6] save_cmdstan_config = false (Default)
+Chain [6] num_threads = 1 (Default)
+Chain [6] 
+Chain [7] method = sample (Default)
+Chain [7] sample
+Chain [7] num_samples = 4000
+Chain [7] num_warmup = 4000
+Chain [7] save_warmup = false (Default)
+Chain [7] thin = 1 (Default)
+Chain [7] adapt
+Chain [7] engaged = true (Default)
+Chain [7] gamma = 0.05 (Default)
+Chain [7] delta = 0.995
+Chain [7] kappa = 0.75 (Default)
+Chain [7] t0 = 10 (Default)
+Chain [7] init_buffer = 75 (Default)
+Chain [7] term_buffer = 50 (Default)
+Chain [7] window = 25 (Default)
+Chain [7] save_metric = false (Default)
+Chain [7] algorithm = hmc (Default)
+Chain [7] hmc
+Chain [7] engine = nuts (Default)
+Chain [7] nuts
+Chain [7] max_depth = 14
+Chain [7] metric = diag_e (Default)
+Chain [7] metric_file =  (Default)
+Chain [7] stepsize = 1 (Default)
+Chain [7] stepsize_jitter = 0 (Default)
+Chain [7] num_chains = 1 (Default)
+Chain [7] id = 7
+Chain [7] data
+Chain [7] file = /tmp/tmperznmkop/b3913pht.json
+Chain [7] init = 0.15
+Chain [7] random
+Chain [7] seed = 592639868
+Chain [7] output
+Chain [7] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_7.csv
+Chain [7] diagnostic_file =  (Default)
+Chain [7] refresh = 200
+Chain [7] sig_figs = 10
+Chain [7] profile_file = profile.csv (Default)
+Chain [7] save_cmdstan_config = false (Default)
+Chain [7] num_threads = 1 (Default)
+Chain [7] 
+Chain [8] method = sample (Default)
+Chain [8] sample
+Chain [8] num_samples = 4000
+Chain [8] num_warmup = 4000
+Chain [8] save_warmup = false (Default)
+Chain [8] thin = 1 (Default)
+Chain [8] adapt
+Chain [8] engaged = true (Default)
+Chain [8] gamma = 0.05 (Default)
+Chain [8] delta = 0.995
+Chain [8] kappa = 0.75 (Default)
+Chain [8] t0 = 10 (Default)
+Chain [8] init_buffer = 75 (Default)
+Chain [8] term_buffer = 50 (Default)
+Chain [8] window = 25 (Default)
+Chain [8] save_metric = false (Default)
+Chain [8] algorithm = hmc (Default)
+Chain [8] hmc
+Chain [8] engine = nuts (Default)
+Chain [8] nuts
+Chain [8] max_depth = 14
+Chain [8] metric = diag_e (Default)
+Chain [8] metric_file =  (Default)
+Chain [8] stepsize = 1 (Default)
+Chain [8] stepsize_jitter = 0 (Default)
+Chain [8] num_chains = 1 (Default)
+Chain [8] id = 8
+Chain [8] data
+Chain [8] file = /tmp/tmperznmkop/b3913pht.json
+Chain [8] init = 0.15
+Chain [8] random
+Chain [8] seed = 592639868
+Chain [8] output
+Chain [8] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_8.csv
+Chain [8] diagnostic_file =  (Default)
+Chain [8] refresh = 200
+Chain [8] sig_figs = 10
+Chain [8] profile_file = profile.csv (Default)
+Chain [8] save_cmdstan_config = false (Default)
+Chain [8] num_threads = 1 (Default)
+Chain [8] 
+Chain [5] method = sample (Default)
+Chain [5] sample
+Chain [5] num_samples = 4000
+Chain [5] num_warmup = 4000
+Chain [5] save_warmup = false (Default)
+Chain [5] thin = 1 (Default)
+Chain [5] adapt
+Chain [5] engaged = true (Default)
+Chain [5] gamma = 0.05 (Default)
+Chain [5] delta = 0.995
+Chain [5] kappa = 0.75 (Default)
+Chain [5] t0 = 10 (Default)
+Chain [5] init_buffer = 75 (Default)
+Chain [5] term_buffer = 50 (Default)
+Chain [5] window = 25 (Default)
+Chain [5] save_metric = false (Default)
+Chain [5] algorithm = hmc (Default)
+Chain [5] hmc
+Chain [5] engine = nuts (Default)
+Chain [5] nuts
+Chain [5] max_depth = 14
+Chain [5] metric = diag_e (Default)
+Chain [5] metric_file =  (Default)
+Chain [5] stepsize = 1 (Default)
+Chain [5] stepsize_jitter = 0 (Default)
+Chain [5] num_chains = 1 (Default)
+Chain [5] id = 5
+Chain [5] data
+Chain [5] file = /tmp/tmperznmkop/b3913pht.json
+Chain [5] init = 0.15
+Chain [5] random
+Chain [5] seed = 592639868
+Chain [5] output
+Chain [5] file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/fits/Train_H5_base_noage_retry1/full_zero_fast-20260928163159_5.csv
+Chain [5] diagnostic_file =  (Default)
+Chain [5] refresh = 200
+Chain [5] sig_figs = 10
+Chain [5] profile_file = profile.csv (Default)
+Chain [5] save_cmdstan_config = false (Default)
+Chain [5] num_threads = 1 (Default)
+Chain [5] 
+Chain [2] 
+Chain [2] Gradient evaluation took 0.000782 seconds
+Chain [2] 1000 transitions using 10 leapfrog steps per transition would take 7.82 seconds.
+Chain [2] Adjust your expectations accordingly!
+Chain [2] 
+Chain [2] 
+Chain [1] 
+Chain [1] Gradient evaluation took 0.000798 seconds
+Chain [1] 1000 transitions using 10 leapfrog steps per transition would take 7.98 seconds.
+Chain [1] Adjust your expectations accordingly!
+Chain [1] 
+Chain [1] 
+Chain [3] 
+Chain [3] Gradient evaluation took 0.00077 seconds
+Chain [1] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [1] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [1] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [1] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [1] 
+Chain [3] 1000 transitions using 10 leapfrog steps per transition would take 7.7 seconds.
+Chain [3] Adjust your expectations accordingly!
+Chain [3] 
+Chain [3] 
+Chain [1] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [1] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [1] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [1] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [1] 
+Chain [4] 
+Chain [4] Gradient evaluation took 0.000787 seconds
+Chain [4] 1000 transitions using 10 leapfrog steps per transition would take 7.87 seconds.
+Chain [4] Adjust your expectations accordingly!
+Chain [4] 
+Chain [4] 
+Chain [4] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [4] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [4] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [4] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [4] 
+Chain [6] 
+Chain [6] Gradient evaluation took 0.000785 seconds
+Chain [6] 1000 transitions using 10 leapfrog steps per transition would take 7.85 seconds.
+Chain [6] Adjust your expectations accordingly!
+Chain [6] 
+Chain [6] 
+Chain [7] 
+Chain [7] Gradient evaluation took 0.000779 seconds
+Chain [7] 1000 transitions using 10 leapfrog steps per transition would take 7.79 seconds.
+Chain [7] Adjust your expectations accordingly!
+Chain [7] 
+Chain [7] 
+Chain [4] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [4] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [4] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [4] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [4] 
+Chain [8] 
+Chain [8] Gradient evaluation took 0.000793 seconds
+Chain [8] 1000 transitions using 10 leapfrog steps per transition would take 7.93 seconds.
+Chain [8] Adjust your expectations accordingly!
+Chain [8] 
+Chain [8] 
+Chain [6] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [6] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [6] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [6] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [6] 
+Chain [5] 
+Chain [5] Gradient evaluation took 0.000785 seconds
+Chain [5] 1000 transitions using 10 leapfrog steps per transition would take 7.85 seconds.
+Chain [5] Adjust your expectations accordingly!
+Chain [5] 
+Chain [5] 
+Chain [6] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [6] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [6] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [6] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [6] 
+Chain [7] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [7] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [7] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [7] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [7] 
+Chain [5] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [5] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [5] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [5] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [5] 
+Chain [5] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [5] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [5] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [5] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [5] 
+Chain [1] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [2] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [3] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [4] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [6] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [7] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [2] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [2] Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [2] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [2] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [2] 
+Chain [8] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [5] Iteration:    1 / 8000 [  0%]  (Warmup)
+Chain [1] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [1] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [1] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [1] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [1] 
+Chain [7] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [7] Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [7] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [7] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [7] 
+Chain [4] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [4] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [4] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [4] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [4] 
+Chain [3] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [3] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [3] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [3] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [3] 
+Chain [5] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [5] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [5] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [5] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [5] 
+Chain [8] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [8] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [8] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [8] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [8] 
+Chain [6] Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Chain [6] Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Chain [6] If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+Chain [6] but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+Chain [6] 
+Chain [3] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [4] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [2] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [8] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [3] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [2] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [4] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [7] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [1] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [5] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [6] Iteration:  200 / 8000 [  2%]  (Warmup)
+Chain [3] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [4] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [8] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [5] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [7] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [1] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [2] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [6] Iteration:  400 / 8000 [  5%]  (Warmup)
+Chain [3] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [4] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [8] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [1] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [5] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [2] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [6] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [3] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [4] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [7] Iteration:  600 / 8000 [  7%]  (Warmup)
+Chain [8] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [6] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [5] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [1] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [3] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [2] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [4] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [2] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [5] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [8] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [7] Iteration:  800 / 8000 [ 10%]  (Warmup)
+Chain [1] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [6] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [3] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [4] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [5] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [2] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [1] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [6] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [4] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [7] Iteration: 1000 / 8000 [ 12%]  (Warmup)
+Chain [8] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [3] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [5] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [2] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [1] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [6] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [4] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [7] Iteration: 1200 / 8000 [ 15%]  (Warmup)
+Chain [3] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [8] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [5] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [1] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [2] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [3] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [6] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [4] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [7] Iteration: 1400 / 8000 [ 17%]  (Warmup)
+Chain [2] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [8] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [1] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [5] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [3] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [4] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [6] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [8] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [2] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [1] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [7] Iteration: 1600 / 8000 [ 20%]  (Warmup)
+Chain [5] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [3] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [6] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [4] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [2] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [1] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [7] Iteration: 1800 / 8000 [ 22%]  (Warmup)
+Chain [8] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [5] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [3] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [6] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [4] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [7] Iteration: 2000 / 8000 [ 25%]  (Warmup)
+Chain [2] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [1] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [8] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [5] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [3] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [6] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [7] Iteration: 2200 / 8000 [ 27%]  (Warmup)
+Chain [4] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [2] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [1] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [8] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [5] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [3] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [7] Iteration: 2400 / 8000 [ 30%]  (Warmup)
+Chain [6] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [4] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [2] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [1] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [8] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [5] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [3] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [7] Iteration: 2600 / 8000 [ 32%]  (Warmup)
+Chain [6] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [4] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [2] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [1] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [8] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [5] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [3] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [7] Iteration: 2800 / 8000 [ 35%]  (Warmup)
+Chain [6] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [4] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [2] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [1] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [8] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [5] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [3] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [6] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [7] Iteration: 3000 / 8000 [ 37%]  (Warmup)
+Chain [4] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [2] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [1] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [8] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [5] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [3] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [6] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [7] Iteration: 3200 / 8000 [ 40%]  (Warmup)
+Chain [4] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [2] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [1] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [8] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [5] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [6] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [3] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [3] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [7] Iteration: 3400 / 8000 [ 42%]  (Warmup)
+Chain [4] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [4] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [1] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [2] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [2] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [8] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [5] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [6] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [3] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [7] Iteration: 3600 / 8000 [ 45%]  (Warmup)
+Chain [4] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [2] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [1] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [1] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [8] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [5] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [5] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [7] Iteration: 3800 / 8000 [ 47%]  (Warmup)
+Chain [3] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [6] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [6] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [4] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [2] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [1] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [5] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [8] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [8] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [3] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [7] Iteration: 4000 / 8000 [ 50%]  (Warmup)
+Chain [7] Iteration: 4001 / 8000 [ 50%]  (Sampling)
+Chain [4] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [6] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [2] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [5] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [1] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [8] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [3] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [7] Iteration: 4200 / 8000 [ 52%]  (Sampling)
+Chain [4] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [6] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [5] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [2] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [1] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [8] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [3] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [7] Iteration: 4400 / 8000 [ 55%]  (Sampling)
+Chain [4] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [5] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [2] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [6] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [1] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [8] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [3] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [7] Iteration: 4600 / 8000 [ 57%]  (Sampling)
+Chain [4] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [5] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [2] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [1] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [6] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [8] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [3] Iteration: 5400 / 8000 [ 67%]  (Sampling)
+Chain [7] Iteration: 4800 / 8000 [ 60%]  (Sampling)
+Chain [5] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [4] Iteration: 5400 / 8000 [ 67%]  (Sampling)
+Chain [2] Iteration: 5400 / 8000 [ 67%]  (Sampling)17:21:13 - cmdstanpy - INFO - Chain [5] done processing
+17:21:46 - cmdstanpy - INFO - Chain [3] done processing
+17:22:04 - cmdstanpy - INFO - Chain [4] done processing
+17:22:16 - cmdstanpy - INFO - Chain [2] done processing
+17:23:33 - cmdstanpy - INFO - Chain [1] done processing
+17:24:54 - cmdstanpy - INFO - Chain [8] done processing
+17:25:05 - cmdstanpy - INFO - Chain [7] done processing
+17:26:29 - cmdstanpy - INFO - Chain [6] done processing
+17:26:29 - cmdstanpy - WARNING - Non-fatal error during sampling:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+	Exception: lkj_corr_cholesky_lpdf: Random variable[3] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'full_zero_fast.stan', line 85, column 2 to column 27)
+17:26:39 - cmdstanpy - WARNING - Some chains may have failed to converge.
+	Chain 1 had 1 divergent transitions (0.0%)
+	Use the "diagnose()" method on the CmdStanMCMC object to see further information.
+
+Chain [1] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [6] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [8] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [3] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [7] Iteration: 5000 / 8000 [ 62%]  (Sampling)
+Chain [5] Iteration: 5400 / 8000 [ 67%]  (Sampling)
+Chain [4] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [2] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [1] Iteration: 5400 / 8000 [ 67%]  (Sampling)
+Chain [8] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [6] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [5] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [3] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [7] Iteration: 5200 / 8000 [ 65%]  (Sampling)
+Chain [4] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [2] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [1] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [8] Iteration: 5400 / 8000 [ 67%]  (Sampling)
+Chain [5] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [3] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [7] Iteration: 5400 / 8000 [ 67%]  (Sampling)
+Chain [6] Iteration: 5400 / 8000 [ 67%]  (Sampling)
+Chain [4] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [2] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [1] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [5] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [8] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [3] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [7] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [6] Iteration: 5600 / 8000 [ 70%]  (Sampling)
+Chain [4] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [2] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [1] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [5] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [8] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [3] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [7] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [6] Iteration: 5800 / 8000 [ 72%]  (Sampling)
+Chain [4] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [2] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [5] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [1] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [8] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [3] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [7] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [4] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [6] Iteration: 6000 / 8000 [ 75%]  (Sampling)
+Chain [5] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [2] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [1] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [8] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [3] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [7] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [5] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [4] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [6] Iteration: 6200 / 8000 [ 77%]  (Sampling)
+Chain [2] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [1] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [8] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [3] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [7] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [5] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [4] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [2] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [6] Iteration: 6400 / 8000 [ 80%]  (Sampling)
+Chain [1] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [8] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [3] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [5] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [7] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [4] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [2] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [1] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [6] Iteration: 6600 / 8000 [ 82%]  (Sampling)
+Chain [5] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [8] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [3] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [7] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [4] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [2] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [1] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [5] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [6] Iteration: 6800 / 8000 [ 85%]  (Sampling)
+Chain [8] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [3] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [7] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [4] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [2] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [1] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [5] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [8] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [3] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [7] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [6] Iteration: 7000 / 8000 [ 87%]  (Sampling)
+Chain [4] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [2] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [5] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [5] 
+Chain [5] Elapsed Time: 1728.29 seconds (Warm-up)
+Chain [5] 1225.78 seconds (Sampling)
+Chain [5] 2954.07 seconds (Total)
+Chain [5] 
+Chain [5] 
+Chain [5] 
+Chain [1] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [8] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [3] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [3] 
+Chain [3] Elapsed Time: 1599.09 seconds (Warm-up)
+Chain [3] 1387.7 seconds (Sampling)
+Chain [3] 2986.79 seconds (Total)
+Chain [3] 
+Chain [3] 
+Chain [7] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [6] Iteration: 7200 / 8000 [ 90%]  (Sampling)
+Chain [4] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [4] 
+Chain [4] Elapsed Time: 1621.26 seconds (Warm-up)
+Chain [4] 1383.77 seconds (Sampling)
+Chain [4] 3005.03 seconds (Total)
+Chain [4] 
+Chain [4] 
+Chain [2] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [2] 
+Chain [2] Elapsed Time: 1637.72 seconds (Warm-up)
+Chain [2] 1379.17 seconds (Sampling)
+Chain [2] 3016.89 seconds (Total)
+Chain [2] 
+Chain [2] 
+Chain [2] 
+Chain [1] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [8] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [7] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [6] Iteration: 7400 / 8000 [ 92%]  (Sampling)
+Chain [1] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [1] 
+Chain [1] Elapsed Time: 1715.2 seconds (Warm-up)
+Chain [1] 1378.63 seconds (Sampling)
+Chain [1] 3093.83 seconds (Total)
+Chain [1] 
+Chain [1] 
+Chain [8] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [7] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [6] Iteration: 7600 / 8000 [ 95%]  (Sampling)
+Chain [8] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [8] 
+Chain [8] Elapsed Time: 1801.35 seconds (Warm-up)
+Chain [8] 1373.62 seconds (Sampling)
+Chain [8] 3174.98 seconds (Total)
+Chain [8] 
+Chain [8] 
+Chain [8] 
+Chain [8] 
+Chain [7] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [7] 
+Chain [7] Elapsed Time: 1817.72 seconds (Warm-up)
+Chain [7] 1368.27 seconds (Sampling)
+Chain [7] 3185.99 seconds (Total)
+Chain [7] 
+Chain [7] 
+Chain [6] Iteration: 7800 / 8000 [ 97%]  (Sampling)
+Chain [6] Iteration: 8000 / 8000 [100%]  (Sampling)
+Chain [6] 
+Chain [6] Elapsed Time: 1759.41 seconds (Warm-up)
+Chain [6] 1510.4 seconds (Sampling)
+Chain [6] 3269.8 seconds (Total)
+Chain [6] 
+Chain [6] 
+Frozen canonical inputs and derived tables verified.
+{
+  "name": "Train_H5_base_noage_retry1",
+  "entry": {
+    "model": "H5",
+    "variant": "base",
+    "subset": "train",
+    "name": "Train_H5_base_noage_retry1",
+    "source_name": "Train_H5_base_noage",
+    "seed_name": "Train_H5_base_noage",
+    "settings": {
+      "chains": 8,
+      "warmup": 4000,
+      "draws": 4000,
+      "adapt_delta": 0.995
+    }
+  },
+  "status": "diagnostic_failed",
+  "started_at": "2026-09-28T20:31:59.366797+00:00",
+  "n_participants": 304,
+  "n_choices": 12498,
+  "fingerprint": "5c0a15f27e1e7694d80222bcabe7a3730d22a9b18a77eeb83b0989844c53a6e9",
+  "settings": {
+    "chains": 8,
+    "warmup": 4000,
+    "draws": 4000,
+    "adapt_delta": 0.995,
+    "max_treedepth": 14,
+    "seed": 20260926,
+    "metric": "diag_e",
+    "inits": 0.15,
+    "sig_figs": 10
+  },
+  "sampler_seed": 592639868,
+  "parallel_chains": 8,
+  "analysis_git_sha": "9644c78f4bab444f3d3fbb33ab31869d20402e5d",
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "reused_posterior": false,
+  "passed": false,
+  "max_rhat": 1.00409,
+  "min_bulk_ess": 2087.86,
+  "min_tail_ess": 3484.82,
+  "divergences": 1,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.7077350131823094,
+  "sampling_seconds": 3282.7826797622256,
+  "diagnostics_sha256": "48f3c4dbcafc4975c6dd881ccd5536d06f5857fc6767dbc06dc23f4aa99576ff",
+  "trace_hashes": {
+    "chain_trace_excerpt.tsv": "d26abc8176163e0b79a5c7171f956439a018b3fb651fb49f313c9c96bbb46b53",
+    "chain_summary.tsv": "e9855a2081cfb0c3bc295c57b33daf2e405b7cb707a22679a91c05c8f99f7cfe"
+  },
+  "finished_at": "2026-09-28T21:30:21.440240+00:00",
+  "elapsed_seconds": 3502.0711502609774,
+  "peak_python_rss_mib": 1778.953125,
+  "peak_child_rss_mib": 1949.01953125
+}

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "source_hashes": {
+    "stan/n111_zero_fast.stan": "6dbb246f1ac6425ef8fabe2fb32c62b434456c73b3dd5b5aab7cd871518c333b",
+    "stan/n111_zero_reference.stan": "a0736e782d69249fa0206a65b285f481b48b864213d948ebc50eea67b4cfab4d",
+    "stan/n111_zero_fast.hpp": "3d7b47bba4f762b736f2d83bc419053f495a245880774e3b7f028d0941a48afc",
+    "src/rf1_trust_socialvalue/full_sample_sampling.py": "9c97f3a2080384467336b608471ceb16b9f70847ad625234be96b8e76f9d6725",
+    "src/rf1_trust_socialvalue/n111_zero.py": "5332c7c74c40d26f11797b1c37ce4859677987c38da5f99ef4a5bb5595fd7ee3",
+    "src/rf1_trust_socialvalue/models.py": "25d2ae8531e3aa1f7bd3aab84f94619f95251026a402d301bed1c9dd9b2cc7f8",
+    "src/rf1_trust_socialvalue/hierarchical.py": "8a01e9ba712488c71bb4705b1d086bf2eac03740d97f519b47988d998ddb8854",
+    "src/rf1_trust_socialvalue/full_sample_batch.py": "78c59f76cf9ce7e434a85deb2f43eb777352c3c4c2bfe193f596d46b1fc47cfb",
+    "src/rf1_trust_socialvalue/full_sample_retries.py": "e38fa93b53c453e90ff21df516e4550a4791b5e2ba497af37a001072d987ef82"
+  },
+  "integration_status_sha256": "a786ea8a080b0778e8e820e6ebdc815fbf715296577a1cf4d48e9b4bf6a5e895",
+  "checks_sha256": "39e4c8ea9c9f1a7f72b53fde4863fe752e339bcb49c75f627589fd201cbb5430",
+  "cmdstan_version": "2.40.0",
+  "generated_at": "2026-09-28T20:31:57.029968+00:00",
+  "phase_config_sha256": "c4562ccc3a798d719facf44efaf0ab76c0ae71c5d6b6501d1b8bda4cb7141b5c"
+}

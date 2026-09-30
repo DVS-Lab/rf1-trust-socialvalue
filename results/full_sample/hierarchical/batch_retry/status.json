@@ -1,0 +1,154 @@
+{
+  "status": "blocked_diagnostics_or_error",
+  "started_at": "2026-09-28T20:31:51.000745+00:00",
+  "analysis_git_sha": "9644c78f4bab444f3d3fbb33ab31869d20402e5d",
+  "runs": {
+    "Train_H2_base_noage_retry1": {
+      "exit_code": 0
+    },
+    "Train_H8_zero_noage_retry1": {
+      "exit_code": 0
+    },
+    "Train_H2_zero_noage_retry1": {
+      "exit_code": 0
+    },
+    "Train_H5_base_noage_retry1": {
+      "exit_code": 2
+    },
+    "Train_H5_zero_noage_retry1": {
+      "exit_code": 0
+    },
+    "Full_H2_zero_noage_retry1": {
+      "exit_code": 0
+    },
+    "Train_HPreference_base_noage_retry1": {
+      "exit_code": 0
+    },
+    "Full_H5_base_noage_retry1": {
+      "exit_code": 0
+    },
+    "Full_HPreference_base_noage_retry1": {
+      "exit_code": 2
+    }
+  },
+  "reused": [
+    {
+      "model": "H2",
+      "variant": "base",
+      "name": "Full_H2_base_noage",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "141bce94d3f495e5a425abf5874a45a59e32fd9fb8d7d5fd2bf28b7b81e422c4"
+    },
+    {
+      "model": "H5",
+      "variant": "zero",
+      "name": "Full_H5_zero_noage",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "cc8d0a5de9dad8bb1f6e3110dbde9fff615812fc6d60abbfacd0ce750ad986dd"
+    },
+    {
+      "model": "H7",
+      "variant": "zero",
+      "name": "Full_H7_zero_noage",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "e2fe8bed36addd2df315c489cb10b429c4489a0b8c32a4a6e9d1722e58ca1a2c"
+    },
+    {
+      "model": "HPreference",
+      "variant": "zero",
+      "name": "Full_HPreference_zero_noage_draws4000",
+      "subset": "full",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "d3d0ddaf9d020d5a95ee5109e76b29adce0c7e109aa76ae5a3f0d93fbace9a49"
+    },
+    {
+      "model": "H7",
+      "variant": "base",
+      "subset": "full",
+      "name": "Full_H7_base_noage",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "1d10a6f5071697b5139998f1ceea12e2314f7e5572d35f0624e7e06abe01d034"
+    },
+    {
+      "model": "H8",
+      "variant": "base",
+      "subset": "full",
+      "name": "Full_H8_base_noage",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "07305c014bbc59fcc69e8e9a206bfa288652fed1b1f4abce9856628b1af2487b"
+    },
+    {
+      "model": "H8",
+      "variant": "zero",
+      "subset": "full",
+      "name": "Full_H8_zero_noage",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "4043053cc3f065b993d6b489ec4f5c0f4d81ce7c7d751fa228bbae002e7fe704"
+    },
+    {
+      "model": "H7",
+      "variant": "base",
+      "subset": "train",
+      "name": "Train_H7_base_noage",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "904c78efe9958a24fa436b747158074a8d68dd72d57c614531d5a3dbe72e0367"
+    },
+    {
+      "model": "H7",
+      "variant": "zero",
+      "subset": "train",
+      "name": "Train_H7_zero_noage",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "08830aaa8c9ec3335398fcb492f3e2710a72b0313e94e60d76c8c482cb12c879"
+    },
+    {
+      "model": "HPreference",
+      "variant": "zero",
+      "subset": "train",
+      "name": "Train_HPreference_zero_noage",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "fd26fc8bb847f7910cc6688a7ec021b97501e7ee9f4bbe831edd0a33f36d0960"
+    },
+    {
+      "model": "H8",
+      "variant": "base",
+      "subset": "train",
+      "name": "Train_H8_base_noage",
+      "status": "complete",
+      "reused": true,
+      "fingerprint": "d4db23fb090a824fbaec61a2e45d291d3576129b8418a165b97e1a0484f621bf"
+    }
+  ],
+  "n_full": 343,
+  "n_train": 304,
+  "parallel_fits": 9,
+  "parallel_chains": 8,
+  "maximum_active_chains": 72,
+  "phase_config_sha256": "c4562ccc3a798d719facf44efaf0ab76c0ae71c5d6b6501d1b8bda4cb7141b5c",
+  "source_hashes": {
+    "stan/n111_zero_fast.stan": "6dbb246f1ac6425ef8fabe2fb32c62b434456c73b3dd5b5aab7cd871518c333b",
+    "stan/n111_zero_reference.stan": "a0736e782d69249fa0206a65b285f481b48b864213d948ebc50eea67b4cfab4d",
+    "stan/n111_zero_fast.hpp": "3d7b47bba4f762b736f2d83bc419053f495a245880774e3b7f028d0941a48afc",
+    "src/rf1_trust_socialvalue/full_sample_sampling.py": "9c97f3a2080384467336b608471ceb16b9f70847ad625234be96b8e76f9d6725",
+    "src/rf1_trust_socialvalue/n111_zero.py": "5332c7c74c40d26f11797b1c37ce4859677987c38da5f99ef4a5bb5595fd7ee3",
+    "src/rf1_trust_socialvalue/models.py": "25d2ae8531e3aa1f7bd3aab84f94619f95251026a402d301bed1c9dd9b2cc7f8",
+    "src/rf1_trust_socialvalue/hierarchical.py": "8a01e9ba712488c71bb4705b1d086bf2eac03740d97f519b47988d998ddb8854",
+    "src/rf1_trust_socialvalue/full_sample_batch.py": "78c59f76cf9ce7e434a85deb2f43eb777352c3c4c2bfe193f596d46b1fc47cfb",
+    "src/rf1_trust_socialvalue/full_sample_retries.py": "e38fa93b53c453e90ff21df516e4550a4791b5e2ba497af37a001072d987ef82"
+  },
+  "finished_at": "2026-09-29T09:44:27.147017+00:00",
+  "next_stage": "Review heldout comparisons and full-fit parameters, then posterior predictive checks, age/sensitivity and targeted recovery"
+}
