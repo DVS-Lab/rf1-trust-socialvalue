@@ -52,7 +52,8 @@ git pull --ff-only &&
 bash scripts/export_full_sample_geometry.sh
 ```
 
-The exporter checks the frozen canonical inputs, reconstructs both fit targets,
+The exporter authenticates the saved canonical trial table against the pinned
+integration provenance, reconstructs both historical fit targets,
 checks raw posterior files against their published hashes, and exports:
 
 - every variable's mean, SD, 5th/50th/95th percentiles and divergent-state rank
@@ -78,3 +79,19 @@ if ! git diff --cached --quiet; then
 fi
 git push origin main
 ```
+
+
+## September 30: live-source drift during diagnostic export
+
+The first export stopped before loading posterior CSVs because the live Trust
+input inventory differed in two sub-10668 run-2 part-mag/part-phase event
+companions. The error does not distinguish changed bytes from removed files.
+The revised exporter verifies the immutable saved analysis snapshot and raw
+posterior hashes, and separately records live-source differences and the known
+10668 repair marker/archive evidence before and after the export. It does not
+refresh the cohort, mutate upstream files or weaken the live-source gate for new
+fits. A changed saved canonical table, frozen parser/configuration, integration
+output or posterior still blocks export. Preparation failures now also receive
+a structured geometry-review status.
+
+See `docs/upstream_10668_drift_report.md` for the Git-history investigation.
