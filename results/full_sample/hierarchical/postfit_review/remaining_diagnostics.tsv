@@ -1,0 +1,3 @@
+name	chain	draw	retained_draws	divergences	max_depth_hits	min_bfmi
+Train_H5_base_noage_retry1	1	2052	32000	1	0	0.7077350131823094
+Full_HPreference_base_noage_retry1	5	2670	32000	1	0	0.5762628761272607
