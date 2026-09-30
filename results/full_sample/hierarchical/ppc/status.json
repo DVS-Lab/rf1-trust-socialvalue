@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-30T12:37:00.642526+00:00",
+  "new_sampling": false,
+  "runs": {
+    "Full_H2_base_noage": 0,
+    "Full_H5_zero_noage": 0,
+    "Full_H7_base_noage": 0,
+    "Full_H8_base_noage": 0,
+    "Full_H7_zero_noage": 0,
+    "Full_H8_zero_noage": 0,
+    "Full_H5_base_noage_retry1": 0,
+    "Full_HPreference_zero_noage_draws4000": 0,
+    "Full_H2_zero_noage_retry1": 0
+  },
+  "workers": 4,
+  "output_sha256": {
+    "predictive_checks_all_models.tsv": "96f2f89761edf387c4b84f68ecd62e960a779dff4538f7b2e5fdbb5bd05faf4e",
+    "partner_zero_predictive_checks.png": "506e515f2354138b55c2c5e0c2adaf65cfc329a81bf428f8cf56e38026e389e3",
+    "partner_zero_predictive_checks.pdf": "8118a927fb26317bd41f14afda299520895ae5960f3f7b561e70ecbf488cf90c"
+  },
+  "finished_at": "2026-09-30T12:39:02.482231+00:00"
+}

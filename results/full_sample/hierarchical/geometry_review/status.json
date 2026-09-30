@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-30T12:39:03.175975+00:00",
+  "analysis_git_sha": "264e9e86615158b4da87f85b36db394a2c77134a",
+  "fits": {
+    "Train_H5_base_noage_retry1": {
+      "fingerprint": "5c0a15f27e1e7694d80222bcabe7a3730d22a9b18a77eeb83b0989844c53a6e9",
+      "status_sha256": "0981366465f8a0bed9c4dfe901765ff5f3b29388ca20a77fe6fe525d6057b17c",
+      "manifest_sha256": "70405c3621667c3f2431f96d60f26ed287d6deb1a8ddef19187a1d36cecb5c1a",
+      "posterior_sha256": {
+        "full_zero_fast-20260928163159_1.csv": "476d4a64d5ed6dcdd82ab5e5c772e178c31ab132019ec14404303d5b44a7d1b5",
+        "full_zero_fast-20260928163159_2.csv": "fda70466ade68e46c9c140c9bd6172118044aa19790393a68538b2513e99fa1f",
+        "full_zero_fast-20260928163159_3.csv": "2574ec6c7ef2358396fc1e12d9a875a4173c799ebe6a3a3e8b7c47974ad12362",
+        "full_zero_fast-20260928163159_4.csv": "eeb1be967f95403d14d2823de67ea37b5608ae7ef3a46292fbbdde436a29a891",
+        "full_zero_fast-20260928163159_5.csv": "311015103f2e1f066959ce23e5658c06b6b5e26ab5702c562a91cb40a9077058",
+        "full_zero_fast-20260928163159_6.csv": "2bc9161f63f78aa4346ec300a0138be271d8de268c3440d7da5da8caa9004cfe",
+        "full_zero_fast-20260928163159_7.csv": "a45e5f6dc36cebb9d3eeb0361683d3590dc3fe4192638354c36d3b60242f7529",
+        "full_zero_fast-20260928163159_8.csv": "08e148e3fcb4a31eea78a657be56cc9aa31a37fefff25d89e1a8305552545f5a"
+      },
+      "output_sha256": {
+        "divergent_iteration_neighborhood.tsv": "a4a9aa09e6143a383b76436ebe741d15559d01a8085c427d8f64f34ad9bd98e7",
+        "divergent_parameter_context.tsv": "ce0559ce7994aeca5a89490815179ed1c7584c9d9edb3387a2b019e0923ece95",
+        "chain_diagnostics.tsv": "46becc22e9676cdac5bec89f9f48946efa09938c74dee9c3e88e42d079e7867c"
+      },
+      "note": "Descriptive context at saved divergent iteration state, not the internal leapfrog location. Extreme ranks among many parameters do not identify a causal geometry problem."
+    },
+    "Full_HPreference_base_noage_retry1": {
+      "fingerprint": "d590c1b0e6a982f476ddc36f79635eb068582d7098a3147b46a5dba706e89336",
+      "status_sha256": "4d298e6cb4179e44ffb46ad4431dbd0fa8c186c123ea8dffc4b02608d0630f13",
+      "manifest_sha256": "a84c5a504fe282ef676b8f35458d94ea058bbbc69b19cbb126bd0d402400c75f",
+      "posterior_sha256": {
+        "full_zero_fast-20260928163159_1.csv": "4249aa53abc9a540609f39efab3d3174a175f1c22c87815641cbfb36b2a70556",
+        "full_zero_fast-20260928163159_2.csv": "2d8a8ce9b7833177e0c4b8f66de3da891a2127b7d6cbb7579712f486f7e5523e",
+        "full_zero_fast-20260928163159_3.csv": "28c3154bdb4cade0bcd8ffd428642ea7f98687834b6773b92ccc7fa400ca4f19",
+        "full_zero_fast-20260928163159_4.csv": "d524211cbc0b3855b77babc35c623a0bf9b060b0b3466b2ffe5ff7f26a57999e",
+        "full_zero_fast-20260928163159_5.csv": "06cafa31149a85dc6241998b9bb3d480e31a59337584311abb771914431a616b",
+        "full_zero_fast-20260928163159_6.csv": "5b0c0445dd8b86a0cabeaa0878a096d328079908c2701dc266808babd41773ce",
+        "full_zero_fast-20260928163159_7.csv": "ef6f9b40bfb812843d6fd91e326fdc7db1581f6e24d1e83c9d0b766e7f28ca37",
+        "full_zero_fast-20260928163159_8.csv": "350b29a5e1ce2b2c220e78bbf4e799d7fa2ec2f3bb3ceda8c532d570a68c55f4"
+      },
+      "output_sha256": {
+        "chain_diagnostics.tsv": "bce66e37b7b92588f9ff8d262dfbf72f15876f8588b3018b365594dcbeba4fd2",
+        "divergent_parameter_context.tsv": "4b6b7317b56cfae347b61f28f992a3b059fda87be88b9497f0f21489c88390d6",
+        "divergent_iteration_neighborhood.tsv": "b58b3b3883ace6fd34aace22e568668d4a6b19a5774f7e072c166d0d17d66aea"
+      },
+      "note": "Descriptive context at saved divergent iteration state, not the internal leapfrog location. Extreme ranks among many parameters do not identify a causal geometry problem."
+    }
+  },
+  "new_sampling": false,
+  "verification_mode": "historical_snapshot",
+  "snapshot_provenance_sha256": "cc1066e6d2d5021f86144419cb5ac50c7cbd37f4466fe94a8da85c00a556027e",
+  "live_source_audit_before_sha256": "44a5b2a1942ac24515861619e93dbb8ab5fc39f0103e838bc07bcab1c1b9e7ff",
+  "live_source_status": "drift_detected",
+  "finished_at": "2026-09-30T12:40:29.450991+00:00",
+  "live_source_audit_after_sha256": "3c05e74fe4bd4607bdaeee152935aff147cb90dd91c2754b965d70e9cb2ea62d"
+}

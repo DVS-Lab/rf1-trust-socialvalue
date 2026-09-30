@@ -1,0 +1,21 @@
+{
+  "fingerprint": "5c0a15f27e1e7694d80222bcabe7a3730d22a9b18a77eeb83b0989844c53a6e9",
+  "status_sha256": "0981366465f8a0bed9c4dfe901765ff5f3b29388ca20a77fe6fe525d6057b17c",
+  "manifest_sha256": "70405c3621667c3f2431f96d60f26ed287d6deb1a8ddef19187a1d36cecb5c1a",
+  "posterior_sha256": {
+    "full_zero_fast-20260928163159_1.csv": "476d4a64d5ed6dcdd82ab5e5c772e178c31ab132019ec14404303d5b44a7d1b5",
+    "full_zero_fast-20260928163159_2.csv": "fda70466ade68e46c9c140c9bd6172118044aa19790393a68538b2513e99fa1f",
+    "full_zero_fast-20260928163159_3.csv": "2574ec6c7ef2358396fc1e12d9a875a4173c799ebe6a3a3e8b7c47974ad12362",
+    "full_zero_fast-20260928163159_4.csv": "eeb1be967f95403d14d2823de67ea37b5608ae7ef3a46292fbbdde436a29a891",
+    "full_zero_fast-20260928163159_5.csv": "311015103f2e1f066959ce23e5658c06b6b5e26ab5702c562a91cb40a9077058",
+    "full_zero_fast-20260928163159_6.csv": "2bc9161f63f78aa4346ec300a0138be271d8de268c3440d7da5da8caa9004cfe",
+    "full_zero_fast-20260928163159_7.csv": "a45e5f6dc36cebb9d3eeb0361683d3590dc3fe4192638354c36d3b60242f7529",
+    "full_zero_fast-20260928163159_8.csv": "08e148e3fcb4a31eea78a657be56cc9aa31a37fefff25d89e1a8305552545f5a"
+  },
+  "output_sha256": {
+    "divergent_iteration_neighborhood.tsv": "a4a9aa09e6143a383b76436ebe741d15559d01a8085c427d8f64f34ad9bd98e7",
+    "divergent_parameter_context.tsv": "ce0559ce7994aeca5a89490815179ed1c7584c9d9edb3387a2b019e0923ece95",
+    "chain_diagnostics.tsv": "46becc22e9676cdac5bec89f9f48946efa09938c74dee9c3e88e42d079e7867c"
+  },
+  "note": "Descriptive context at saved divergent iteration state, not the internal leapfrog location. Extreme ranks among many parameters do not identify a causal geometry problem."
+}
