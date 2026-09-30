@@ -1,0 +1,20 @@
+{
+  "status": "reviewed",
+  "results_commit": "604868a",
+  "new_sampling": false,
+  "evidence_sha256": {
+    "results/full_sample/hierarchical/residual_review/status.json": "6ccf69a6b3d01e326afc1e9a8a2ce6528464a54d3660517295918fa0c9ffb8e4",
+    "results/full_sample/hierarchical/residual_review/offer_age_residuals.tsv": "0549f04a59f90f91ca9bae90e434502edff746c2bfd4b1b96b76886e37866d46",
+    "results/full_sample/hierarchical/residual_review/live_source_audit.json": "062cae156000f4f913f049cd6def8a5b2c34c729460cbc1d73d3650871dfc128",
+    "src/rf1_trust_socialvalue/full_sample_residuals.py": "87364cf2f909e54cd3926b1ce8c8d6af27da16b266548beb56076a930d21a8cb",
+    "docs/linux2_full_sample_residuals.md": "24cfd893d35b38e2f788a4c78f7e978773496a269be48284ed5ae69cbc4c15a1",
+    "results/full_sample/hierarchical/residual_review/fits/Full_HPreference_zero_noage_draws4000/status.json": "4ec87c4f4cec9c6462deb3618aa62640c96d376754a1935ba8dd1538e70e5be3",
+    "results/full_sample/hierarchical/residual_review/fits/Full_H7_zero_noage/status.json": "4119b1ab3bc747295e65d8c892422b97b2fa5d6970cac3117f9387f6b80233ec"
+  },
+  "output_sha256": {
+    "README.md": "9782e109681d57746dfcb11a9b51426f293fd76dd0338643eff2cd866a461b2b",
+    "pooled_age_slopes.tsv": "64dbb426e45504897aa1b2d3382fdacbc91a227de86678015ee453b121f47d7c",
+    "selected_offer_checks.tsv": "5ff96c30b4fb273e548ff6ca6c9aa771fc4cd013eb0edf293b6b2a29412f7680"
+  },
+  "conclusion": "Shared exact-offer mean misfit; residual age dependence uncertain; no new model accepted or sampling launched."
+}
