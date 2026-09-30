@@ -1,0 +1,36 @@
+{
+  "simulations": 200,
+  "workers": 4,
+  "accepted_full_fits": [
+    "Full_H2_base_noage",
+    "Full_H2_zero_noage_retry1",
+    "Full_H5_base_noage_retry1",
+    "Full_H5_zero_noage",
+    "Full_H7_base_noage",
+    "Full_H7_zero_noage",
+    "Full_H8_base_noage",
+    "Full_H8_zero_noage",
+    "Full_HPreference_zero_noage_draws4000"
+  ],
+  "evidence_sha256": {
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/status.json": "94a4829bd9694d89547b6c3b923f025d2fcca908d0613793fb2f7ad2e2f2f82b",
+    "results/full_sample/hierarchical/fits/Full_H2_base_noage/manifest_summary.json": "229d251b14d6c6eeefd10b6e20da68a2f8284ae6284c5eb65f387c0f97076b7a",
+    "results/full_sample/hierarchical/fits/Full_H2_zero_noage_retry1/status.json": "f159d780b4d805d196f2643fe452083eff36563549c2af04733b8b4dec63fa91",
+    "results/full_sample/hierarchical/fits/Full_H2_zero_noage_retry1/manifest_summary.json": "abcbf9a4c71a9596ac5d2e05df9ccab125983ee11b048075ed683c88155e0287",
+    "results/full_sample/hierarchical/fits/Full_H5_base_noage_retry1/status.json": "9fca610abd71cfd03e82f17832a979a882cd80c7a4215d43d35a79cf3ccd058a",
+    "results/full_sample/hierarchical/fits/Full_H5_base_noage_retry1/manifest_summary.json": "a7109553c033e54f184a2260148ec99877f83e95d9f64b5ad85bdadb61db1ddb",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/status.json": "c7908f4b7ce4d7fca507b74068cd37844f0d3622cfdb85ed0bf05ab93e621d2d",
+    "results/full_sample/hierarchical/fits/Full_H5_zero_noage/manifest_summary.json": "1160128a8ce79487c92275cbec8f48a2eab0e77e6aca3f8072a16aa2ef8c59ea",
+    "results/full_sample/hierarchical/fits/Full_H7_base_noage/status.json": "7c826c96ebb67f17369d01899ca29fb3725c6e14abad548df88c05277ed72fc9",
+    "results/full_sample/hierarchical/fits/Full_H7_base_noage/manifest_summary.json": "53bde0ba1c943c76a5a4f26c22b5565b5a911b68284f56871c259bde0dbeee56",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/status.json": "cca640e684825c3c0448749560595a9828f743dd2e1ed33d0038fccb49771faa",
+    "results/full_sample/hierarchical/fits/Full_H7_zero_noage/manifest_summary.json": "4f72cdb42224161fd5e99ae6e28a6b5fc7facd1338a8d947909d0a43d697888b",
+    "results/full_sample/hierarchical/fits/Full_H8_base_noage/status.json": "6d7b9a155a3850304daed108523aab014748d6d30229dc79301a5b9ae8748036",
+    "results/full_sample/hierarchical/fits/Full_H8_base_noage/manifest_summary.json": "a6971bdc5673f3899fa307e7670c6912f7bb29267b08d1ad75d3b0a44cdfd7d2",
+    "results/full_sample/hierarchical/fits/Full_H8_zero_noage/status.json": "40032455d29db3d5ad5084dbc43da0a5136ee9d22172947dac84b6e7ef73bb8e",
+    "results/full_sample/hierarchical/fits/Full_H8_zero_noage/manifest_summary.json": "8faa8cc75ae070da795885f7d8bc810d95fa15f63cdfedc9453b89cc2c611674",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/status.json": "c5ed2a0779f7c2c54d3f3316c607df7a3cf29dd75c5846b83a4d902804af00f6",
+    "results/full_sample/hierarchical/fits/Full_HPreference_zero_noage_draws4000/manifest_summary.json": "f4fce1ca6f7549ac7d55f5aeae96dce53171fc75c1319681a9324bccc9f47124"
+  },
+  "note": "Use accepted full-data posteriors from the frozen Trust cohort. No new MCMC or live-data refresh. Observed-history expected predictions and generative simulated feedback histories are separate. Missingness is held fixed."
+}
