@@ -105,6 +105,17 @@ def diagnostics(fit, cfg, c):
     return selected.rename_axis('parameter').reset_index(), info
 
 
+def load_posterior(csv_files, phase, c):
+    """Configure the pinned project CmdStan before any saved-chain diagnostics.
+
+    CSV loading itself can succeed without CmdStan, but summary()/diagnose()
+    invoke its executables. Every worker is a fresh Python process and must
+    initialize its own path, including cache and recovery-only executions.
+    """
+    s.cmdstan(phase, c)  # Locate/version-check only; installation is disabled.
+    return s.load_chains(csv_files)
+
+
 def old_posterior(entry, old, phase, c, t):
     out, work = a.paths(c); name = entry.get('source', entry['name'])
     published = out/'fits'/name; cache = work/'fits'/name
@@ -123,7 +134,8 @@ def old_posterior(entry, old, phase, c, t):
     for file, h in manifest['posterior_sha256'].items():
         if s.fs.sha(file) != h:
             raise ValueError('Original posterior changed: '+file)
-    fit = s.load_chains(manifest['csv_files'])
+    print(name+': reviewing historical chains; no new sampling yet.', flush=True)
+    fit = load_posterior(manifest['csv_files'], phase, c)
     _, info = a.diagnostics(fit, old, c)
     for key, value in info.items():
         if status[key] != value:
@@ -277,7 +289,7 @@ def fit_entry(cfg, old, phase, c, entry, recovery=None):
         saved=authenticated_cache(folder,fingerprint)
         state.update(status='running',fingerprint=fingerprint,sampler_seed=seed,settings=cfg);s.save(dest/'status.json',state)
         if saved:
-            posterior=s.load_chains(saved['csv_files']); state['reused_posterior']=True
+            posterior=load_posterior(saved['csv_files'],phase,c); state['reused_posterior']=True
         else:
             s.cmdstan(phase,c)
             exe=a.paths(c)[1]/'build/amount_fast' if 'source' in entry else work/'build/closeout_fast'

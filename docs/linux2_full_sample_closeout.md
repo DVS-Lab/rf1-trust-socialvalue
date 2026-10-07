@@ -94,3 +94,9 @@ Upstream commit `5e8bbd62f2ed97bf21141f9995dbfa6b97e718f1` (September 30) added 
 The full audit is now written **before** validation and retains all accepted and rejected changes. If a future check stops the run, push `results/full_sample/hierarchical/closeout/live_source_audit.json` along with the normal logs so all differences can be reviewed together.
 
 Restart using the same `all` command above after pulling `main`. No cache deletion, cohort refresh or upstream checkout/reset is required; this failed attempt created no new posterior draws.
+
+## CmdStan initialization before saved-chain diagnostics
+
+The launcher already invokes `.venv-linux2/bin/python` directly, so shell activation is unnecessary. CmdStan itself is a separate installation. The next startup failure occurred while recomputing diagnostics from existing amount-stage CSVs: loading CSVs works without a configured CmdStan path, but `summary()` invokes `stansummary` and requires it. The closeout now locates and version-checks the existing project CmdStan before every saved-chain load, including initial historical review, cache reuse and recovery-only workers. It does not install CmdStan or change sampler settings.
+
+During preflight, a warning about the historical chain's one divergence is expected for the fit scheduled for retry. The console now identifies historical review explicitly. This is not a newly sampled failed fit. The reported initialization failure occurred before any new sampling; pull the fix and restart the same `all` command, with no cleanup or environment reinstallation.

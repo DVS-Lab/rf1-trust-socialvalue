@@ -199,3 +199,51 @@ def test_accepted_worker_and_postfit_failure_keep_raw_draws(monkeypatch,tmp_path
     assert json.loads((work/'fits'/entry['name']/'manifest.json').read_text())==manifest
     status=json.loads((out/'fits'/entry['name']/'status.json').read_text())
     assert status['status']=='error' and status['reused_posterior']
+
+
+def test_saved_chain_loader_initializes_project_cmdstan_without_install(monkeypatch):
+    calls=[];phase={'cmdstan_version':'2.40.0'};c={'_root':'project'};files=['chain.csv'];posterior=object()
+    def configure(actual_phase,actual_c,install=False):
+        assert actual_phase is phase and actual_c is c and install is False
+        calls.append('configure')
+    def load(actual_files):
+        assert actual_files is files and calls==['configure']
+        calls.append('load');return posterior
+    monkeypatch.setattr(s,'cmdstan',configure);monkeypatch.setattr(s,'load_chains',load)
+    assert q.load_posterior(files,phase,c) is posterior
+    assert calls==['configure','load']
+
+
+def test_missing_project_cmdstan_stops_before_csv_loading(monkeypatch):
+    def missing(*args):raise RuntimeError('CmdStan missing')
+    monkeypatch.setattr(s,'cmdstan',missing)
+    monkeypatch.setattr(s,'load_chains',lambda *args:pytest.fail('Must initialize before loading'))
+    with pytest.raises(RuntimeError,match='CmdStan missing'):q.load_posterior(['chain.csv'],{}, {})
+
+
+def test_old_posterior_configures_cmdstan_before_recomputing_diagnostics(tmp_path,monkeypatch):
+    cfg,old,phase,c=q.configuration();c=dict(c,output=str(tmp_path/'out'),work=str(tmp_path/'work'))
+    entry=q.entries()[0];name=entry['source'];t=trials(2);t=pd.concat([t,t.assign(run=2)],ignore_index=True)
+    original=next(e for e in a.entries(old) if e['name']==name)
+    data,meta,_=a.model_data(q.subset(t,original),original,phase)
+    fingerprint=s.digest(dict(data=data,config=old,sources=a.sources(c)))
+    out,work=a.paths(c);cache=work/'fits'/name;cache.mkdir(parents=True)
+    files=[]
+    for i in range(old['chains']):
+        f=cache/f'chain{i}.csv';f.write_text(f'fake retained chain {i}\n');files.append(str(f))
+    hashes={f:s.fs.sha(f) for f in files}
+    manifest=dict(fingerprint=fingerprint,meta=meta,csv_files=files,posterior_sha256=hashes)
+    published=out/'fits'/name;s.save(cache/'manifest.json',manifest)
+    s.save(published/'manifest_summary.json',dict(manifest,posterior_sha256={Path(f).name:h for f,h in hashes.items()}))
+    info=dict(passed=False,max_rhat=1.004,min_bulk_ess=1000.,min_tail_ess=1000.,divergences=1,max_depth_hits=0,min_bfmi=.7)
+    s.save(published/'status.json',dict(status='diagnostic_failed',fingerprint=fingerprint,**info))
+    events=[];fit=object()
+    def configure(*args,**kwargs):events.append('configured')
+    def load(files):
+        assert events==['configured'];events.append('loaded');return fit
+    def diagnostics(actual_fit,*args):
+        assert actual_fit is fit and events==['configured','loaded']
+        events.append('summarized');return None,info
+    monkeypatch.setattr(s,'cmdstan',configure);monkeypatch.setattr(s,'load_chains',load);monkeypatch.setattr(a,'diagnostics',diagnostics)
+    result=q.old_posterior(entry,old,phase,c,t)
+    assert result[0] is fit and result[1]==data and events==['configured','loaded','summarized']

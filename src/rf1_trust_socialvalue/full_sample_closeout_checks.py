@@ -126,7 +126,7 @@ def age_anchor(cfg,old,phase,c,t):
         raise ValueError('Recovery anchor target mismatch')
     if {Path(f).name:h for f,h in manifest['posterior_sha256'].items()}!=portable['posterior_sha256']:
         raise ValueError('Recovery anchor portable hashes mismatch')
-    fit=s.load_chains(manifest['csv_files']);_,info=q.diagnostics(fit,cfg,c)
+    fit=q.load_posterior(manifest['csv_files'],phase,c);_,info=q.diagnostics(fit,cfg,c)
     if not info['passed']:raise ValueError('Recovery anchor diagnostics failed')
     return fit,dict(fingerprint=fingerprint,posterior_sha256=portable['posterior_sha256']),data,meta
 
