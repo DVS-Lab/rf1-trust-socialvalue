@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "source_hashes": {
+    "stan/n111_zero_fast.stan": "6dbb246f1ac6425ef8fabe2fb32c62b434456c73b3dd5b5aab7cd871518c333b",
+    "stan/n111_zero_reference.stan": "a0736e782d69249fa0206a65b285f481b48b864213d948ebc50eea67b4cfab4d",
+    "stan/n111_zero_fast.hpp": "3d7b47bba4f762b736f2d83bc419053f495a245880774e3b7f028d0941a48afc",
+    "src/rf1_trust_socialvalue/full_sample_sampling.py": "9c97f3a2080384467336b608471ceb16b9f70847ad625234be96b8e76f9d6725",
+    "src/rf1_trust_socialvalue/n111_zero.py": "5332c7c74c40d26f11797b1c37ce4859677987c38da5f99ef4a5bb5595fd7ee3",
+    "src/rf1_trust_socialvalue/models.py": "25d2ae8531e3aa1f7bd3aab84f94619f95251026a402d301bed1c9dd9b2cc7f8",
+    "src/rf1_trust_socialvalue/hierarchical.py": "8a01e9ba712488c71bb4705b1d086bf2eac03740d97f519b47988d998ddb8854",
+    "src/rf1_trust_socialvalue/full_sample_batch.py": "78c59f76cf9ce7e434a85deb2f43eb777352c3c4c2bfe193f596d46b1fc47cfb",
+    "src/rf1_trust_socialvalue/full_sample_retries.py": "e38fa93b53c453e90ff21df516e4550a4791b5e2ba497af37a001072d987ef82",
+    "src/rf1_trust_socialvalue/full_sample_ppc.py": "8612f7210d537235d45ba3eb0206a43851ce3bfa82f2b98aa66bb9f765f5de6f",
+    "src/rf1_trust_socialvalue/full_sample_geometry.py": "a81e4c0e1b3a0e8b6a5d6db12b0ae926fb79debfecaca82e630066743ee611db",
+    "src/rf1_trust_socialvalue/full_sample_review.py": "0489e157900fe86b5fff3f940ecdc36d75785729126c44324cc2069e87d73c4e",
+    "stan/full_amount_fast.stan": "98c534427485940ac191283149fbcd478f558d3594c392843c61a63f6e62ad48",
+    "stan/full_amount_reference.stan": "ada7e89c27ee85552f2e5ef8b2777d62b695f9ce1ee5a95b7eb670309519d581",
+    "stan/full_amount_fast.hpp": "f23975fdb270070c3b04427bc9854dfe86fe29c3910f5e5da82a4e8355322b79",
+    "src/rf1_trust_socialvalue/full_sample_amount.py": "ebb50a6ad406b13e1d809baf9a2c5e3733c5bc45ed978a8fe23287bf8d39c0bf",
+    "src/rf1_trust_socialvalue/full_sample_residuals.py": "87364cf2f909e54cd3926b1ce8c8d6af27da16b266548beb56076a930d21a8cb",
+    "config/full_sample_amount.json": "20884730e70f87162bd93ea3b0fe6a19c1e1baefe3e4d893704b28efa73cf165"
+  },
+  "check_sha256": "d3220b4e940dcbc1f154aa69daaee361719426fdfdf9b3f2f64e0373dc57e90a",
+  "executable_sha256": "ae85363c543dcce0b31b0e50bc727c87aa8b1b7fd082c762af9d00785e844ddc",
+  "prior_screen_sha256": "1f4a4a8e0b4d70c7c63124801054312ad2813f9c4afbff7713b79ebe703b22fa",
+  "generated_at": "2026-09-30T15:37:40.281751+00:00"
+}

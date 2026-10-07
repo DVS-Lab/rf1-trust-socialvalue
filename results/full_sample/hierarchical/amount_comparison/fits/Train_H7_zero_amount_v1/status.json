@@ -1,0 +1,58 @@
+{
+  "name": "Train_H7_zero_amount_v1",
+  "entry": {
+    "model": "H7",
+    "extension": "amount",
+    "subset": "train",
+    "name": "Train_H7_zero_amount_v1"
+  },
+  "status": "diagnostic_failed",
+  "started_at": "2026-09-30T15:37:40.933103+00:00",
+  "fingerprint": "b30bcae79e66f305677e8c1b2f3cdd2ef22461d04d6671f14624958990a4a5f2",
+  "sampler_seed": 183313633,
+  "settings": {
+    "stage": "exploratory_amount_training",
+    "models": [
+      "H7",
+      "HPreference"
+    ],
+    "extensions": [
+      "bias",
+      "amount"
+    ],
+    "subset": "train",
+    "chains": 8,
+    "warmup": 4000,
+    "draws": 4000,
+    "adapt_delta": 0.995,
+    "max_treedepth": 14,
+    "metric": "diag_e",
+    "parallel_fits": 4,
+    "cpu_budget": 32,
+    "inits": 0.15,
+    "sig_figs": 10,
+    "automatic_retries": false,
+    "seed": 20260930,
+    "expected_train_n": 304,
+    "expected_train_choices": 12498,
+    "expected_test_choices": 12494,
+    "amount_feature": "(high^2-low^2)/64",
+    "extension_prior": "mu_ext ~ normal(0,1); tau_ext ~ half_normal(0,0.8); independent noncentered participant effects",
+    "source_exception": "Only the two removed empty sub-10668 Trust run-2 imaging templates, authenticated against the complete repair receipt and original archive. Every other live input must match the frozen inventory.",
+    "interpretation": "Exploratory reuse of run-2 evaluation after full-data diagnostics informed model selection; not untouched confirmatory validation. Recovery and full-data fits follow review, not automatically."
+  },
+  "reused_posterior": false,
+  "passed": false,
+  "max_rhat": 1.004,
+  "min_bulk_ess": 1273.92,
+  "min_tail_ess": 2330.07,
+  "divergences": 3,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6652452097781477,
+  "sampling_seconds": 5922.230282952078,
+  "finished_at": "2026-09-30T17:22:53.850646+00:00",
+  "elapsed_seconds": 6312.917289939709,
+  "output_sha256": {
+    "diagnostics.tsv": "092f8bbf07ccb45b0488b2289e3c0fc0255730f524046e528893e1e6a7cebd38"
+  }
+}

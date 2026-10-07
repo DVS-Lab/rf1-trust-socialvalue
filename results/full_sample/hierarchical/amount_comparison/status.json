@@ -1,0 +1,20 @@
+{
+  "status": "error",
+  "started_at": "2026-09-30T15:36:41.310278+00:00",
+  "runs": {
+    "Train_HPreference_zero_bias_v1": 0,
+    "Train_H7_zero_bias_v1": 2,
+    "Train_H7_zero_amount_v1": 2,
+    "Train_HPreference_zero_amount_v1": 2
+  },
+  "workers": 4,
+  "active_chains": 32,
+  "comparison_sha256": {
+    "available_model_comparison.pdf": "3d9d1068d7d6f9ff2c31d12d838f197007bb7425760cdaea45bff72e8bfd765a",
+    "available_model_comparison.png": "82d6f4a64938f20039bcdcc4cf10e2e374ffc2074d56d5ebc504b4aeeb8cd92a",
+    "amount_vs_bias.tsv": "566d0a6dd1f8f968f52f308815a372068f011776bf75eaa99b89fc3a09a8f388",
+    "available_model_comparison.tsv": "7b3dc347bcdaf7612f5821c2d027fde520a2a344a6816ff01bbea6d9c72e2a88"
+  },
+  "finished_at": "2026-09-30T17:23:28.251799+00:00",
+  "error": "RuntimeError('Some fits failed diagnostics or execution; available comparisons saved, inspect logs; no automatic retry')"
+}

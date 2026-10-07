@@ -1,0 +1,68 @@
+{
+  "status": "drift_detected",
+  "changes": [
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/bids/sub-10668/ses-01/func/sub-10668_ses-01_task-trust_run-2_part-mag_events.tsv",
+      "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+      "current_sha256": null,
+      "change": "missing",
+      "imaging_event_file": true
+    },
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/bids/sub-10668/ses-01/func/sub-10668_ses-01_task-trust_run-2_part-phase_events.tsv",
+      "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+      "current_sha256": null,
+      "change": "missing",
+      "imaging_event_file": true
+    }
+  ],
+  "read_errors": [],
+  "repair_10668": [
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/bids/sub-10668/ses-01/.rf1-10668-repair.json",
+      "exists": true,
+      "sha256": "90ece0092cfb1eeca0275fed142a9c2be6d209d65c283eff37d12e065392fbf8",
+      "repair_id": "10668-sharedreward-v1",
+      "status": "bids_corrected_derivatives_require_rebuild",
+      "implicated_originals": [
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-mag_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423"
+        },
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-phase_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423"
+        }
+      ]
+    },
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/derivatives/source_repairs/10668-sharedreward-v1/receipt.json",
+      "exists": true,
+      "sha256": "ef7854ba2efcf918072ac1df44d17ab292e073ca681ee8c55a195a700333a01d",
+      "repair_id": "10668-sharedreward-v1",
+      "status": "complete",
+      "implicated_originals": [
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-mag_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_exists": true,
+          "archive_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_matches_freeze": true
+        },
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-phase_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_exists": true,
+          "archive_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_matches_freeze": true
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-09-30T17:01:59.869624+00:00",
+  "scope": "Live files are audited only. This export uses the authenticated saved canonical table and existing posterior hashes. New fits still require the original strict live-input verification."
+}

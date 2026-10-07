@@ -1,0 +1,62 @@
+{
+  "name": "Train_HPreference_zero_bias_v1",
+  "entry": {
+    "model": "HPreference",
+    "extension": "bias",
+    "subset": "train",
+    "name": "Train_HPreference_zero_bias_v1"
+  },
+  "status": "complete",
+  "started_at": "2026-09-30T15:37:40.928738+00:00",
+  "fingerprint": "edb845c6db35db8fc56e84409be135bee62c8965f54f0bb044966de0fda2eb52",
+  "sampler_seed": 4205324732,
+  "settings": {
+    "stage": "exploratory_amount_training",
+    "models": [
+      "H7",
+      "HPreference"
+    ],
+    "extensions": [
+      "bias",
+      "amount"
+    ],
+    "subset": "train",
+    "chains": 8,
+    "warmup": 4000,
+    "draws": 4000,
+    "adapt_delta": 0.995,
+    "max_treedepth": 14,
+    "metric": "diag_e",
+    "parallel_fits": 4,
+    "cpu_budget": 32,
+    "inits": 0.15,
+    "sig_figs": 10,
+    "automatic_retries": false,
+    "seed": 20260930,
+    "expected_train_n": 304,
+    "expected_train_choices": 12498,
+    "expected_test_choices": 12494,
+    "amount_feature": "(high^2-low^2)/64",
+    "extension_prior": "mu_ext ~ normal(0,1); tau_ext ~ half_normal(0,0.8); independent noncentered participant effects",
+    "source_exception": "Only the two removed empty sub-10668 Trust run-2 imaging templates, authenticated against the complete repair receipt and original archive. Every other live input must match the frozen inventory.",
+    "interpretation": "Exploratory reuse of run-2 evaluation after full-data diagnostics informed model selection; not untouched confirmatory validation. Recovery and full-data fits follow review, not automatically."
+  },
+  "reused_posterior": false,
+  "passed": true,
+  "max_rhat": 1.00191,
+  "min_bulk_ess": 2078.07,
+  "min_tail_ess": 4300.88,
+  "divergences": 0,
+  "max_depth_hits": 0,
+  "min_bfmi": 0.6673560412589319,
+  "sampling_seconds": 4039.425767544657,
+  "finished_at": "2026-09-30T16:52:22.950002+00:00",
+  "elapsed_seconds": 4482.021010315977,
+  "output_sha256": {
+    "heldout_participants.tsv": "ed7194ae07163cf100a91b6a3bdc8f087819c04ccc518fcc267f7c9587b5defc",
+    "participant_parameters.tsv": "28fbfaafccd035d46d853c7d95bf088a728403ececded6fd3f2c5c36a731838d",
+    "population_parameters.tsv": "acac51192e557f66caa450915590eb68ba7d3274d14205dd779553d87f01969b",
+    "heldout_cells.tsv": "f748d99c3b1c253dbfa04cc8288a79c7bc7b5eae4e33f1ff85588594d0d40b08",
+    "diagnostics.tsv": "234c18aae544af1f96c86641a9d72fe821ce44012e5367f44cf2a0afec5c1030"
+  }
+}

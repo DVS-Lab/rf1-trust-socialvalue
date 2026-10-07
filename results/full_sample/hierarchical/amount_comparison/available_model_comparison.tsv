@@ -1,0 +1,4 @@
+name	model	extension	participants	choices	log_loss	delta_vs_original	ci_low	ci_high
+Train_H7_zero_noage	H7	original	304	12494	0.5054878938409135	0.0	0.0	0.0
+Train_HPreference_zero_noage	HPreference	original	304	12494	0.5117651022763738	0.0	0.0	0.0
+Train_HPreference_zero_bias_v1	HPreference	bias	304	12494	0.48096807465291197	-0.03079702762346189	-0.039826940907435736	-0.021780612267010595
