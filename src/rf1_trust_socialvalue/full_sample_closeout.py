@@ -15,6 +15,7 @@ import pandas as pd
 from . import full_sample_amount as a
 from . import full_sample_sampling as s
 from . import full_sample_residuals as residuals
+from .full_sample_closeout_snapshot import snapshot
 
 RETRIES = {'Train_H7_zero_bias_v1': 1, 'Train_H7_zero_amount_v1': 3,
            'Train_HPreference_zero_amount_v1': 4}
@@ -58,7 +59,8 @@ def paths(c):
 
 def sources(c):
     root = Path(c['_root'])
-    files = ['config/full_sample_closeout.json', 'stan/full_closeout_fast.stan',
+    files = ['config/full_sample_closeout.json', 'config/full_sample_closeout_qc_review.json',
+             'src/rf1_trust_socialvalue/full_sample_closeout_snapshot.py', 'stan/full_closeout_fast.stan',
              'stan/full_closeout_reference.stan', 'src/rf1_trust_socialvalue/full_sample_closeout.py',
              'src/rf1_trust_socialvalue/full_sample_closeout_checks.py']
     return {**a.sources(c), **{f: s.fs.sha(root/f) for f in files}}
@@ -256,7 +258,7 @@ def fit_entry(cfg, old, phase, c, entry, recovery=None):
     folder.mkdir(parents=True,exist_ok=True);dest.mkdir(parents=True,exist_ok=True)
     start=time.monotonic(); state=dict(name=name,entry=entry,status='preparing',started_at=s.now());s.save(dest/'status.json',state)
     try:
-        t,audit=a.snapshot(old,phase,c);s.save(dest/'live_source_audit_before.json',audit);gate(c)
+        t,audit=snapshot(old,phase,c,dest/'live_source_audit_before.json');gate(c)
         selected=subset(t,entry)
         if recovery is not None:
             selected, truth, anchor = checks.synthetic_trials(selected, recovery, cfg, old, phase, c)
@@ -287,7 +289,7 @@ def fit_entry(cfg, old, phase, c, entry, recovery=None):
                        csv_files=posterior.runset.csv_files,posterior_sha256={f:s.fs.sha(f) for f in posterior.runset.csv_files},
                        source_hashes=sources(c),sampling_seconds=time.monotonic()-start,recovery_anchor=anchor)
             s.save(folder/'manifest.json',saved);state['reused_posterior']=False
-        _,audit=a.snapshot(old,phase,c);s.save(dest/'live_source_audit_after.json',audit);gate(c)
+        _,audit=snapshot(old,phase,c,dest/'live_source_audit_after.json');gate(c)
         diagnostic,info=diagnostics(posterior,cfg,c);diagnostic.to_csv(dest/'diagnostics.tsv',sep='\t',index=False)
         state.update(info,sampling_seconds=saved['sampling_seconds']);(dest/'diagnose.txt').write_text(posterior.diagnose())
         if not info['passed']:
@@ -303,7 +305,7 @@ def fit_entry(cfg, old, phase, c, entry, recovery=None):
                 checks.predictive_tables(arrays,meta,natural,entry,cfg,dest)
             checks.parameter_tables(posterior,natural,data,meta,entry,cfg,dest)
         gate(c)
-        _,audit=a.snapshot(old,phase,c);s.save(dest/'live_source_audit_after.json',audit)
+        _,audit=snapshot(old,phase,c,dest/'live_source_audit_after.json')
         state['status']='complete';return 0
     except BaseException as exc:
         state.update(status='error',error=repr(exc));raise
@@ -357,7 +359,7 @@ def main():
         except BlockingIOError:raise RuntimeError('Closeout already running')
         state=dict(status='running',started_at=s.now(),command=args.command);s.save(out/'status.json',state)
         try:
-            t,audit=a.snapshot(old,phase,c);s.save(out/'live_source_audit.json',audit)
+            t,audit=snapshot(old,phase,c,out/'live_source_audit.json')
             failed=False
             if args.command in ['all','analysis']:
                 preflight(cfg,old,phase,c,t);failed=run_batch('analysis',cfg,c)

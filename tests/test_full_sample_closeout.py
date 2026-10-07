@@ -172,7 +172,7 @@ def test_accepted_worker_and_postfit_failure_keep_raw_draws(monkeypatch,tmp_path
     t=trials(343);t['age']=50.;t['include_sensitivity']=True
     entry=next(e for e in q.entries() if e['name']=='Full_HPreference_zero_bias_age_closeout1')
     monkeypatch.setattr(s,'require_linux',lambda:None);monkeypatch.setattr(s,'cmdstan',lambda *args:None)
-    monkeypatch.setattr(a,'snapshot',lambda *args:(t,{'status':'matches_snapshot'}));monkeypatch.setattr(q,'gate',lambda c:None)
+    monkeypatch.setattr(q,'snapshot',lambda *args:(t,{'status':'matches_snapshot'}));monkeypatch.setattr(q,'gate',lambda c:None)
     monkeypatch.setattr(q,'sources',lambda c:{'test':'source'})
     diagnostic=pd.DataFrame({'parameter':['beta_ext[1,1]'],'R_hat':[1.001],'ESS_bulk':[1000],'ESS_tail':[1000]})
     info=dict(passed=True,max_rhat=1.001,min_bulk_ess=1000,min_tail_ess=1000,divergences=0,max_depth_hits=0,min_bfmi=.7)

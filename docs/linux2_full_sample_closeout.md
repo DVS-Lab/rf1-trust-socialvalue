@@ -1,6 +1,6 @@
 # Linux2 closeout: diagnostics, hierarchical age, predictive checks and recovery
 
-This stage retains the frozen 343-person cohort, all old source files and fit caches, and the accepted `Train_HPreference_zero_bias_v1` result. It creates `results/full_sample/hierarchical/closeout` and `work/full_sample/hierarchical/closeout`. No laptop sampling and no cohort refresh. The sole live-source exception remains the authenticated removal of two empty sub-10668 imaging templates.
+This stage retains the frozen 343-person cohort, all old source files and fit caches, and the accepted `Train_HPreference_zero_bias_v1` result. It creates `results/full_sample/hierarchical/closeout` and `work/full_sample/hierarchical/closeout`. No laptop sampling and no cohort refresh. Live-source exceptions are limited to the authenticated removal of two empty sub-10668 imaging templates and the exact reviewed SharedReward-only global QC update described below.
 
 ## Scientific scope
 
@@ -82,3 +82,15 @@ Raw posterior CSVs remain on Linux2 under ignored `work/`. Portable manifests re
 ## Stopping rule
 
 Review sampler diagnostics, amount-versus-bias contrasts, age/no-age prediction, full-data predictive checks, QC/prior robustness and recovery together. An accepted sampler is not proof of adequate model fit. If the age results survive these checks, write the final figures and report. If recovery or exact-offer checks remain weak, report the descriptive/predictive findings and limit mechanistic claims. An improved amount model may justify one age robustness fit; this is not an open-ended model search. Existing N=111 results remain an immutable historical analysis.
+
+## October 7 restart: global QC changed after the SharedReward repair
+
+The first closeout attempt stopped before compilation or sampling. Its 282 tests passed; pandas/Matplotlib FutureWarnings were not the failure. The strict amount-stage snapshot gate rejected the updated `qc/events/results/provenance.json` before it could save a live-source audit.
+
+Upstream commit `5e8bbd62f2ed97bf21141f9995dbfa6b97e718f1` (September 30) added precisely one global response-QC row: **sub-10668 / session 01 / SharedReward / run 2**. The table grew from 2,751 to 2,752 rows. Removing that exact added line reproduces the frozen table byte for byte, including all **647 Trust QC rows**. The global provenance changed only its timestamp, run count and events-manifest hash; QC policy and review counts remained unchanged. Trust run eligibility, source exclusions, Trust handoff provenance, converter and curation files match their frozen hashes in the reviewed upstream revision. The added row is not Trust run 2 and does not enter modeling.
+
+`config/full_sample_closeout_qc_review.json` records the before/after hashes, added row, both metadata versions and upstream commits. The closeout-only snapshot adapter requires this exact reviewed pair of files and independently verifies exact reconstruction of the original QC table. Every other live input still passes the existing check, including the earlier empty-template repair receipts. Any further QC update, Trust event change, policy change, eligibility change or incomplete QC update stops the run. Original amount-stage source files, accepted-fit fingerprints, frozen cohort configuration and model equations are unchanged.
+
+The full audit is now written **before** validation and retains all accepted and rejected changes. If a future check stops the run, push `results/full_sample/hierarchical/closeout/live_source_audit.json` along with the normal logs so all differences can be reviewed together.
+
+Restart using the same `all` command above after pulling `main`. No cache deletion, cohort refresh or upstream checkout/reset is required; this failed attempt created no new posterior draws.

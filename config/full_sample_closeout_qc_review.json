@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "frozen_upstream_commit": "c44dd97dfe0a778fb48113546a3e60d776be38c2",
+  "reviewed_upstream_commit": "72a5a160a8636cff770ea93116cb13bab64cf609",
+  "change_commit": "5e8bbd62f2ed97bf21141f9995dbfa6b97e718f1",
+  "reason": "SharedReward run 2 for sub-10668 added to global response QC after the approved source repair. Removing precisely this added line reproduces the frozen QC table byte for byte. All Trust QC rows and all pre-existing rows are unchanged.",
+  "trust_rows_unchanged": 647,
+  "approved_transitions": {
+    "qc/events/results/run_response_qc.tsv": {
+      "frozen_sha256": "1776307264d20663e8b08d8890bc044fda6b483b4fc2be08fcce8f5ad9bbc148",
+      "current_sha256": "b31eebeba0ddd62738add8b04ae72c1f993a4412fa6f23958205400261a74929"
+    },
+    "qc/events/results/provenance.json": {
+      "frozen_sha256": "0024397bb42f80739b04a3832531a1157d00d65c0731c20d09aff7be4f143f57",
+      "current_sha256": "11388845473151cd597df28b574644c8fe2d43a44b18f6fb8d423e361dfa850d"
+    }
+  },
+  "added_qc_row": {
+    "subject": "10668",
+    "session": "01",
+    "task": "sharedreward",
+    "run": "2",
+    "events_path": "bids/sub-10668/ses-01/func/sub-10668_ses-01_task-sharedreward_run-2_events.tsv",
+    "events_sha256": "b734eb33f5d37ddc89ae192f7a9b5dde63a650d41aae8211338742a6a8f0cf90",
+    "expected_trials": "54",
+    "response_trials": "54",
+    "trial_count_complete": "true",
+    "misses": "4",
+    "miss_fraction": "0.074074",
+    "response_fraction": "0.925926",
+    "first_miss_trial": "3",
+    "last_miss_trial": "39",
+    "longest_miss_streak": "1",
+    "longest_miss_streak_start_trial": "3",
+    "terminal_miss_streak": "0",
+    "terminal_miss_start_trial": "",
+    "terminal_miss_start_onset_sec": "",
+    "terminal_affected_duration_sec": "",
+    "preterminal_trials": "54",
+    "preterminal_misses": "4",
+    "preterminal_miss_fraction": "0.074074",
+    "retained_trial_fraction_if_terminal_trimmed": "1",
+    "overall_miss_rule_failed": "false",
+    "terminal_failure_candidate": "false",
+    "salvage_review_candidate": "false",
+    "review_status": "pass",
+    "review_reasons": "",
+    "miss_pattern": "..M.................M..........M......M..............."
+  },
+  "added_qc_line": "10668\t01\tsharedreward\t2\tbids/sub-10668/ses-01/func/sub-10668_ses-01_task-sharedreward_run-2_events.tsv\tb734eb33f5d37ddc89ae192f7a9b5dde63a650d41aae8211338742a6a8f0cf90\t54\t54\ttrue\t4\t0.074074\t0.925926\t3\t39\t1\t3\t0\t\t\t\t54\t4\t0.074074\t1\tfalse\tfalse\tfalse\tpass\t\t..M.................M..........M......M...............\r\n",
+  "frozen_qc_provenance": {
+    "events_manifest_sha256": "cfd33dcb98ef222bc585981ea38aca06bda0b3c427344c86b8dbfcea0604af88",
+    "events_run_count": 2751,
+    "generated_at": "2026-09-27T02:28:29.472467+00:00",
+    "policy": "/ZPOOL/data/projects/rf1-sra-linux2/qc/events/policy.json",
+    "policy_sha256": "59b44f4255de034e13ba3e3c2b3347cc25b450bb0f09dd2e32e311aaeebbf507",
+    "review_count": 32,
+    "salvage_review_count": 7,
+    "schema_version": 1,
+    "sublist": null,
+    "sublist_sha256": null
+  },
+  "approved_qc_provenance": {
+    "events_manifest_sha256": "4bb80a8389519449cbf24e03442e3f235bed1f2cd823226846ecbdd0e9b6ab8f",
+    "events_run_count": 2752,
+    "generated_at": "2026-09-30T20:44:01.982660+00:00",
+    "policy": "/ZPOOL/data/projects/rf1-sra-linux2/qc/events/policy.json",
+    "policy_sha256": "59b44f4255de034e13ba3e3c2b3347cc25b450bb0f09dd2e32e311aaeebbf507",
+    "review_count": 32,
+    "salvage_review_count": 7,
+    "schema_version": 1,
+    "sublist": null,
+    "sublist_sha256": null
+  }
+}
