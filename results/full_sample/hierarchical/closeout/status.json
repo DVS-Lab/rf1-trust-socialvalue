@@ -1,7 +1,7 @@
 {
   "status": "error",
-  "started_at": "2026-10-07T14:53:15.907173+00:00",
+  "started_at": "2026-10-07T15:28:55.202577+00:00",
   "command": "all",
-  "error": "ValueError('Unreviewed live input change; amount fits blocked: /ZPOOL/data/projects/rf1-sra-linux2/qc/events/results/provenance.json')",
-  "finished_at": "2026-10-07T14:53:45.093387+00:00"
+  "error": "ValueError('No CmdStan installation found, run command \"install_cmdstan\"or (re)activate your conda environment!')",
+  "finished_at": "2026-10-07T15:30:02.989280+00:00"
 }

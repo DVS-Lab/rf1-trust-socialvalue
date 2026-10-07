@@ -1,0 +1,106 @@
+{
+  "status": "drift_detected",
+  "changes": [
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/bids/sub-10668/ses-01/func/sub-10668_ses-01_task-trust_run-2_part-mag_events.tsv",
+      "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+      "current_sha256": null,
+      "change": "missing",
+      "imaging_event_file": true
+    },
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/bids/sub-10668/ses-01/func/sub-10668_ses-01_task-trust_run-2_part-phase_events.tsv",
+      "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+      "current_sha256": null,
+      "change": "missing",
+      "imaging_event_file": true
+    },
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/qc/events/results/provenance.json",
+      "frozen_sha256": "0024397bb42f80739b04a3832531a1157d00d65c0731c20d09aff7be4f143f57",
+      "current_sha256": "11388845473151cd597df28b574644c8fe2d43a44b18f6fb8d423e361dfa850d",
+      "change": "modified",
+      "imaging_event_file": false
+    },
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/qc/events/results/run_response_qc.tsv",
+      "frozen_sha256": "1776307264d20663e8b08d8890bc044fda6b483b4fc2be08fcce8f5ad9bbc148",
+      "current_sha256": "b31eebeba0ddd62738add8b04ae72c1f993a4412fa6f23958205400261a74929",
+      "change": "modified",
+      "imaging_event_file": false
+    }
+  ],
+  "read_errors": [],
+  "repair_10668": [
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/bids/sub-10668/ses-01/.rf1-10668-repair.json",
+      "exists": true,
+      "sha256": "90ece0092cfb1eeca0275fed142a9c2be6d209d65c283eff37d12e065392fbf8",
+      "repair_id": "10668-sharedreward-v1",
+      "status": "bids_corrected_derivatives_require_rebuild",
+      "implicated_originals": [
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-mag_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423"
+        },
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-phase_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423"
+        }
+      ]
+    },
+    {
+      "path": "/ZPOOL/data/projects/rf1-sra-linux2/derivatives/source_repairs/10668-sharedreward-v1/receipt.json",
+      "exists": true,
+      "sha256": "ef7854ba2efcf918072ac1df44d17ab292e073ca681ee8c55a195a700333a01d",
+      "repair_id": "10668-sharedreward-v1",
+      "status": "complete",
+      "implicated_originals": [
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-mag_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_exists": true,
+          "archive_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_matches_freeze": true
+        },
+        {
+          "filename": "sub-10668_ses-01_task-trust_run-2_part-phase_events.tsv",
+          "frozen_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "receipt_original_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_exists": true,
+          "archive_sha256": "f49141d568d2bfebb7456958a33a9f3d67f923ec542a560f3c7cb6b2de599423",
+          "archive_matches_freeze": true
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-10-07T15:28:55.614592+00:00",
+  "scope": "New closeout fits use the authenticated frozen canonical table. Live inputs must match except for receipt-authenticated removed empty templates and the exact reviewed SharedReward QC addition. No refreshed data enter any fit.",
+  "closeout_validation": {
+    "status": "passed",
+    "review_sha256": "0e9e0a1d740a5f2c4befccf83fccd6a0b81e5cbd93fc2ffffdecabea442b89d7",
+    "reviewed_upstream_commit": "72a5a160a8636cff770ea93116cb13bab64cf609",
+    "qc_transition_applied": true,
+    "trust_qc_rows_unchanged": 647,
+    "changes_accepted": [
+      {
+        "path": "/ZPOOL/data/projects/rf1-sra-linux2/qc/events/results/provenance.json",
+        "frozen_sha256": "0024397bb42f80739b04a3832531a1157d00d65c0731c20d09aff7be4f143f57",
+        "current_sha256": "11388845473151cd597df28b574644c8fe2d43a44b18f6fb8d423e361dfa850d",
+        "change": "modified",
+        "imaging_event_file": false
+      },
+      {
+        "path": "/ZPOOL/data/projects/rf1-sra-linux2/qc/events/results/run_response_qc.tsv",
+        "frozen_sha256": "1776307264d20663e8b08d8890bc044fda6b483b4fc2be08fcce8f5ad9bbc148",
+        "current_sha256": "b31eebeba0ddd62738add8b04ae72c1f993a4412fa6f23958205400261a74929",
+        "change": "modified",
+        "imaging_event_file": false
+      }
+    ],
+    "reason": "SharedReward run 2 for sub-10668 added to global response QC after the approved source repair. Removing precisely this added line reproduces the frozen QC table byte for byte. All Trust QC rows and all pre-existing rows are unchanged."
+  }
+}
