@@ -1,0 +1,5 @@
+name	accepted	max_rhat	min_bulk_ess	min_tail_ess	divergences	max_depth_hits	min_bfmi	sampling_seconds
+Train_H7_zero_amount_v1	False	1.004	1273.92	2330.07	3	0	0.6652452097781477	5922.230282952078
+Train_H7_zero_bias_v1	False	1.00429	2703.75	5869.27	1	0	0.6579950994515886	5058.589251758531
+Train_HPreference_zero_amount_v1	False	1.00438	1418.14	3188.0	4	0	0.6692867362783781	5957.653221269138
+Train_HPreference_zero_bias_v1	True	1.00191	2078.07	4300.88	0	0	0.6673560412589319	4039.425767544657
