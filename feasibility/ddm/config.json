@@ -1,0 +1,31 @@
+{
+  "seed": 20261104,
+  "session": "01",
+  "rt_min_seconds": 0.2,
+  "rt_max_seconds": 3.0,
+  "rt_placeholder_values": [999.0, -999.0],
+  "pilot_participants": 24,
+  "datasets_per_scenario": 2,
+  "observed_pilot_participants": 8,
+  "stress_participants": 8,
+  "multistarts": 4,
+  "simulation_dt_seconds": 0.0005,
+  "individual_z_sd": {"small": 0.03, "moderate": 0.08, "large": 0.15},
+  "bounds": {
+    "a": [0.5, 3.0], "t0": [0.05, 0.8], "z": [0.1, 0.9],
+    "drift": [-4.0, 4.0], "offer_slope": [-4.0, 4.0]
+  },
+  "pilot_gates": {
+    "z_and_contrast_correlation_min": 0.8,
+    "z_and_contrast_rmse_max": 0.05,
+    "multistart_agreement_fraction_min": 0.95,
+    "optimization_success_fraction_min": 0.95,
+    "boundary_fraction_max": 0.05
+  },
+  "notes": [
+    "Operational pilot gates chosen before accessing new RT/choice data; not claimed preregistered.",
+    "Do not launch associations or read demographics, ratings, FEVS, or imaging.",
+    "No automatic progression to hierarchical sampling.",
+    "Confirm the 3-second response deadline against canonical sidecar/task documentation before interpretation."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "scope": "software and numerical verification only; no RF1 DDM fit or association analysis",
+  "unit_tests": {
+    "passed": 8,
+    "command": "bash scripts/run_ddm_feasibility.sh test"
+  },
+  "synthetic_end_to_end": {
+    "audit_exit": 0,
+    "pilot_exit": 0,
+    "report_exit": 0,
+    "synthetic_participants": 8,
+    "simulated_fits": 57,
+    "observed_fixture_fits": 4,
+    "synthetic_only": true
+  },
+  "source_sha256": {
+    "pilot.py": "36a0abbbab82766cbaf6d1e99c661a3d91efcd8fbd0575fff014a0d3ce8ecd03",
+    "audit.py": "6c21213629451059570496fe748a0def16161141c79c9c57d48f210dd40cb8d1",
+    "test_ddm.py": "5c64ae65a7a26b7537e75a82566824b7753afa8b7778423859d1bcd8790924c3",
+    "model.py": "dafa6b6ab7be4cad926618f14c0913b80d9695dadce52e2f875f220e426e7e85",
+    "report.py": "106630d0dc786f6f1e59cc778c2b972be88b34dd7aa67344d665cefccb188e75"
+  },
+  "python": "3.13.5",
+  "software": {
+    "numpy": "2.1.3",
+    "scipy": "1.15.3",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.0",
+    "numba": "0.61.0"
+  },
+  "stale_result_report_check": "passed"
+}

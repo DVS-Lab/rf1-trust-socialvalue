@@ -1,0 +1,13 @@
+{
+  "upstream_git_sha": "3ecbc8f4fb5554911b815bcb214561b9b9ca196c",
+  "metadata_only": true,
+  "config_sha256": "1da8f554e6c467f9ca4e58b2cc0e3089af81209e0d7b1520a97d78b756313fd2",
+  "audit_source_sha256": "6c21213629451059570496fe748a0def16161141c79c9c57d48f210dd40cb8d1",
+  "loader_source_sha256": "66c6ff96aacc9dcff1abcca0feb7af9985d36a0ca5a5e463c600153ba866d563",
+  "inputs": {
+    "qc/trust_analysis/run_eligibility.tsv": "4f838d4c13ad6562b0948a789addeb3b1509edbead0df92d02bbc176396a87b7",
+    "qc/trust_analysis/source_exclusions.tsv": "37e6c86c411b98412a59516794db3222db48cdca6a35406c790b386c4e520250",
+    "qc/trust_analysis/provenance.json": "c880c5e6d148bf54ac43eb59e7ad95ec42873aec8c1aa6a37ba7d9aa573e365f",
+    "qc/events/results/run_response_qc.tsv": "b31eebeba0ddd62738add8b04ae72c1f993a4412fa6f23958205400261a74929"
+  }
+}

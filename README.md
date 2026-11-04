@@ -1,5 +1,13 @@
 # Trust, learning, and social value
 
+> **DDM feasibility:** this repository is also the record for the separate
+> [Linux2 starting-point-bias feasibility workflow](feasibility/ddm/README.md).
+> Begin with its canonical data audit, then the bounded recovery pilot. The
+> [current report](results/ddm_feasibility/ddm_feasibility_report.md) distinguishes
+> published QC counts from checks that still require Linux2. No DDM associations
+> or automatic hierarchical sampling are included; existing modeling outputs
+> remain unchanged.
+
 > **N=111 closeout complete:** read the [final synthesis and five figure sets](results/n111_wrapup/README.md). The generic zero-option term is retained as a candidate with residual misfit; realistic recovery shows criterion-dependent mechanism confusion. All 7,992 simulated participant cases completed. No further hierarchical confirmation is warranted in this scoped phase; no additional participants were accessed.
 
 > **Historical accepted-fit review: [report and six figure sets](results/review/README.md) (25 September 2026).** The diagnostic audit is complete. This scoped report uses the 32 of 34 Linux posterior runs that pass all checks; H4 full-age inference and H5 training-age scoring remain excluded because each has one divergence. Full second-pass finalization is still incomplete. No further sampling is needed to read or rebuild this report. See the [current status](results/second_pass_checkpoint.md). The report/gallery below are historical first-pass outputs.

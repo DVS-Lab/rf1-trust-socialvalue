@@ -1,0 +1,32 @@
+{
+  "evidence": "published upstream QC snapshot; current BIDS files not yet verified",
+  "participants_with_certified_runs": 343,
+  "certified_runs": 647,
+  "participants_by_run_count": {
+    "1": 39,
+    "2": 304
+  },
+  "decision_opportunities": 27143,
+  "misses": 583,
+  "miss_fraction": 0.02147883432192462,
+  "recorded_responses_before_rt_filter": 26560,
+  "responses_per_participant": {
+    "count": 343.0,
+    "mean": 77.43440233236151,
+    "std": 13.813532018282336,
+    "min": 9.0,
+    "25%": 81.0,
+    "50%": 83.0,
+    "75%": 84.0,
+    "max": 84.0
+  },
+  "run_lengths": {
+    "11": 1,
+    "42": 646
+  },
+  "ddm_eligible_participants": null,
+  "choice_variability_exclusions": null,
+  "sub_200ms_fraction": null,
+  "partner_choice_counts": null,
+  "observed_rt_summary": null
+}
