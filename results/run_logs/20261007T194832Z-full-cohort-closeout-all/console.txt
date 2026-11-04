@@ -1,0 +1,69 @@
+........................................................................ [ 23%]
+........................................................................ [ 47%]
+........................................................................ [ 71%]
+........................................................................ [ 95%]
+.............                                                            [100%]
+=============================== warnings summary ===============================
+tests/test_full_sample.py::test_milestone_integration_synthetic
+tests/test_full_sample.py::test_milestone_integration_synthetic
+  /ZPOOL/data/projects/rf1-trust-socialvalue/.venv-linux2/lib/python3.12/site-packages/matplotlib/cbook.py:1811: FutureWarning: Calling float on a single element Series is deprecated and will raise a TypeError in the future. Use float(ser.iloc[0]) instead
+    return math.isfinite(val)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:291: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['complete_run_sensitivity']=m.include_primary & m.participant_id.map(a.complete_run_sensitivity).fillna(False).astype(bool)
+
+tests/test_full_sample.py::test_source_excluded_cannot_enter_primary
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/full_sample.py:292: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    m['include_sensitivity']=m.include_primary&m.participant_id.map(a.include_sensitivity).fillna(False).astype(bool)
+
+tests/test_n111_closeout.py: 150 warnings
+tests/test_n111_diagnostics.py: 50 warnings
+tests/test_n111_zero.py: 850 warnings
+tests/test_second_pass.py: 50 warnings
+  /ZPOOL/data/projects/rf1-trust-socialvalue/src/rf1_trust_socialvalue/models.py:49: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    frame.chose_high.fillna(-1).astype(float),frame.feedback_observed.astype(float),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+301 passed, 1104 warnings in 34.19s
+Historical analysis snapshot verified for existing-posterior export only.
+Train_H7_zero_bias_v1: reviewing historical chains; no new sampling yet.
+15:49:48 - cmdstanpy - WARNING - Some chains may have failed to converge.
+	Chain 5 had 1 divergent transitions (0.0%)
+	Use the "diagnose()" method on the CmdStanMCMC object to see further information.
+Train_H7_zero_amount_v1: reviewing historical chains; no new sampling yet.
+15:53:55 - cmdstanpy - WARNING - Some chains may have failed to converge.
+	Chain 2 had 2 divergent transitions (0.1%)
+	Chain 6 had 1 divergent transitions (0.0%)
+	Use the "diagnose()" method on the CmdStanMCMC object to see further information.
+Train_HPreference_zero_amount_v1: reviewing historical chains; no new sampling yet.
+15:58:19 - cmdstanpy - WARNING - Some chains may have failed to converge.
+	Chain 3 had 2 divergent transitions (0.1%)
+	Chain 4 had 1 divergent transitions (0.0%)
+	Chain 5 had 1 divergent transitions (0.0%)
+	Use the "diagnose()" method on the CmdStanMCMC object to see further information.
+Train_HPreference_zero_bias_v1: reviewing historical chains; no new sampling yet.
+16:05:57 - cmdstanpy - INFO - compiling stan file /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/closeout/build/closeout_fast.stan to exe file /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/closeout/build/closeout_fast
+16:06:28 - cmdstanpy - INFO - compiled model executable: /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/closeout/build/closeout_fast
+16:06:28 - cmdstanpy - INFO - compiling stan file /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/closeout/build/closeout_reference.stan to exe file /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/closeout/build/closeout_reference
+16:06:56 - cmdstanpy - INFO - compiled model executable: /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/closeout/build/closeout_reference
+Age fast/reference, Python likelihood and full no-age target nesting passed; joint prior screen saved.
+analysis: 8 fits; 8 concurrent x 8 chains = 64 active cores.
+Train_HPreference_zero_bias_age_closeout1: exit 0
+Train_H7_zero_bias_v1_retry1: exit 0
+Train_HPreference_zero_amount_v1_retry1: exit 2
+Train_H7_zero_amount_v1_retry1: exit 2
+Full_HPreference_zero_bias_noage_closeout1: exit 0
+Sensitivity_HPreference_zero_bias_age_closeout1: exit 0
+Full_HPreference_zero_bias_age_closeout1: exit 0
+Full_HPreference_zero_bias_age_wideprior_closeout1: exit 0
+recovery: 8 fits; 8 concurrent x 8 chains = 64 active cores.
+Recovery_null_1_closeout1: exit 0
+Recovery_null_4_closeout1: exit 2
+Recovery_null_3_closeout1: exit 2
+Recovery_effect_1_closeout1: exit 2
+Recovery_effect_4_closeout1: exit 2
+Recovery_effect_2_closeout1: exit 0
+Recovery_effect_3_closeout1: exit 2
+Recovery_null_2_closeout1: exit 2
+Closeout exit=2. Commit results/full_sample/hierarchical/closeout and results/run_logs.

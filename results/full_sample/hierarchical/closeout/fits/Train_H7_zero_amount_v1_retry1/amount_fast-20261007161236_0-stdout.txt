@@ -1,0 +1,109 @@
+method = sample (Default)
+  sample
+    num_samples = 4000
+    num_warmup = 6000
+    save_warmup = false (Default)
+    thin = 1 (Default)
+    adapt
+      engaged = true (Default)
+      gamma = 0.05 (Default)
+      delta = 0.9995
+      kappa = 0.75 (Default)
+      t0 = 10 (Default)
+      init_buffer = 75 (Default)
+      term_buffer = 50 (Default)
+      window = 25 (Default)
+      save_metric = false (Default)
+    algorithm = hmc (Default)
+      hmc
+        engine = nuts (Default)
+          nuts
+            max_depth = 16
+        metric = diag_e (Default)
+        metric_file =  (Default)
+        stepsize = 1 (Default)
+        stepsize_jitter = 0 (Default)
+    num_chains = 1 (Default)
+id = 1 (Default)
+data
+  file = /tmp/tmp8o15gnbz/v5n0blv7.json
+init = 0.15
+random
+  seed = 183313633
+output
+  file = /ZPOOL/data/projects/rf1-trust-socialvalue/work/full_sample/hierarchical/closeout/fits/Train_H7_zero_amount_v1_retry1/amount_fast-20261007161236_1.csv
+  diagnostic_file =  (Default)
+  refresh = 200
+  sig_figs = 10
+  profile_file = profile.csv (Default)
+  save_cmdstan_config = false (Default)
+num_threads = 1 (Default)
+
+
+Gradient evaluation took 0.001583 seconds
+1000 transitions using 10 leapfrog steps per transition would take 15.83 seconds.
+Adjust your expectations accordingly!
+
+
+Iteration:    1 / 10000 [  0%]  (Warmup)
+Informational Message: The current Metropolis proposal is about to be rejected because of the following issue:
+Exception: lkj_corr_cholesky_lpdf: Random variable[2] is 0, but must be positive! (in 'amount_fast.stan', line 96, column 2 to column 27)
+If this warning occurs sporadically, such as for highly constrained variable types like covariance matrices, then the sampler is fine,
+but if this warning occurs often then your model may be either severely ill-conditioned or misspecified.
+
+Iteration:  200 / 10000 [  2%]  (Warmup)
+Iteration:  400 / 10000 [  4%]  (Warmup)
+Iteration:  600 / 10000 [  6%]  (Warmup)
+Iteration:  800 / 10000 [  8%]  (Warmup)
+Iteration: 1000 / 10000 [ 10%]  (Warmup)
+Iteration: 1200 / 10000 [ 12%]  (Warmup)
+Iteration: 1400 / 10000 [ 14%]  (Warmup)
+Iteration: 1600 / 10000 [ 16%]  (Warmup)
+Iteration: 1800 / 10000 [ 18%]  (Warmup)
+Iteration: 2000 / 10000 [ 20%]  (Warmup)
+Iteration: 2200 / 10000 [ 22%]  (Warmup)
+Iteration: 2400 / 10000 [ 24%]  (Warmup)
+Iteration: 2600 / 10000 [ 26%]  (Warmup)
+Iteration: 2800 / 10000 [ 28%]  (Warmup)
+Iteration: 3000 / 10000 [ 30%]  (Warmup)
+Iteration: 3200 / 10000 [ 32%]  (Warmup)
+Iteration: 3400 / 10000 [ 34%]  (Warmup)
+Iteration: 3600 / 10000 [ 36%]  (Warmup)
+Iteration: 3800 / 10000 [ 38%]  (Warmup)
+Iteration: 4000 / 10000 [ 40%]  (Warmup)
+Iteration: 4200 / 10000 [ 42%]  (Warmup)
+Iteration: 4400 / 10000 [ 44%]  (Warmup)
+Iteration: 4600 / 10000 [ 46%]  (Warmup)
+Iteration: 4800 / 10000 [ 48%]  (Warmup)
+Iteration: 5000 / 10000 [ 50%]  (Warmup)
+Iteration: 5200 / 10000 [ 52%]  (Warmup)
+Iteration: 5400 / 10000 [ 54%]  (Warmup)
+Iteration: 5600 / 10000 [ 56%]  (Warmup)
+Iteration: 5800 / 10000 [ 58%]  (Warmup)
+Iteration: 6000 / 10000 [ 60%]  (Warmup)
+Iteration: 6001 / 10000 [ 60%]  (Sampling)
+Iteration: 6200 / 10000 [ 62%]  (Sampling)
+Iteration: 6400 / 10000 [ 64%]  (Sampling)
+Iteration: 6600 / 10000 [ 66%]  (Sampling)
+Iteration: 6800 / 10000 [ 68%]  (Sampling)
+Iteration: 7000 / 10000 [ 70%]  (Sampling)
+Iteration: 7200 / 10000 [ 72%]  (Sampling)
+Iteration: 7400 / 10000 [ 74%]  (Sampling)
+Iteration: 7600 / 10000 [ 76%]  (Sampling)
+Iteration: 7800 / 10000 [ 78%]  (Sampling)
+Iteration: 8000 / 10000 [ 80%]  (Sampling)
+Iteration: 8200 / 10000 [ 82%]  (Sampling)
+Iteration: 8400 / 10000 [ 84%]  (Sampling)
+Iteration: 8600 / 10000 [ 86%]  (Sampling)
+Iteration: 8800 / 10000 [ 88%]  (Sampling)
+Iteration: 9000 / 10000 [ 90%]  (Sampling)
+Iteration: 9200 / 10000 [ 92%]  (Sampling)
+Iteration: 9400 / 10000 [ 94%]  (Sampling)
+Iteration: 9600 / 10000 [ 96%]  (Sampling)
+Iteration: 9800 / 10000 [ 98%]  (Sampling)
+Iteration: 10000 / 10000 [100%]  (Sampling)
+
+ Elapsed Time: 6233.2 seconds (Warm-up)
+               4054.09 seconds (Sampling)
+               10287.3 seconds (Total)
+

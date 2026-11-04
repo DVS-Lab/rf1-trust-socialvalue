@@ -1,0 +1,4 @@
+name	participants	choices	log_loss	brier
+Train_H7_zero_bias_v1_retry1	304	12494	0.48097901137240073	0.15745651754163867
+Train_HPreference_zero_bias_age_closeout1	304	12494	0.48139890635080845	0.1576653613537541
+Train_HPreference_zero_bias_v1	304	12494	0.48096807465291197	0.15748583558695695

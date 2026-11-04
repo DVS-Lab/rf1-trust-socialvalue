@@ -1,0 +1,17 @@
+{
+  "status": "incomplete",
+  "started_at": "2026-10-07T20:06:59.817892+00:00",
+  "runs": {
+    "Train_HPreference_zero_bias_age_closeout1": 0,
+    "Train_H7_zero_bias_v1_retry1": 0,
+    "Train_HPreference_zero_amount_v1_retry1": 2,
+    "Train_H7_zero_amount_v1_retry1": 2,
+    "Full_HPreference_zero_bias_noage_closeout1": 0,
+    "Sensitivity_HPreference_zero_bias_age_closeout1": 0,
+    "Full_HPreference_zero_bias_age_closeout1": 0,
+    "Full_HPreference_zero_bias_age_wideprior_closeout1": 0
+  },
+  "workers": 8,
+  "active_chains": 64,
+  "finished_at": "2026-10-08T03:57:42.525376+00:00"
+}

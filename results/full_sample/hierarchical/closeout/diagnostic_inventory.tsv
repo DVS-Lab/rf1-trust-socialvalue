@@ -1,0 +1,17 @@
+name	status	divergences	max_rhat	min_bulk_ess	min_tail_ess	min_bfmi	max_depth_hits
+Train_H7_zero_bias_v1_retry1	complete	0	1.00233	2677.85	5703.76	0.6737732317502374	0
+Train_H7_zero_amount_v1_retry1	diagnostic_failed	1	1.00329	1547.74	2534.56	0.6961055322686148	0
+Train_HPreference_zero_amount_v1_retry1	diagnostic_failed	2	1.0046	1330.13	3030.36	0.6799338920825423	0
+Train_HPreference_zero_bias_age_closeout1	complete	0	1.00352	2599.12	5471.33	0.6594181153340534	0
+Full_HPreference_zero_bias_noage_closeout1	complete	0	1.0024	3027.35	4311.33	0.6404892793401334	0
+Full_HPreference_zero_bias_age_closeout1	complete	0	1.00219	2746.89	5115.63	0.6546526006323772	0
+Sensitivity_HPreference_zero_bias_age_closeout1	complete	0	1.00142	3499.36	5404.75	0.6387990790198738	0
+Full_HPreference_zero_bias_age_wideprior_closeout1	complete	0	1.00382	3708.27	5358.8	0.6484461868734687	0
+Recovery_null_1_closeout1	complete	0	1.0029	2062.9	4323.57	0.6730405582815314	0
+Recovery_null_2_closeout1	diagnostic_failed	3	1.00208	3626.73	2735.0	0.6896876221988444	0
+Recovery_null_3_closeout1	diagnostic_failed	1	1.00514	1966.18	4316.64	0.6940093548154325	0
+Recovery_null_4_closeout1	diagnostic_failed	3	1.002	3511.33	6209.62	0.6805947970719365	0
+Recovery_effect_1_closeout1	diagnostic_failed	2	1.00737	1553.7	3312.5	0.6675345219403623	0
+Recovery_effect_2_closeout1	complete	0	1.0064	1564.78	3154.35	0.6824724162098196	0
+Recovery_effect_3_closeout1	diagnostic_failed	5	1.00399	2052.26	4211.52	0.6748968699513604	0
+Recovery_effect_4_closeout1	diagnostic_failed	8	1.00287	1875.0	3265.28	0.7098786228780897	0

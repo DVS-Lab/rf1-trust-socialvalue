@@ -1,0 +1,15 @@
+# Full-cohort closeout: results awaiting scientific review
+
+8 of 16 scoped fits are accepted/completed. See diagnostic_inventory.tsv; failed fits do not contribute scientific summaries. Three amount-stage retries, five age/control/sensitivity fits, and eight simulated-data fits were planned. Missing comparisons remain unanswered.
+
+Age is included jointly in all six population parameter locations: learning rate (logit), inverse temperature (log), friend and stranger preferences, zero-option coefficient, and general choice bias. Age is (years - 50)/20, with independent Normal(0, 0.5) slope priors. The wider-prior fit uses SD 1. Population random effects and likelihood otherwise retain the accepted model. Sensitivity excludes the five participants flagged by the frozen N=338 rule.
+
+Age variance fraction is beta^2 Var(age_z)/(beta^2 Var(age_z)+tau^2), calculated separately per latent parameter in each posterior draw. It is a model-based, cross-sectional variance decomposition, not a fraction of observed choice variance explained or a causal aging effect. Curves transform the population location at zero random effect; they are not population-marginal means. No-age/full-age latent tau comparisons alone are not a valid variance decomposition.
+
+Run-2 comparisons use the same 304 people and 12,494 choices. Negative left-minus-right log loss favors the left model; intervals bootstrap whole people 2,000 times, conditioning on fitted predictions. This is exploratory reuse of run 2 after previous residual inspection, not untouched validation or prediction for new participants. Full fits use all 343 participants. The preferred bias model anchors the age analysis; a supported amount extension would require an additional age robustness fit before attributing effects to specific parameters.
+
+Predictive checks generate choices and feedback histories on the actual offers and schedules, preserving observed missingness. Age predictive checks distinguish conditional expected behavior from generated choices. Joint prior checks draw all parameters and include the wider age prior; inspect extreme rates rather than interpreting a finite simulation as scientific prior approval.
+
+Recovery uses four zero-age and four known signed age-effect datasets (0.3 latent units per 20 years), with fresh participant effects and population locations/scales anchored to the accepted full-age fit. This is a targeted identification screen, not simulation-based calibration or a precise false-positive/coverage estimate. Inspect each parameter's slope bias, interval coverage and participant rank recovery; do not promote weakly recovered parameters to mechanistic claims. Any divergence or poor mixing remains a failure. No automatic further retries.
+
+Finish criteria: assess amount-versus-bias contrasts; inspect exact-offer and age posterior predictive checks; compare primary age slopes against the N=338 and wider-prior fits; review recovery before interpreting parameters. A passed sampler is necessary but does not establish adequate model fit. Persistent misspecification should limit conclusions rather than trigger an open-ended model search.

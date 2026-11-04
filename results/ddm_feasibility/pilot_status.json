@@ -1,0 +1,39 @@
+{
+  "status": "pilot_complete_requires_scientific_review",
+  "core_screen_passed": false,
+  "elapsed_seconds": 1201.0219015730545,
+  "participants": 24,
+  "simulated_fits": 360,
+  "inputs": {
+    "canonical_trials_sha256": "86b6ea70a05aee9715b6493b390647eb0494c6e86d6ab3ccb4478646c2cda272",
+    "participant_eligibility_sha256": "4475b190b5a304cdc4253dc3f2baaaa7151806ea31d53181faeb08d7b22876b5",
+    "config_sha256": "1da8f554e6c467f9ca4e58b2cc0e3089af81209e0d7b1520a97d78b756313fd2"
+  },
+  "source_sha256": {
+    "audit.py": "6c21213629451059570496fe748a0def16161141c79c9c57d48f210dd40cb8d1",
+    "report.py": "106630d0dc786f6f1e59cc778c2b972be88b34dd7aa67344d665cefccb188e75",
+    "test_ddm.py": "5c64ae65a7a26b7537e75a82566824b7753afa8b7778423859d1bcd8790924c3",
+    "pilot.py": "36a0abbbab82766cbaf6d1e99c661a3d91efcd8fbd0575fff014a0d3ce8ecd03",
+    "model.py": "dafa6b6ab7be4cad926618f14c0913b80d9695dadce52e2f875f220e426e7e85"
+  },
+  "software": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pandas": "2.3.3",
+    "matplotlib": "3.11.2",
+    "numba": "0.67.0"
+  },
+  "python": "3.12.14",
+  "hierarchical_fit": false,
+  "posterior_predictive_checks": false,
+  "plug_in_predictive_checks": true,
+  "association_analysis": false,
+  "limitations": [
+    "No posterior uncertainty, interval coverage, hierarchical recovery, or group-effect inference.",
+    "Fixed empirical missingness mask assumes noninformative omissions; censoring/lapse mechanisms require review.",
+    "Monte Carlo pilot is too small to certify false-positive rates or approve association analyses.",
+    "Shared-z fits to partner-varying truths are deliberate misspecification checks.",
+    "Recovery-error correlations are not posterior parameter correlations.",
+    "Learning stress uses fixed alpha and drift gain; no joint RL-DDM is fitted."
+  ]
+}

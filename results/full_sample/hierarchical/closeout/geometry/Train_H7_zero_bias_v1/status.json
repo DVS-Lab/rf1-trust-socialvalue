@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "divergences": 1,
+  "note": "Saved iteration states, not internal leapfrog failure locations. Extreme ranks are descriptive, not causal.",
+  "output_sha256": {
+    "parameter_context.tsv": "06e2dd6848517ca915a6cd4b802800f81dadc6b0e3d68f74a98e1abf86ccda11",
+    "iteration_neighborhood.tsv": "ea0aee6d4d5f255c25e42f0803374da5b37adf2931e2b9261b5db58107adbf25"
+  }
+}

@@ -2,12 +2,12 @@
 
 ## Decision
 
-**Scientific GREEN/YELLOW/RED verdict pending. Do not proceed to the amended individual-difference tests.**
-This is an infrastructure/data-readiness report, not an empirical DDM feasibility finding. Only published canonical QC metadata have been examined locally. The user will run the canonical audit and bounded recovery pilot on Linux2. No current RT distribution, choice-variability exclusion count, individual-z reliability, group DDM effect, or partner-specific recovery has been established.
+**RED — Do not pursue the amended DDM individual-difference tests under the tested simple specification.**
+The declared moderate-variation pilot gates failed for individual z and/or the friend-minus-stranger contrast, numerical stability, or boundary hits. Retain the original behavioral and imaging hypotheses. Group-level or hierarchical DDM questions require a separately justified recovery study; this screen does not demonstrate that all possible DDMs fail. Inspect the reasons below before deciding whether any reduced question merits expansion.
 
 ## Data readiness
 
-Evidence: published upstream QC snapshot; current BIDS files not yet verified. Upstream revision `3ecbc8f4fb5554911b815bcb214561b9b9ca196c`. These are session-01 behavioral counts; imaging QC, demographics and external outcomes do not define this audit sample.
+Evidence: canonical BIDS events verified against upstream certification. Upstream revision `0c4cafba1d172f685e7c4ac13628114515922ea4`. These are session-01 behavioral counts; imaging QC, demographics and external outcomes do not define this audit sample.
 
 | Quantity | Count |
 |---|---:|
@@ -22,7 +22,17 @@ Evidence: published upstream QC snapshot; current BIDS files not yet verified. U
 
 Run lengths in this QC snapshot: 1 with 11 decisions, 646 with 42 decisions. The documented complete design has 14 trials per partner per run: at most 28 per partner across two complete runs, before misses, RT filtering and variability exclusions. The expanded cohort increases the number of people, not the observations available for each person's partner-specific parameters. Recorded responses per participant have median 83, range 9–84 in this snapshot. These nominal partner counts are design facts, not a direct audit of every person's partner cells.
 
-**Still unavailable:** valid RT counts per partner/run, RT distributions by offer and choice, sub-200-ms rates, friend/stranger choice-variability exclusions, high/low frequencies and live schema verification. The local participant inventory records QC-available trials and marks DDM eligibility unassessed; it is not a final eligibility table.
+Direct canonical audit: **258 eligible participants**, 26536 RT-valid decisions across the full audited cohort (including participants later excluded). The supplied choice-variability rule excludes 85 participants; 85 have a constant friend/stranger choice after RT filtering (overlapping counts, not additive). Under-200-ms responses: 0 (0.00% of recorded choices); RT placeholders: 0; beyond the configured deadline: 24.
+
+![Choice and RT distributions](choice_rt_distributions.png)
+
+![RT by exact offer pair, choice and partner](rt_by_offer_choice_partner.png)
+
+Partner choice counts (before participant exclusions):
+
+- computer: 3978 high, 4870 low.
+- friend: 7004 high, 1860 low.
+- stranger: 4801 high, 4023 low.
 
 ## Estimand and candidate specifications
 
@@ -42,7 +52,32 @@ The Linux2 pilot selects at most 24 eligible participants stratified across avai
 
 The declared operational screen requires, in both moderate-SD replicates, r ≥ .80 and RMSE ≤ .05 for friend z, stranger z and their difference, ≤5% bound hits, and ≥95% full multistart agreement. These are prospective engineering/scientific review criteria, not OSF-registered thresholds. Small-SD failures, stress sensitivity, extreme simulated responders and minority-choice scarcity must still constrain any favorable moderate-SD result. The central target is individual reliability, not optimizer convergence or a significant population coefficient.
 
-**No actual-schedule recovery or observed DDM fit has been run in this handoff.** Numerical tests of the likelihood/simulator are software checks and do not establish RF1 parameter recovery.
+| z SD scenario | Target | Replicate | r | RMSE | Bound fraction |
+|---|---|---:|---:|---:|---:|
+| large | z_friend | 1 | 0.84 | 0.099 | 0.08 |
+| large | z_stranger | 1 | 0.81 | 0.094 | 0.08 |
+| large | z_difference | 1 | 0.90 | 0.103 | 0.08 |
+| large | z_friend | 2 | 0.84 | 0.075 | 0.08 |
+| large | z_stranger | 2 | 0.76 | 0.118 | 0.08 |
+| large | z_difference | 2 | 0.86 | 0.124 | 0.08 |
+| moderate | z_friend | 1 | 0.18 | 0.124 | 0.04 |
+| moderate | z_stranger | 1 | 0.42 | 0.097 | 0.04 |
+| moderate | z_difference | 1 | 0.72 | 0.087 | 0.04 |
+| moderate | z_friend | 2 | 0.83 | 0.081 | 0.04 |
+| moderate | z_stranger | 2 | 0.74 | 0.099 | 0.04 |
+| moderate | z_difference | 2 | 0.77 | 0.120 | 0.04 |
+| small | z_friend | 1 | 0.51 | 0.078 | 0.04 |
+| small | z_stranger | 1 | 0.49 | 0.068 | 0.04 |
+| small | z_difference | 1 | 0.60 | 0.120 | 0.04 |
+| small | z_friend | 2 | 0.34 | 0.112 | 0.00 |
+| small | z_stranger | 2 | 0.46 | 0.096 | 0.00 |
+| small | z_difference | 2 | 0.56 | 0.101 | 0.00 |
+
+![Individual and contrast recovery](parameter_recovery.png)
+
+![Recovery confounding](recovery_confounding.png)
+
+![Plug-in predictive checks](pilot_predictive_checks.png)
 
 Plug-in predictive intervals omit parameter uncertainty; they are explicitly **not posterior predictive checks**. The pilot has no posterior interval coverage, MCMC convergence diagnostics, hierarchical comparison, or validated group-effect estimates. A fixed empirical missingness mask assumes omissions are noninformative; deadline/lapse mechanisms can violate that assumption. Recovery is reported before and with flags for simulated choice-rule exclusions, which must be examined for selection bias. Recovery-error correlations describe confounding across simulated fits, not posterior parameter dependence.
 

@@ -1,0 +1,17 @@
+{
+  "status": "incomplete",
+  "started_at": "2026-10-08T03:57:42.536349+00:00",
+  "runs": {
+    "Recovery_null_1_closeout1": 0,
+    "Recovery_null_4_closeout1": 2,
+    "Recovery_null_3_closeout1": 2,
+    "Recovery_effect_1_closeout1": 2,
+    "Recovery_effect_4_closeout1": 2,
+    "Recovery_effect_2_closeout1": 0,
+    "Recovery_effect_3_closeout1": 2,
+    "Recovery_null_2_closeout1": 2
+  },
+  "workers": 8,
+  "active_chains": 64,
+  "finished_at": "2026-10-08T10:24:43.068769+00:00"
+}
