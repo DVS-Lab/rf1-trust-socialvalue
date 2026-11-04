@@ -8,6 +8,12 @@
 > or automatic hierarchical sampling are included; existing modeling outputs
 > remain unchanged.
 
+> **Full-cohort hierarchical DDM:** the [new Linux2 workflow](feasibility/ddm/HIERARCHICAL.md)
+> retains the full behavioral roster and constant responders, applies reviewed
+> run decisions, and reports a separate Trust imaging-QC intersection. It adds
+> joint posterior estimation, full-cohort recovery and posterior predictive
+> checks. The earlier independent-fit pilot remains preserved.
+
 > **N=111 closeout complete:** read the [final synthesis and five figure sets](results/n111_wrapup/README.md). The generic zero-option term is retained as a candidate with residual misfit; realistic recovery shows criterion-dependent mechanism confusion. All 7,992 simulated participant cases completed. No further hierarchical confirmation is warranted in this scoped phase; no additional participants were accessed.
 
 > **Historical accepted-fit review: [report and six figure sets](results/review/README.md) (25 September 2026).** The diagnostic audit is complete. This scoped report uses the 32 of 34 Linux posterior runs that pass all checks; H4 full-age inference and H5 training-age scoring remain excluded because each has one divergence. Full second-pass finalization is still incomplete. No further sampling is needed to read or rebuild this report. See the [current status](results/second_pass_checkpoint.md). The report/gallery below are historical first-pass outputs.

@@ -1,0 +1,43 @@
+{
+  "seed": 20261105,
+  "session": "01",
+  "cmdstan_version": "2.40.0",
+  "cue_seconds": 0.5,
+  "response_window_seconds_from_cue": 3.0,
+  "raw_rt_min_seconds": 0.2,
+  "contaminant_probability": 0.01,
+  "fit_cohort": "all_certified_behavioral_participants",
+  "choice_variability_exclusion": false,
+  "imaging_run_manifest": null,
+  "models": ["shared", "partner", "partner_history", "partner_wide_prior"],
+  "chains": 4,
+  "parallel_chains": 4,
+  "threads_per_chain": 4,
+  "warmup": 3000,
+  "draws": 3000,
+  "adapt_delta": 0.99,
+  "max_treedepth": 14,
+  "grainsize": 1,
+  "ppc_draws": 200,
+  "simulation_dt_seconds": 0.0005,
+  "recovery_datasets_per_regime": 4,
+  "recovery_null_datasets": 2,
+  "recovery_misspecification_stress": true,
+  "recovery_z_logit_sd": {"small": 0.15, "moderate": 0.4, "large": 0.8},
+  "diagnostics": {
+    "rhat_max": 1.01,
+    "ess_bulk_min": 400,
+    "ess_tail_min": 400,
+    "bfmi_min": 0.3,
+    "divergences_max": 0,
+    "treedepth_hits_max": 0
+  },
+  "notes": [
+    "Full cohort and full task schedules for observed fitting and every recovery dataset; no participant subsampling.",
+    "Constant responders and valid single-run participants are retained. Preregistered eligibility is an annotation.",
+    "The released task presents the partner cue for 0.5 s before showing offers; RT is logged from cue onset.",
+    "Verify timing against the Linux2 task script during prepare; no raw task logs are read.",
+    "Positive boundary separation and unit-interval z have intrinsic support, without the pilot's numerical ceilings.",
+    "No external outcome associations, neuroimaging analysis, automatic retries, or automatic Git publication."
+  ]
+}
