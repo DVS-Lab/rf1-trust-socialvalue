@@ -1,0 +1,52 @@
+{
+  "participants": 343,
+  "certified_runs": 647,
+  "scientifically_retained_runs": 646,
+  "presented_decisions": 27143,
+  "recorded_choices": 26560,
+  "valid_model_decisions": 26494,
+  "misses": 583,
+  "preregistered_rule_pass": 258,
+  "choice_rule_excluded": 85,
+  "participants_without_retained_RT": 0,
+  "decision_rt_under_200ms": 99,
+  "decision_rt_under_200ms_policy": "Retained with the prespecified contaminant mixture; not a participant exclusion.",
+  "beyond_nominal_window": 24,
+  "settled_run_holds_applied": 1,
+  "excluded_choice_directions": {
+    "friend_always_high": 68,
+    "friend_always_low": 1,
+    "stranger_always_high": 23,
+    "stranger_always_low": 6,
+    "computer_always_high": 18,
+    "computer_always_low": 17
+  },
+  "timing": {
+    "sha256": "39a6ae4508d501e5bea4f63fab444ac96c4312d5d42856e1dbeb982be7348bb9",
+    "cue_seconds": 0.5,
+    "response_window_seconds_from_cue": 3.0,
+    "identical_to_released_reference": false,
+    "interpretation": "Current script verified; historical per-run executable versions are not independently certified."
+  },
+  "imaging": {
+    "scientific_imaging_eligibility": "derived_Trust_run_QC_intersection_preserving_upstream_decisions",
+    "imaging_members": 320,
+    "qc_table_sha256": "e2adf0c556dc5d32f2622cb1a06c7f9adce5f11e84bec3080001eb3035c8dab5",
+    "qc_matched_runs": 651,
+    "qc_matched_participants": 343,
+    "qc_interpretation": "Recorded imaging QC flags are annotations, not newly adjudicated exclusions. Readiness is not scientific eligibility.",
+    "passing_runs": 597,
+    "threshold_sha256": "a2c9625c5c962b7cc5a856d8552eb85ebbea639d01d4f0ae4f5078783dc131f0",
+    "policy_sha256": "f34d4f73fb97f6408aa4125fac08889fe47bf1c45ef0adb9ad2c236f733e71af",
+    "thresholds": {
+      "fd_mean": 0.42841615249735165,
+      "tsnr": 0.33758755706367083
+    },
+    "minimum_coverage_percent": 95.0,
+    "high_fd_runs": 48,
+    "low_tsnr_runs": 0,
+    "low_coverage_runs": 2,
+    "missing_qc_runs": 0,
+    "interpretation": "Separate imaging sensitivity: passing Trust runs only, retain good single runs, no age restriction, no TEDANA-count exclusion. This is not certification of completed imaging contrasts."
+  }
+}

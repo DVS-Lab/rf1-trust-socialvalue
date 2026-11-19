@@ -8,11 +8,7 @@
 > or automatic hierarchical sampling are included; existing modeling outputs
 > remain unchanged.
 
-> **Full-cohort hierarchical DDM:** the [new Linux2 workflow](feasibility/ddm/HIERARCHICAL.md)
-> retains the full behavioral roster and constant responders, applies reviewed
-> run decisions, and reports a separate Trust imaging-QC intersection. It adds
-> joint posterior estimation, full-cohort recovery and posterior predictive
-> checks. The earlier independent-fit pilot remains preserved.
+> **Full-cohort hierarchical DDM.** The Linux2 analysis retained 343 participants, including 85 constant responders. None of the five observed-data fits produced an accepted posterior. Recovery of individual friend–stranger starting-point differences remains untested in the hierarchy. [November 18 assessment](results/ddm_hierarchical/README.md)
 
 > **N=111 closeout complete:** read the [final synthesis and five figure sets](results/n111_wrapup/README.md). The generic zero-option term is retained as a candidate with residual misfit; realistic recovery shows criterion-dependent mechanism confusion. All 7,992 simulated participant cases completed. No further hierarchical confirmation is warranted in this scoped phase; no additional participants were accessed.
 

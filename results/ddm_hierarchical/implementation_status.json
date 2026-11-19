@@ -1,23 +1,23 @@
 {
   "status": "passed",
   "cmdstan_version": "2.40.0",
-  "density_max_absolute_log_error": 4.8681499720260035e-08,
+  "density_max_absolute_log_error": 4.8681500608438455e-08,
   "cdf_max_absolute_error": 1.286662582034026e-08,
   "likelihood_gradient_states": [
     {
       "model": "shared",
       "state": 0,
-      "loglik_absolute_error": 2.9232865017547738e-09
+      "loglik_absolute_error": 2.9234001885924954e-09
     },
     {
       "model": "shared",
       "state": 1,
-      "loglik_absolute_error": 1.9349499780219048e-10
+      "loglik_absolute_error": 1.935518412210513e-10
     },
     {
       "model": "shared",
       "state": 2,
-      "loglik_absolute_error": 3.524291969370097e-12
+      "loglik_absolute_error": 3.410605131648481e-12
     },
     {
       "model": "partner",

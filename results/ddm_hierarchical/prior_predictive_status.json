@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "datasets": 100,
+  "numerical_domain_rejected_populations": 2,
+  "full_cohort": true,
+  "note": "Joint prior draws conditioned on the documented, generous numerical CDF evaluation domain."
+}

@@ -1,6 +1,6 @@
 {
-  "stage": "check",
-  "exit_code": 0,
-  "run_id": "20261104T195513Z-check-29039",
-  "private_log": "work/ddm_hierarchical/logs/20261104T195513Z-check-29039.log"
+  "stage": "all",
+  "exit_code": 2,
+  "run_id": "20261104T202019Z-all-3040747",
+  "private_log": "work/ddm_hierarchical/logs/20261104T202019Z-all-3040747.log"
 }

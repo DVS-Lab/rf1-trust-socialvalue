@@ -1,0 +1,73 @@
+{
+  "status": "incomplete",
+  "models": [
+    {
+      "name": "shared",
+      "status": "execution_failed",
+      "error_type": "RuntimeError",
+      "association_analysis": false
+    },
+    {
+      "name": "partner",
+      "status": "execution_failed",
+      "error_type": "RuntimeError",
+      "association_analysis": false
+    },
+    {
+      "name": "partner_history",
+      "specification": "partner_history",
+      "status": "diagnostic_failed",
+      "divergences": 10571,
+      "treedepth_hits": 1429,
+      "max_rhat": 4.26301,
+      "min_bulk_ess": 4.24779,
+      "min_tail_ess": 27.3205,
+      "min_bfmi": 0.10668315942685826,
+      "nonfinite_diagnostics": 0,
+      "sampled_parameters_checked": 8372,
+      "max_numerical_domain_ratio": 3.3671145073238566,
+      "near_numerical_guard_fraction": 0.0,
+      "passed": false,
+      "participants": 343,
+      "valid_decisions": 26494,
+      "informative_participants": 343,
+      "fingerprint": "12c62d9ad173348cf1e9f11d75e899ca757144416060bffd56530388b73b14b7",
+      "settings": {
+        "chains": 4,
+        "parallel_chains": 4,
+        "threads_per_chain": 4,
+        "warmup": 3000,
+        "draws": 3000,
+        "adapt_delta": 0.99,
+        "max_treedepth": 14
+      },
+      "sources": {
+        "hierarchical.stan": "8f5c4b088712d7face2882efc0eb62a838e9dd2b08b0aa3f8428a6bef5a80505",
+        "hierarchical.py": "1203ea6bd72af79a5df49af4f7fd655c5dbd10adf6d43711a00e11e80e1f6498",
+        "hier_data.py": "4638f08cb9da9a2155fc46c50a55bc3de8ba1763bf2d570977689a4a1ab27405",
+        "hier_simulation.py": "3b9aaa8affc20306f2035bdacc5895d762d5b4077139e23078c9b1a96f5033e2",
+        "audit.py": "6c21213629451059570496fe748a0def16161141c79c9c57d48f210dd40cb8d1",
+        "model.py": "dafa6b6ab7be4cad926618f14c0913b80d9695dadce52e2f875f220e426e7e85"
+      },
+      "cohort_trials_sha256": "8963e63b26d36377115382ebab68bc09dbaa799f055a8a19568b7e78fc1dc471",
+      "participant_manifest_sha256": "e2c40c71fe88fbf14b339a1dd66ca18083af1e5f3ff2b7fac6cb44a591f31803",
+      "elapsed_seconds": 1066821.745908128,
+      "association_analysis": false,
+      "participant_subsampling": false
+    },
+    {
+      "name": "partner_wide_prior",
+      "status": "execution_failed",
+      "error_type": "RuntimeError",
+      "association_analysis": false
+    },
+    {
+      "name": "partner_imaging",
+      "status": "execution_failed",
+      "error_type": "RuntimeError",
+      "association_analysis": false
+    }
+  ],
+  "full_cohort": true,
+  "participant_subsampling": false
+}
