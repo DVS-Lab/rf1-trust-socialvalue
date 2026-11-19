@@ -1,5 +1,7 @@
 # Full-cohort hierarchical Trust DDM
 
+For the November primary-model failure, start with the [timed partner retry](PARTNER_RETRY.md). It uses the archived Linux2 input and writes a fresh attempt.
+
 This is the full behavioral-cohort extension authorized after review of the
 independent-fit pilot. It fits every participant in the certified session-01
 Trust roster (currently 343), including constant responders and valid single-run

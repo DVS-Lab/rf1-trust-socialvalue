@@ -1,11 +1,6 @@
 functions {
   real upper_logcdf(real y, real a, real t0, real z, real v) {
     if (y <= t0) return negative_infinity();
-    // Extreme warmup proposals can make both native CDF series lengths infinite,
-    // producing a nonterminating floating-point loop in Stan Math 2.40.
-    // This generous numerical domain is far beyond the pilot's fitting bounds.
-    if (is_inf(a) || is_nan(a) || a<1e-6 || square(a)/(y-t0)>1000 || abs(v)>1e6)
-      reject("Wiener numerical evaluation domain exceeded");
     return wiener_lcdf_unnorm(y, a, t0, z, v);
   }
   real retained_logmass(real a, real t0, real z, real v, real lo, real hi) {
@@ -13,16 +8,27 @@ functions {
     if (lo <= t0) return fmin(0,high);
     return log_diff_exp(high,log_sum_exp(upper_logcdf(lo,a,t0,z,v), upper_logcdf(lo,a,t0,1-z,-v)));
   }
-  real decision_logdensity(real rt, int high_choice, real a, real t0, real z, real v,
-                           real lo, real hi, real lapse) {
-    real ld = negative_infinity();
-    real lm = retained_logmass(a,t0,z,v,lo,hi);
-    if (rt > t0) {
-      if (high_choice == 1) ld = wiener_lpdf(rt | a,t0,z,v);
-      else ld = wiener_lpdf(rt | a,t0,1-z,-v);
+  // Tail forms of the same first-passage density. Computing exp(-d^2/(2t))
+  // before taking its log can poison the gradient of the contaminant mixture.
+  real upper_logdensity(real rt, real a, real t0, real z, real v) {
+    real t = rt - t0;
+    real x = t / square(a);
+    real w = 1 - z;
+    if (x < 0.01) {
+      // Leading image and its reflection. The next pair is suppressed by
+      // at least exp(-2/x) relative to the first image for 0 < w < 1.
+      real d = a * w;
+      real reflected = log1p(2 * z / w) - 2 * z / x;
+      return log(d) - log(t) + normal_lpdf(d | v * t, sqrt(t))
+             + log1m_exp(reflected);
     }
-    // One unconditional mixture, then condition both choices jointly on RT retention.
-    return log_mix(lapse,-log(2*(hi-lo)),ld)-log_sum_exp(log1m(lapse)+lm,log(lapse));
+    if (x > 10) {
+      // Next spectral term has relative magnitude <= 4 exp(-1.5 pi^2 x).
+      real sin_term = sin(pi() * fmin(w, z));
+      return log(pi()) - 2 * log(a) + log(sin_term)
+             - 0.5 * square(pi()) * x + v * a * w - 0.5 * square(v) * t;
+    }
+    return wiener_lpdf(rt | a,t0,z,v);
   }
   real partial_likelihood(array[] int persons, int start, int end,
                           matrix eta, real beta_zero, real beta_side, vector beta_history,
@@ -41,21 +47,30 @@ functions {
       vector[nc] bias;
       vector[nc] normalizer;
       if (nc > 0) {
+        // A zero target rejects the whole proposal, outside the mixture,
+        // before either CDF is called. Both positive CDF times must be safe.
+        if (is_inf(a) || is_nan(a) || a < 1e-6 || t0 >= hi
+            || square(a)/(hi-t0) > 1000
+            || (lo > t0 && square(a)/(lo-t0) > 1000)) return negative_infinity();
         for (k in 1:nc) {
           int c=cfirst[i]+k-1;
           int p=partner[c];
           int zi=7;
           if (Z == 3) zi=6+p;
-          drift[k]=eta[i,2+p]+eta[i,6]*gap[c]+beta_zero*zero_offer[c]+dot_product(history[c],beta_history);
+          drift[k]=eta[i,2+p]+eta[i,6]*gap[c]+beta_zero*zero_offer[c];
+          if (num_elements(beta_history) > 0)
+            drift[k]+=dot_product(history[c],beta_history);
           bias[k]=inv_logit(eta[i,zi]+beta_side*side[c]);
+          if (bias[k] <= 0 || bias[k] >= 1 || 1-bias[k] >= 1
+              || is_nan(drift[k]) || abs(drift[k]) > 1e6) return negative_infinity();
           normalizer[k]=log_sum_exp(log1m(lapse)+retained_logmass(a,t0,bias[k],drift[k],lo,hi),log(lapse));
         }
         for (t in first[i]:last[i]) {
           int k=cell[t]-cfirst[i]+1;
           real ld=negative_infinity();
           if (rt[t] > t0) {
-            if (y[t] == 1) ld=wiener_lpdf(rt[t] | a,t0,bias[k],drift[k]);
-            else ld=wiener_lpdf(rt[t] | a,t0,1-bias[k],-drift[k]);
+            if (y[t] == 1) ld=upper_logdensity(rt[t],a,t0,bias[k],drift[k]);
+            else ld=upper_logdensity(rt[t],a,t0,1-bias[k],-drift[k]);
           }
           lp+=log_mix(lapse,-log(2*(hi-lo)),ld)-normalizer[k];
         }

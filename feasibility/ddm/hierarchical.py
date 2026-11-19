@@ -11,6 +11,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import re
 import shutil
 import subprocess
 import time
@@ -134,7 +135,8 @@ def check_implementation(c):
         "jacobian=false","data","file="+str(pfolder/"guard_data.json"),"output","file="+str(pfolder/"guard.csv")],
         capture_output=True,text=True,timeout=15)
     (pfolder/"guard.log").write_text(rejected.stdout+rejected.stderr)
-    guard_passed=rejected.returncode!=0 and "numerical evaluation domain" in rejected.stderr+rejected.stdout
+    guard_passed = rejected.returncode == 0 and bool(np.isneginf(
+        pd.read_csv(pfolder/"guard.csv",comment="#").iloc[0,0]))
     if not guard_passed:raise ValueError("Extreme-proposal numerical guard failed")
     status=dict(status="passed",cmdstan_version=c["cmdstan_version"],density_max_absolute_log_error=pdf_error,
         cdf_max_absolute_error=cdf_error,likelihood_gradient_states=results,numerical_guard_check=guard_passed,sources=source_hashes(),
@@ -277,6 +279,15 @@ def posterior_predictive(draws,meta,trials,participants,c,name):
         fit_fingerprint=fingerprint,integrates_parameter_uncertainty=True,feedback="generative; reveal only after a retained positive investment"))
 
 
+def execution_failure(name, error):
+    state = dict(name=name, status="execution_failed", error_type=type(error).__name__,
+                 association_analysis=False)
+    match = re.search(r"retcodes=\[([-\d, ]+)\]", str(error))
+    if match:
+        state["chain_exit_codes"] = [int(code) for code in match[1].split(",")]
+    return state
+
+
 def full_fits(c):
     t,p,binding=load_prepared(c);check_implementation(c);rows=[]
     save(PUBLIC/"fit_status.json",dict(status="running",models=[]))
@@ -294,7 +305,7 @@ def full_fits(c):
             draws=publish_accepted(fit,meta,status,folder,c,frames,people)
             if draws is not None:posterior_predictive(draws,meta,frames,people,c,name)
         except Exception as e:
-            status=dict(name=name,status="execution_failed",error_type=type(e).__name__,association_analysis=False)
+            status=execution_failure(name, e)
             save(PUBLIC/"fits"/name/"status.json",status);rows.append(status)
             print(f"{name} failed: {type(e).__name__}: {e}",flush=True)
     save(PUBLIC/"fit_status.json",dict(status="complete" if all(r.get("passed",False) for r in rows) else "incomplete",
@@ -331,91 +342,160 @@ def prior_predictive(c):
         note="Joint prior draws conditioned on the documented, generous numerical CDF evaluation domain."))
 
 
-def full_recovery(c):
-    t,p,binding=load_prepared(c)
-    fit,meta,status,folder=fit_dataset(t,c,"partner","partner",c["seed"]+c["models"].index("partner"))
-    if not status["passed"]:raise RuntimeError("Primary full-cohort posterior failed diagnostics; recovery generator unavailable")
-    draws=posterior_arrays(fit);rng=np.random.default_rng(c["seed"]+91000);summaries=[];population=[];states=[]
-    save(PUBLIC/"recovery_status.json",dict(status="running",fits=[],full_cohort=True))
+def recovery_inputs(draws, ids, c):
+    # Draw populations and simulation seeds in the same order for every worker count.
+    rng = np.random.default_rng(c["seed"] + 91000)
     regimes=[(s,c["recovery_datasets_per_regime"]) for s in c["recovery_z_logit_sd"]]+[("drift_only_null",c.get("recovery_null_datasets",2))]
     if c.get("recovery_misspecification_stress",True):regimes += [("partner_boundary_stress",1),("partner_nondecision_stress",1)]
     for regime,repetitions in regimes:
         for rep in range(repetitions):
             name=f"Recovery_{regime}_{rep+1}";index=int(rng.integers(len(draws["eta"])))
             for rejected_populations in range(10000):
-                eta,bzero,bside,bhistory=new_population(draws,index,len(meta["ids"]),c,regime,rng)
+                eta,bzero,bside,bhistory=new_population(draws,index,len(ids),c,regime,rng)
                 a=np.exp(eta[:,0]);hi=c["response_window_seconds_from_cue"]-c["cue_seconds"]
                 ratio=a*a/(hi-hi*expit(eta[:,1]))
                 if np.isfinite(ratio).all() and ratio.max()<1000 and a.min()>=1e-6:break
             else:raise ValueError("Recovery populations repeatedly exceed numerical evaluation domain")
             seed=int(rng.integers(1,2**30))
-            stress={}
-            if regime=="partner_boundary_stress":stress["a_scale"]=[1.1,.9,1.]
-            if regime=="partner_nondecision_stress":stress["t0_scale"]=[.9,1.,1.]
-            s=simulate(t,eta,bzero,bside,bhistory,c,3,seed,**stress)
-            truth=truth_table(eta,meta["ids"],c)
-            # Misspecified common-a/t0 fits have no unique true common parameter.
-            if regime=="partner_boundary_stress":truth=truth.drop(columns="a")
-            if regime=="partner_nondecision_stress":truth=truth.drop(columns="t0")
-            cohort=p.copy()
-            simulated_pass={}
-            for pid,g in s.groupby("participant_id"):
-                variability=g[g.analysis_valid].groupby("partner").chose_high.nunique()
-                simulated_pass[pid]=all(variability.get(partner,0)>1 for partner in ["friend","stranger"])
-            cohort["simulated_rule_pass"]=cohort.participant_id.map(simulated_pass)
-            simulated_n=s.groupby("participant_id").analysis_valid.sum()
-            cohort["simulated_valid"]=cohort.participant_id.map(simulated_n).fillna(0).astype(int)
-            private=WORK/"recovery"/name;private.mkdir(parents=True,exist_ok=True)
-            truth.to_csv(private/"truth.tsv",sep="\t",index=False)
-            save(private/"generator.json",dict(index=index,seed=seed,primary_fingerprint=status["fingerprint"],numerical_domain_rejected_populations=rejected_populations,
-                regime=regime,misspecification=stress,full_participants=len(meta["ids"]),sources=source_hashes()))
-            try:
-                sf,sm,ss,sfolder=fit_dataset(s,c,"partner",name,seed+1);states.append(ss)
-                if not ss["passed"]:
-                    save(PUBLIC/"recovery_status.json",dict(status="running",fits=states,full_cohort=True))
-                    continue
-                sd=publish_accepted(sf,sm,ss,sfolder,c,s,p)
-                post=participant_posterior(sd,sm["ids"])
-                paired,summary=recovery_summary(post,truth,cohort,regime,rep,name)
-                paired.to_csv(private/"recovery_participants.tsv",sep="\t",index=False);summaries.append(summary)
-                delta=sd["z_difference"]
-                for label,values,true in [("cohort_mean_z_difference",delta.mean(axis=1),truth.z_difference.mean()),
-                                          ("cohort_sd_z_difference",delta.std(axis=1),truth.z_difference.std(ddof=0))]:
-                    lo,hi=np.quantile(values,[.025,.975])
-                    boundary=label=="cohort_sd_z_difference" and true<1e-12
-                    population.append(dict(fit=name,regime=regime,replicate=rep,parameter=label,truth=float(true),
-                        estimate=float(values.mean()),q025=float(lo),q975=float(hi),covered=None if boundary else bool(lo<=true<=hi),
-                        truth_on_variance_boundary=boundary))
-            except Exception as e:
-                ss=dict(name=name,status="execution_failed",error_type=type(e).__name__);states.append(ss)
-                print(f"{name} failed: {type(e).__name__}: {e}",flush=True)
-            if summaries:pd.concat(summaries,ignore_index=True).to_csv(PUBLIC/"recovery_summary.tsv",sep="\t",index=False)
-            pd.DataFrame(population).to_csv(PUBLIC/"recovery_population.tsv",sep="\t",index=False)
-            save(PUBLIC/"recovery_status.json",dict(status="running",fits=states,full_cohort=True))
-    passed=len(states)==sum(n for _,n in regimes) and all(s.get("passed",False) for s in states)
-    save(PUBLIC/"recovery_status.json",dict(status="complete" if passed else "incomplete",fits=states,
-        full_cohort=True,participant_subsampling=False,datasets_planned=sum(n for _,n in regimes),
-        note="Four datasets per variability regime, two null datasets and two specification stresses; interval/false-positive calibration remains Monte Carlo-limited."))
+            yield (name, regime, rep, index, seed, rejected_populations, eta, bzero, bside, bhistory)
+
+
+def recovery_worker(job, t, p, ids, primary_fingerprint, c):
+    name, regime, rep, index, seed, rejected_populations, eta, bzero, bside, bhistory = job
+    population = []
+    stress={}
+    if regime=="partner_boundary_stress":stress["a_scale"]=[1.1,.9,1.]
+    if regime=="partner_nondecision_stress":stress["t0_scale"]=[.9,1.,1.]
+    s=simulate(t,eta,bzero,bside,bhistory,c,3,seed,**stress)
+    truth=truth_table(eta,ids,c)
+    # Misspecified common-a/t0 fits have no unique true common parameter.
+    if regime=="partner_boundary_stress":truth=truth.drop(columns="a")
+    if regime=="partner_nondecision_stress":truth=truth.drop(columns="t0")
+    cohort=p.copy()
+    simulated_pass={}
+    for pid,g in s.groupby("participant_id"):
+        variability=g[g.analysis_valid].groupby("partner").chose_high.nunique()
+        simulated_pass[pid]=all(variability.get(partner,0)>1 for partner in ["friend","stranger"])
+    cohort["simulated_rule_pass"]=cohort.participant_id.map(simulated_pass)
+    simulated_n=s.groupby("participant_id").analysis_valid.sum()
+    cohort["simulated_valid"]=cohort.participant_id.map(simulated_n).fillna(0).astype(int)
+    private=WORK/"recovery"/name;private.mkdir(parents=True,exist_ok=True)
+    truth.to_csv(private/"truth.tsv",sep="\t",index=False)
+    save(private/"generator.json",dict(index=index,seed=seed,primary_fingerprint=primary_fingerprint,numerical_domain_rejected_populations=rejected_populations,
+        regime=regime,misspecification=stress,full_participants=len(ids),sources=source_hashes()))
+    sf,sm,ss,sfolder=fit_dataset(s,c,"partner",name,seed+1)
+    if not ss["passed"]:
+        return ss, None, []
+    sd=publish_accepted(sf,sm,ss,sfolder,c,s,p)
+    post=participant_posterior(sd,sm["ids"])
+    paired,summary=recovery_summary(post,truth,cohort,regime,rep,name)
+    paired.to_csv(private/"recovery_participants.tsv",sep="\t",index=False)
+    delta=sd["z_difference"]
+    for label,values,true in [("cohort_mean_z_difference",delta.mean(axis=1),truth.z_difference.mean()),
+                              ("cohort_sd_z_difference",delta.std(axis=1),truth.z_difference.std(ddof=0))]:
+        lo,hi=np.quantile(values,[.025,.975])
+        boundary=label=="cohort_sd_z_difference" and true<1e-12
+        population.append(dict(fit=name,regime=regime,replicate=rep,parameter=label,truth=float(true),
+            estimate=float(values.mean()),q025=float(lo),q975=float(hi),covered=None if boundary else bool(lo<=true<=hi),
+            truth_on_variance_boundary=boundary))
+    return ss, summary, population
+
+
+def full_recovery(c, workers=1):
+
+    t, p, _ = load_prepared(c)
+    fit, meta, status, _ = fit_dataset(t, c, "partner", "partner", c["seed"] + c["models"].index("partner"))
+    if not status["passed"]:
+        raise RuntimeError("Primary full-cohort posterior failed diagnostics; recovery generator unavailable")
+    ids = meta["ids"]
+    draws = posterior_arrays(fit)
+    jobs = list(recovery_inputs(draws, ids, c))
+    del draws, fit
+    return run_recovery_jobs(jobs, workers, recovery_worker, (t, p, ids, status["fingerprint"], c))
+
+
+def run_recovery_jobs(jobs, workers, worker, args):
+    from concurrent.futures import ProcessPoolExecutor, as_completed
+    from multiprocessing import get_context
+    states, summaries, population = {}, {}, {}
+
+    def publish(stage):
+        rows = [states[j[0]] for j in jobs if j[0] in states]
+        if summaries:
+            pd.concat([summaries[j[0]] for j in jobs if j[0] in summaries], ignore_index=True).to_csv(
+                PUBLIC / "recovery_summary.tsv", sep="\t", index=False)
+            pd.DataFrame([row for j in jobs for row in population.get(j[0], [])]).to_csv(
+                PUBLIC / "recovery_population.tsv", sep="\t", index=False)
+        save(PUBLIC / "recovery_status.json", dict(status=stage, fits=rows, full_cohort=True,
+             participant_subsampling=False, datasets_planned=len(jobs), workers=workers))
+
+    def collect(name, get_result):
+        try:
+            state, summary, pop = get_result()
+        except Exception as error:
+            print(f"{name} failed: {type(error).__name__}: {error}", flush=True)
+            state, summary, pop = execution_failure(name, error), None, []
+        states[name] = state
+        if summary is not None:
+            summaries[name], population[name] = summary, pop
+        publish("running")
+
+    publish("running")
+    if workers == 1:
+        for job in jobs:
+            collect(job[0], lambda: worker(job, *args))
+    else:
+        # One worker owns each dataset's chains and outputs. Only the parent
+        # updates cohort-wide tables. Spawn avoids inheriting native thread pools.
+        with ProcessPoolExecutor(max_workers=workers, mp_context=get_context("spawn")) as pool:
+            futures = {pool.submit(worker, j, *args): j[0] for j in jobs}
+            for future in as_completed(futures):
+                collect(futures[future], future.result)
+    passed = len(states) == len(jobs) and all(row.get("passed", False) for row in states.values())
+    publish("complete" if passed else "incomplete")
     return passed
 
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("stage",choices=["prepare","check","prior","fit","recovery","report","all"])
+    ap.add_argument("stage",choices=["prepare","check","prior","primary","fit","recovery","report","all"])
     ap.add_argument("--config",type=Path)
     ap.add_argument("--upstream",type=Path,default=Path(os.environ.get("DDM_UPSTREAM","/ZPOOL/data/projects/rf1-sra-linux2")))
     ap.add_argument("--task-source",type=Path,default=os.environ.get("DDM_TASK_SOURCE"))
     ap.add_argument("--approved-trust-imaging-manifest",type=Path)
-    args=ap.parse_args();c=config(args.config);WORK.mkdir(parents=True,exist_ok=True);PUBLIC.mkdir(parents=True,exist_ok=True)
+    ap.add_argument("--recovery-workers", type=int, default=1,
+                    help="Independent recovery datasets sampled concurrently after an accepted primary fit")
+    args=ap.parse_args();c=config(args.config)
+    workers=args.recovery_workers
+    if workers < 1 or (workers != 1 and args.stage not in ("all","recovery")):
+        ap.error("--recovery-workers must be positive and applies only to all/recovery")
+    if workers > 1 and hasattr(os,"sched_getaffinity"):
+        needed=workers*c["parallel_chains"]*c["threads_per_chain"]
+        if needed > len(os.sched_getaffinity(0)):
+            ap.error(f"{workers} recovery workers require an allocation of {needed} CPUs with these settings")
+    WORK.mkdir(parents=True,exist_ok=True);PUBLIC.mkdir(parents=True,exist_ok=True)
     save(PUBLIC/"run_status.json",dict(status="running",stage=args.stage,started=now()))
     ok=True
     try:
         if args.stage in ["prepare","all"]:prepare(args.upstream,c,args.task_source,args.approved_trust_imaging_manifest)
         if args.stage=="check":check_implementation(c)
         if args.stage in ["prior","all"]:prior_predictive(c)
+        if args.stage=="primary":
+            trials, people, _ = load_prepared(c)
+            check_implementation(c)
+            seed = c["seed"] + c["models"].index("partner")
+            try:
+                fit, meta, status, folder = fit_dataset(trials, c, "partner", "partner", seed)
+            except Exception as error:
+                save(PUBLIC/"fits/partner/status.json", execution_failure("partner", error))
+                raise
+            ok = status["passed"]
+            if ok:
+                draws = publish_accepted(fit, meta, status, folder, c, trials, people)
+                posterior_predictive(draws, meta, trials, people, c, "partner")
         if args.stage in ["fit","all"]:ok=full_fits(c) and ok
         if args.stage in ["recovery","all"]:
-            try:ok=full_recovery(c) and ok
+            try:ok=full_recovery(c,workers) and ok
             except Exception as e:
                 save(PUBLIC/"recovery_status.json",dict(status="blocked_primary_posterior_or_execution",error_type=type(e).__name__))
                 print(f"Recovery unavailable: {type(e).__name__}: {e}",flush=True);ok=False

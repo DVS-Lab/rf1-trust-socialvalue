@@ -6,8 +6,8 @@ cd "$DDM_ROOT"
 DDM_STAGE="${1:-all}"
 if [[ $# -gt 0 ]]; then shift; fi
 case "$DDM_STAGE" in
-  prepare|check|prior|fit|recovery|report|all|test) ;;
-  *) echo 'Usage: bash scripts/run_ddm_hierarchical.sh {all|prepare|check|prior|fit|recovery|report|test} [Python CLI options]' >&2;exit 2 ;;
+  prepare|check|prior|primary|fit|recovery|report|all|test) ;;
+  *) echo 'Usage: bash scripts/run_ddm_hierarchical.sh {all|prepare|check|prior|primary|fit|recovery|report|test} [Python CLI options]' >&2;exit 2 ;;
 esac
 DDM_PYTHON="${DDM_PYTHON:-$DDM_ROOT/.venv-linux2/bin/python}"
 [[ -x "$DDM_PYTHON" ]] || { echo 'Set DDM_PYTHON to the existing Linux2 scientific Python.' >&2;exit 2; }
@@ -38,7 +38,7 @@ run_ddm_stage() (
   "$DDM_PYTHON" --version
   git rev-parse HEAD
   if [[ "$DDM_STAGE" != report ]]; then
-    "$DDM_PYTHON" -m pytest feasibility/ddm/test_ddm.py feasibility/ddm/test_hierarchical.py -q
+    "$DDM_PYTHON" -m pytest feasibility/ddm/test_ddm.py feasibility/ddm/test_hierarchical.py feasibility/ddm/test_recovery_workers.py -q
   fi
   if [[ "$DDM_STAGE" != test ]]; then
     "$DDM_PYTHON" feasibility/ddm/hierarchical.py "$DDM_STAGE" "$@"
