@@ -1,12 +1,10 @@
 # Testing the Linux2 partner fit
 
-The November run's primary partner model exited during sampling. CmdStanPy 1.3
-collects Stan messages from all chains when a process returns a nonzero code.
-The launcher log also records the individual process codes. For the original
-run, inspect the lines containing `error: code`, `retcodes=`, and the last
-reported iteration for each chain. A later error about partial CSV files means
-the runner found the existing attempt when it tried to obtain the primary
-posterior for recovery.
+In the November run, the primary partner model's chain 1 had a nonfinite
+gradient at its supplied initial value. It exited before the first warmup
+iteration. Chains 2, 3 and 4 completed all 6,000 iterations. CmdStanPy recorded
+exit codes `[1, 0, 0, 0]` and collected proposal warnings from the chains that
+continued. Recovery stopped when it found the incomplete four-chain fit.
 
 In the archived model, a synthetic response 10 microseconds above nondecision
 time produced a finite mixture log likelihood and 23 nonfinite gradient
@@ -58,6 +56,20 @@ original=/ZPOOL/data/projects/rf1-trust-socialvalue
 bash scripts/run_ddm_partner_preflight.sh "$original" --threads-per-chain 4
 ```
 
+If the retry checkout already exists, update it and repeat the short run.
+
+```bash
+cd /ZPOOL/data/projects/rf1-trust-ddm-retry
+git pull --ff-only origin codex/ddm-partner-retry
+bash scripts/run_ddm_partner_preflight.sh /ZPOOL/data/projects/rf1-trust-socialvalue
+```
+
+The launcher checks the original checkout's shared, full-sample hierarchical
+and DDM installation directories, and verifies version 2.40.0 against the
+CmdStan makefile. It prints the selected directory before compilation. If
+discovery fails, the exception lists the checked paths and the status records
+`failed_phase` as `locate_cmdstan`.
+
 The launcher prints the private log path and a compact JSON status. Share the
 status and per-chain exit codes. Exit 2 means the test completed with
 divergences or depth-limit hits. A timeout preserves partial outputs. Compare
@@ -96,7 +108,7 @@ path to preparation and every subsequent stage.
 
 ```bash
 export DDM_PYTHON="$original/.venv-linux2/bin/python"
-export CMDSTAN="$original/work/cmdstan/cmdstan-2.40.0"
+export DDM_ORIGINAL_ROOT="$original"
 bash scripts/run_ddm_hierarchical.sh prepare
 bash scripts/run_ddm_hierarchical.sh primary
 ```

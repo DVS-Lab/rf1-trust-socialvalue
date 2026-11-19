@@ -11,7 +11,7 @@ from pathlib import Path
 import numpy as np
 from scipy.special import expit
 
-from hierarchical import compile_model, config, execution_failure, initial_values, model_data, synthetic_fixture
+from hierarchical import cmdstan, compile_model, config, execution_failure, initial_values, model_data, synthetic_fixture
 from hier_data import WORK, digest, save, sha
 
 
@@ -122,10 +122,8 @@ def main():
     else:
         if platform.system() != "Linux":
             parser.error("Use Linux2 for archived participant data")
-        if args.original_root and "CMDSTAN" not in os.environ:
-            existing = args.original_root / "work/cmdstan" / ("cmdstan-" + c["cmdstan_version"])
-            if existing.is_dir():
-                os.environ["CMDSTAN"] = str(existing.resolve())
+        if args.original_root:
+            os.environ["DDM_ORIGINAL_ROOT"] = str(args.original_root.resolve())
         data = archived_data(args.data) if args.data else partner_input(args.original_root)
     parent = WORK / "partner_preflight"
     parent.mkdir(parents=True, exist_ok=True)
@@ -136,15 +134,23 @@ def main():
                   warmup=args.warmup, draws=args.draws, seed=c["seed"]+1)
     print(f"Private attempt: {folder}", flush=True)
     save(folder/"status.json", dict(status, status="started"))
+    phase = "locate_cmdstan"
     try:
-        model = compile_model(c)
+        backend = cmdstan(c)
+        status["cmdstan_path"] = backend.cmdstan_path()
+        print(f"Using CmdStan {c['cmdstan_version']} at {status['cmdstan_path']}", flush=True)
+        phase = "compile_model"
+        model = compile_model(c, backend=backend)
+        phase = "check_gradients"
         status["gradient_states_checked"] = check_gradients(model, c)
         if args.benchmark_only:
+            phase = "benchmark"
             status["gradient_seconds_including_startup"] = time_gradients(
                 model, data, status["seed"], args.threads_per_chain, folder)
             status["status"] = "benchmark_complete"
             return
         print("Gradient checks passed. Launching four primary-model chains.", flush=True)
+        phase = "sampling"
         start = time.monotonic()
         fit = model.sample(data=data, seed=status["seed"], chains=4, parallel_chains=4,
                            force_one_process_per_chain=True, threads_per_chain=args.threads_per_chain,
@@ -153,6 +159,7 @@ def main():
                            inits=[initial_values(data, status["seed"]+i) for i in range(4)],
                            output_dir=str(folder), show_progress=False, show_console=True, refresh=5)
         status["sampling_seconds"] = time.monotonic()-start
+        phase = "summarize_draws"
         method = fit.method_variables()
         status["divergences_by_chain"] = method["divergent__"].sum(axis=0).astype(int).tolist()
         status["depth_limit_by_chain"] = (method["treedepth__"] >= c["max_treedepth"]).sum(axis=0).astype(int).tolist()
@@ -161,6 +168,7 @@ def main():
         status["status"] = "completed_with_sampler_warnings" if warnings else "completed_short_test"
     except Exception as error:
         status.update(execution_failure("partner", error))
+        status["failed_phase"] = phase
         (folder/"exception.txt").write_text(str(error))
         raise
     finally:

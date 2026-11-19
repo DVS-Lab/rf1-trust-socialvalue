@@ -10,6 +10,7 @@ import pytest
 sys.path.insert(0,str(Path(__file__).parent))
 import hier_data as hd
 import hier_report as hr
+import hierarchical as hierarchy
 from hierarchical import synthetic_fixture,reference_loglik,initial_values
 from hier_simulation import simulate,truth_table,recovery_summary
 
@@ -34,6 +35,25 @@ def test_full_roster_includes_constant_responders_and_people_without_retained_rt
     assert "synthetic-0" in meta["ids"] and "synthetic-1" in meta["ids"]
     assert data["T"]==t.analysis_valid.sum()
     assert data["hi"]==2.5
+
+
+@pytest.mark.parametrize("layout", ["work/cmdstan", "work/full_sample/hierarchical/cmdstan",
+                                    "work/ddm_hierarchical/cmdstan"])
+def test_retry_resolves_original_installation_in_each_layout(tmp_path, monkeypatch, layout):
+    original = tmp_path / "original"
+    monkeypatch.setattr(hierarchy, "ROOT", tmp_path / "retry")
+    monkeypatch.setenv("DDM_ORIGINAL_ROOT", str(original))
+    # A stale installation takes precedence in the environment but has a different patch version.
+    stale = tmp_path / "stale"
+    expected = original / layout / "cmdstan-2.40.0"
+    monkeypatch.setenv("CMDSTAN", str(stale))
+    for install, version in ((stale, "2.40.1"), (expected, "2.40.0")):
+        (install / "bin").mkdir(parents=True)
+        compiler = install / "bin/stanc"
+        compiler.touch()
+        compiler.chmod(0o755)
+        (install / "makefile").write_text(f"CMDSTAN_VERSION := {version}\n")
+    assert Path(hierarchy.cmdstan(C).cmdstan_path()) == expected.resolve()
 
 
 def test_cell_cache_preserves_motor_mapping_and_history():

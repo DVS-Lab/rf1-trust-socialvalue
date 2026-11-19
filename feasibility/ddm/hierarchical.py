@@ -31,22 +31,51 @@ from model import lower_density,lower_cdf,retained_mass
 def now():return datetime.now(timezone.utc).isoformat()
 
 
+def find_cmdstan(version):
+    release = "cmdstan-" + version
+    candidates = []
+    if os.environ.get("CMDSTAN"):
+        candidates.append(Path(os.environ["CMDSTAN"]).expanduser())
+    roots = [ROOT]
+    if os.environ.get("DDM_ORIGINAL_ROOT"):
+        roots.insert(0, Path(os.environ["DDM_ORIGINAL_ROOT"]).expanduser())
+    for root in roots:
+        for folder in ("work/cmdstan", "work/full_sample/hierarchical/cmdstan", "work/ddm_hierarchical/cmdstan"):
+            candidates.append(root / folder / release)
+    candidates.append(Path.home() / ".cmdstan" / release)
+    if os.environ.get("CONDA_PREFIX"):
+        candidates.append(Path(os.environ["CONDA_PREFIX"]) / "bin/cmdstan")
+
+    checked = []
+    for path in dict.fromkeys(candidates):
+        compiler = path / "bin/stanc"
+        if not compiler.is_file() or not os.access(compiler, os.X_OK):
+            checked.append(f"{path} (no executable bin/stanc)")
+            continue
+        try:
+            makefile = (path / "makefile").read_text()
+        except OSError as error:
+            checked.append(f"{path} ({error})")
+            continue
+        match = re.search(r"^CMDSTAN_VERSION\s*:?=\s*(\S+)", makefile, re.MULTILINE)
+        installed = match.group(1) if match else "unknown"
+        if installed == version:
+            return path.resolve()
+        checked.append(f"{path} (version {installed})")
+    raise RuntimeError(f"Could not locate CmdStan {version}. Set CMDSTAN to its installation directory. "
+                       + "Checked:\n  " + "\n  ".join(checked))
+
+
 def cmdstan(c):
     import cmdstanpy
-    version=c["cmdstan_version"]
-    candidates=[Path(os.environ["CMDSTAN"])] if os.environ.get("CMDSTAN") else []
-    candidates += [ROOT/"work/cmdstan"/("cmdstan-"+version),
-        ROOT/"work/full_sample/hierarchical/cmdstan"/("cmdstan-"+version),WORK/"cmdstan"/("cmdstan-"+version)]
-    found=[p for p in candidates if (p/"bin/stanc").is_file()]
-    if not found:raise RuntimeError("Existing CmdStan "+version+" required. Set CMDSTAN to its installation; no installation is launched automatically.")
-    cmdstanpy.set_cmdstan_path(str(found[0].resolve()))
-    if cmdstanpy.cmdstan_version()!=tuple(map(int,version.split(".")[:2])):
-        raise RuntimeError("CmdStan version differs from configuration")
+    path = find_cmdstan(c["cmdstan_version"])
+    cmdstanpy.set_cmdstan_path(str(path))
     return cmdstanpy
 
 
-def compile_model(c,name="hierarchical"):
-    cp=cmdstan(c);source=HERE/(name+".stan")
+def compile_model(c,name="hierarchical", *, backend=None):
+    cp = cmdstan(c) if backend is None else backend
+    source=HERE/(name+".stan")
     folder=WORK/"build"/sha(source)[:16];folder.mkdir(parents=True,exist_ok=True)
     target=folder/source.name
     if not target.exists():shutil.copy(source,target)
