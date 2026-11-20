@@ -1,0 +1,43 @@
+{
+  "status": "execution_failed",
+  "failed_phase": "sampling",
+  "error_type": "TimeoutError",
+  "synthetic": false,
+  "N": 343,
+  "T": 26494,
+  "input_hash": "c6d8b04cec174fc42e52aafefe63d5c09d82eee8342b3ae5ed85d025012fbe03",
+  "model_hash": "dcf9eff61795a5344fc3f3300ae8c1f37ae564a6a203771470f8097ca36d5e2c",
+  "chains": 4,
+  "threads_per_chain": 4,
+  "minutes": 30,
+  "warmup": 50,
+  "draws": 25,
+  "seed": 20261106,
+  "gradient_states_checked": 8,
+  "attempt": "20261119-174838-4lo40i4h",
+  "cmdstan_version": "2.40.0",
+  "chain_progress": {
+    "1": {
+      "initialization": "passed",
+      "last_reported_iteration": 25,
+      "exit_code": -15
+    },
+    "2": {
+      "initialization": "passed",
+      "last_reported_iteration": 10,
+      "exit_code": -15
+    },
+    "3": {
+      "initialization": "passed",
+      "last_reported_iteration": 15,
+      "exit_code": -15
+    },
+    "4": {
+      "initialization": "passed",
+      "last_reported_iteration": 10,
+      "exit_code": -15
+    }
+  },
+  "last_project_frame": "partner_preflight.py:155",
+  "reported_issue": "chain_timeout"
+}
