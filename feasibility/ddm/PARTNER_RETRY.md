@@ -53,15 +53,16 @@ git clone --single-branch --branch codex/ddm-partner-retry \
   https://github.com/DVS-Lab/rf1-trust-socialvalue.git rf1-trust-ddm-retry
 cd rf1-trust-ddm-retry
 original=/ZPOOL/data/projects/rf1-trust-socialvalue
-bash scripts/run_ddm_partner_preflight.sh "$original" --threads-per-chain 4
+bash scripts/run_ddm_partner_preflight.sh --push "$original" --threads-per-chain 4
 ```
 
-If the retry checkout already exists, update it and repeat the short run.
+For an existing attempt, publish the latest diagnostic report from Linux2.
+This reads the original attempt without starting a sampler.
 
 ```bash
 cd /ZPOOL/data/projects/rf1-trust-ddm-retry
 git pull --ff-only origin codex/ddm-partner-retry
-bash scripts/run_ddm_partner_preflight.sh /ZPOOL/data/projects/rf1-trust-socialvalue
+python3 scripts/share_ddm_preflight.py --push
 ```
 
 The launcher checks the original checkout's shared, full-sample hierarchical
@@ -70,8 +71,18 @@ CmdStan makefile. It prints the selected directory before compilation. If
 discovery fails, the exception lists the checked paths and the status records
 `failed_phase` as `locate_cmdstan`.
 
-The launcher prints the private log path and a compact JSON status. Share the
-status and per-chain exit codes. Exit 2 means the test completed with
+Each launcher invocation writes a compact report under
+`results/ddm_hierarchical/partner_preflight/`. The leading `--push` on the
+launcher also commits and pushes that report to `codex/ddm-partner-retry` on
+success or failure. The standalone command above can publish an earlier attempt
+or retry an interrupted push. Use `--log PATH` to select a particular launcher
+log. Repeating it with identical evidence reuses the same report. A snapshot
+from an active run can be updated from the same log after it finishes.
+The report includes model and input hashes when available, per-chain warmup
+progress, initialization failures and aggregate diagnostics. Participant data,
+raw console text and draws stay under `work/`.
+
+Exit 2 from the sampler preflight means the test completed with
 divergences or depth-limit hits. A timeout preserves partial outputs. Compare
 progress across chains before deciding to extend the time limit. Clean short
 chains support a longer primary-model diagnostic run. Individual recovery needs
